@@ -45,6 +45,7 @@
   - Holoprojector
   - WetFloorSign
   - WireBrush
+  - PhotoCamera # CorvaxGoob-PhotoCamera
 
 - type: latheRecipePack
   id: ServiceBoardsStatic

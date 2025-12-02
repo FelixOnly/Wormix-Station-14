@@ -800,9 +800,11 @@ namespace Content.Server.GameTicking
 
                 ReqWindowAttentionAll();
 
-                // Запуск голосования за Мапу и Режим в лобби
-                _voteManager.CreateStandardVote(initiator: null, voteType: StandardVoteType.Map);     // ADT-Tweak
-                _voteManager.CreateStandardVote(initiator: null, voteType: StandardVoteType.Preset);  // ADT-Tweak
+                //Wormix edit
+
+                //// Запуск голосования за Мапу и Режим в лобби
+                //_voteManager.CreateStandardVote(initiator: null, voteType: StandardVoteType.Map);     // ADT-Tweak
+                //_voteManager.CreateStandardVote(initiator: null, voteType: StandardVoteType.Preset);  // ADT-Tweak
             }
         }
 

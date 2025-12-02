@@ -109,14 +109,13 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Shared.Fax;
-using Content.Goobstation.Common.Administration.Notifications;
-using Content.Goobstation.Shared.Fax;
+using Content.Goobstation.Shared.Fax; // Goobstation
+using Content.Server._CorvaxGoob.Photo;
 using Content.Server.Administration;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.DeviceNetwork.Systems;
-using Content.Server.Explosion.EntitySystems;
+using Content.Server.Explosion.EntitySystems; // Goobstation
 using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Tools;
@@ -396,7 +395,7 @@ public sealed class FaxSystem : EntitySystem
                     if (!isForSyndie && !component.ResponsePings)
                         return;
 
-                    var payload = new NetworkPayload
+                    var payload = new NetworkPayload()
                     {
                         { DeviceNetworkConstants.Command, FaxConstants.FaxPongCommand },
                         { FaxConstants.FaxNameData, component.FaxName }
@@ -560,7 +559,7 @@ public sealed class FaxSystem : EntitySystem
         component.DestinationFaxAddress = null;
         component.KnownFaxes.Clear();
 
-        var payload = new NetworkPayload
+        var payload = new NetworkPayload()
         {
             { DeviceNetworkConstants.Command, FaxConstants.FaxPingCommand }
         };
@@ -612,21 +611,37 @@ public sealed class FaxSystem : EntitySystem
         if (sendEntity == null)
             return;
 
-        if (!TryComp(sendEntity, out MetaDataComponent? metadata) ||
-            !TryComp<PaperComponent>(sendEntity, out var paper))
+        // CorvaxGoob-PhotoCamera-Start
+        if (!TryComp(sendEntity, out MetaDataComponent? metadata))
             return;
 
         TryComp<LabelComponent>(sendEntity, out var labelComponent);
         TryComp<NameModifierComponent>(sendEntity, out var nameMod);
 
+        FaxPrintout? printout = null;
+
+        if (TryComp<PaperComponent>(sendEntity, out var paper))
+        {
+            printout = new FaxPrintout(paper.Content,
+                                           nameMod?.BaseName ?? metadata.EntityName,
+                                           labelComponent?.CurrentLabel,
+                                           metadata.EntityPrototype?.ID ?? component.PrintPaperId,
+                                           paper.StampState,
+                                           paper.StampedBy,
+                                           paper.EditingDisabled);
+        } 
+        else if (TryComp<PhotoCardComponent>(sendEntity, out var photo) )
+        {
+            var meta = MetaData(sendEntity.Value);
+
+            if (meta.EntityPrototype is not null)
+                printout = new FaxPrintout("", meta.EntityName, prototypeId: meta.EntityPrototype.ID, entityUid: sendEntity);
+        }
         // TODO: See comment in 'Send()' about not being able to copy whole entities
-        var printout = new FaxPrintout(paper.Content,
-                                       nameMod?.BaseName ?? metadata.EntityName,
-                                       labelComponent?.CurrentLabel,
-                                       metadata.EntityPrototype?.ID ?? component.PrintPaperId,
-                                       paper.StampState,
-                                       paper.StampedBy,
-                                       paper.EditingDisabled);
+
+        if (printout is null)
+            return;
+        // CorvaxGoob-PhotoCamera-End
 
         component.PrintingQueue.Enqueue(printout);
         component.SendTimeoutRemaining += component.SendTimeout;
@@ -676,7 +691,7 @@ public sealed class FaxSystem : EntitySystem
 
         TryComp<LabelComponent>(sendEntity, out var labelComponent);
 
-        var payload = new NetworkPayload
+        var payload = new NetworkPayload()
         {
             // Goobstation merge conflict landmine: if how faxes work is changed FaxSlipSystem.cs might become broken
             { DeviceNetworkConstants.Command, FaxConstants.FaxPrintCommand },
@@ -750,7 +765,7 @@ public sealed class FaxSystem : EntitySystem
 
         var printout = component.PrintingQueue.Dequeue();
 
-        var entityToSpawn = printout.PrototypeId.Length == 0 ? component.PrintPaperId.ToString() : printout.PrototypeId;
+        var entityToSpawn = printout.PrototypeId.Length == 0 ? component.PrintPaperId.ToString() : printout.PrototypeId;            
         var coordinates = _transform.GetMapCoordinates(uid); // Goobstation
         var printed = Spawn(entityToSpawn, coordinates);
 
@@ -769,6 +784,8 @@ public sealed class FaxSystem : EntitySystem
 
             paper.EditingDisabled = printout.Locked;
         }
+        else if (printout.EntityUid.HasValue && TryComp<PhotoCardComponent>(printout.EntityUid, out var photo)) // CorvaxGoob-PhotoCamera
+            EnsureComp<PhotoCardComponent>(printed).ImageData = photo.ImageData;
 
         _metaData.SetEntityName(printed, printout.Name);
 
@@ -783,10 +800,6 @@ public sealed class FaxSystem : EntitySystem
     private void NotifyAdmins(string faxName)
     {
         _chat.SendAdminAnnouncement(Loc.GetString("fax-machine-chat-notify", ("fax", faxName)));
-
-        // Goobstation - Admin Notifications / Admin Notifications
-        // _audioSystem.PlayGlobal("/Audio/Machines/high_tech_confirm.ogg", Filter.Empty().AddPlayers(_adminManager.ActiveAdmins), false, AudioParams.Default.WithVolume(-8f));
-        foreach (var admin in _adminManager.ActiveAdmins)
-            RaiseNetworkEvent(new AdminNotificationEvent(new SoundPathSpecifier("/Audio/Machines/high_tech_confirm.ogg")), admin);
+        _audioSystem.PlayGlobal("/Audio/Machines/high_tech_confirm.ogg", Filter.Empty().AddPlayers(_adminManager.ActiveAdmins), false, AudioParams.Default.WithVolume(-8f));
     }
 }

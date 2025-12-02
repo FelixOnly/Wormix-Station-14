@@ -8,6 +8,6 @@ cd ../../
 
 call git submodule update --init --recursive
 call dotnet build Content.Packaging --configuration Release
-call dotnet run --project Content.Packaging server --hybrid-acz --platform win-x64
+call dotnet run --project Content.Packaging server --hybrid-acz --platform linux-x64
 
 pause
