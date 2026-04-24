@@ -37,9 +37,17 @@ public sealed class NotJobRequirementSystem : EntitySystem
         if (proto is null)
             return;
 
-
-        // MisandryBox - JobObjectives
-        var hasJob = proto.ID == comp.Job;
+        var hasJob = false;
+        if (comp.Jobs.Count > 0)
+        {
+            // Amour edit: list-based exclusion takes priority when provided.
+            hasJob = comp.Jobs.Contains(proto.ID);
+        }
+        else
+        {
+            // MisandryBox - JobObjectives
+            hasJob = comp.Job != null && proto.ID == comp.Job;
+        }
 
         if (comp.Inverted ? !hasJob : hasJob)
             args.Cancelled = true;

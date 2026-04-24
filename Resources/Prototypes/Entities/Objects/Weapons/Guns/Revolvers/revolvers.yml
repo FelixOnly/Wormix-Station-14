@@ -175,6 +175,8 @@
     capacity: 6
     chambers: [ True, True, True, True, True, True ]
     ammoSlots: [ null, null, null, null, null, null ]
+  - type: StealTarget
+    stealGroup: WeaponRevolverInspector # Amour edit
 
 - type: entity
   name: Mateba

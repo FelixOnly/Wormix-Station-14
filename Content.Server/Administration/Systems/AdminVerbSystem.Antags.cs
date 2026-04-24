@@ -83,6 +83,7 @@
 
 using Content.Server._DV.CosmicCult.Components;
 using Content.Server._Goobstation.Wizard.Components;
+using Content.Server._Amour.GameTicking.Rules.Components; // Amour edit
 using Content.Server.Antag;
 using Content.Server.Clothing.Systems;
 using Content.Server.GameTicking;
@@ -112,6 +113,7 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId DefaultNukeOpRule = "LoneOpsSpawn";
     private static readonly EntProtoId DefaultRevsRule = "Revolutionary";
     private static readonly EntProtoId DefaultThiefRule = "Thief";
+    private static readonly EntProtoId DefaultVampireRule = "Vampire"; // Amour edit
     private static readonly ProtoId<StartingGearPrototype> PirateGearId = "PirateGear";
 
     private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
@@ -293,6 +295,22 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", wizardName, Loc.GetString("admin-verb-make-wizard")),
         };
         args.Verbs.Add(wizard);
+
+        // Amour edit - vampire antag admin verb
+        var vampireName = Loc.GetString("admin-verb-text-make-vampire");
+        Verb vampire = new()
+        {
+            Text = vampireName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_Amour/Vampire/actions_vampire.rsi"), "fangs_extended"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<VampireRuleComponent>(targetPlayer, DefaultVampireRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", vampireName, Loc.GetString("admin-verb-make-vampire")),
+        };
+        args.Verbs.Add(vampire);
 
         // Begin DeltaV Additions
         var cosmicCultName = Loc.GetString("admin-verb-text-make-cosmiccultist");

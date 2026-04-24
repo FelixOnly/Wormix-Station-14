@@ -8,6 +8,7 @@
 using Content.Server.Objectives.Systems;
 using Content.Shared.Roles;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 /// <summary>
 /// Requires that the player not have a certain job to have this objective.
@@ -18,8 +19,16 @@ public sealed partial class NotJobRequirementComponent : Component
     /// <summary>
     /// ID of the job to ban from having this objective.
     /// </summary>
-    [DataField(required: true, customTypeSerializer: typeof(PrototypeIdSerializer<JobPrototype>))]
-    public string Job = string.Empty;
+    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<JobPrototype>))]
+    public string? Job;
+
+    /// <summary>
+    /// IDs of jobs to ban from having this objective.
+    /// Used by some downstream forks.
+    /// </summary>
+    // Amour edit: support list-based job blacklist syntax in YAML prototypes.
+    [DataField(customTypeSerializer: typeof(PrototypeIdListSerializer<JobPrototype>))]
+    public List<string> Jobs = new();
 
     // MisandryBox/JobObjectives - Double negative to not break compatibility
     [DataField]

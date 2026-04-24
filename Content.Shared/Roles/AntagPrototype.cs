@@ -68,6 +68,12 @@ public sealed partial class AntagPrototype : IPrototype
     public HashSet<JobRequirement>? Requirements;
 
     /// <summary>
+    ///     Whether or not this antag is restricted by the server role whitelist.
+    /// </summary>
+    [DataField]
+    public bool Whitelisted;
+
+    /// <summary>
     /// Optional list of guides associated with this antag. If the guides are opened, the first entry in this list
     /// will be used to select the currently selected guidebook.
     /// </summary>

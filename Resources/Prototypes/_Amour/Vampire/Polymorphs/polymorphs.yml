@@ -1,0 +1,10 @@
+- type: polymorph
+  id: VampireSanguinePoolPolymorph
+  configuration:
+    entity: MobVampireSanguinePool
+    forced: true
+    inventory: Drop
+    transferName: true
+    transferDamage: true
+    revertOnCrit: true
+    revertOnDeath: true
