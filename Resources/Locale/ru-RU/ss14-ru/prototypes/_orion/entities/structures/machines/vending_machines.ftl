@@ -5,5 +5,3 @@ ent-VendingMachineInteQDrobeNerf = { ent-VendingMachineInteQDrobe }
     .suffix = Для секреток на станции
 ent-CaptainDrobe = КапитанШкаф
     .desc = Стильная униформа для сильного лидера!
-ent-VendingMachineBitrunning = снабжение битраннинга
-    .desc = Вендинг заказа припасов, обменивающий очки битраннинга на снаряжение.

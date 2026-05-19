@@ -53,21 +53,13 @@ public sealed class DeployableBarrierSystem : EntitySystem
 
         if (isDeployed && transform.GridUid != null)
         {
-            // Orion-Edit-Start
-            if (!transform.Anchored)
-                _transform.AnchorEntity(uid, transform);
-            // Orion-Edit-End
-
+            _transform.AnchorEntity(uid, transform);
             if (fixture != null)
                 _physics.SetHard(uid, fixture, true);
         }
         else
         {
-            // Orion-Edit-Start
-            if (transform.Anchored)
-                _transform.Unanchor(uid, transform);
-            // Orion-Edit-End
-
+            _transform.Unanchor(uid, transform);
             if (fixture != null)
                 _physics.SetHard(uid, fixture, false);
         }

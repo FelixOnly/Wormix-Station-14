@@ -5,7 +5,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Actions;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Goobstation.Shared.Fishing.Events;
@@ -13,11 +12,6 @@ namespace Content.Goobstation.Shared.Fishing.Events;
 public sealed partial class ThrowFishingLureActionEvent : WorldTargetActionEvent;
 
 public sealed partial class PullFishingLureActionEvent : InstantActionEvent;
-
-// Orion-Start
-[ByRefEvent]
-public readonly record struct FishCaughtEvent(EntProtoId FishId);
-// Orion-End
 
 [Serializable, NetSerializable]
 public sealed class ActiveFishingSpotComponentState : ComponentState
