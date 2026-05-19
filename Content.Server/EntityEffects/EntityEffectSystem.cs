@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server._EinsteinEngines.Language;
+using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
@@ -25,7 +26,7 @@ using Content.Shared._EinsteinEngines.Language.Components;
 using Content.Shared._EinsteinEngines.Language.Systems;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems;
 using Content.Shared.Atmos;
-using Content.Shared.Atmos.Components;
+using Content.Shared.Audio;
 using Content.Shared.Body.Components;
 using Content.Shared.Chat;
 using Content.Shared.Coordinates.Helpers;
@@ -48,7 +49,6 @@ using Robust.Shared.Random;
 
 using TemperatureCondition = Content.Shared.EntityEffects.EffectConditions.Temperature; // disambiguate the namespace
 using PolymorphEffect = Content.Shared.EntityEffects.Effects.Polymorph;
-using Content.Shared.Atmos.Components;
 
 namespace Content.Server.EntityEffects;
 

@@ -58,13 +58,12 @@
 
 using Content.Shared.Alert;
 using Content.Shared.Damage;
-using Robust.Shared.GameStates;
 using Robust.Shared.Physics.Collision.Shapes;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Atmos.Components
+namespace Content.Server.Atmos.Components
 {
-    [RegisterComponent, NetworkedComponent]
+    [RegisterComponent]
     public sealed partial class FlammableComponent : Component
     {
         [DataField]

@@ -242,7 +242,6 @@
       sprite: _Goobstation/Objects/Shields/riotbulletshield.rsi # Goobstation
       state: ballistic-icon
     - type: Item
-      sprite: _Goobstation/Objects/Shields/riotbulletshield.rsi #Goobstation
       heldPrefix: ballistic
     - type: Blocking
       passiveBlockModifier:

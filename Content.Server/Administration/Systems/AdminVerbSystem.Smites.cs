@@ -107,6 +107,7 @@
 using System.Threading;
 using Content.Goobstation.Common.Speech;
 using Content.Server.Administration.Components;
+using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
@@ -126,7 +127,6 @@ using Content.Server.Temperature.Components;
 using Content.Shared._Goobstation.Wizard.Traps;
 using Content.Shared.Administration;
 using Content.Shared.Administration.Components;
-using Content.Shared.Atmos.Components;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Content.Shared.Clothing.Components;

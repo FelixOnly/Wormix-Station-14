@@ -96,7 +96,6 @@
   parent: BaseAction
   id: ActionRgbLight
   components:
-  - type: TargetAction # Goobstation
   - type: EntityTargetAction
     whitelist: { components: [ PointLight ] }
     event: !type:ChangeComponentsSpellEvent

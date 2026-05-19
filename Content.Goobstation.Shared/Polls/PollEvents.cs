@@ -15,7 +15,6 @@ public sealed class MsgActivePollsResponse : NetMessage
 {
     public override MsgGroups MsgGroup => MsgGroups.Command;
     public List<PollData> Polls { get; set; } = new();
-    public List<int> SeenPollIds { get; set; } = new();
 
     public override void ReadFromBuffer(NetIncomingMessage buffer, IRobustSerializer serializer)
     {
@@ -23,11 +22,6 @@ public sealed class MsgActivePollsResponse : NetMessage
         Polls = new List<PollData>(count);
         for (var i = 0; i < count; i++)
             Polls.Add(ReadPollData(buffer));
-
-        var seenCount = buffer.ReadVariableInt32();
-        SeenPollIds = new List<int>(seenCount);
-        for (var i = 0; i < seenCount; i++)
-            SeenPollIds.Add(buffer.ReadVariableInt32());
     }
 
     public override void WriteToBuffer(NetOutgoingMessage buffer, IRobustSerializer serializer)
@@ -35,10 +29,6 @@ public sealed class MsgActivePollsResponse : NetMessage
         buffer.WriteVariableInt32(Polls.Count);
         foreach (var poll in Polls)
             WritePollData(buffer, poll);
-
-        buffer.WriteVariableInt32(SeenPollIds.Count);
-        foreach (var id in SeenPollIds)
-            buffer.WriteVariableInt32(id);
     }
 
     internal static PollData ReadPollData(NetIncomingMessage buffer)
@@ -50,8 +40,7 @@ public sealed class MsgActivePollsResponse : NetMessage
             Description = buffer.ReadString(),
             StartTime = DateTime.FromBinary(buffer.ReadInt64()),
             Active = buffer.ReadBoolean(),
-            AllowMultipleChoices = buffer.ReadBoolean(),
-            SeenCount = buffer.ReadVariableInt32(),
+            AllowMultipleChoices = buffer.ReadBoolean()
         };
         buffer.ReadPadBits();
 
@@ -89,7 +78,6 @@ public sealed class MsgActivePollsResponse : NetMessage
         buffer.Write(poll.StartTime.ToBinary());
         buffer.Write(poll.Active);
         buffer.Write(poll.AllowMultipleChoices);
-        buffer.WriteVariableInt32(poll.SeenCount);
         buffer.WritePadBits();
 
         buffer.Write(poll.EndTime != null);
@@ -267,22 +255,6 @@ public sealed class MsgPollUpdated : NetMessage
     public override void WriteToBuffer(NetOutgoingMessage buffer, IRobustSerializer serializer)
     {
         MsgActivePollsResponse.WritePollData(buffer, Poll);
-    }
-}
-
-public sealed class MsgMarkPollSeen : NetMessage
-{
-    public override MsgGroups MsgGroup => MsgGroups.Command;
-    public int PollId { get; set; }
-
-    public override void ReadFromBuffer(NetIncomingMessage buffer, IRobustSerializer serializer)
-    {
-        PollId = buffer.ReadVariableInt32();
-    }
-
-    public override void WriteToBuffer(NetOutgoingMessage buffer, IRobustSerializer serializer)
-    {
-        buffer.WriteVariableInt32(PollId);
     }
 }
 

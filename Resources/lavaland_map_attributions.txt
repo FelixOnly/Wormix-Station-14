@@ -11,6 +11,3 @@ authors: aineias1
 
 files: "ruin_snow_biodome.yml", "ruin_hermit.yml"
 authors: rouden_
-
-files: "ruin_xeno_nest.yml"
-authors: DeusMaldPr, deltanedas, caoimhan2008
