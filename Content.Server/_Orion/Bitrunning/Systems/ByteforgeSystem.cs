@@ -135,6 +135,7 @@ public sealed class ByteforgeSystem : EntitySystem
             return false;
         }
 
+        EjectEntitiesFromStorage(cargoUid, byteforgeXform.Coordinates);
         EnsureComp<BitrunningDeliveredObjectiveCargoComponent>(cargoUid);
         PulseByteforge(byteforgeUid);
         QueueDel(cargoUid);
@@ -228,8 +229,7 @@ public sealed class ByteforgeSystem : EntitySystem
         if (server.CurrentDomain == null || !_domains.TryGetDomain(server.CurrentDomain, out var domain))
             return server.DeliveryEasyLootTable;
 
-        var rewardDifficulty = domain.RewardLootDifficulty ?? domain.Difficulty;
-        return rewardDifficulty switch
+        return domain.Difficulty switch
         {
             BitrunningDifficulty.Peaceful => server.DeliveryPeacefulLootTable,
             BitrunningDifficulty.Easy => server.DeliveryEasyLootTable,
@@ -238,5 +238,19 @@ public sealed class ByteforgeSystem : EntitySystem
             BitrunningDifficulty.Extreme => server.DeliveryExtremeLootTable,
             _ => server.DeliveryEasyLootTable,
         };
+    }
+
+    private void EjectEntitiesFromStorage(EntityUid cargoUid, EntityCoordinates dropCoordinates)
+    {
+        if (TryComp<StorageComponent>(cargoUid, out var storage))
+            _container.EmptyContainer(storage.Container, destination: dropCoordinates);
+
+        if (!TryComp<EntityStorageComponent>(cargoUid, out var entityStorage))
+            return;
+
+        foreach (var contained in entityStorage.Contents.ContainedEntities.ToList())
+        {
+            _container.Remove(contained, entityStorage.Contents, destination: dropCoordinates, reparent: true);
+        }
     }
 }

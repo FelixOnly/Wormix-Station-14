@@ -7,7 +7,6 @@ using Content.Server.Storage.EntitySystems;
 using Content.Shared.Storage;
 using Content.Shared._Orion.Bitrunning;
 using Content.Shared._Orion.Bitrunning.Components;
-using Content.Shared.Clothing.Components;
 using Content.Shared.Damage;
 using Content.Shared.Examine;
 using Content.Shared.Hands.EntitySystems;
@@ -232,39 +231,26 @@ public sealed class BitrunningDiskSystem : EntitySystem
                 continue;
 
             var spawned = Spawn(itemProto, Transform(avatar.Owner).Coordinates);
-            TryInsertIntoAvatarInventory(avatar.Owner, spawned);
-
-            server.GrantedItemDisks.Add(diskUid);
-        }
-    }
-
-    private void TryInsertIntoAvatarInventory(EntityUid avatarUid, EntityUid itemUid)
-    {
-        if (TryEquipOnAvatar(avatarUid, itemUid))
-            return;
-
-        if (_inventory.TryGetSlotEntity(avatarUid, "back", out var backUid) && TryComp<StorageComponent>(backUid.Value, out var storage) && _storage.Insert(backUid.Value, itemUid, out _, storageComp: storage, playSound: false))
-            return;
-
-        _hands.TryPickupAnyHand(avatarUid, itemUid, checkActionBlocker: false);
-    }
-
-    private bool TryEquipOnAvatar(EntityUid avatarUid, EntityUid itemUid)
-    {
-        if (!TryComp<ClothingComponent>(itemUid, out var clothing))
-            return false;
-
-        if (!_inventory.TryGetSlots(avatarUid, out var slots))
-            return false;
-
-        foreach (var slot in slots)
-        {
-            if ((slot.SlotFlags & clothing.Slots) == SlotFlags.NONE)
+            if (TryInsertIntoInventoryOrHands(avatar.Owner, spawned))
+            {
+                server.GrantedItemDisks.Add(diskUid);
                 continue;
+            }
 
-            if (_inventory.TryEquip(avatarUid, itemUid, slot.Name, silent: true))
-                return true;
+            QueueDel(spawned);
         }
+    }
+
+    private bool TryInsertIntoInventoryOrHands(EntityUid avatarUid, EntityUid itemUid)
+    {
+        if (_hands.TryPickupAnyHand(avatarUid, itemUid, checkActionBlocker: false))
+            return true;
+
+        if (!_inventory.TryGetSlotEntity(avatarUid, "back", out var backUid))
+            return false;
+
+        if (TryComp<StorageComponent>(backUid.Value, out var storage) && _storage.Insert(backUid.Value, itemUid, out _, storageComp: storage, playSound: false))
+            return true;
 
         return false;
     }
