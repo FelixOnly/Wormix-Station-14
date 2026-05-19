@@ -1,6 +1,3 @@
-cargo-account-command-name = Исполнительный бюджет НаноТрейзен
-cargo-account-command-code = КМД
-
 cargo-account-cargo-destination = Склад снабжения
 cargo-account-engineering-destination = Инженерный отдел
 cargo-account-medical-destination = Медицинский отдел

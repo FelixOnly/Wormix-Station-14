@@ -25,39 +25,10 @@ public sealed class CargoPalletConsoleInterfaceState : BoundUserInterfaceState
     /// </summary>
     public bool Enabled;
 
-    // Orion-Start
-    public List<CargoPalletMarketChangeData> ActiveChanges;
-    public List<CargoPalletMarketChangeData> RecentChanges;
-    // Orion-End
-
-    public CargoPalletConsoleInterfaceState(
-        int appraisal,
-        int count,
-        bool enabled,
-        List<CargoPalletMarketChangeData>? activeChanges = null, // Orion
-        List<CargoPalletMarketChangeData>? recentChanges = null) // Orion
+    public CargoPalletConsoleInterfaceState(int appraisal, int count, bool enabled)
     {
         Appraisal = appraisal;
         Count = count;
         Enabled = enabled;
-        ActiveChanges = activeChanges ?? new(); // Orion
-        RecentChanges = recentChanges ?? new(); // Orion
     }
 }
-
-// Orion-Start
-[NetSerializable, Serializable]
-public sealed class CargoPalletMarketChangeData
-{
-    public string MaterialProto;
-    public float Multiplier;
-    public int Sequence;
-
-    public CargoPalletMarketChangeData(string materialProto, float multiplier, int sequence)
-    {
-        MaterialProto = materialProto;
-        Multiplier = multiplier;
-        Sequence = sequence;
-    }
-}
-// Orion-End

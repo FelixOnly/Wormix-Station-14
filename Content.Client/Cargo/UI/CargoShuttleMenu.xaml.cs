@@ -57,19 +57,13 @@ namespace Content.Client.Cargo.UI
                      Icon = { Texture = sprites.Frame0(product) },
                      ProductName =
                      {
-                         // Orion-Edit-Start
-                         Text = order.PaidPrivately
-                             ? Loc.GetString(
-                                 "cargo-console-menu-populate-orders-cargo-order-row-product-name-private-text",
-                                 ("orderRequester", order.Requester))
-                             : Loc.GetString(
-                                 "cargo-console-menu-populate-orders-cargo-order-row-product-name-text",
-                                 ("productName", productName),
-                                 ("orderAmount", order.OrderQuantity - order.NumDispatched),
-                                 ("orderRequester", order.Requester),
-                                 ("accountColor", account.Color),
-                                 ("account", Loc.GetString(account.Code))),
-                         // Orion-Edit-End
+                         Text = Loc.GetString(
+                             "cargo-console-menu-populate-orders-cargo-order-row-product-name-text",
+                             ("productName", productName),
+                             ("orderAmount", order.OrderQuantity - order.NumDispatched),
+                             ("orderRequester", order.Requester),
+                             ("accountColor", account.Color),
+                             ("account", Loc.GetString(account.Code)))
                      },
                      // Orion-Edit-Start
                      DeliveryDestination =

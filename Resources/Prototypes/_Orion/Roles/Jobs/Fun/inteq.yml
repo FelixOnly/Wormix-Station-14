@@ -7,9 +7,6 @@
   icon: "JobIconInteQLeader"
   supervisors: job-supervisors-hire
   canBeAntag: false
-  goobcoins: 20 #Goob content
-  salary: 200
-  payrollFromStationBudget: false
   access:
   - InteQVanguard
   - InteQVanguardLeader
@@ -24,9 +21,6 @@
   icon: "JobIconInteQ"
   supervisors: job-supervisors-hire
   canBeAntag: false
-  goobcoins: 20 #Goob content
-  salary: 150
-  payrollFromStationBudget: false
   access:
   - InteQVanguard
   - Maintenance
@@ -40,8 +34,6 @@
   icon: "JobIconInteQLeader"
   supervisors: job-supervisors-hire
   canBeAntag: false
-  salary: 300
-  payrollFromStationBudget: false
   accessGroups:
   - InteQ
   - AllAccess
@@ -59,8 +51,6 @@
   icon: "JobIconInteQ"
   supervisors: job-supervisors-hire
   canBeAntag: false
-  salary: 200
-  payrollFromStationBudget: false
   accessGroups:
   - AllAccess
   access:

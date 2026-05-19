@@ -102,7 +102,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Goobstation.Common.Pirates;
-using Content.Server._Orion.Economy.Components;
 using Content.Server.Access.Systems;
 using Content.Server.Cargo.Components;
 using Content.Server.Storage.EntitySystems;
@@ -119,7 +118,6 @@ using Content.Shared.Item;
 using Content.Shared.Labels.Components;
 using Content.Shared.Paper;
 using Content.Shared.Prototypes;
-using Content.Shared.Stacks;
 using Content.Shared.Station.Components;
 using Content.Shared.Storage;
 using Content.Shared.Storage.Components;
@@ -142,10 +140,7 @@ namespace Content.Server.Cargo.Systems
         [Dependency] private readonly StorageSystem _storage = default!;
         // Orion-End
 
-        // Orion-Start
-        private ISawmill _sawmill = default!;
-        private const double PrivatePurchaseMarkup = 1.10;
-        // Orion-End
+        private ISawmill _sawmill = default!; // Orion
 
         private void InitializeConsole()
         {
@@ -160,27 +155,18 @@ namespace Content.Server.Cargo.Systems
 
         private void OnInteractUsingCash(EntityUid uid, CargoOrderConsoleComponent component, ref InteractUsingEvent args)
         {
-            // Orion-Edit-Start
-            if (!TryComp<CashComponent>(args.Used, out var cash))
+            var price = _pricing.GetPrice(args.Used);
+
+            if (price == 0)
                 return;
 
-            var total = (long) cash.Value;
-            if (TryComp<StackComponent>(args.Used, out var stack))
-                total *= stack.Count;
-
-            if (total <= 0)
-                return;
-
-            var amount = (int) Math.Min(total, int.MaxValue);
-            // Orion-Edit-End
-
-            var stationUid = _station.GetOwningStation(uid); // Orion-Edit
+            var stationUid = _station.GetOwningStation(args.Used);
 
             if (!TryComp(stationUid, out StationBankAccountComponent? bank))
                 return;
 
             _audio.PlayPvs(ApproveSound, uid);
-            UpdateBankAccount((stationUid.Value, bank), amount, component.Account); // Orion-Edit
+            UpdateBankAccount((stationUid.Value, bank), (int) price, component.Account);
             QueueDel(args.Used);
             args.Handled = true;
         }
@@ -261,59 +247,16 @@ namespace Content.Server.Cargo.Systems
             var stationQuery = EntityQueryEnumerator<StationBankAccountComponent>();
             while (stationQuery.MoveNext(out var uid, out var bank))
             {
-                // Orion-Edit-Start
-                while (Timing.CurTime >= bank.NextIncomeTime)
-                {
-                    bank.NextIncomeTime += bank.IncomeDelay;
+                if (Timing.CurTime < bank.NextIncomeTime)
+                    continue;
+                bank.NextIncomeTime += bank.IncomeDelay;
 
-                    var balanceToAdd = (int) Math.Round(bank.IncreasePerSecond * bank.IncomeDelay.TotalSeconds);
-                    UpdateBankAccount((uid, bank), balanceToAdd, bank.RevenueDistribution);
-                }
-
-                foreach (var (account, nextFundingTime) in bank.NextBudgetFundingTime.ToArray())
-                {
-                    if (Timing.CurTime < nextFundingTime)
-                        continue;
-
-                    if (!_protoMan.TryIndex(account, out var accountProto))
-                    {
-                        bank.NextBudgetFundingTime.Remove(account);
-                        continue;
-                    }
-
-                    bank.NextBudgetFundingTime[account] = nextFundingTime + accountProto.BudgetFundingDelay;
-
-                    if (accountProto.BudgetFundingAmount <= 0)
-                        continue;
-
-                    UpdateBankAccount((uid, bank),
-                        accountProto.BudgetFundingAmount,
-                        new Dictionary<ProtoId<CargoAccountPrototype>, double>
-                    {
-                        { account, 1.0 },
-                    });
-                }
-                // Orion-Edit-End
+                var balanceToAdd = (int) Math.Round(bank.IncreasePerSecond * bank.IncomeDelay.TotalSeconds);
+                UpdateBankAccount((uid, bank), balanceToAdd, bank.RevenueDistribution);
             }
         }
 
         #region Interface
-
-        // Orion-Start
-        private static int GetOrderBaseCost(CargoOrderData order)
-        {
-            return order.Price * order.OrderQuantity;
-        }
-
-        private static int GetOrderFinalCost(CargoOrderData order)
-        {
-            var baseCost = GetOrderBaseCost(order);
-            if (!order.PaidPrivately)
-                return baseCost;
-
-            return (int) Math.Round(baseCost * PrivatePurchaseMarkup, MidpointRounding.AwayFromZero);
-        }
-        // Orion-End
 
         private void OnApproveOrderMessage(EntityUid uid, CargoOrderConsoleComponent component, CargoConsoleApproveOrderMessage args)
         {
@@ -392,36 +335,16 @@ namespace Content.Server.Cargo.Systems
                 PlayDenySound(uid, component);
             }
 
-            var baseCost = GetOrderBaseCost(order); // Orion
-            var finalCost = GetOrderFinalCost(order); // Orion-Edit: was cost
+            var cost = order.Price * order.OrderQuantity;
             var accountBalance = GetBalanceFromAccount((station.Value, bank), order.Account);
-            Entity<StationAccountComponent>? privateAccount = null; // Orion
 
-            // Orion-Edit-Start
-            if (order.PaidPrivately)
+            // Not enough balance
+            if (cost > accountBalance)
             {
-                if (string.IsNullOrWhiteSpace(order.PrivateBuyerAccountId) || !_bank.TryFindAccountById(order.PrivateBuyerAccountId, out var buyerAccount))
-                {
-                    ConsolePopup(args.Actor, Loc.GetString("cargo-console-invalid-bank-account"));
-                    PlayDenySound(uid, component);
-                    return;
-                }
-
-                privateAccount = buyerAccount;
-                if (buyerAccount.Comp.Balance < finalCost)
-                {
-                    ConsolePopup(args.Actor, Loc.GetString("cargo-console-private-insufficient-funds", ("cost", finalCost)));
-                    PlayDenySound(uid, component);
-                    return;
-                }
-            }
-            else if (finalCost > accountBalance)
-            {
-                ConsolePopup(args.Actor, Loc.GetString("cargo-console-insufficient-funds", ("cost", finalCost)));
+                ConsolePopup(args.Actor, Loc.GetString("cargo-console-insufficient-funds", ("cost", cost)));
                 PlayDenySound(uid, component);
                 return;
             }
-            // Orion-Edit-End
 
             // GoobStation - cooldown on Cargo Orders (specifically gamba)
             if (order.Cooldown > 0)
@@ -446,32 +369,12 @@ namespace Content.Server.Cargo.Systems
             RaiseLocalEvent(ref ev);
             ev.FulfillmentEntity ??= station.Value;
 
-            // Orion-Start
-            var privatePaymentTaken = false;
-            if (order.PaidPrivately)
-            {
-                if (privateAccount == null || !_bank.Withdraw(privateAccount.Value, finalCost, "cargo-private-purchase", reasonData: $"order:{order.OrderId}|product:{order.ProductId}"))
-                {
-                    ConsolePopup(args.Actor, Loc.GetString("cargo-console-payment-failed"));
-                    PlayDenySound(uid, component);
-                    return;
-                }
-
-                privatePaymentTaken = true;
-            }
-            // Orion-End
-
             if (!ev.Handled)
             {
                 ev.FulfillmentEntity = TryFulfillOrder((station.Value, stationData), order.Account, order, orderDatabase);
 
                 if (ev.FulfillmentEntity == null)
                 {
-                    // Orion-Start
-                    if (privatePaymentTaken && privateAccount != null)
-                        _bank.Deposit(privateAccount.Value, finalCost, "cargo-private-purchase-refund", reasonData: $"order:{order.OrderId}|product:{order.ProductId}");
-                    // Orion-End
-
                     ConsolePopup(args.Actor, Loc.GetString("cargo-console-unfulfilled"));
                     PlayDenySound(uid, component);
                     return;
@@ -497,7 +400,7 @@ namespace Content.Server.Cargo.Systems
                     ("productName", Loc.GetString(order.ProductName)),
                     ("orderAmount", order.OrderQuantity),
                     ("approver", order.Approver ?? string.Empty),
-                    ("cost", finalCost)); // Orion-Edit
+                    ("cost", cost));
                 _radio.SendRadioMessage(uid, message, account.RadioChannel, uid, escapeMarkup: false);
                 if (CargoOrderConsoleComponent.BaseAnnouncementChannel != account.RadioChannel)
                     _radio.SendRadioMessage(uid, message, CargoOrderConsoleComponent.BaseAnnouncementChannel, uid, escapeMarkup: false);
@@ -510,23 +413,8 @@ namespace Content.Server.Cargo.Systems
                 LogImpact.Low,
                 $"{ToPrettyString(player):user} approved order [orderId:{order.OrderId}, quantity:{order.OrderQuantity}, product:{order.ProductId}, requester:{order.Requester}, deliveryDestination: {order.DeliveryDestination}, note:{order.Note}] on account {order.Account} with balance at {accountBalance}"); // Orion-Edit
 
-            // Orion-Start
-            if (order.PaidPrivately)
-            {
-                var fee = finalCost - baseCost;
-                if (fee > 0)
-                    UpdateBankAccount((station.Value, bank), fee, order.Account);
-
-                _adminLogger.Add(LogType.Action, LogImpact.Low, $"Private cargo order approved [orderId:{order.OrderId}, product:{order.ProductId}, buyerAccount:{order.PrivateBuyerAccountId}, buyerName:{order.PrivateBuyerName}, baseCost:{baseCost}, finalCost:{finalCost}, fee:{fee}]");
-            }
-            else
-            {
-                UpdateBankAccount((station.Value, bank), -finalCost, order.Account);
-            }
-            // Orion-End
-
             orderDatabase.Orders[component.Account].Remove(order);
-//            UpdateBankAccount((station.Value, bank), -cost, order.Account); // Orion-Edit
+            UpdateBankAccount((station.Value, bank), -cost, order.Account);
             UpdateOrders(station.Value);
         }
 
@@ -699,43 +587,7 @@ namespace Content.Server.Cargo.Systems
 
             var targetAccount = component.Mode == CargoOrderConsoleMode.SendToPrimary ? bank.PrimaryAccount : component.Account;
 
-            // Orion-Start
-            string? privateBuyerAccountId = null;
-            string? privateBuyerName = null;
-            if (args.PayPrivately)
-            {
-                if (!_idCard.TryFindIdCard(player, out var idCard))
-                {
-                    ConsolePopup(args.Actor, Loc.GetString("cargo-console-no-id-detected"));
-                    PlayDenySound(uid, component);
-                    return;
-                }
-
-                if (string.IsNullOrWhiteSpace(idCard.Comp.BankAccountId))
-                {
-                    ConsolePopup(args.Actor, Loc.GetString("cargo-console-no-linked-bank-account"));
-                    PlayDenySound(uid, component);
-                    return;
-                }
-
-                if (!_bank.TryFindAccountById(idCard.Comp.BankAccountId, out var privateBuyerAccount))
-                {
-                    ConsolePopup(args.Actor, Loc.GetString("cargo-console-invalid-bank-account"));
-                    PlayDenySound(uid, component);
-                    return;
-                }
-
-                privateBuyerAccountId = idCard.Comp.BankAccountId;
-                privateBuyerName = privateBuyerAccount.Comp.OwnerName;
-            }
-            // Orion-End
-
             var data = GetOrderData(args, product, GenerateOrderId(orderDatabase), component.Account, requester, args.SecuredDelivery ? component.SecureOrderCost : default); // Orion-Edit
-
-            // Orion-Start
-            if (privateBuyerAccountId != null && privateBuyerName != null)
-                data.SetPrivateBuyerData(privateBuyerAccountId, privateBuyerName);
-            // Orion-End
 
             if (!TryAddOrder(stationUid.Value, targetAccount, data, orderDatabase))
             {
@@ -1019,7 +871,7 @@ namespace Content.Server.Cargo.Systems
                 var spawns = EntitySpawnCollection.GetSpawns(storageFill.Contents, _random);
                 foreach (var contentItem in spawns)
                 {
-                    if (crateEntityStorage.Contents.Count >= crateEntityStorage.Capacity || spawns.Count > crateEntityStorage.Capacity) // Orion-Edit
+                    if (crateEntityStorage.Contents.Count >= crateEntityStorage.Capacity && spawns.Count <= crateEntityStorage.Capacity)
                         doExcessFill = true;
 
                     if (doExcessFill)
@@ -1063,8 +915,7 @@ namespace Content.Server.Cargo.Systems
                     ("note", string.IsNullOrWhiteSpace(order.Note) ? Loc.GetString("cargo-console-paper-note-default") : order.Note), // CorvaxGoob-CargoFeatures
                     ("account", Loc.GetString(accountProto.Name)),
                     ("accountcode", Loc.GetString(accountProto.Code)),
-                    ("approver", string.IsNullOrWhiteSpace(order.Approver) ? Loc.GetString("cargo-console-paper-approver-default") : order.Approver), // Orion-Edit
-                    ("privateBuyerLine", order.PaidPrivately ? Loc.GetString("cargo-console-paper-private-buyer", ("buyer", order.PrivateBuyerName ?? string.Empty)) : string.Empty))); // Orion
+                    ("approver", string.IsNullOrWhiteSpace(order.Approver) ? Loc.GetString("cargo-console-paper-approver-default") : order.Approver)));
 
             // attempt to attach the label to the item
             if (TryComp<PaperLabelComponent>(item, out var label))

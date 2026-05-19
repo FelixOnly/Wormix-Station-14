@@ -8,10 +8,6 @@
   icon: "JobIconBitrunner"
   supervisors: job-supervisors-qm
   goobcoins: 20 #Goob content
-  # Orion-Start
-  salary: 40
-  payrollDepartmentAccount: Cargo
-  # Orion-End
   access:
   - Cargo
   - Bitrun
