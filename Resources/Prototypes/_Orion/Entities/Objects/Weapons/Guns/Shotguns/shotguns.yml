@@ -33,16 +33,14 @@
   components:
   - type: Sprite
     sprite: _Orion/Objects/Weapons/Guns/Shotguns/sh-39/big.rsi
-    scale: 0.8, 0.8
   - type: Item
     sprite: _Orion/Objects/Weapons/Guns/Shotguns/sh-39/tiny.rsi
   - type: Clothing
     sprite: _Orion/Objects/Weapons/Guns/Shotguns/sh-39/tiny.rsi
   - type: BallisticAmmoProvider
-    capacity: 6
+    capacity: 7
   - type: GunRequiresWield
   - type: Gun
-    fireRate: 1.7
     cameraRecoilScalar: 2
     soundGunshot:
       path: /Audio/_Orion/Weapons/Guns/Shotguns/sh39.ogg
@@ -60,7 +58,7 @@
   parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSecurityContraband]
   id: WeaponShotgunPaladin
   name: Paladin pump shotgun
-  description: A seven-round pump action shotgun. A shotgun used for hunting, home defence and police work, many versions of it exist and are used by just about anyone.
+  description: A nine-round pump action shotgun. A shotgun used for hunting, home defence and police work, many versions of it exist and are used by just about anyone.
   suffix: Shotgun
   components:
   - type: Sprite
@@ -71,7 +69,7 @@
   - type: Clothing
     sprite: _Orion/Objects/Weapons/Guns/Shotguns/paladin-12/tiny.rsi
   - type: BallisticAmmoProvider
-    capacity: 7
+    capacity: 8
     autoCycle: false
     soundRack:
       path: /Audio/_Orion/Weapons/Guns/Shotguns/shotgun_cmb_pump.ogg
@@ -106,7 +104,7 @@
   - type: Clothing
     sprite: _Orion/Objects/Weapons/Guns/Shotguns/spas-16/tiny.rsi
   - type: BallisticAmmoProvider
-    capacity: 12
+    capacity: 14
     autoCycle: false
     soundRack:
       path: /Audio/_Orion/Weapons/Guns/Shotguns/shotgun_cmb_pump.ogg
@@ -114,9 +112,9 @@
       path: /Audio/_Orion/Weapons/Guns/Shotguns/shotgun_cmb_insert.ogg
   - type: GunRequiresWield
   - type: Gun
-    fireRate: 1
+    fireRate: 1.5
     cameraRecoilScalar: 2
     soundGunshot:
       path: /Audio/_Orion/Weapons/Guns/Shotguns/t35.ogg
   - type: GunSpreadModifier
-    spread: 0.8
+    spread: 0.7

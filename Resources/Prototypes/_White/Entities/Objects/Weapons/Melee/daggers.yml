@@ -24,7 +24,7 @@
     attackRate: 3
     damage:
       types:
-        Slash: 13 # Orion-Edit: 8 > 13
+        Slash: 8
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Sharp
