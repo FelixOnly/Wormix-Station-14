@@ -61,7 +61,6 @@
     - NailsStatic
     # Orion-Start
     - MegaCells
-    - PartsDynamic
     # Orion-End
     - ConstructionBagOfHolding
     - AdvancedTools
@@ -190,7 +189,6 @@
     - CircuitFloorsStatic
     - MedicalBoardsStatic
     - MedicalBoardsStaticGoob
-    - ChemistryStatic
     - ToolsStatic
     - PartsStatic
     - LatheMiscStatic
@@ -209,7 +207,6 @@
     # Orion-Start
     - BodyBagsDynamic
     - MegaCells
-    - PartsDynamic
     # Orion-End
     - AdvancedTools
     - ScienceEquipment

@@ -50,9 +50,6 @@ public sealed partial class QuantumServerComponent : Component
     [DataField, AutoNetworkedField]
     public EntProtoId RewardCachePrototype = "CrateBitrunSecureReward";
 
-    /// <summary>
-    /// Crate that spawns in byteforge delivery.
-    /// </summary>
     [DataField, AutoNetworkedField]
     public TimeSpan Cooldown = TimeSpan.FromMinutes(2);
 
