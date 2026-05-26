@@ -31,8 +31,13 @@
     MysteryFigureBox: 2
     BooksBag: 3
     CardBoxBlack: 3 # GoobStation
+<<<<<<< HEAD
     ADTCardBoxUno: 3 # ADT
     ClothingBackpackDuffelTennisGame: 1 # Wormix
+=======
+    PokerChipsBox: 1 # Orion
+#    PokerChips100: 6 # GoobStation | Orion-Edit: Duplicate
+>>>>>>> ff2857405e7 (Merge remote-tracking branch 'goob/master' into Upstream)
   contrabandInventory:
     OuijaBoard: 1 # ADT
     Basketball: 1
