@@ -11,6 +11,7 @@ using Robust.Client.GameObjects;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Robust.Client.UserInterface;
 
 namespace Content.Client.CrewManifest.UI;
 
@@ -18,6 +19,7 @@ public sealed class CrewManifestListing : BoxContainer
 {
     [Dependency] private readonly IEntitySystemManager _entitySystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly IClipboardManager _clipboard = default!;
     private readonly SpriteSystem _spriteSystem;
 
     public CrewManifestListing()
@@ -53,7 +55,7 @@ public sealed class CrewManifestListing : BoxContainer
 
         foreach (var item in entryList)
         {
-            AddChild(new CrewManifestSection(_prototypeManager, _spriteSystem, item.section, item.entries));
+            AddChild(new CrewManifestSection(_prototypeManager, _spriteSystem, _clipboard, item.section, item.entries)); // CorvaxGoob-ClipboardManifest
         }
     }
 }
