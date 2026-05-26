@@ -1,0 +1,40 @@
+- type: entity
+  id: tatamibase
+  suffix: Бакмен
+  parent: BaseStructure
+  abstract: true
+  components:
+    - type: Sprite
+      drawdepth: FloorTiles
+      sprite: Backmen/Structures/Furniture/tatami.rsi
+    - type: Tag
+      tags: [Carpet]
+    - type: Physics
+      canCollide: false
+    - type: Fixtures
+
+- type: entity
+  id: tatamisingle
+  suffix: Бакмен
+  parent: tatamibase
+  name: tatami square
+  description: It's tatami, but a square.
+  components:
+    - type: Sprite
+      state: tatami_1x1
+    - type: Construction
+      graph: tatami
+      node: tatamiSquare
+
+- type: entity
+  id: tatamimat
+  suffix: Бакмен
+  parent: tatamibase
+  name: tatami mat
+  description: It's a portion of a tatami mat.
+  components:
+    - type: Sprite
+      state: tatami_1x1P
+    - type: Construction
+      graph: tatami
+      node: tatamiPart

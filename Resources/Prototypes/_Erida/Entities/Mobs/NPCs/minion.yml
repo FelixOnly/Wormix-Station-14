@@ -1,0 +1,11 @@
+- type: entity
+  id: Minion
+  name: minion
+  suffix: Эрида
+  components:
+  - type: Sprite
+    sprite: _Erida/Mobs/Demon/minion.rsi
+    state: minion
+    noRot: true
+    drawdepth: Mobs
+  - type: InteractionOutline

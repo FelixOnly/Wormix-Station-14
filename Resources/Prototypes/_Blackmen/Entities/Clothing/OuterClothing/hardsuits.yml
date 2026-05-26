@@ -1,0 +1,570 @@
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitCentcomCarporate
+  name: Скафандр ЦК (Корпорат)
+  description: Специальный космический костюм Корпорат сделаный для различных ситуация и весьма лёгкий в ношении.
+  suffix: Бакмен, ЦК
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/centcom_corparat.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/centcom_corparat.rsi
+    - type: PressureProtection
+      highPressureMultiplier: 0.5
+      lowPressureMultiplier: 1000
+    - type: ExplosionResistance
+      damageCoefficient: 0.3
+    - type: Armor
+      coverage:
+        - Groin
+        - Chest
+        - Arm
+        - Hand
+        - Leg
+        - Foot
+        - Tail
+      modifiers:
+        coefficients:
+          Blunt: 0.4
+          Slash: 0.5
+          Piercing: 0.5
+          ArmorPiercing: 0.8
+          Radiation: 0.6
+          Caustic: 0.6
+          Heat: 0.4
+          Stun: 0.4
+    - type: ClothingSpeedModifier
+      walkModifier: 0.85
+      sprintModifier: 0.85
+    - type: ToggleableClothing
+      clothingPrototypes:
+        head: ClothingHeadHelmetHardsuitCentcomCarporate
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitOrdinaryOrdersuit
+  name: Suit of the special detachment of the red order
+  description: Extremely valuable and desirable for any corporation. an unreadable name engraved on the shoulder
+  suffix: Бакмен, СССП
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/ordinary_orden_suit.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/ordinary_orden_suit.rsi
+    - type: PressureProtection
+      highPressureMultiplier: 0.02
+      lowPressureMultiplier: 10000
+    - type: ClothingSpeedModifier
+      walkModifier: 0.85
+      sprintModifier: 0.85
+    - type: Armor
+      coverage:
+        - Groin
+        - Chest
+        - Arm
+        - Hand
+        - Leg
+        - Foot
+        - Tail
+      modifiers:
+        coefficients:
+          Blunt: 0.9
+          Slash: 0.9
+          Piercing: 0.9
+          Heat: 0.2
+          Radiation: 0.25
+          Caustic: 0.85
+          Stun: 0.65
+    - type: TemperatureProtection
+      heatingCoefficient: 0.01
+      coolingCoefficient: 0.01
+    - type: ExplosionResistance
+      damageCoefficient: 0.1
+    - type: ToggleableClothing
+      clothingPrototypes:
+        head: ClothingHeadHelmetHardsuitOrdinaryOrden
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitOrdersuit
+  name: Suit of the elite special squad of the red order
+  description: Extremely valuable and desirable for any corporation. an unreadable name engraved on the shoulder
+  suffix: Бакмен, СССП
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/order_suit.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/order_suit.rsi
+    - type: PressureProtection
+      highPressureMultiplier: 0.02
+      lowPressureMultiplier: 10000
+    - type: ClothingSpeedModifier
+      walkModifier: 0.85
+      sprintModifier: 0.85
+    - type: Armor
+      coverage:
+        - Groin
+        - Chest
+        - Arm
+        - Hand
+        - Leg
+        - Foot
+        - Tail
+      modifiers:
+        coefficients:
+          Blunt: 0.15
+          Slash: 0.15
+          Piercing: 0.20
+          ArmorPiercing: 0.8
+          Heat: 0.30
+          Radiation: 0.1
+          Caustic: 0.15
+          Stun: 0.15
+    - type: TemperatureProtection
+      heatingCoefficient: 0.001
+      coolingCoefficient: 0.001
+    - type: ExplosionResistance
+      damageCoefficient: 0.1
+    - type: ToggleableClothing
+      clothingPrototypes:
+        head: ClothingHeadHelmetHardsuitOrden
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitBerserk
+  name: Скафандр берсерка
+  description: Самая лучшая броня, для самого лучшего мазилы!
+  suffix: Бакмен, СССП
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Armor/hardsuit/hardsuit_berserk.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Armor/hardsuit/hardsuit_berserk.rsi
+    - type: PressureProtection
+      highPressureMultiplier: 0.02
+      lowPressureMultiplier: 10000
+    - type: ClothingSpeedModifier
+      walkModifier: 0.70
+      sprintModifier: 0.75
+    - type: Armor
+      coverage:
+        - Groin
+        - Chest
+        - Arm
+        - Hand
+        - Leg
+        - Foot
+        - Tail
+      modifiers:
+        coefficients:
+          Blunt: 0.60
+          Slash: 0.6
+          Piercing: 0.4
+          ArmorPiercing: 0.8
+          Heat: 0.3
+          Radiation: 0.25
+          Caustic: 0.75
+          Stun: 0.4
+    - type: TemperatureProtection
+      heatingCoefficient: 0.001
+      coolingCoefficient: 0.001
+    - type: ExplosionResistance
+      damageCoefficient: 0.2
+    - type: ToggleableClothing
+      clothingPrototypes:
+        head: ClothingHeadHelmetHardsuitBerserk
+
+- type: entity
+  parent: [ClothingOuterHardsuitBase, BaseCentcommContraband]
+  id: ClothingOuterHardsuitBlueShield
+  name: officer "Blueshield"'s combat hardsuit
+  description: A hardsuit designed for Blueshield officers with enhanced protection and night vision.
+  suffix: Бакмен, ОСЩ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/bluehardsuit.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/bluehardsuit.rsi
+    - type: ToggleableClothing
+      clothingPrototypes:
+        head: ClothingHeadHelmetHardsuitBlueShield
+    - type: Armor
+      modifiers:
+        coefficients: # Erida
+          Blunt: 0.6
+          Heat: 0.6
+          Slash: 0.6
+          Piercing: 0.6
+          Radiation: 0.4
+          Caustic: 0.5
+    - type: ClothingSpeedModifier
+      walkModifier: 1
+      sprintModifier: 0.9
+    - type: StaminaResistance # Erida
+      damageCoefficient: 0.4
+
+- type: entity
+  parent: ClothingOuterHardsuitSecurity
+  id: ClothingOuterHardsuitSecurityPilot
+  name: security pilot hardsuit
+  description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor. Lightened especially for the pilot.
+  suffix: Бакмен, СБ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/sec-pilot-hardsuit.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/sec-pilot-hardsuit.rsi
+    - type: ClothingSpeedModifier
+      walkModifier: 0.8
+      sprintModifier: 0.8
+    - type: HeldSpeedModifier
+    - type: ToggleableClothing # Goobstation - Modsuits change
+      clothingPrototypes:
+        head: ClothingHeadHelmetHardsuitSecurityPilot
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitUEG
+  name: Скафандр С.О.Н
+  description: Обычный скафандр С.О.Н который выдаётся оперативникам С.О.Н и некоторым офицерам ОПЗ
+  suffix: Бакмен, ОПЗ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/ueg-hardsuit.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/ueg-hardsuit.rsi
+    - type: PressureProtection
+      highPressureMultiplier: 0.5
+      lowPressureMultiplier: 1000
+    - type: ExplosionResistance
+      damageCoefficient: 0.3
+    - type: Armor
+      coverage:
+        - Groin
+        - Chest
+        - Arm
+        - Hand
+        - Leg
+        - Foot
+        - Tail
+      modifiers:
+        coefficients:
+          Blunt: 0.3
+          Slash: 0.3
+          Piercing: 0.3
+          ArmorPiercing: 0.6
+          Radiation: 0.5
+          Caustic: 0.5
+          Heat: 0.24
+          Stun: 0.24
+    - type: ClothingSpeedModifier
+      walkModifier: 0.85
+      sprintModifier: 0.85
+    - type: ToggleableClothing
+      clothingPrototypes:
+        head: ClothingHeadHelmetHardsuitUEG
+
+- type: entity
+  parent: ClothingOuterHardsuitERTEngineer
+  id: ClothingOuterHardsuitERTEngineerReal
+  suffix: Бакмен, ОБР
+  components:
+    - type: PressureProtection
+      highPressureMultiplier: 0.2
+      lowPressureMultiplier: 1000
+    - type: ClothingSpeedModifier
+      walkModifier: 0.7
+      sprintModifier: 0.7
+    - type: Armor
+      coverage:
+        - Groin
+        - Chest
+        - Arm
+        - Hand
+        - Leg
+        - Foot
+        - Tail
+      modifiers:
+        coefficients:
+          Blunt: 0.3
+          Slash: 0.2
+          Piercing: 0.2
+          ArmorPiercing: 0.5
+          Heat: 0.3
+          Radiation: 0.3
+          Stun: 0.2
+    - type: ExplosionResistance
+      damageCoefficient: 0.8
+
+- type: entity
+  parent: ClothingOuterHardsuitSyndie
+  id: ClothingOuterHardsuitERTOperativeAlpha1
+  name: ERT alpha hardsuit
+  description: A protective hardsuit worn by the leader of an emergency response team.
+  suffix: Бакмен, ОБР
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/ERTSuits/ertSpecialOperative.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/ERTSuits/ertSpecialOperative.rsi
+    - type: ToggleableClothing
+      clothingPrototypes:
+        head: ClothingHeadHelmetHardsuitERTOperativeAlpha1
+    - type: ExplosionResistance
+      damageCoefficient: 0.3
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitERTOperativeAlpha1
+  name: ERT hardsuit helmet
+  description: A special hardsuit helmet worn by members of an emergency response team.
+  suffix: Бакмен, ОБР
+  components:
+    - type: BreathMask
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Hardsuits/ERThelmets/ertSpecialOperative.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Hardsuits/ERThelmets/ertSpecialOperative.rsi
+    - type: PressureProtection
+      highPressureMultiplier: 0.08
+      lowPressureMultiplier: 1000
+    - type: Armor
+      coverage:
+        - Head
+      modifiers:
+        coefficients:
+          Blunt: 0.4
+          Slash: 0.4
+          Piercing: 0.5
+          Heat: 0.4
+    - type: NightVision
+      color: "#BF40BF"
+      activateSound: null
+      deactivateSound: null
+
+- type: entity
+  parent: ClothingOuterHardsuitSyndieElite
+  id: ClothingOuterHardsuitERTLeaderTay39
+  name: ERT leader tay 39 hardsuit
+  description: A protective hardsuit worn by the leader of an emergency response team.
+  suffix: Бакмен, ОБР
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/ERTSuits/ertTraumaTeamLeader.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/ERTSuits/ertTraumaTeamLeader.rsi
+    - type: ToggleableClothing
+      clothingPrototypes:
+        head: ClothingHeadHelmetHardsuitERTLeaderTay39
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitSyndieElite
+  id: ClothingHeadHelmetHardsuitERTLeaderTay39
+  name: helmet ERT leader hardsuit
+  description: A special hardsuit helmet worn by members of an emergency response team.
+  suffix: Бакмен, ОБР
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Hardsuits/ERThelmets/ertTraumaTeamLeader.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Hardsuits/ERThelmets/ertTraumaTeamLeader.rsi
+    - type: PointLight
+      color: cyan
+
+- type: entity
+  parent: ClothingOuterHardsuitSyndieElite
+  id: ClothingOuterHardsuitERTTay39
+  name: ERT leader tay 39 hardsuit
+  description: A protective hardsuit worn by the leader of an emergency response team.
+  suffix: Бакмен, ОБР
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/ERTSuits/ertTraumaTeam.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/ERTSuits/ertTraumaTeam.rsi
+    - type: ToggleableClothing # Goobstation - Modsuits change
+      clothingPrototypes:
+        head: ClothingHeadHelmetHardsuitERTTay39
+
+- type: entity
+  parent: ClothingOuterHardsuitSyndieElite
+  id: ClothingOuterHardsuitERTMedicTay39
+  name: ERT medic tay 39 hardsuit
+  description: A protective hardsuit worn by the leader of an emergency response team.
+  suffix: Бакмен, ОБР
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/ERTSuits/ertTraumaTeamMedic.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/ERTSuits/ertTraumaTeamMedic.rsi
+    - type: ToggleableClothing
+      clothingPrototypes:
+        head: ClothingHeadHelmetHardsuitERTMedicTay39
+    - type: Armor
+      coverage:
+        - Groin
+        - Chest
+        - Arm
+        - Hand
+        - Leg
+        - Foot
+        - Tail
+      modifiers:
+        coefficients:
+          Blunt: 0.3
+          Slash: 0.3
+          Piercing: 0.4
+          ArmorPiercing: 0.5
+          Heat: 0.2
+          Radiation: 0
+          Caustic: 0.2
+          Stun: 0.1
+
+- type: entity
+  parent: ClothingOuterHardsuitDeathsquad
+  id: ClothingOuterHardsuitSpecialForce
+  name: EarthGov special force hardsuit
+  suffix: Бакмен, ОПЗ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/specialforce.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/specialforce.rsi
+      equipSound: /Audio/Backmen/Misc/suit/nominal.ogg
+      unequipSound: /Audio/Backmen/Misc/suit/mechmove03.ogg
+    - type: ToggleableClothing
+      clothingPrototypes:
+        head: ClothingHeadHelmetHardsuitSpecialForce
+
+- type: entity
+  parent: ClothingOuterHardsuitRTULeader
+  id: ClothingOuterHardsuitRTU
+  name: EarthGov RTU hardsuit
+  description: A rescue troop unit suit designed specifically for combat in space and the harsh far-off worlds.
+  suffix: Бакмен, ОПЗ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/RescueTroopsUnits/grunthardsuit.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/RescueTroopsUnits/grunthardsuit.rsi
+    - type: ToggleableClothing
+      clothingPrototypes:
+        head: ClothingHeadHelmetHardsuitRTU
+
+- type: entity
+  parent: ClothingOuterHardsuitRTULeader
+  id: ClothingOuterHardsuitRTUMedick
+  name: EarthGov medic RTU hardsuit
+  suffix: Бакмен, ОПЗ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/RescueTroopsUnits/medickhardsuit.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/RescueTroopsUnits/medickhardsuit.rsi
+    - type: ToggleableClothing # Goobstation - Modsuits change
+      clothingPrototypes:
+        head: ClothingHeadHelmetHardsuitRTUMedick
+
+- type: entity
+  parent: ClothingOuterHardsuitRTULeader
+  id: ClothingOuterHardsuitRTUEnginegr
+  name: EarthGov engineer RTU hardsuit
+  suffix: Бакмен, ОПЗ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/RescueTroopsUnits/enginegrhardsuit.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/RescueTroopsUnits/enginegrhardsuit.rsi
+    - type: ToggleableClothing # Goobstation - Modsuits change
+      clothingPrototypes:
+        head: ClothingHeadHelmetHardsuitRTUEnginegr
+
+- type: entity
+  parent: ClothingOuterHardsuitSyndie
+  id: ClothingOuterHardsuitRTULeader
+  name: EarthGov commander RTU hardsuit
+  suffix: Бакмен, ОПЗ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/RescueTroopsUnits/dungeonmasterhardsuit.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/RescueTroopsUnits/dungeonmasterhardsuit.rsi
+      equipSound: /Audio/Backmen/Misc/suit/nominal.ogg
+      unequipSound: /Audio/Backmen/Misc/suit/mechmove03.ogg
+    - type: ToggleableClothing # Goobstation - Modsuits change
+      clothingPrototypes:
+        head: ClothingHeadHelmetHardsuitRTULeader
+
+- type: entity
+  parent: ClothingOuterHardsuitSyndieCommander
+  id: ClothingOuterHardsuitSecurityEgovSpecial
+  name: special EarthGov force hardsuit
+  description: A marine suit designed specifically for combat in space and the harsh far-off worlds.
+  suffix: Бакмен, ОПЗ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/marinespecialhardsuit.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/marinespecialhardsuit.rsi
+    - type: ToggleableClothing # Goobstation - Modsuits change
+      clothingPrototypes:
+        head: ClothingHeadHelmetHardsuitSecurityEgov
+
+- type: entity
+  parent: ClothingOuterHardsuitSyndie
+  id: ClothingOuterHardsuitSecurityEgov
+  name: marine hardsuit
+  description: A marine suit designed specifically for combat in space and the harsh far-off worlds.
+  suffix: Бакмен, ОПЗ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/marinehardsuit.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/marinehardsuit.rsi
+    - type: ToggleableClothing # Goobstation - Modsuits change
+      clothingPrototypes:
+        head: ClothingHeadHelmetHardsuitSecurityEgov
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitChronoLegionnaire
+  name: chrono legionnaire hardsuit
+  description: An advanced and stylish hardsuit right from the future.
+  suffix: Бакмен, ОПЗ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/chronolegionnaire.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/chronolegionnaire.rsi
+    - type: PressureProtection
+      highPressureMultiplier: 0.02
+      lowPressureMultiplier: 1000
+    - type: TemperatureProtection
+      heatingCoefficient: 0.001
+      coolingCoefficient: 0.001
+    - type: ExplosionResistance
+      damageCoefficient: 0.2
+    - type: Armor
+      coverage:
+        - Groin
+        - Chest
+        - Arm
+        - Hand
+        - Leg
+        - Foot
+        - Tail
+      modifiers:
+        coefficients:
+          Blunt: 0.2
+          Slash: 0.2
+          Piercing: 0.2
+          ArmorPiercing: 0.3
+          Heat: 0.1
+          Radiation: 0
+          Caustic: 0.2
+    - type: ClothingSpeedModifier
+      walkModifier: 1
+      sprintModifier: 1
+    - type: ToggleableClothing # Goobstation - Modsuits change
+      clothingPrototypes:
+        head: ClothingHeadHelmetHardsuitChronoLegionnaire

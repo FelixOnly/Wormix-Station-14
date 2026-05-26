@@ -27,7 +27,7 @@
     - type: MapGrid
     - type: BlobFloorPlanBuilder
       floorTileset:
-      - FloorAsteroidSand
+        - FloorAsteroidSand
       blobDrawProb: 0.6
       radius: 6
       floorPlacements: 16
@@ -70,8 +70,8 @@
           - id: WallRockBSCrystal # Goobstation
             prob: 0.05
             orGroup: rock
-          - id: WallRockBSCrystal # Goobstation
-            prob: 0.01
+          - id: WallRockGibtonite # Goobstation
+            prob: 0.005
             orGroup: rock
     - type: IFF
       flags: HideLabel
@@ -81,7 +81,7 @@
   id: AsteroidDebrisSmall
   parent: BaseAsteroidDebris
   name: asteroid debris small
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   components:
     - type: MapGrid
     - type: BlobFloorPlanBuilder
@@ -91,7 +91,7 @@
   id: AsteroidDebrisMedium
   parent: BaseAsteroidDebris
   name: asteroid debris medium
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   components:
     - type: MapGrid
     - type: BlobFloorPlanBuilder
@@ -101,7 +101,7 @@
   id: AsteroidDebrisLarge
   parent: BaseAsteroidDebris
   name: asteroid debris large
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   components:
     - type: MapGrid
     - type: BlobFloorPlanBuilder
@@ -111,7 +111,7 @@
   id: AsteroidDebrisLarger
   parent: BaseAsteroidDebris
   name: asteroid debris larger
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   components:
     - type: MapGrid
     - type: BlobFloorPlanBuilder
@@ -122,7 +122,7 @@
   id: AsteroidSalvageSmall
   parent: BaseAsteroidDebris
   name: salvage asteroid small
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   components:
     - type: MapGrid
     - type: BlobFloorPlanBuilder
@@ -134,7 +134,7 @@
   id: AsteroidSalvageMedium
   parent: BaseAsteroidDebris
   name: salvage asteroid medium
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   components:
     - type: MapGrid
     - type: BlobFloorPlanBuilder
@@ -146,7 +146,7 @@
   id: AsteroidSalvageLarge
   parent: BaseAsteroidDebris
   name: salvage asteroid large
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   components:
     - type: MapGrid
     - type: BlobFloorPlanBuilder
@@ -158,10 +158,11 @@
   id: AsteroidSalvageHuge
   parent: BaseAsteroidDebris
   name: salvage asteroid huge
-  categories: [ HideSpawnMenu ]
+  categories: [HideSpawnMenu]
   components:
     - type: MapGrid
     - type: BlobFloorPlanBuilder
       blobDrawProb: 0.66
       radius: 23
       floorPlacements: 250
+

@@ -1,0 +1,234 @@
+# Гарнитура и ключи шифрования
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetFADAK9M
+  suffix: DeadSector
+  name: FADAK-9M headset
+  description: A headset used by the upper echelons of Nanotrasen.
+  components:
+  - type: EncryptionKeyHolder
+    keySlots: 30
+  - type: Sprite
+    sprite: Imperial/DeadSector/headset/headset.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/headset/headset.rsi # Гарнитура на 20 слотов
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetFADAK9MAdministration
+  suffix: Felix
+  name: FelixFADAK9MheadsetAdministration
+  description: A headset used by the upper echelons of Nanotrasen.
+  components:
+  - type: EncryptionKeyHolder
+    keySlots: 30
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyRadioAdministration
+      - EncryptionKeyRadioFelixradioChannelAdministrativeSector
+      - EncryptionKeyRadioFelixradioChannelManufacturingSector
+      - EncryptionKeyRadioFelixradioChannelFinancialSector
+      - EncryptionKeyCommon
+      - EncryptionKeyAirGroup
+    defaultChannel: EncryptionKeyRadioAdministration
+  - type: Sprite
+    sprite: Imperial/DeadSector/headset/headset.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/headset/headset.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetFADAK9MPolice
+  suffix: Felix
+  name: FelixFADAK9Mheadset
+  description: A headset used by the upper echelons of Nanotrasen.
+  components:
+  - type: EncryptionKeyHolder
+    keySlots: 30
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyRadioFelixradioChannelPolice
+      - EncryptionKeyRadioFelixradioChannelAdministrativeSector
+      - EncryptionKeyRadioFelixradioChannelManufacturingSector
+      - EncryptionKeyRadioFelixradioChannelFinancialSector
+      - EncryptionKeyCommon
+      - EncryptionKeyAirGroup
+    defaultChannel: EncryptionKeyRadioFelixradioChannelPolice
+  - type: Sprite
+    sprite: Imperial/DeadSector/headset/headset.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/headset/headset.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetFADAK9MShipyard
+  suffix: Felix
+  name: FelixFADAK9Mheadset
+  description: A headset used by the upper echelons of Nanotrasen.
+  components:
+  - type: EncryptionKeyHolder
+    keySlots: 30
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyRadioFelixradioChannelShipyard
+      - EncryptionKeyRadioFelixradioChannelFinancialSector
+      - EncryptionKeyCommon
+      - EncryptionKeyAirGroup
+    defaultChannel: EncryptionKeyRadioFelixradioChannelShipyard
+  - type: Sprite
+    sprite: Imperial/DeadSector/headset/headset.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/headset/headset.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetFADAK9MBank
+  suffix: Felix
+  name: FelixFADAK9Mheadset
+  description: A headset used by the upper echelons of Nanotrasen.
+  components:
+  - type: EncryptionKeyHolder
+    keySlots: 30
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyRadioFelixradioChannelBank
+      - EncryptionKeyRadioFelixradioChannelFinancialSector
+      - EncryptionKeyCommon
+      - EncryptionKeyAirGroup
+    defaultChannel: EncryptionKeyRadioFelixradioChannelBank
+  - type: Sprite
+    sprite: Imperial/DeadSector/headset/headset.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/headset/headset.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetFADAK9MSpecialist
+  suffix: Felix
+  name: FelixFADAK9Mheadset
+  description: A headset used by the upper echelons of Nanotrasen.
+  components:
+  - type: EncryptionKeyHolder
+    keySlots: 30
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - FelixradioChannelCommoditySpecialist
+      - EncryptionKeyRadioFelixradioChannelManufacturingSector
+      - EncryptionKeyRadioFelixradioChannelFinancialSector
+      - EncryptionKeyCommon
+      - EncryptionKeyAirGroup
+    defaultChannel: FelixradioChannelCommoditySpecialist
+  - type: Sprite
+    sprite: Imperial/DeadSector/headset/headset.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/headset/headset.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetFADAK9MWastes
+  suffix: Felix
+  name: FelixFADAK9Mheadset
+  description: A headset used by the upper echelons of Nanotrasen.
+  components:
+  - type: EncryptionKeyHolder
+    keySlots: 30
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyRadioFelixradioChannelWastes
+      - EncryptionKeyRadioFelixradioChannelManufacturingSector
+      - EncryptionKeyRadioFelixradioChannelFinancialSector
+      - EncryptionKeyCommon
+      - EncryptionKeyAirGroup
+    defaultChannel: EncryptionKeyRadioFelixradioChannelWastes
+  - type: Sprite
+    sprite: Imperial/DeadSector/headset/headset.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/headset/headset.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetFADAK9MMiner
+  suffix: Felix
+  name: FelixFADAK9Mheadset
+  description: A headset used by the upper echelons of Nanotrasen.
+  components:
+  - type: EncryptionKeyHolder
+    keySlots: 30
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyRadioFelixradioChannelMiner
+      - EncryptionKeyRadioFelixradioChannelManufacturingSector
+      - EncryptionKeyCommon
+      - EncryptionKeyAirGroup
+    defaultChannel: EncryptionKeyRadioFelixradioChannelMiner
+  - type: Sprite
+    sprite: Imperial/DeadSector/headset/headset.rsi
+  - type: Clothing
+    sprite: Imperial/DeadSector/headset/headset.rsi
+
+- type: entity
+  parent: EncryptionKey
+  id: DeadSectorEncryptionKeyEngineering
+  suffix: DeadSector
+  name: engineering encryption key
+  description: An encryption key used by the engineers.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Engineering
+    defaultChannel: Engineering # Дефолтный инж. канал. Если понадобится - замените на кастомный.
+  - type: Sprite
+    sprite: Imperial/DeadSector/headset/encryption_keys.rsi
+    state: engineering
+
+- type: entity
+  parent: EncryptionKey
+  id: DeadSectorEncryptionKeyMedical
+  suffix: DeadSector
+  name: medical encryption key
+  description: An encryption key used by those who save lives.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Medical
+    defaultChannel: # Дефолтный мед. канал
+  - type: Sprite
+    sprite: Imperial/DeadSector/headset/encryption_keys.rsi
+    state: medical
+
+- type: entity
+  parent: EncryptionKey
+  id: DeadSectorEncryptionKeySecurity
+  suffix: DeadSector
+  name: security encryption key
+  description: An encryption key used by security.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Security
+    defaultChannel: Security # Дефолтный канал щиткьюрити.
+  - type: Sprite
+    sprite: Imperial/DeadSector/headset/encryption_keys.rsi
+    state: security
+
+- type: entity
+  parent: EncryptionKey
+  id: DeadSectorEncryptionKeyPilot # пилотский ключ шифрования
+  suffix: DeadSector
+  name: security encryption key
+  description: An encryption key used by security.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Security
+    defaultChannel: Security # Замените на "пилотскую" частоту, если понадобится. По дефолту поставил частоту охраны.
+  - type: Sprite
+    sprite: Imperial/DeadSector/headset/encryption_keys.rsi
+    state: pilot

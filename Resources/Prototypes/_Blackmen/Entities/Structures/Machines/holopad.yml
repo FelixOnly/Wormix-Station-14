@@ -1,0 +1,49 @@
+# Centcomm holopads
+
+- type: entity
+  parent: Holopad
+  id: HolopadCentCommBase
+  suffix: Бакмен, Centcomm
+  components:
+    - type: Label
+      currentLabel: holopad-centomm-base
+
+- type: entity
+  parent: HolopadLongRange
+  id: HolopadCentCommLongRange
+  suffix: Бакмен, Centcomm
+  components:
+    - type: Label
+      currentLabel: holopad-centomm-base
+
+- type: entity
+  parent: HolopadUnlimitedRange
+  id: HolopadCentCommUnlimitedRange
+  suffix: Бакмен, CentComm, Operator
+  components:
+    - type: Label
+      currentLabel: holopad-centomm-base
+
+- type: entity
+  parent: HolopadCentCommBase
+  id: HolopadCentCommOperator
+  suffix: Бакмен, Centcomm, Operator
+  components:
+    - type: Label
+      currentLabel: holopad-centomm-operator
+
+- type: entity
+  parent: HolopadCentCommBase
+  id: HolopadCentCommAdmiral
+  suffix: Бакмен, Centcomm, Admiral
+  components:
+    - type: Label
+      currentLabel: holopad-centomm-admiral
+
+- type: entity
+  parent: HolopadCentCommBase
+  id: HolopadCentCommEvac
+  suffix: Бакмен, Centcomm, Evac room
+  components:
+    - type: Label
+      currentLabel: holopad-centomm-evac

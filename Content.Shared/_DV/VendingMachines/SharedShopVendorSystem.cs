@@ -147,7 +147,7 @@ public abstract class SharedShopVendorSystem : EntitySystem
 
     private void Deny(Entity<ShopVendorComponent> ent, EntityUid user)
     {
-        _popup.PopupClient(Loc.GetString("vending-machine-component-try-eject-access-denied"), ent, user);
+        _popup.PopupClient(Loc.GetString("vending-machine-component-try-eject-access-denied"), ent, user, PopupType.Small);
         if (ent.Comp.Denying)
             return;
 

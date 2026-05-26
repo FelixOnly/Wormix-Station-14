@@ -69,7 +69,7 @@ public sealed class PlayTimeCommandUtilities
             return result;
         }
 
-        MatchCollection timeRegex = Regex.Matches(timeString, "(-?\\d+)([A-Za-z]+)"); // Orion-Edit: '-?' to support negative values
+        MatchCollection timeRegex = Regex.Matches(timeString, "(\\d+)([A-Za-z]+)");
 
         foreach (Match match in timeRegex)
         {

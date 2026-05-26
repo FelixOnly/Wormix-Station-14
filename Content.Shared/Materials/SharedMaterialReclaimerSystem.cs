@@ -183,10 +183,6 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
         if (HasComp<RecyclableOnUnlockComponent>(item) && _lockSystem.IsLocked(item))
             return false;
 
-        // Goobstation
-        if (HasComp<MaterialReclaimerImmuneComponent>(item))
-            return false;
-
         if (HasComp<MobStateComponent>(item) && !CanGib(uid, item, component)) // whitelist? We be gibbing, boy!
             return false;
 

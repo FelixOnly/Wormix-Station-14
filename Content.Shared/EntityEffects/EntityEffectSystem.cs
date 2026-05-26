@@ -71,3 +71,4 @@ public sealed partial class SharedEntityEffectSystem : EntitySystem
         _queue.Add(new(time, effect, args));
     }
 }
+

@@ -60,4 +60,35 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
   <Import Project="..\RobustToolbox\MSBuild\XamlIL.targets" />
+  <ItemGroup>
+    <EmbeddedResource Update="_ADT\Administration\UI\Tabs\AdminTab\EchoChatPanelWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="_ADT\UserInterface\Controls\FancyButton\FancyButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="_ADT\VendingMachines\UI\FancyVendingMachineItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="_ADT\VendingMachines\UI\FancyVendingMachineMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="_Amour\Stickers\UI\StickerSelectorWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="_Backmen\Shipyard\UI\ShipyardConsoleMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="_Backmen\Shipyard\UI\VesselRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="_Erida\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Update="Options\UI\Tabs\ChatsanPlusTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </AdditionalFiles>
+  </ItemGroup>
 </Project>

@@ -1,0 +1,116 @@
+- type: entity
+  name: рация
+  description: Рация которая связывается с ближайшей блю-спейс артиллерийской платформой.
+  parent: BaseItem
+  id: RadioMTFHandheld
+  suffix: Бакмен, ВЫРЕЗАН
+  components:
+    - type: Sprite
+      sprite: Objects/Devices/communication.rsi
+      state: radio
+    - type: Item
+      sprite: Objects/Devices/communication.rsi
+      heldPrefix: radio
+    - type: Spellbook
+      learnTime: 0
+      spellActions:
+        ActionCallAirSupportMissiles: -1
+    - type: UseDelay
+      delay: 10
+    - type: Speech
+      speechSounds: Combine
+#  - type: SpeakOnUse
+#    pack: ArtilleryComander
+
+- type: entity
+  id: ActionCallAirSupportMissiles
+  parent: BaseAction
+  name: Вызов арт-обстрела
+  description: Запросить артиллерийской поддержки по указаной вами точке.
+  suffix: Бакмен, ВЫРЕЗАН
+  components:
+    - type: Action
+      useDelay: 240
+      itemIconStyle: BigAction
+      icon:
+        sprite: Backmen/Structures/Storage/supplypod.rsi
+        state: missilepod_falling
+    - type: WorldTargetAction
+      event: !type:WorldSpawnSpellEvent
+        prototypes:
+          - id: MissileDropSpawnerAreaSpawner
+            amount: 1
+        offset: 0, 1
+    - type: TargetAction
+      range: 80
+
+- type: entity
+  name: рация вызова снабжения
+  description: Портативная рация для связи с отделом снабжения, настроена на одностороний разговор.
+  parent: BaseItem
+  id: RadioBlueShieldSupplyPod
+  suffix: Бакмен, ВЫРЕЗАН
+  components:
+    - type: Sprite
+      sprite: Objects/Devices/communication.rsi
+      state: radio
+    - type: Item
+      sprite: Objects/Devices/communication.rsi
+      heldPrefix: radio
+    - type: SpawnItemsOnUse
+      items:
+        - id: RadioBlueShieldSupplyPodAirDrop
+      sound:
+        path: /Audio/Corvax/Effects/Footsteps/boots1.ogg
+
+- type: entity
+  categories: [HideSpawnMenu]
+  name: RadioBlueShieldSupplyPodAirDrop
+  id: RadioBlueShieldSupplyPodAirDrop
+  save: false
+  components:
+    - type: AirDrop
+      supplyDropTable: BlueShieldSupplyPodSpawnTable
+
+- type: entityTable
+  id: BlueShieldSupplyPodSpawnTable
+  table: !type:AllSelector
+    children:
+      - id: ClothingOuterHardsuitBlueShield
+      - id: ClothingMaskGasBlueShield
+      - id: DoubleEmergencyOxygenTankFilled
+      - id: DoubleEmergencyNitrogenTankFilled
+
+- type: entity
+  name: supply call radio
+  description: A portable radio for communication with the supply department, configured for one-way conversation.
+  parent: BaseItem
+  id: RadioSecurityPilotSupplyPod
+  suffix: Бакмен, ВЫРЕЗАН
+  components:
+    - type: Sprite
+      sprite: Objects/Devices/communication.rsi
+      state: radio
+    - type: Item
+      sprite: Objects/Devices/communication.rsi
+      heldPrefix: radio
+    - type: SpawnItemsOnUse
+      items:
+        - id: AirDropSecurityPilot
+      sound:
+        path: /Audio/Corvax/Effects/Footsteps/boots2.ogg
+
+- type: entity
+  id: AirDropSecurityPilot
+  categories: [HideSpawnMenu]
+  suffix: SecurityPilot, supply
+  save: false
+  components:
+    - type: AirDrop
+      supplyDropTable: AirDropSecurityPilotSpawnTable
+
+- type: entityTable
+  id: AirDropSecurityPilotSpawnTable
+  table: !type:AllSelector
+    children:
+      - id: ClothingOuterHardsuitSecurityPilot

@@ -49,6 +49,7 @@ using Robust.Shared.Random;
 
 using TemperatureCondition = Content.Shared.EntityEffects.EffectConditions.Temperature; // disambiguate the namespace
 using PolymorphEffect = Content.Shared.EntityEffects.Effects.Polymorph;
+using Content.Shared.Atmos.Components;
 
 namespace Content.Server.EntityEffects;
 

@@ -31,8 +31,9 @@
     MysteryFigureBox: 2
     BooksBag: 3
     CardBoxBlack: 3 # GoobStation
-    PokerChipsBox: 1 # Orion
+    ADTCardBoxUno: 3 # ADT
   contrabandInventory:
+    OuijaBoard: 1 # ADT
     Basketball: 1
     FoodSnackBoritos: 3
     DrinkSpaceMountainWindCan: 3

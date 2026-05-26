@@ -52,6 +52,7 @@ public sealed partial class InventoryComponent : Component
     [ViewVariables]
     public SlotDefinition[] Slots = Array.Empty<SlotDefinition>();
 
+
     [ViewVariables]
     public ContainerSlot[] Containers = Array.Empty<ContainerSlot>();
 

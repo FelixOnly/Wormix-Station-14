@@ -26,7 +26,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Numerics;
+using Content.Client._Lua.UserInterface.Controls;
 using Content.Client.Changelog;
 using Content.Client.Hands;
 using Content.Client.UserInterface.Controls;
@@ -41,6 +41,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Configuration;
 using Robust.Shared.Timing;
+using System.Numerics;
 
 namespace Content.Client.Gameplay
 {
@@ -54,7 +55,7 @@ namespace Content.Client.Gameplay
         [Dependency] private readonly ChangelogManager _changelog = default!;
         [Dependency] private readonly IConfigurationManager _configurationManager = default!;
 
-        private FpsCounter _fpsCounter = default!;
+        private Control _fpsCounter = default!;
         private Label _version = default!;
 
         public MainViewport Viewport => _uiManager.ActiveScreen!.GetWidget<MainViewport>()!;
@@ -80,7 +81,7 @@ namespace Content.Client.Gameplay
 
             // FPS counter.
             // yeah this can just stay here, whatever
-            _fpsCounter = new FpsCounter(_gameTiming);
+            _fpsCounter = new HudPerfLabel(_gameTiming, EntitySystem.Get<_Lua.Tick.ClientServerPerfSystem>()); // Lua fps mod
             UserInterfaceManager.PopupRoot.AddChild(_fpsCounter);
             _fpsCounter.Visible = _configurationManager.GetCVar(CCVars.HudFpsCounterVisible);
             _configurationManager.OnValueChanged(CCVars.HudFpsCounterVisible, (show) => { _fpsCounter.Visible = show; });

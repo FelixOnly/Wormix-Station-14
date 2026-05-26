@@ -1,0 +1,16 @@
+- type: entity
+  parent: FaxMachineBase
+  id: FaxMachineDeadSpace
+  suffix: Мертвый Космос
+  name: факс дальнего действия
+  description: Блюспейс-технологии на службе бюрократии.
+  components:
+    - type: Sprite
+      sprite: _DeadSpace/Structures/Machines/fax_machine.rsi
+      drawdepth: SmallObjects
+      layers:
+      - state: icon
+        map: [ "enum.FaxMachineVisuals.VisualState" ]
+    - type: Icon
+      sprite: _DeadSpace/Structures/Machines/fax_machine.rsi
+      state: icon

@@ -41,10 +41,12 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Client._RMC14.LinkAccount; // RMC - Patreon
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Client.UserInterface.Systems.Info;
+using Content.Client.UserInterface.Systems.MenuBar.Widgets;  // RMC - Patreon
 using Content.Shared.CCVar;
 using JetBrains.Annotations;
 using Robust.Client.Console;
@@ -55,8 +57,6 @@ using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BaseButton;
-using Content.Client.UserInterface.Systems.MenuBar.Widgets;  // RMC - Patreon
-using Content.Client._RMC14.LinkAccount; // RMC - Patreon
 // Goobstation - Character customization in escape menu
 using Content.Client.Lobby;
 using Robust.Client.Player;
@@ -75,6 +75,7 @@ namespace Content.Client.UserInterface.Systems.EscapeMenu;
 public sealed class EscapeUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>
 {
     [Dependency] private readonly IClientConsoleHost _console = default!;
+    [Dependency] private readonly IUriOpener _uri = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly ChangelogUIController _changelog = default!;
     [Dependency] private readonly InfoUIController _info = default!;
@@ -87,12 +88,12 @@ public sealed class EscapeUIController : UIController, IOnStateEntered<GameplayS
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
-    [Dependency] private readonly IUriOpener _uri = default!;
     [Dependency] private readonly JobRequirementsManager _requirements = default!;
     [Dependency] private readonly MarkingManager _markings = default!;
     [UISystemDependency] private readonly GuidebookSystem? _guide = default!;
 
     private Options.UI.EscapeMenu? _escapeWindow;
+
     // Goobstation - Character customization in escape menu
     private DefaultWindow? _characterWindow;
     private CharacterSetupGui? _characterSetup;

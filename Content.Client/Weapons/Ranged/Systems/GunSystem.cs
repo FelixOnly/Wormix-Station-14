@@ -34,11 +34,11 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Numerics;
 using Content.Client.Animations;
 using Content.Client.Gameplay;
 using Content.Client.Items;
 using Content.Client.Weapons.Ranged.Components;
+using Content.Shared._Backmen.Camera.Components;
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared.Camera;
 using Content.Shared.CombatMode;
@@ -59,6 +59,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using System.Numerics;
 using SharedGunSystem = Content.Shared.Weapons.Ranged.Systems.SharedGunSystem;
 using TimedDespawnComponent = Robust.Shared.Spawners.TimedDespawnComponent;
 
@@ -78,6 +79,8 @@ public sealed partial class GunSystem : SharedGunSystem
     [Dependency] private readonly SpriteSystem _sprite = default!;
 
     public static readonly EntProtoId HitscanProto = "HitscanEffect";
+
+    private EntityQuery<BkmGunWieldBonusComponent> _bkmCameraRecoilQuery; // backmen: KickMagnitudeMax
 
     public bool SpreadOverlay
     {
@@ -123,6 +126,8 @@ public sealed partial class GunSystem : SharedGunSystem
 
         InitializeMagazineVisuals();
         InitializeSpentAmmo();
+
+        _bkmCameraRecoilQuery = GetEntityQuery<Shared._Backmen.Camera.Components.BkmGunWieldBonusComponent>(); // backmen: KickMagnitudeMax
     }
 
     private void OnUpdateClientAmmo(EntityUid uid, AmmoCounterComponent ammoComp, ref UpdateClientAmmoEvent args)
@@ -319,12 +324,15 @@ public sealed partial class GunSystem : SharedGunSystem
         }
     }
 
-    private void Recoil(EntityUid? user, Vector2 recoil, float recoilScalar)
+    private void Recoil(EntityUid? user, Vector2 recoil, float recoilScalar, EntityUid? gunUid = null) // backmen: KickMagnitudeMax
     {
         if (!Timing.IsFirstTimePredicted || user == null || recoil == Vector2.Zero || recoilScalar == 0)
             return;
 
-        _recoil.KickCamera(user.Value, recoil.Normalized() * 0.5f * recoilScalar);
+        _recoil.KickCamera(
+            user.Value,
+            recoil.Normalized() * 0.5f * recoilScalar,
+            kickMagnitudeMax: _bkmCameraRecoilQuery.TryComp(gunUid, out var bkmCameraRecoilComponent) ? bkmCameraRecoilComponent.KickMagnitudeMax : null); // backmen: KickMagnitudeMax
     }
 
     protected override void Popup(string message, EntityUid? uid, EntityUid? user)

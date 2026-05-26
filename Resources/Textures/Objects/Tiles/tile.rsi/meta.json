@@ -610,6 +610,21 @@
         {
             "name": "uranium-marble-inhand-right",
             "directions": 4
+        },
+		{
+            "name": "xenofloor"
+        },
+        {
+            "name": "xeno-steel"
+        },
+        {
+            "name": "xeno-steel-corner"
+        },
+        {
+            "name": "xeno-techmaint"
+        },
+        {
+            "name": "xenoborg-floor"
         }
     ]
 }

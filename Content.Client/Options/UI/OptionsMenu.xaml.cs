@@ -108,6 +108,7 @@ namespace Content.Client.Options.UI
             Tabs.SetTabTitle(4, Loc.GetString("ui-options-tab-accessibility"));
             Tabs.SetTabTitle(5, Loc.GetString("ui-options-tab-admin"));
             Tabs.SetTabTitle(6, Loc.GetString("ui-options-tab-network"));
+            Tabs.SetTabTitle(7, Loc.GetString("ui-options-tab-chatsan"));
 
             UpdateTabs();
         }

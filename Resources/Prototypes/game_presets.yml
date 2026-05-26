@@ -241,6 +241,7 @@
     - dm
   name: death-match-title
   description: death-match-description
+  minPlayers: 10 # Wormix
   maxPlayers: 15
   showInVote: true
   isMiniGame: true # Orion

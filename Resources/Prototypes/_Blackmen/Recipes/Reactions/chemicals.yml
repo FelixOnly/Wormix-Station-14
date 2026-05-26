@@ -1,0 +1,22 @@
+- type: reaction
+  id: Lye
+  reactants:
+    Water:
+      amount: 1
+    Ash:
+      amount: 1
+  products:
+    Lye: 2
+
+- type: reaction
+  id: StimulantsSuper
+  impact: Medium
+  reactants:
+    Ephedrine:
+      amount: 2
+    Omnizine:
+      amount: 2
+    Stimulants:
+      amount: 1
+  products:
+    StimulantsSuper: 3

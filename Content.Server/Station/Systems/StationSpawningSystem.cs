@@ -243,6 +243,8 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             if (_configurationManager.GetCVar(CCVars.FlavorText))
                 AddComp<DetailExaminableComponent>(entity.Value).SetProfile(profile);
             // Orion-End
+
+
         }
 
         if (loadout != null)

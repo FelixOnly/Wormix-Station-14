@@ -5,9 +5,11 @@ using Content.Shared.DetailExaminable;
 using Content.Shared.Examine;
 using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
+using Content.Shared.SD;
 using Content.Shared.Verbs;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
+using YamlDotNet.Core;
 
 namespace Content.Server._Orion.DetailExaminable;
 
@@ -61,12 +63,16 @@ public sealed class DetailExaminableSystem : EntitySystem
             || mind is not { UserId: not null } || !_player.TryGetSessionById(mind.UserId, out var session))
             return;
 
+        var markup = new FormattedMessage();
+        markup.AddMarkupPermissive(detail.Content);
+
         var state = new DetailExaminableEuiState(
             GetNetEntity(target),
             Identity.Name(target, EntityManager),
             humanoid.Species.Id,
             humanoid.Sex,
             humanoid.Gender,
+            detail.ERPStatus,
             detail.Content,
             detail.OOCContent,
             detail.CharacterContent,
@@ -80,6 +86,8 @@ public sealed class DetailExaminableSystem : EntitySystem
             detail.NsfwLinksContent,
             detail.NsfwTagsContent
         );
+
+       
 
         var window = new DetailExaminableEui(state);
         _euiMan.OpenEui(window, session);

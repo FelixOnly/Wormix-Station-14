@@ -1,0 +1,21 @@
+- type: entity
+  parent: PosterBase
+  id: PosterPact
+  name: Poster with the pact logo
+  description: Smells like blood and money.
+  suffix: ПОСТЕР
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Decoration/pact_posters.rsi
+    state: poster_pact
+
+- type: entity
+  parent: PosterBase
+  id: PosterPactRecruit
+  suffix: ПОСТЕР
+  name: Join the pact.
+  description: Long live the pact!
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Decoration/pact_posters.rsi
+    state: poster_recruit

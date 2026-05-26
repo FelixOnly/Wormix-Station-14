@@ -25,6 +25,8 @@ namespace Content.Shared.EntityEffects;
 [MeansImplicitUse]
 public abstract partial class EntityEffect
 {
+    //public abstract void RaiseEvent(EntityUid target, IEntityEffectRaiser raiser, float scale, EntityUid? user);
+
     private protected string _id => this.GetType().Name;
     /// <summary>
     ///     The list of conditions required for the effect to activate. Not required.
@@ -131,6 +133,8 @@ public record class EntityEffectBaseArgs
         EntityManager = entityManager;
     }
 }
+
+
 
 public record class EntityEffectReagentArgs : EntityEffectBaseArgs
 {

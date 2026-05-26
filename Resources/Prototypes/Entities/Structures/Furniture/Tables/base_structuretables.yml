@@ -70,9 +70,6 @@
     - ForceFixRotations
   - type: RequireProjectileTarget # Goobstation - Crawling
     ignoreThrow: true
-  - type: InteractionVerbs # Orion
-    allowedVerbs:
-      - KnockOn
 
 
 - type: entity

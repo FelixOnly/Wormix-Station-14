@@ -1,0 +1,63 @@
+#- type: sticker
+#  id: example
+#  texture: /Textures/Interface/Emotes/example.yml
+
+- type: sticker
+  id: squeak
+  texture: /Textures/Interface/Emotes/squeak.png
+  
+- type: sticker
+  id: laugh
+  texture: /Textures/Interface/Emotes/laugh.png
+  
+- type: sticker
+  id: tailslap
+  texture: /Textures/Interface/Emotes/tailslap.png
+  
+- type: sticker
+  id: sigh
+  texture: /Textures/Interface/Emotes/sigh.png
+  
+- type: sticker
+  id: cry
+  texture: /Textures/Interface/Emotes/cry.png
+  
+- type: sticker
+  id: hew
+  texture: /Textures/Interface/Emotes/hew.png
+  
+- type: sticker
+  id: weh
+  texture: /Textures/Interface/Emotes/weh.png
+
+- type: sticker
+  id: chirp
+  texture: /Textures/Interface/Emotes/chirp.png
+
+- type: sticker
+  id: beep
+  texture: /Textures/Interface/Emotes/beep.png
+  
+- type: sticker
+  id: buzztwo
+  texture: /Textures/Interface/Emotes/buzztwo.png
+  
+- type: sticker
+  id: click
+  texture: /Textures/Interface/Emotes/click.png
+  
+- type: sticker
+  id: chitter
+  texture: /Textures/Interface/Emotes/chitter.png
+
+- type: sticker
+  id: squish
+  texture: /Textures/Interface/Emotes/squish.png
+
+- type: sticker
+  id: deathgasp
+  texture: /Textures/Interface/Emotes/deathgasp.png
+ 
+- type: sticker
+  id: salute
+  texture: /Textures/Interface/Emotes/salute.png

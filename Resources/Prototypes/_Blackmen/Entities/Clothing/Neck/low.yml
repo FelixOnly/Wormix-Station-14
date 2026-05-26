@@ -1,0 +1,12 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakBlackWendor
+  name: Чёрная накидка
+  description: Чёрная Накидка. Пыль и грязь делает эту накидку брутальной
+  suffix: Бакмен
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Neck/Cloaks/low.rsi
+      state: icon
+    - type: StealTarget
+      stealGroup: HeadCloak

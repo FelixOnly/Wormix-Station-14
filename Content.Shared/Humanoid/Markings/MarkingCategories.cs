@@ -28,6 +28,7 @@ namespace Content.Shared.Humanoid.Markings
         HeadTop,
         HeadSide,
         Face, // Plasmeme Port
+        SnoutOverlay, // ADT edit
         Snout,
         Chest,
         RightArm,
@@ -45,6 +46,7 @@ namespace Content.Shared.Humanoid.Markings
 //        Underwear, // Orion-Edit: Removed
 //        Undershirt, // Orion-Edit: Removed
         Tail,
+        OverlayBandage, // ADT edit
         Overlay,
     }
 
@@ -61,6 +63,7 @@ namespace Content.Shared.Humanoid.Markings
                 HumanoidVisualLayers.Head => MarkingCategories.Head,
                 HumanoidVisualLayers.HeadTop => MarkingCategories.HeadTop,
                 HumanoidVisualLayers.HeadSide => MarkingCategories.HeadSide,
+                HumanoidVisualLayers.SnoutOverlay => MarkingCategories.SnoutOverlay, // ADT edit
                 HumanoidVisualLayers.Snout => MarkingCategories.Snout,
 //                HumanoidVisualLayers.Undershirt => MarkingCategories.Undershirt, // Orion-Edit: Removed
 //                HumanoidVisualLayers.Underwear => MarkingCategories.Underwear, // Orion-Edit: Removed
@@ -76,6 +79,7 @@ namespace Content.Shared.Humanoid.Markings
                 HumanoidVisualLayers.RFoot => MarkingCategories.RightFoot,
                 HumanoidVisualLayers.Wings => MarkingCategories.Wings,
                 HumanoidVisualLayers.Tail => MarkingCategories.Tail,
+                HumanoidVisualLayers.OverlayBandage => MarkingCategories.OverlayBandage,
                 _ => MarkingCategories.Overlay,
             };
         }

@@ -66,12 +66,11 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Linq;
-using System.Text;
+using Content.Client._Shitcode.Silo;
+using Content.Client._Wormix.Searching;
 using Content.Client.Materials;
 using Content.Shared._DV.Salvage.Components;
 using Content.Shared._DV.Salvage.Systems;
-using Content.Client._Shitcode.Silo;
 using Content.Shared.Lathe;
 using Content.Shared.Lathe.Prototypes;
 using Content.Shared.Research.Prototypes;
@@ -85,6 +84,8 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using System.Linq;
+using System.Text;
 namespace Content.Client.Lathe.UI;
 
 [GenerateTypedNameReferences]
@@ -238,6 +239,8 @@ public sealed partial class LatheMenu : DefaultWindow
     /// </summary>
     public void PopulateRecipes()
     {
+        // Wormix edit start
+
         var recipesToShow = new List<LatheRecipePrototype>();
         foreach (var recipe in Recipes)
         {
@@ -256,15 +259,42 @@ public sealed partial class LatheMenu : DefaultWindow
                     continue;
             }
 
+            
+
             if (SearchBar.Text.Trim().Length != 0)
             {
-                if (_lathe.GetRecipeName(recipe).ToLowerInvariant().Contains(SearchBar.Text.Trim().ToLowerInvariant()))
+                string recipeName = _lathe.GetRecipeName(recipe).ToLowerInvariant()
+                    .Replace("(Машинная плата)","")
+                    .Replace("(Консольная плата)","")
+                    .Replace("ё", "е");
+
+                string search = SearchBar.Text.Trim().ToLowerInvariant()
+                    .Replace("ё", "е");
+
+
+                if (recipeName.Contains(search))
+                {
                     recipesToShow.Add(proto);
+                    continue;
+                }
+
+
+                var distance = FuzzySearching.LevensteinAlgorithm(recipeName, search);
+
+                // Adjust this number to make search stricter/looser
+                if (distance > 7 && !recipeName.Contains(search))
+                {
+                    recipesToShow.Add(proto);
+                    continue;
+                }
+
             }
             else
             {
                 recipesToShow.Add(proto);
             }
+
+            
         }
 
         if (!int.TryParse(AmountLineEdit.Text, out var quantity) || quantity <= 0)
@@ -272,11 +302,83 @@ public sealed partial class LatheMenu : DefaultWindow
 
         RecipeCount.Text = Loc.GetString("lathe-menu-recipe-count", ("count", recipesToShow.Count));
 
-        var sortedRecipesToShow = recipesToShow.OrderBy(_lathe.GetRecipeName);
+        recipesToShow.Sort((a, b) =>
+        {
+
+            string aRecipeName = _lathe.GetRecipeName(a).ToLowerInvariant()
+                    .Replace("(Машинная плата)", "")
+                    .Replace("(Консольная плата)", "")
+                    .Replace("ё", "е");
+
+            string bRecipeName = _lathe.GetRecipeName(b).ToLowerInvariant()
+                   .Replace("(Машинная плата)", "")
+                   .Replace("(Консольная плата)", "")
+                   .Replace("ё", "е");
+
+            var searchText = SearchBar.Text.Trim().ToLowerInvariant()
+                   .Replace("ё", "е");
+
+
+            if (searchText.Length == 0)
+                return string.Compare(aRecipeName, bRecipeName, StringComparison.InvariantCulture);
+
+            if (string.IsNullOrEmpty(aRecipeName) || string.IsNullOrEmpty(bRecipeName))
+                return -1;
+
+
+            // 1. StartsWith priority
+            var aStarts = aRecipeName.StartsWith(searchText);
+            var bStarts = bRecipeName.StartsWith(searchText);
+
+
+
+            if (aStarts && !bStarts)
+                return -1;
+
+            if (!aStarts && bStarts)
+                return 1;
+
+            // 2. Contains priority
+            var aContains = aRecipeName.Contains(searchText);
+            var bContains = bRecipeName.Contains(searchText);
+
+            if (aContains && !bContains)
+                return -1;
+
+            if (!aContains && bContains)
+                return 1;
+
+            // 3. Similarity percent
+            var aSimilarity = FuzzySearching.GetSimilarityPercent(aRecipeName, searchText);
+            var bSimilarity = FuzzySearching.GetSimilarityPercent(bRecipeName, searchText);
+
+            var similarityCompare = bSimilarity.CompareTo(aSimilarity);
+
+            if (similarityCompare != 0)
+                return similarityCompare;
+
+            // 4. Distance fallback
+            var aDistance = FuzzySearching.LevensteinAlgorithm(aRecipeName, searchText);
+            var bDistance = FuzzySearching.LevensteinAlgorithm(bRecipeName, searchText);
+
+            var distanceCompare = aDistance.CompareTo(bDistance);
+
+            if (distanceCompare != 0)
+                return distanceCompare;
+
+            // 5. Alphabetical fallback
+            return string.Compare(aRecipeName, bRecipeName, StringComparison.InvariantCulture);
+        });
+
+        //var sortedRecipesToShow = recipesToShow.OrderBy(_lathe.GetRecipeName);
+
+
+        // Wormix edit end
+
         RecipeList.Children.Clear();
         _entityManager.TryGetComponent(Entity, out LatheComponent? lathe);
 
-        foreach (var prototype in sortedRecipesToShow)
+        foreach (var prototype in recipesToShow)
         {
             var canProduce = _lathe.CanProduce(Entity, prototype, quantity, component: lathe);
 

@@ -1,0 +1,391 @@
+- type: radioChannel
+  id: Expedition
+  name: chat-radio-expedition
+  keycode: "7"
+  frequency: 1067
+  color: "#10313c"
+  longRange: true
+
+- type: radioChannel
+  id: Cult
+  name: chat-radio-cult
+  keycode: "q"
+  frequency: 1068
+  color: "#9a0e10"
+  longRange: true
+
+- type: radioChannel
+  id: Military
+  name: chat-radio-military
+  keycode: "8"
+  frequency: 1069
+  color: "#0f4910"
+  longRange: true
+
+- type: radioChannel
+  id: Shadow
+  name: chat-radio-shadow
+  keycode: "s"
+  frequency: 1070
+  color: "#292d28"
+  longRange: true
+
+- type: entity
+  parent: EncryptionKeyCustomBase
+  id: EncryptionKeyExpedition
+  name: encryption key
+  description: An encryption key
+  components:
+    - type: EncryptionKey
+      channels:
+        - Expedition
+      defaultChannel: Expedition
+    - type: Sprite
+      layers:
+        - state: crypt_silver
+        - state: expedition_label
+
+- type: entity
+  parent: EncryptionKeyCustomBase
+  id: EncryptionKeyCult
+  name: encryption key
+  description: An encryption key
+  components:
+    - type: EncryptionKey
+      channels:
+        - Cult
+      defaultChannel: Cult
+    - type: Sprite
+      layers:
+        - state: crypt_red
+        - state: cult_label
+
+- type: entity
+  parent: EncryptionKeyCustomBase
+  id: EncryptionKeyMilitary
+  name: encryption key
+  description: An encryption key
+  components:
+    - type: EncryptionKey
+      channels:
+        - Military
+      defaultChannel: Military
+    - type: Sprite
+      layers:
+        - state: crypt_gray
+        - state: military_label
+
+- type: entity
+  parent: EncryptionKeyCustomBase
+  id: EncryptionKeyShadow
+  name: encryption key
+  description: An encryption key
+  components:
+    - type: EncryptionKey
+      channels:
+        - Shadow
+      defaultChannel: Shadow
+    - type: Sprite
+      layers:
+        - state: crypt_rusted
+        - state: shadow_label
+
+- type: radioChannel
+  id: SSSP
+  name: chat-radio-sssp
+  keycode: "6"
+  frequency: 1076
+  color: "#c63e17"
+  longRange: true
+
+- type: radioChannel
+  id: Ganza
+  name: chat-radio-ganza
+  keycode: "г"
+  frequency: 1077
+  color: "#10417b"
+  longRange: true
+
+- type: entity
+  parent: EncryptionKeyCustomBase
+  id: EncryptionKeySSSP
+  name: encryption key
+  description: An encryption key
+  components:
+    - type: EncryptionKey
+      channels:
+        - SSSP
+      defaultChannel: SSSP
+    - type: Sprite
+      layers:
+        - state: crypt_red
+        - state: sssp_label
+
+- type: entity
+  parent: EncryptionKeyCustomBase
+  id: EncryptionKeyGanza
+  name: encryption key
+  description: An encryption key
+  components:
+    - type: EncryptionKey
+      channels:
+        - Ganza
+      defaultChannel: Ganza
+    - type: Sprite
+      layers:
+        - state: crypt_blue
+        - state: ganza_label
+
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: EncryptionKeyCustomBase
+  name: encryption key
+  description: A small cypher chip for headsets.
+  components:
+    - type: EncryptionKey
+    - type: Item
+      sprite: Objects/Devices/encryption_keys.rsi
+    - type: Sprite
+      sprite: Imperial/RadioChannels/imperial_encryption_keys.rsi
+      netsync: false
+
+- type: radioChannel
+  id: FelixradioChannelAdministration
+  name: Administration
+  keycode: "w"
+  frequency: 1084
+  color: "#B22222"
+
+- type: radioChannel
+  id: FelixradioChannelBank
+  name: Bank
+  keycode: "e"
+  frequency: 1085
+  color: "#32CD32"
+
+- type: radioChannel
+  id: FelixradioChannelCommoditySpecialist
+  name: CommoditySpecialist
+  keycode: "r"
+  frequency: 1086
+  color: "#9ACD32"
+
+- type: radioChannel
+  id: FelixradioChannelMiner
+  name: Miner
+  keycode: "t"
+  frequency: 1087
+  color: "#B8860B"
+
+- type: radioChannel
+  id: FelixradioChannelPolice
+  name: Police
+  keycode: "y"
+  frequency: 1088
+  color: "#4682B4"
+
+- type: radioChannel
+  id: FelixradioChannelShipyard
+  name: Shipyard
+  keycode: "u"
+  frequency: 1089
+  color: "#808000"
+
+- type: radioChannel
+  id: FelixradioChannelWastes
+  name: Wastes
+  keycode: "i"
+  frequency: 1095
+  color: "#A0522D"
+
+- type: radioChannel
+  id: FelixradioChannelAdministrativeSector
+  name: AdministrativeSector
+  keycode: "а"
+  frequency: 1155
+  color: "#66CDAA"
+
+- type: radioChannel
+  id: FelixradioChannelFinancialSector
+  name: FinancialSector
+  keycode: "f"
+  frequency: 1175
+  color: "#66CDAA"
+
+- type: radioChannel
+  id: FelixradioChannelManufacturingSector
+  name: ManufacturingSector
+  keycode: "m"
+  frequency: 1085
+  color: "#66CDAA"
+
+- type: entity
+  parent: EncryptionKeyCustomBase
+  id: EncryptionKeyRadioAdministration
+  suffix: ElysiumPrime, Other
+  name: encryption key
+  description: An encryption key
+  components:
+    - type: EncryptionKey
+      channels:
+        - FelixradioChannelAdministration
+      defaultChannel: FelixradioChannelAdministration
+    - type: Item
+      sprite: Imperial/Other/ElysiumPrime/Radio/Administration.rsi
+    - type: Sprite
+      sprite: Imperial/Other/ElysiumPrime/Radio/Administration.rsi
+      state: radio-channel-admin
+
+- type: entity
+  parent: EncryptionKeyCustomBase
+  id: EncryptionKeyRadioFelixradioChannelBank
+  suffix: ElysiumPrime, Other
+  name: encryption key
+  description: An encryption key
+  components:
+    - type: EncryptionKey
+      channels:
+        - FelixradioChannelBank
+      defaultChannel: FelixradioChannelBank
+    - type: Item
+      sprite: Imperial/Other/ElysiumPrime/Radio/Bank.rsi
+    - type: Sprite
+      sprite: Imperial/Other/ElysiumPrime/Radio/Bank.rsi
+      state: radio-channel-bank
+
+- type: entity
+  parent: EncryptionKeyCustomBase
+  id: FelixradioChannelCommoditySpecialist
+  suffix: ElysiumPrime, Other
+  name: encryption key
+  description: An encryption key
+  components:
+    - type: EncryptionKey
+      channels:
+        - FelixradioChannelCommoditySpecialist
+      defaultChannel: FelixradioChannelCommoditySpecialist
+    - type: Item
+      sprite: Imperial/Other/ElysiumPrime/Radio/CommoditySpecialist.rsi
+    - type: Sprite
+      sprite: Imperial/Other/ElysiumPrime/Radio/CommoditySpecialist.rsi
+      state: radio-channel-suply
+
+- type: entity
+  parent: EncryptionKeyCustomBase
+  id: EncryptionKeyRadioFelixradioChannelMiner
+  suffix: ElysiumPrime, Other
+  name: encryption key
+  description: An encryption key
+  components:
+    - type: EncryptionKey
+      channels:
+        - FelixradioChannelMiner
+      defaultChannel: FelixradioChannelMiner
+    - type: Item
+      sprite: Imperial/Other/ElysiumPrime/Radio/Miner.rsi
+    - type: Sprite
+      sprite: Imperial/Other/ElysiumPrime/Radio/Miner.rsi
+      state: radio-channel-miner
+
+- type: entity
+  parent: EncryptionKeyCustomBase
+  id: EncryptionKeyRadioFelixradioChannelPolice
+  suffix: ElysiumPrime, Other
+  name: encryption key
+  description: An encryption key
+  components:
+    - type: EncryptionKey
+      channels:
+        - FelixradioChannelPolice
+      defaultChannel: FelixradioChannelPolice
+    - type: Item
+      sprite: Imperial/Other/ElysiumPrime/Radio/Police.rsi
+    - type: Sprite
+      sprite: Imperial/Other/ElysiumPrime/Radio/Police.rsi
+      state: radio-channel-police
+
+- type: entity
+  parent: EncryptionKeyCustomBase
+  id: EncryptionKeyRadioFelixradioChannelShipyard
+  suffix: ElysiumPrime, Other
+  name: encryption key
+  description: An encryption key
+  components:
+    - type: EncryptionKey
+      channels:
+        - FelixradioChannelShipyard
+      defaultChannel: FelixradioChannelShipyard
+    - type: Item
+      sprite: Imperial/Other/ElysiumPrime/Radio/Shipyard.rsi
+    - type: Sprite
+      sprite: Imperial/Other/ElysiumPrime/Radio/Shipyard.rsi
+      state: radio-channel-shipyard
+
+- type: entity
+  parent: EncryptionKeyCustomBase
+  id: EncryptionKeyRadioFelixradioChannelWastes
+  suffix: ElysiumPrime, Other
+  name: encryption key
+  description: An encryption key
+  components:
+    - type: EncryptionKey
+      channels:
+        - FelixradioChannelWastes
+      defaultChannel: FelixradioChannelWastes
+    - type: Item
+      sprite: Imperial/Other/ElysiumPrime/Radio/Wastes.rsi
+    - type: Sprite
+      sprite: Imperial/Other/ElysiumPrime/Radio/Wastes.rsi
+      state: radio-channel-cargotech
+
+- type: entity
+  parent: EncryptionKeyCustomBase
+  id: EncryptionKeyRadioFelixradioChannelAdministrativeSector
+  suffix: ElysiumPrime, Other
+  name: encryption key
+  description: An encryption key
+  components:
+    - type: EncryptionKey
+      channels:
+        - FelixradioChannelAdministrativeSector
+      defaultChannel: FelixradioChannelAdministrativeSector
+    - type: Item
+      sprite: Imperial/Other/ElysiumPrime/Radio/CommonChannels/AdministrativeSector.rsi
+    - type: Sprite
+      sprite: Imperial/Other/ElysiumPrime/Radio/CommonChannels/AdministrativeSector.rsi
+      state: radio-channel-adminsector
+
+- type: entity
+  parent: EncryptionKeyCustomBase
+  id: EncryptionKeyRadioFelixradioChannelFinancialSector
+  suffix: ElysiumPrime, Other
+  name: encryption key
+  description: An encryption key
+  components:
+    - type: EncryptionKey
+      channels:
+        - FelixradioChannelFinancialSector
+      defaultChannel: FelixradioChannelFinancialSector
+    - type: Item
+      sprite: Imperial/Other/ElysiumPrime/Radio/CommonChannels/FinancialSector.rsi
+    - type: Sprite
+      sprite: Imperial/Other/ElysiumPrime/Radio/CommonChannels/FinancialSector.rsi
+      state: radio-channel-tradingsector
+
+- type: entity
+  parent: EncryptionKeyCustomBase
+  id: EncryptionKeyRadioFelixradioChannelManufacturingSector
+  suffix: ElysiumPrime, Other
+  name: encryption key
+  description: An encryption key
+  components:
+    - type: EncryptionKey
+      channels:
+        - FelixradioChannelManufacturingSector
+      defaultChannel: FelixradioChannelManufacturingSector
+    - type: Item
+      sprite: Imperial/Other/ElysiumPrime/Radio/CommonChannels/ManufacturingSector.rsi
+    - type: Sprite
+      sprite: Imperial/Other/ElysiumPrime/Radio/CommonChannels/ManufacturingSector.rsi
+      state: radio-channel-fabricsector

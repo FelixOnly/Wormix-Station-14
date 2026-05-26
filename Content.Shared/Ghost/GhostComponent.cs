@@ -93,11 +93,6 @@ public sealed partial class GhostComponent : Component
     [DataField("canInteract"), AutoNetworkedField]
     public bool CanGhostInteract;
 
-    // Orion-Start
-    [DataField, AutoNetworkedField]
-    public bool CanGhostOpenUI = true;
-    // Orion-End
-
     /// <summary>
     /// Is this ghost player allowed to return to their original body?
     /// </summary>

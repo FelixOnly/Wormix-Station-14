@@ -1,0 +1,7 @@
+- type: marking
+  id: TailDemon
+  bodyPart: Tail
+  markingCategory: Tail
+  sprites:
+    - sprite: _Erida/Mobs/Demon/custom.rsi
+      state: tail

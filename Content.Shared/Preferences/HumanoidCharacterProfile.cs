@@ -49,15 +49,14 @@
 // SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 //
 
-using System.Linq;
-using System.Text.RegularExpressions;
+using Content.Goobstation.Common.Barks; // Goob Station - Barks
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
-using Content.Goobstation.Common.Barks; // Goob Station - Barks
+using Content.Shared.SD;
 using Content.Shared.Traits;
 using Robust.Shared.Collections;
 using Robust.Shared.Configuration;
@@ -67,6 +66,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Content.Shared.Preferences
 {
@@ -155,6 +156,8 @@ namespace Content.Shared.Preferences
         public string NsfwTagsFlavorText { get; set; } = string.Empty;
         // Orion-End
 
+        public EnumERPStatus ERPStatus { get; set; } // SD-ERPStatus
+
         /// <summary>
         /// Associated <see cref="SpeciesPrototype"/> for this profile.
         /// </summary>
@@ -222,6 +225,7 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile(
             string name,
             string flavortext,
+            int erpStatus, // SD-ERPStatus
             // Orion-Start
             string oocflavortext,
             string characterflavortext,
@@ -252,6 +256,7 @@ namespace Content.Shared.Preferences
         {
             Name = name;
             FlavorText = flavortext;
+            ERPStatus = (EnumERPStatus) erpStatus; // SD-ERPStatus
             // Orion-Start
             OocFlavorText = oocflavortext;
             CharacterFlavorText = characterflavortext;
@@ -299,6 +304,7 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile(HumanoidCharacterProfile other)
             : this(other.Name,
                 other.FlavorText,
+                (int) other.ERPStatus, // SD-ERPStatus
                 // Orion-Start
                 other.OocFlavorText,
                 other.CharacterFlavorText,
@@ -352,6 +358,13 @@ namespace Content.Shared.Preferences
                 Species = species,
             };
         }
+
+        // SD-ERPStatus-Start
+        public HumanoidCharacterProfile WithERPStatus(EnumERPStatus state)
+        {
+            return new(this) { ERPStatus = state };
+        }
+        // SD-ERPStatus-End
 
         // TODO: This should eventually not be a visual change only.
         public static HumanoidCharacterProfile Random(HashSet<string>? ignoredSpecies = null)

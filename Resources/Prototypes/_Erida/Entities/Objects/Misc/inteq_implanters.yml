@@ -1,0 +1,171 @@
+- type: entity
+  id: BaseImplantOnlyImplanterInteQ
+  parent: [BaseImplantOnlyImplanter, BaseInteQContraband]
+  suffix: Интек
+  name: InteQ implanter
+  description: A compact disposable syringe exclusively designed for the injection of subdermal implants. Make sure to scrub it with soap or a rag to remove residual DNA after use!
+  abstract: true
+  components:
+    - type: Item
+      sprite: Objects/Specific/Medical/syndi_implanter.rsi
+      heldPrefix: implanter
+    - type: Sprite
+      sprite: Objects/Specific/Medical/syndi_implanter.rsi
+      state: implanter1
+      layers:
+        - state: implanter0
+          map: [ "implantFull" ]
+          visible: true
+        - state: implanter1
+          map: [ "implantOnly" ]
+    - type: GenericVisualizer
+      visuals:
+        enum.ImplanterVisuals.Full:
+          implantFull:
+            True: {visible: true}
+            False: {visible: false}
+        enum.ImplanterImplantOnlyVisuals.ImplantOnly:
+          implantOnly:
+            True: {state: broken}
+            False: {state: implanter1}
+    - type: Tag
+      tags: []
+
+- type: entity
+  parent: [ BaseSubdermalImplant, StorePresetUplinkInteQ ]
+  id: UplinkImplantInteQ
+  suffix: Интек
+  name: uplink implant
+  description: This implant lets the user access a hidden InteQ uplink at will.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    implantAction: ActionOpenUplinkImplantInteQ
+    whitelist:
+      components:
+      - Hands # prevent mouse buying grenade penguin since its not telepathic
+  - type: Store
+    balance:
+      Telecrystal: 0
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+
+
+- type: entity
+  id: StorageImplanterInteQ
+  suffix: Интек
+  name: storage implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+    - type: Implanter
+      implant: StorageImplant
+
+- type: entity
+  id: FreedomImplanterInteQ
+  suffix: Интек
+  name: freedom implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+    - type: Implanter
+      implant: FreedomImplant
+
+- type: entity
+  id: RadioImplanterInteQ
+  suffix: Интек Имплант
+  name: inteq radio implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+  - type: Implanter
+    implant: RadioImplantInteQ
+
+- type: entity
+  id: UplinkImplanterInteQ
+  suffix: Интек Имплант
+  name: uplink implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+  - type: Implanter
+    implant: UplinkImplantInteQ
+
+- type: entity
+  id: EmpImplanterInteQ
+  suffix: Интек Имплант
+  name: EMP implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+    - type: Implanter
+      implant: EmpImplant
+
+- type: entity
+  id: ScramImplanterInteQ
+  name: scram implanter
+  suffix: Интек Имплант
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+    - type: Implanter
+      implant: ScramImplant
+
+- type: entity
+  id: DnaScramblerImplanterInteQ
+  name: DNA scrambler implanter
+  suffix: Интек Имплант
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+    - type: Implanter
+      implant: DnaScramblerImplant
+
+- type: entity
+  id: ChameleonControllerImplanterInteQ
+  suffix: Интек Имплант
+  name: chameleon controller implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+  - type: Implanter
+    implant: ChameleonControllerImplant
+
+- type: entity
+  id: MicroBombImplanterInteQ
+  suffix: Интек Имплант
+  name: micro-bomb implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+    - type: Implanter
+      implant: MicroBombImplant
+
+- type: entity
+  id: MacroBombImplanterInteQ
+  suffix: Интек Имплант
+  name: macro-bomb implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+    - type: Implanter
+      implant: MacroBombImplant
+
+- type: entity
+  id: DeathRattleImplanterInteQ
+  suffix: Интек Имплант
+  name: death rattle implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+    - type: Implanter
+      implant: DeathRattleImplantInteQ
+
+- type: entity
+  id: DeathAcidifierImplanterInteQ
+  suffix: Интек Имплант
+  name: death acidifier implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+  - type: Implanter
+    implant: DeathAcidifierImplant
+
+- type: entity
+  id: FakeMindShieldImplanterInteQ
+  suffix: Интек Имплант
+  name: fake mindshield implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+  - type: Implanter
+    implant: FakeMindShieldImplant

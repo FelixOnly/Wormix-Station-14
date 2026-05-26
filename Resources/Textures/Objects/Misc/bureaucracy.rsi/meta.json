@@ -10,6 +10,9 @@
     {
       "name": "acquisition_form"
     },
+	{
+      "name": "valentine_card"
+    },
     {
       "name": "acquisition_form_words"
     },
@@ -191,6 +194,9 @@
     },
     {
       "name": "paper_stamp-ok"
+    },
+	{
+      "name": "paper_stamp-approve"
     },
     {
       "name": "paper_stamp-mime"

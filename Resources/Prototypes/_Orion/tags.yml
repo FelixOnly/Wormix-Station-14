@@ -20,9 +20,6 @@
   id: MagazineHeavyRifleM41
 
 - type: Tag
-  id: MagazineLightMachineGunRPD
-
-- type: Tag
   id: MagazinePistol20
 
 - type: Tag
@@ -90,6 +87,3 @@
 
 - type: Tag
   id: InertBagOfHoldingMessenger
-
-- type: Tag
-  id: PokerChip

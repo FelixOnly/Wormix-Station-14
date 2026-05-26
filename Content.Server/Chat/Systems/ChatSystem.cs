@@ -332,6 +332,11 @@ public sealed partial class ChatSystem : SharedChatSystem
         bool forced = false // goobstation
         )
     {
+        // Orion-Start
+        if (player != null && _chatProtection.CheckOOCMessage(message, player))
+            return;
+        // Orion-End
+
         if (HasComp<GhostComponent>(source))
         {
             // Ghosts can only send dead chat messages, so we'll forward it to InGame OOC.

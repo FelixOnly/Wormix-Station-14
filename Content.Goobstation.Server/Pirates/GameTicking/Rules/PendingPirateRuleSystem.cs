@@ -103,11 +103,12 @@ public sealed partial class PendingPirateRuleSystem : GameRuleSystem<PendingPira
             var reason = Loc.GetString($"pirates-ransom-{announcer}-desc", ("num", price));
             var requester = Loc.GetString($"pirates-announcer-{announcer}");
 
-            var ransom = new CargoOrderData(orderId, component.RansomPrototype, name, price, 1, requester, null, reason, bank.PrimaryAccount, 30); // Orion-Edit: null
+            // TEMP-TEMP
+            //var ransom = new CargoOrderData(orderId, component.RansomPrototype, name, price, 1, requester, null, reason, bank.PrimaryAccount, 30); // Orion-Edit: null
 
-            component.Order = ransom;
+            //component.Order = ransom;
 
-            _cargo.TryAddOrder(station.Value, bank.PrimaryAccount, ransom, cargoDb);
+            //_cargo.TryAddOrder(station.Value, bank.PrimaryAccount, ransom, cargoDb);
         }
 
         SendAnnouncement((uid, component), AnnouncementType.Threat);

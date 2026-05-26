@@ -1,0 +1,258 @@
+- type: entity
+  id: ArmyStorageBox
+  name: army box
+  description: A large storage container for holding army's goods.
+  parent: BaseStructureDynamic
+  components:
+  - type: StaticPrice
+    price: 500
+  - type: Anchorable
+  - type: InteractionOutline
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:EmptyAllContainersBehaviour
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 5
+            max: 10
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Climbable
+  - type: Sprite
+    noRot: true
+    sprite: Backmen/Structures/Storage/armybox.rsi
+    layers:
+    - state: box
+      map: [ "enum.DamageStateVisualLayers.Base" ]
+  - type: RandomSprite
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          box1: ""
+      - enum.DamageStateVisualLayers.Base:
+          box2: ""
+      - enum.DamageStateVisualLayers.Base:
+          box: ""
+  - type: Appearance
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,27,11
+    storageOpenSound: /Audio/Effects/closetopen.ogg
+    storageCloseSound: /Audio/Effects/closetclose.ogg
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: [ ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.3
+        density: 300
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+
+- type: entity
+  id: ArmyStorageBoxFillAmmoRifle
+  parent: ArmyStorageBox
+  suffix: Fill, Random Rifle Ammo
+  components:
+  - type: Sprite
+    layers:
+    - state: box1
+      map: [ "enum.DamageStateVisualLayers.Base" ]
+  - type: RandomSprite
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          box1: ""
+      - enum.DamageStateVisualLayers.Base:
+          box2: ""
+  - type: StorageFill
+    contents:
+      - id: MagazineRifle556UEG
+        amount: 40
+      - id: MagazineRifle762UEG
+        amount: 40
+      - id: MagazineRifleFamas556UEG
+        amount: 20
+      - id: MagazineRifleLight762x39
+        amount: 48
+      - id: MagazineHeavyRifleBR64
+        amount: 20
+
+- type: entity
+  id: ArmyStorageBoxFillWeaponRifle
+  parent: ArmyStorageBox
+  suffix: Fill, Random Rifle Weapon
+  components:
+  - type: RandomSprite
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          box: ""
+  - type: StorageFill
+    contents:
+      - id: WeaponRifleAR18
+        amount: 2
+      - id: WeaponRifleM28
+        amount: 2
+      - id: WeaponRifleSCARAB
+        amount: 4
+      - id: WeaponRifleG36
+        amount: 2
+      - id: WeaponRifleM16A4
+        amount: 4
+      - id: WeaponRifleAUG
+        amount: 2
+      - id: WeaponRifleFamas
+        amount: 4
+      - id: WeaponRifleBR64
+        amount: 2
+      - id: WeaponRifleSTG44
+        amount: 2
+      - id: WeaponAKMSRifle
+        amount: 4
+
+- type: entity
+  id: ArmyStorageBoxFillAmmoSMG
+  parent: ArmyStorageBox
+  suffix: Fill, Random SMG Ammo
+  components:
+  - type: Sprite
+    layers:
+    - state: box1
+      map: [ "enum.DamageStateVisualLayers.Base" ]
+  - type: RandomSprite
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          box1: ""
+      - enum.DamageStateVisualLayers.Base:
+          box2: ""
+  - type: StorageFill
+    contents:
+      - id: MagazinePistolSubMachineGun9x17
+        amount: 40
+      - id: MagazinePistolSubMachineGun57x28
+        amount: 28
+      - id: MagazinePistolBoxSubMachineGun
+        amount: 28
+      - id: MagazinePistolSubMachineGunVector45ACP
+        amount: 28
+      - id: MagazinePistolDrumSubMachineGun
+        amount: 16
+
+- type: entity
+  id: ArmyStorageBoxFillWeaponSMG
+  parent: ArmyStorageBox
+  suffix: Fill, Random SMG Weapon
+  components:
+  - type: RandomSprite
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          box: ""
+  - type: StorageFill
+    contents:
+      - id: WeaponSubMachineGunMP5
+        amount: 10
+      - id: WeaponSubMachineGunMP7
+        amount: 7
+      - id: WeaponSubMachineGunVectorSpecial
+        amount: 7
+      - id: WeaponSubMachineGunP90
+        amount: 7
+      - id: WeaponSubMachineGunMP38
+        amount: 7
+      - id: WeaponSubMachineGunPPSH41
+        amount: 4
+
+- type: entity
+  id: ArmyStorageBoxFillAmmoShotgun
+  parent: ArmyStorageBox
+  suffix: Fill, Random Shotgun Ammo
+  components:
+  - type: Sprite
+    layers:
+    - state: box1
+      map: [ "enum.DamageStateVisualLayers.Base" ]
+  - type: RandomSprite
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          box1: ""
+      - enum.DamageStateVisualLayers.Base:
+          box2: ""
+  - type: StorageFill
+    contents:
+      - id: BoxLethalshot
+        amount: 10
+        maxAmount: 50
+      - id: BoxShotgunSlug
+        amount: 5
+        maxAmount: 10
+
+- type: entity
+  id: ArmyStorageBoxFillWeaponShotgun
+  parent: ArmyStorageBox
+  suffix: Fill, Random Shotgun Weapon
+  components:
+  - type: RandomSprite
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          box: ""
+  - type: StorageFill
+    contents:
+      - id: WeaponShotguntrenchgun4034
+        amount: 5
+        maxAmount: 10
+      - id: WeaponShotgunPaladin12
+        prob: 0.8
+        amount: 1
+        maxAmount: 10
+      - id: WeaponShotgun12
+        prob: 0.5
+        amount: 5
+        maxAmount: 10
+      - id: WeaponShotgun39
+        prob: 0.5
+        amount: 1
+        maxAmount: 10
+
+- type: entity
+  id: ArmyStorageBoxFillWeaponLaser
+  parent: ArmyStorageBox
+  suffix: Fill, Random Laser Weapon
+  components:
+  - type: RandomSprite
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          box: ""
+  - type: StorageFill
+    contents:
+      - id: WeaponEarthGovLaserPistol
+        amount: 5
+        maxAmount: 16
+      - id: WeaponEarthGovLaserCarbine
+        prob: 0.4
+        amount: 1
+        maxAmount: 12
+      - id: WeaponEarthGovLaserRifle
+        prob: 0.8
+        amount: 1
+        maxAmount: 8
+      - id: WeaponEarthGovLaserSniper
+        prob: 0.3
+        amount: 1
+        maxAmount: 4

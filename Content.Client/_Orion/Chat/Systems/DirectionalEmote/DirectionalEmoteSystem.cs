@@ -1,5 +1,7 @@
 using Content.Shared._Orion.Chat.Components;
 using Content.Shared.CCVar;
+using Content.Shared.Ghost;
+using Content.Shared.Inventory;
 using Content.Shared.Verbs;
 using Robust.Client.UserInterface;
 using Robust.Shared.Configuration;
@@ -43,6 +45,10 @@ public sealed partial class DirectionalEmoteSystem : EntitySystem
         if (args.Target == args.User ||
             !HasComp<DirectionalEmoteTargetComponent>(args.User))
             return;
+
+        if (HasComp<GhostComponent>(args.User) && !HasComp<InventoryComponent>(args.User)) // Wormix edit
+            return; // Who we lost can't speak to us.. But admin can
+
 
         args.Verbs.Add(new Verb
         {

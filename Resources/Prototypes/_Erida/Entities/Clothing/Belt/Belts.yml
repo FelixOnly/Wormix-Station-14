@@ -1,0 +1,7 @@
+# i think we need new sprite >.<
+- type: entity
+  parent: [ClothingBeltSyndieHolster]
+  suffix: Интек
+  id: ClothingBeltInteQHolster
+  name: inteq shoulder holster
+  description: A deep shoulder holster capable of holding many types of ballistics.

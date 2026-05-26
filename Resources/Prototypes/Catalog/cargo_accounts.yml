@@ -5,14 +5,6 @@
   color: "#b48b57"
   radioChannel: Supply
   acquisitionSlip: PaperAcquisitionSlipCargo
-  # Orion-Start
-  departmentDestinationName: cargo-account-cargo-destination
-  secureCratePrototype: CratePrivateCargoSecure
-  secureCrateOrderAccess:
-  - Cargo
-  - Salvage
-  - Quartermaster
-  # Orion-End
 
 - type: cargoAccount
   id: Engineering
@@ -21,14 +13,6 @@
   color: "#ff733c"
   radioChannel: Engineering
   acquisitionSlip: PaperAcquisitionSlipEngineering
-  # Orion-Start
-  departmentDestinationName: cargo-account-engineering-destination
-  secureCratePrototype: CrateEngineeringSecure
-  secureCrateOrderAccess:
-  - Engineering
-  - Atmospherics
-  - ChiefEngineer
-  # Orion-End
 
 - type: cargoAccount
   id: Medical
@@ -37,15 +21,6 @@
   color: "#57b8f0"
   radioChannel: Medical
   acquisitionSlip: PaperAcquisitionSlipMedical
-  # Orion-Start
-  departmentDestinationName: cargo-account-medical-destination
-  secureCratePrototype: CrateMedicalSecure
-  secureCrateOrderAccess:
-  - Medical
-  - Chemistry
-  - Paramedic
-  - ChiefMedicalOfficer
-  # Orion-End
 
 - type: cargoAccount
   id: Science
@@ -54,14 +29,6 @@
   color: "#cd7ccd"
   radioChannel: Science
   acquisitionSlip: PaperAcquisitionSlipScience
-  # Orion-Start
-  departmentDestinationName: cargo-account-science-destination
-  secureCratePrototype: CrateScienceSecure
-  secureCrateOrderAccess:
-  - ResearchDirector
-  - Research
-  - Robotics
-  # Orion-End
 
 - type: cargoAccount
   id: Security
@@ -70,16 +37,6 @@
   color: "#ff4242"
   radioChannel: Security
   acquisitionSlip: PaperAcquisitionSlipSecurity
-  # Orion-Start
-  departmentDestinationName: cargo-account-security-destination
-  secureCratePrototype: CrateWeaponSecure
-  secureCrateOrderAccess:
-  - Security
-  - Armory
-  - HeadOfSecurity
-  - Detective
-  - Brig
-  # Orion-End
 
 - type: cargoAccount
   id: Service
@@ -88,16 +45,3 @@
   color: "#539c00"
   radioChannel: Service
   acquisitionSlip: PaperAcquisitionSlipService
-  # Orion-Start
-  departmentDestinationName: cargo-account-service-destination
-  secureCratePrototype: CrateHydroSecure
-  secureCrateOrderAccess:
-  - Bar
-  - Kitchen
-  - Hydroponics
-  - Service
-  - Janitor
-  - Theatre
-  - Chapel
-  - Lawyer
-  # Orion-End

@@ -1,0 +1,57 @@
+- type: entity
+  parent: BaseWall
+  id: WallDrywall
+  name: drywall
+  description: It looks sturdy enough.
+  suffix: Бакмен
+  components:
+    - type: Sprite
+      sprite: Backmen/Structures/Walls/drywall.rsi
+    - type: Icon
+      sprite: Backmen/Structures/Walls/drywall.rsi
+    - type: Damageable
+      damageContainer: Inorganic
+      damageModifierSet: Wood
+    - type: Destructible
+      thresholds:
+        - trigger: !type:DamageTrigger
+            damage: 100
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+        - trigger: !type:DamageTrigger
+            damage: 50
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                collection: GlassBreak
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+    - type: IconSmooth
+      key: walls
+      base: drywall
+    - type: Tag
+      tags:
+        - Wall
+    - type: RCDDeconstructable
+      cost: 6
+      delay: 8
+
+- type: entity
+  parent: BaseWall
+  id: WallRivetedIndestructible
+  name: riveted wall
+  suffix: Бакмен, indestructible
+  components:
+    - type: Tag
+      tags:
+        - Wall
+    - type: Sprite
+      sprite: Structures/Walls/riveted.rsi
+    - type: Icon
+      sprite: Structures/Walls/riveted.rsi
+    - type: IconSmooth
+      key: walls
+      base: riveted
+    - type: Reflect
+      reflectProb: 1

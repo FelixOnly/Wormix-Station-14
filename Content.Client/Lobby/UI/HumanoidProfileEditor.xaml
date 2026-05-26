@@ -102,6 +102,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                                     <Control HorizontalExpand="True"/>
                                     <OptionButton Name="PronounsButton" HorizontalAlignment="Right" />
                                 </BoxContainer>
+                                <!-- SD-ERPStatus-Start -->
+                                <OptionButton Name="CERPStatusOption" Access="Public" MinSize="220 0" HorizontalExpand="True" />
+                                <!-- SD-ERPStatus-End   -->
                                 <!-- Show clothing -->
                                 <BoxContainer HorizontalExpand="True">
                                     <Label Text="{Loc 'humanoid-profile-editor-clothing'}" />

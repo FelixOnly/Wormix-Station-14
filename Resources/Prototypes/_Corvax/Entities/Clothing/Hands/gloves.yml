@@ -1,0 +1,11 @@
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesAerostatic
+  name: aerostatic gloves
+  description: Breathable red gloves for expert handling of a pen and notebook.
+  components:
+    - type: Sprite
+      sprite: Corvax/Clothing/Hands/Gloves/kim.rsi
+    - type: Clothing
+      sprite: Corvax/Clothing/Hands/Gloves/kim.rsi
+    - type: Insulated

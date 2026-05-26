@@ -1,0 +1,536 @@
+## Random humanoids whith no "zoo"
+
+- type: randomHumanoidSettings
+  id: EventHumanoidAlt
+  speciesBlacklist:
+  - Anthropomorph
+  - Diona
+  - Vox
+  - Shadowkin
+  - Arachnid
+  - Diona
+  - Shark
+  - Vox
+  - Reptilian
+  - Moth
+  - SlimePerson
+  - Dwarf
+  - Demon
+  - Felinid
+  - Vulpkanin
+  - Resomi
+  components:
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+    - type: GhostTakeoverAvailable
+    - type: IdBind
+
+## CoS CentComm
+
+- type: entity
+  name: CentComm CoS
+  id: RandomHumanoidSpawnerCentcomCoS
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: CentcomCoS
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirst
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: CentcomCoS
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-coscc
+      description: job-description-coscc
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ CoSCCGear ]
+      roleLoadout: [ RoleSurvivalStandard ]
+
+## CentComm Officer
+
+- type: entity
+  name: CentComm Officer
+  id: RandomHumanoidSpawnerCentcomOfficer
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: CentcomOfficer
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirst
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: CentcomOfficer
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-centcom-officer
+      description: job-description-centcom-officer
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ CentcomOfficerGear ]
+      roleLoadout: [ RoleSurvivalStandard ]
+
+## CentComm Operator
+
+- type: entity
+  name: CentComm Operator
+  id: RandomHumanoidSpawnerCentcomOperator
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: CentcomOperator
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirst
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: CentcomOperator
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-centcom-operator
+      description: job-description-centcom-operator
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ CentcomOperatorGear ]
+      roleLoadout: [ RoleSurvivalStandard ]
+
+## CentComm OSO
+
+- type: entity
+  name: CentComm OSO
+  id: RandomHumanoidSpawnerCentcomOSO
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: CentcomOSO
+    - type: RandomMetadata
+      nameSegments:
+      - NamesMilitaryFirstLeader
+      - NamesMilitaryLast
+      nameFormat: name-format-ert
+
+- type: randomHumanoidSettings
+  id: CentcomOSO
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-centcom-oso
+      description: job-description-centcom-oso
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ OSOGear ]
+      roleLoadout: [ RoleSurvivalStandard ]
+
+## CentComm Clerc
+
+- type: entity
+  name: CentComm Clerc
+  id: RandomHumanoidSpawnerCentcomClerc
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: CentcomClerc
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirst
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: CentcomClerc
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-centcom-clerc
+      description: job-description-centcom-clerc
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ CentcomClercGear ]
+      roleLoadout: [ RoleSurvivalStandard ]
+
+## CentComm Cargo
+
+- type: entity
+  name: CentComm Intendant
+  id: RandomHumanoidSpawnerCentcomIntendant
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: CentcomIntendant
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirst
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: CentcomIntendant
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-centcom-intendant
+      description: job-description-centcom-intendant
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ CentcomIntendantGear ]
+      roleLoadout: [ RoleSurvivalStandard ]
+
+## CentComm Engineer
+
+- type: entity
+  name: CentComm Engineer
+  id: RandomHumanoidSpawnerCentcomEngineer
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: CentcomEngineer
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirst
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: CentcomEngineer
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-centcom-engineer
+      description: job-description-centcom-engineer
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ CentcomEngineerGear ]
+      roleLoadout: [ RoleSurvivalStandard ]
+
+## CentComm HoS
+
+- type: entity
+  name: CentComm HoS
+  id: RandomHumanoidSpawnerCentcomHoS
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: CentcomHoS
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirst
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: CentcomHoS
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-centcom-hos
+      description: job-description-centcom-hos
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ CentcomHoSGear ]
+      roleLoadout: [ RoleSurvivalStandard ]
+
+## CentComm Security
+
+- type: entity
+  name: CentComm Security
+  id: RandomHumanoidSpawnerCentcomSecurity
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: CentcomSecurity
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirst
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: CentcomSecurity
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-centcom-sec
+      description: job-description-centcom-sec
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ CentcomSecGear ]
+      roleLoadout: [ RoleSurvivalStandard ]
+
+## Nanotrasen navy captain EVA armed
+
+- type: entity
+  name: Nanotrasen navy captain
+  id: RandomHumanoidSpawnerNTNavyCaptain
+  components:
+    - type: Sprite
+      sprite: _Erida/Markers/jobs.rsi
+      layers:
+        - state: green
+        - state: nanotrasen_navy_captain
+    - type: RandomHumanoidSpawner
+      settings: NTNavyCaptain
+    - type: RandomMetadata
+      nameSegments:
+      - NamesNavyFirstCaptain
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: NTNavyCaptain
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-nanotrasen-navy-captain
+      description: job-description-nanotrasen-navy-captain
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ NTNavyCaptainArmedGear ]
+      roleLoadout: [ RoleSurvivalMilitaryDouble ]
+
+## Nanotrasen navy officer EVA armed
+
+- type: entity
+  name: Nanotrasen navy officer
+  id: RandomHumanoidSpawnerNTNavyOfficer
+  components:
+    - type: Sprite
+      sprite: _Erida/Markers/jobs.rsi
+      layers:
+        - state: green
+        - state: nanotrasen_navy_officer
+    - type: RandomHumanoidSpawner
+      settings: NTNavyOfficer
+    - type: RandomMetadata
+      nameSegments:
+      - NamesNavyFirstOfficer
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: NTNavyOfficer
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-nanotrasen-navy-officer
+      description: job-description-nanotrasen-navy-officer
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ NTNavyOfficerArmedGear ]
+      roleLoadout: [ RoleSurvivalMilitaryDouble ]
+
+## Nanotrasen navy WO engineer EVA armed
+
+- type: entity
+  name: Nanotrasen navy WO engineer
+  id: RandomHumanoidSpawnerNTNavyWOEngi
+  components:
+    - type: Sprite
+      sprite: _Erida/Markers/jobs.rsi
+      layers:
+        - state: green
+        - state: nanotrasen_navy_wo_engineer
+    - type: RandomHumanoidSpawner
+      settings: NTNavyWOEngi
+    - type: RandomMetadata
+      nameSegments:
+      - NamesNavyFirstWO
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: NTNavyWOEngi
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-nanotrasen-navy-warrant-officer-engineer
+      description: job-description-nanotrasen-navy-warrant-officer-engineer
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ NTNavyWOEngiArmedGear ]
+      roleLoadout: [ RoleSurvivalMilitaryDouble ]
+
+## Nanotrasen navy WO medical EVA armed
+
+- type: entity
+  name: Nanotrasen navy WO medical
+  id: RandomHumanoidSpawnerNTNavyWOMed
+  components:
+    - type: Sprite
+      sprite: _Erida/Markers/jobs.rsi
+      layers:
+        - state: green
+        - state: nanotrasen_navy_wo_medical
+    - type: RandomHumanoidSpawner
+      settings: NTNavyWOMed
+    - type: RandomMetadata
+      nameSegments:
+      - NamesNavyFirstWO
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: NTNavyWOMed
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-nanotrasen-navy-warrant-officer-medical
+      description: job-description-nanotrasen-navy-warrant-officer-medical
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ NTNavyWOMedArmedGear ]
+      roleLoadout: [ RoleSurvivalMilitaryDouble ]
+
+## Nanotrasen navy sailor EVA armed
+
+- type: entity
+  name: Nanotrasen navy sailor
+  id: RandomHumanoidSpawnerNTNavySailor
+  components:
+    - type: Sprite
+      sprite: _Erida/Markers/jobs.rsi
+      layers:
+        - state: green
+        - state: nanotrasen_navy_sailor
+    - type: RandomHumanoidSpawner
+      settings: NTNavySailor
+    - type: RandomMetadata
+      nameSegments:
+      - NamesNavyFirstSailor
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: NTNavySailor
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-nanotrasen-navy-sailor
+      description: job-description-nanotrasen-navy-sailor
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ NTNavySailorArmedGear ]
+      roleLoadout: [ RoleSurvivalMilitaryDouble ]
+
+## Nanotrasen navy engineer EVA armed
+
+- type: entity
+  name: Nanotrasen navy engineer
+  id: RandomHumanoidSpawnerNTNavyEngineer
+  components:
+    - type: Sprite
+      sprite: _Erida/Markers/jobs.rsi
+      layers:
+        - state: green
+        - state: nanotrasen_navy_engineer
+    - type: RandomHumanoidSpawner
+      settings: NTNavyEngineer
+    - type: RandomMetadata
+      nameSegments:
+      - NamesNavyFirstSailor
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: NTNavyEngineer
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-nanotrasen-navy-engineer
+      description: job-description-nanotrasen-navy-engineer
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ NTNavyEngineerArmedGear ]
+      roleLoadout: [ RoleSurvivalMilitaryDouble ]
+
+## Nanotrasen navy medical EVA armed
+
+- type: entity
+  name: Nanotrasen navy medical
+  id: RandomHumanoidSpawnerNTNavyMedical
+  components:
+    - type: Sprite
+      sprite: _Erida/Markers/jobs.rsi
+      layers:
+        - state: green
+        - state: nanotrasen_navy_medical
+    - type: RandomHumanoidSpawner
+      settings: NTNavyMedical
+    - type: RandomMetadata
+      nameSegments:
+      - NamesNavyFirstSailor
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: NTNavyMedical
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-nanotrasen-navy-medical
+      description: job-description-nanotrasen-navy-medical
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ NTNavyMedicalArmedGear ]
+      roleLoadout: [ RoleSurvivalMilitaryDouble ]

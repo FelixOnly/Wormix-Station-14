@@ -220,7 +220,6 @@
   - type: Tag
     tags:
     - AllowGhostShownByEvent
-    - NoConsoleSound # Orion
   # <Goobstation>
   - type: UserInterface
     interfaces:

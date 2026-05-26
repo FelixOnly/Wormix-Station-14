@@ -56,22 +56,12 @@ SPDX-License-Identifier: MIT
                        VerticalExpand="True"
                        StyleClasses="LabelSubText" />
 
-                <!-- Orion-Edit -->
-                <Label Name="DeliveryDestination"
+                <Label Name="Description"
                        Access="Public"
                        HorizontalExpand="True"
                        VerticalExpand="True"
                        StyleClasses="LabelSubText"
                        ClipText="True" />
-
-                <!-- Orion-Start -->
-                <Label Name="Note"
-                       Access="Public"
-                       HorizontalExpand="True"
-                       VerticalExpand="True"
-                       StyleClasses="LabelSubText"
-                       ClipText="True" />
-                <!-- Orion-End -->
             </BoxContainer>
         </BoxContainer>
 

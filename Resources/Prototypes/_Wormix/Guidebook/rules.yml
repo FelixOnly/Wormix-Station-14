@@ -1,0 +1,79 @@
+# Default rules
+- type: guideEntry
+  id: WormixRuleset
+  name: guide-entry-server-rules
+  text: "/ServerInfo/_Wormix/Guidebook/ServerRules/Ruleset.xml"
+  children:
+  - WormixOffer
+  - WormixRule0
+  - WormixRule1
+  - WormixRule2
+  - WormixRule3
+  - WormixRule4
+  - WormixRule5
+  - WormixRule6
+  - WormixRule7
+  - WormixRule8
+  - WormixRule9
+  - WormixRule10
+
+- type: guideEntry
+  id: WormixOffer
+  name: guide-entry-server-rules-rule-offer
+  text: "/ServerInfo/_Wormix/Guidebook/ServerRules/Offer.xml"
+
+- type: guideEntry
+  id: WormixRule0
+  name: guide-entry-server-rules-rule-0
+  text: "/ServerInfo/_Wormix/Guidebook/ServerRules/Rule0.xml"
+
+- type: guideEntry
+  id: WormixRule1
+  name: guide-entry-server-rules-rule-1
+  text: "/ServerInfo/_Wormix/Guidebook/ServerRules/Rule1.xml"
+  
+- type: guideEntry
+  id: WormixRule2
+  name: guide-entry-server-rules-rule-2
+  text: "/ServerInfo/_Wormix/Guidebook/ServerRules/Rule2.xml"
+  
+- type: guideEntry
+  id: WormixRule3
+  name: guide-entry-server-rules-rule-3
+  text: "/ServerInfo/_Wormix/Guidebook/ServerRules/Rule3.xml"
+  
+- type: guideEntry
+  id: WormixRule4
+  name: guide-entry-server-rules-rule-4
+  text: "/ServerInfo/_Wormix/Guidebook/ServerRules/Rule4.xml"
+  
+- type: guideEntry
+  id: WormixRule5
+  name: guide-entry-server-rules-rule-5
+  text: "/ServerInfo/_Wormix/Guidebook/ServerRules/Rule5.xml"
+  
+- type: guideEntry
+  id: WormixRule6
+  name: guide-entry-server-rules-rule-6
+  text: "/ServerInfo/_Wormix/Guidebook/ServerRules/Rule6.xml"
+  
+- type: guideEntry
+  id: WormixRule7
+  name: guide-entry-server-rules-rule-7
+  text: "/ServerInfo/_Wormix/Guidebook/ServerRules/Rule7.xml"
+  
+- type: guideEntry
+  id: WormixRule8
+  name: guide-entry-server-rules-rule-8
+  text: "/ServerInfo/_Wormix/Guidebook/ServerRules/Rule8.xml"
+  
+- type: guideEntry
+  id: WormixRule9
+  name: guide-entry-server-rules-rule-9
+  text: "/ServerInfo/_Wormix/Guidebook/ServerRules/Rule9.xml"
+  
+- type: guideEntry
+  id: WormixRule10
+  name: guide-entry-server-rules-rule-10
+  text: "/ServerInfo/_Wormix/Guidebook/ServerRules/Rule10.xml"
+

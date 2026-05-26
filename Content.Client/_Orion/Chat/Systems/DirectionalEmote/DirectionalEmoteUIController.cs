@@ -28,6 +28,12 @@ public sealed class DirectionalEmoteUIController : UIController
             _typingIndicator.ClientChangedWindowStatus(true);
         };
 
+        _emoteWindow.Closed += () =>
+        {
+            _typingIndicator.ClientChangedWindowStatus(false);
+            _emoteWindow.Dispose();
+        };
+
         _emoteWindow.AcceptPressed += () =>
         {
             _typingIndicator.ClientChangedWindowStatus(false);

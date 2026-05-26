@@ -25,6 +25,10 @@
                 <BoxContainer Orientation="Vertical" HorizontalExpand="False" VerticalExpand="False" Margin="10,0,10,0">
                     <Label Name="PreviewGenderText" Access="Public" HorizontalAlignment="Center" StyleClasses="LabelSmall" />
                 </BoxContainer>
+                
+                <BoxContainer Orientation="Vertical" HorizontalExpand="False" VerticalExpand="False" Margin="10,0,10,0">
+                    <Label Name="PreviewERPStatus" Access="Public" HorizontalAlignment="Center" StyleClasses="LabelSmall" />
+                </BoxContainer>
                 <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" SeparationOverride="4" Margin="0,5,0,10">
                     <Button Name="RotateLeftButton" Text="⬅" StyleClasses="OpenRight"/>
                     <Button Name="RotateRightButton" Text="➡" StyleClasses="OpenLeft"/>

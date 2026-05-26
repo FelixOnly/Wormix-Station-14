@@ -454,7 +454,6 @@
     - TerrorObjective
     - MassArrestObjective
     - NinjaSurviveObjective
-    - NinjaProtectObjective # Orion
   - type: AntagSelection
     agentName: ninja-round-end-agent-name
     definitions:

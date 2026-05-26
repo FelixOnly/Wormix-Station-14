@@ -1,0 +1,8 @@
+- type: entity
+  name: дубинка-шокер спецсил
+  parent: Stunbaton
+  id: StunbatonSuper
+  description: Электрошоковая дубинка для обездвиживания людей. Слишком усердное причинение вреда с помощью этого предмета считается дурным тоном.
+  components:
+    - type: Stunbaton
+      energyPerUse: 10

@@ -1,0 +1,267 @@
+- type: entity
+  parent: CentcomPDA
+  id: CoSCCPDA
+  suffix: ЦК
+  components:
+    - type: Pda
+      id: CoSCCIDCard
+    - type: Tag #  Ignore Chameleon tags
+      tags:
+        - DoorBumpOpener
+
+- type: entity
+  parent: CentcomPDA
+  id: CentcomOfficerPDA
+  suffix: ЦК
+  components:
+    - type: Pda
+      id: CentcomOfficerIDCard
+    - type: Tag #  Ignore Chameleon tags
+      tags:
+        - DoorBumpOpener
+
+- type: entity
+  parent: CentcomPDA
+  id: CentcomOperatorPDA
+  suffix: ЦК
+  components:
+    - type: Pda
+      id: CentcomOperatorIDCard
+    - type: Tag #  Ignore Chameleon tags
+      tags:
+        - DoorBumpOpener
+
+- type: entity
+  parent: [ SyndiPDA, BaseSyndicateContraband ]
+  id: SyndiOperativePDA
+  name: syndicate operative PDA
+  description: Death to NT!
+  components:
+  - type: Pda
+    id: SyndiOperativeIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-syndi-operative
+  - type: Icon
+    state: pda-syndi-operative
+
+
+
+- type: entity
+  parent: CentcomPDA
+  id: CentcomIntendantPDA
+  suffix: ЦК
+  components:
+    - type: Pda
+      id: CentcomIntendantIDCard
+    - type: Tag #  Ignore Chameleon tags
+      tags:
+        - DoorBumpOpener
+
+- type: entity
+  parent: CentcomPDA
+  id: CentcomEngineerPDA
+  suffix: ЦК
+  components:
+    - type: Pda
+      id: CentcomEngineerIDCard
+    - type: Tag #  Ignore Chameleon tags
+      tags:
+        - DoorBumpOpener
+
+- type: entity
+  parent: CentcomPDA
+  id: CentcomClercPDA
+  suffix: ЦК
+  components:
+    - type: Pda
+      id: CentcomClercIDCard
+    - type: Tag #  Ignore Chameleon tags
+      tags:
+        - DoorBumpOpener
+
+- type: entity
+  parent: CentcomPDA
+  id: OSOPDA
+  categories: [HideSpawnMenu]
+  suffix: OSO PDA
+  components:
+    - type: Pda
+      id: OSOIDCard
+    - type: Tag #  Ignore Chameleon tags
+      tags:
+        - DoorBumpOpener
+
+- type: entity
+  parent: CentcomPDA
+  id: CentralCommandHoSPDA
+  suffix: ЦК
+  components:
+    - type: Pda
+      id: CentralCommandHoSIDCard
+    - type: Tag #  Ignore Chameleon tags
+      tags:
+        - DoorBumpOpener
+
+- type: entity
+  parent: CentcomPDA
+  id: CentralCommandSecPDA
+  suffix: ЦК
+  components:
+    - type: Pda
+      id: CentralCommandSecIDCard
+    - type: Tag #  Ignore Chameleon tags
+      tags:
+        - DoorBumpOpener
+
+- type: entity
+  parent: [BasePDA, BaseInteQContraband]
+  id: InteQBasePDA
+  suffix: Интек
+  name: InteQ PDA
+  components:
+    - type: Pda
+      id: InteQOpsBaseIDCard
+    - type: Sprite
+      sprite: _Erida/Objects/Devices/pda.rsi
+      layers:
+        - map: ["enum.PdaVisualLayers.Base"]
+          state: "inteq-base"
+        - state: "light_overlay"
+          map: ["enum.PdaVisualLayers.Flashlight"]
+          shader: "unshaded"
+          visible: false
+        - state: "id_overlay"
+          map: ["enum.PdaVisualLayers.IdLight"]
+          shader: "unshaded"
+          visible: false
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType: !type:String inteq-base
+    - type: PdaBorderColor
+      borderColor: "#c56c00"
+    - type: Icon
+      sprite: _Erida/Objects/Devices/pda.rsi
+      state: inteq-base
+    - type: CartridgeLoader
+      uiKey: enum.PdaUiKey.Key
+      preinstalled:
+        - NotekeeperCartridge
+        - NanoTaskCartridge
+        - AstroNavCartridge
+
+- type: entity
+  parent: InteQBasePDA
+  id: InteQMedicalPDA
+  name: InteQ Medical PDA
+  components:
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType: !type:String inteq-med
+    - type: Pda
+      id: InteQOpsMedicalIDCard
+    - type: Icon
+      state: inteq-med
+    - type: CartridgeLoader
+      uiKey: enum.PdaUiKey.Key
+      preinstalled:
+        - NotekeeperCartridge
+        - NanoTaskCartridge
+        - AstroNavCartridge
+        - MedTekCartridge
+
+- type: entity
+  parent: InteQBasePDA
+  id: InteQLeaderPDA
+  name: InteQ Leader PDA
+  components:
+    - type: Pda
+      id: InteQOpsLeaderIDCard
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType: !type:String inteq-lead
+    - type: Icon
+      state: inteq-lead
+
+# Syndicate ERT
+- type: entity
+  parent: [SyndiOperativePDA, BaseSyndicateContraband]
+  id: SyndiERTOperativePDA
+  name: Syndicate ERT operative PDA
+  components:
+    - type: Pda
+      id: SyndicateERTOperativeIDCard
+    - type: CartridgeLoader
+      uiKey: enum.PdaUiKey.Key
+      preinstalled:
+        - CrewManifestCartridge
+        - NotekeeperCartridge
+        - NanoTaskCartridge
+        - NewsReaderCartridge
+
+- type: entity
+  parent: [SyndiOperativePDA, BaseSyndicateContraband]
+  id: SyndiCorpsmanPDA
+  name: syndicate corpsman PDA
+  description: Commander... I need to cook!
+  components:
+    - type: Pda
+      id: SyndiCorpsmanIDCard
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType: !type:String pda-syndi-corpsman
+    - type: Icon
+      state: pda-syndi-corpsman
+    - type: CartridgeLoader
+      uiKey: enum.PdaUiKey.Key
+      preinstalled:
+        - NotekeeperCartridge
+        - NanoTaskCartridge
+        - MedTekCartridge
+
+- type: entity
+  parent: [SyndiOperativePDA, BaseSyndicateContraband]
+  id: SyndiCommanderPDA
+  name: syndicate commander PDA
+  description: So what are we, some kind of Nukie squad?
+  components:
+    - type: Pda
+      id: SyndiCommanderIDCard
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType: !type:String pda-syndi-commander
+    - type: Icon
+      state: pda-syndi-commander
+
+- type: entity
+  parent: [SyndiCorpsmanPDA, BaseSyndicateContraband]
+  id: SyndiERTMedicalPDA
+  name: Syndicate ERT medic PDA
+  components:
+    - type: Pda
+      id: SyndicateERTMedicalIDCard
+    - type: CartridgeLoader
+      uiKey: enum.PdaUiKey.Key
+      preinstalled:
+        - CrewManifestCartridge
+        - NotekeeperCartridge
+        - NanoTaskCartridge
+        - NewsReaderCartridge
+        - MedTekCartridge
+
+- type: entity
+  parent: [SyndiCommanderPDA, BaseSyndicateContraband]
+  id: SyndiERTLiderPDA
+  name: Syndicate ERT lider PDA
+  components:
+    - type: Pda
+      id: SyndicateERTLiderIDCard
+    - type: CartridgeLoader
+      uiKey: enum.PdaUiKey.Key
+      preinstalled:
+        - CrewManifestCartridge
+        - NotekeeperCartridge
+        - NanoTaskCartridge
+        - NewsReaderCartridge

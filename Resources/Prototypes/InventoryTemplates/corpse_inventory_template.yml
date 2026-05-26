@@ -99,14 +99,14 @@
       stripHidden: true
     - name: suitstorage
       slotTexture: suit_storage
-      slotFlags:   SUITSTORAGE
+      slotFlags: SUITSTORAGE
       slotGroup: MainHotbar
       stripTime: 3
       uiWindowPos: 2,0
       strippingWindowPos: 2,5
       dependsOn: outerClothing
       dependsOnComponents:
-      - type: AllowSuitStorage
+        - type: AllowSuitStorage
       displayName: Suit Storage
     - name: belt
       slotTexture: belt
@@ -164,3 +164,15 @@
       displayName: Wrists
       stripTime: 3
     # Orion-End
+    #Erida edit start
+    - name: Anus
+      slotTexture: anus
+      slotFlags: ANUS
+      stripTime: 6
+      uiWindowPos: 3,3
+      strippingWindowPos: 4,0
+      displayName: Anus
+      whitelist:
+        tags:
+          - anus
+    #Erida edit end

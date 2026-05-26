@@ -1802,6 +1802,18 @@
             "name": "tcboss",
             "directions": 4
         },
+		{
+            "name": "inteqshuttle",
+            "directions": 4
+        },
+		{
+            "name": "inteq_key",
+            "directions": 4
+        },
+		{
+            "name": "inteq_key_off",
+            "directions": 4
+        },
         {
             "name": "tech_key",
             "directions": 4

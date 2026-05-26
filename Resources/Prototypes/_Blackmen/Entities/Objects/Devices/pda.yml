@@ -1,0 +1,162 @@
+- type: entity
+  parent: BasePDA
+  id: BlueshieldPDAAlt
+  name: officer "Blueshield" PDA
+  suffix: Бакмен, ОСЩ
+  description: He took a bullet and was unharmed.
+  components:
+    - type: Sprite
+      sprite: Backmen/Objects/Devices/pda.rsi
+      layers:
+        - map: ["enum.PdaVisualLayers.Base"]
+          state: "pda-blue"
+        - state: "light_overlay"
+          map: ["enum.PdaVisualLayers.Flashlight"]
+          shader: "unshaded"
+          visible: false
+        - state: "id_overlay"
+          map: ["enum.PdaVisualLayers.IdLight"]
+          shader: "unshaded"
+          visible: false
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType: !type:String pda-blue
+    - type: PdaBorderColor
+      borderColor: "#3f3f74"
+    - type: Pda
+      id: BlueshieldIDCard
+      penSlot:
+        startingItem: Pen
+        priority: -1
+        whitelist:
+          tags:
+            - Write
+    - type: Icon
+      sprite: Backmen/Objects/Devices/pda.rsi
+      state: pda-blue
+
+- type: entity
+  parent: BasePDA
+  id: OrdenPDA
+  name: PDA of the Red Order
+  description: An unusual variation of the PDA that draws energy from redspace crystals inside.
+  suffix: Бакмен, СССП
+  components:
+    - type: Sprite
+      sprite: Backmen/Objects/Devices/pda.rsi
+      layers:
+        - map: ["enum.PdaVisualLayers.Base"]
+          state: "pda-orden"
+        - state: "light_overlay"
+          map: ["enum.PdaVisualLayers.Flashlight"]
+          shader: "unshaded"
+          visible: false
+        - state: "id_overlay"
+          map: ["enum.PdaVisualLayers.IdLight"]
+          shader: "unshaded"
+          visible: false
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType: !type:String pda-orden
+    - type: Pda
+      id: IdCardRO
+      penSlot:
+        startingItem: EnergyDagger
+        priority: -1
+        whitelist:
+          tags:
+            - Write
+    - type: PdaBorderColor
+      borderColor: "#8b0000"
+    - type: Icon
+      sprite: Backmen/Objects/Devices/pda.rsi
+      state: pda-orden
+
+- type: entity
+  parent: BasePDA
+  id: DeliveryPDA
+  name: КПК доставщика
+  description: Пахнет пиццой
+  suffix: Бакмен
+  components:
+    - type: Sprite
+      sprite: Backmen/Objects/Devices/pda.rsi
+      layers:
+        - map: ["enum.PdaVisualLayers.Base"]
+          state: "pda-Delivery"
+        - state: "light_overlay"
+          map: ["enum.PdaVisualLayers.Flashlight"]
+          shader: "unshaded"
+          visible: false
+        - state: "id_overlay"
+          map: ["enum.PdaVisualLayers.IdLight"]
+          shader: "unshaded"
+          visible: false
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType: !type:String pda-Delivery
+    - type: Pda
+      id: DeliveryIDCard
+      penSlot:
+        startingItem: EnergyDagger
+        priority: -1
+        whitelist:
+          tags:
+            - Write
+    - type: PdaBorderColor
+      borderColor: "#00a000"
+    - type: Icon
+      sprite: Backmen/Objects/Devices/pda.rsi
+      state: pda-Delivery
+
+- type: entity
+  parent: BasePDA
+  id: PrisonerPDA
+  name: prisoner PDA
+  description: Clear, so you can make sure there's nothing being smuggled inside.
+  suffix: Бакмен,
+  components:
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType: !type:String pda-clear
+    - type: Pda
+      id: PrisonerIDCard
+    - type: Icon
+      state: pda-clear
+
+- type: entity
+  parent: BaseMedicalPDA
+  id: SurgeonPDA
+  name: surgeon PDA
+  description: Standart PDA of station surgeon.
+  components:
+    - type: Sprite
+      sprite: Backmen/Objects/Devices/pda.rsi
+      layers:
+        - map: ["enum.PdaVisualLayers.Base"]
+          state: "pda-surgeon"
+        - state: "light_overlay"
+          map: ["enum.PdaVisualLayers.Flashlight"]
+          shader: "unshaded"
+          visible: false
+        - state: "id_overlay"
+          map: ["enum.PdaVisualLayers.IdLight"]
+          shader: "unshaded"
+          visible: false
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType: !type:String pda-surgeon
+    - type: PdaBorderColor
+      borderColor: "#333333"
+      accentVColor: "#5fa4cc"
+    - type: Pda
+      id: SurgeonIDCard
+      penSlot:
+        startingItem: Pen
+        priority: -1
+        whitelist:
+          tags:
+            - Write
+    - type: Icon
+      sprite: Backmen/Objects/Devices/pda.rsi
+      state: pda-surgeon

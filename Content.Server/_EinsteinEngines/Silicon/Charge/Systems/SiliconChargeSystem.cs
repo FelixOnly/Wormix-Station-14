@@ -19,6 +19,7 @@ using Content.Server.Temperature.Components;
 using Content.Shared._EinsteinEngines.Silicon.Components;
 using Content.Shared._EinsteinEngines.Silicon.Systems;
 using Content.Shared.Alert;
+using Content.Shared.Atmos.Components;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Systems;

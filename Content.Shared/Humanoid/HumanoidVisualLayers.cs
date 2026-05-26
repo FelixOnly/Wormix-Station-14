@@ -51,7 +51,10 @@ namespace Content.Shared.Humanoid
         RArm,
         LArm,
         RHand,
-
+        // ADT start
+        SnoutOverlay,
+        OverlayBandage,
+        // ADT end
         LHand,
         RLeg,
         LLeg,

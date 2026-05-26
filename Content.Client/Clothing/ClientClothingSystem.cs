@@ -88,6 +88,7 @@ public sealed class ClientClothingSystem : ClothingSystem
         {"socks", "SOCKS"},
         {"wrists", "WRISTS"},
         // Orion-End
+        {"anus","ANUS"} // Erida-edit
     };
 
     [Dependency] private readonly IResourceCache _cache = default!;

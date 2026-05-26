@@ -1,4 +1,3 @@
-using Content.Shared.Access;
 using Content.Shared.Radio;
 using Robust.Shared.Prototypes;
 
@@ -43,15 +42,4 @@ public sealed partial class CargoAccountPrototype : IPrototype
     /// </summary>
     [DataField]
     public EntProtoId AcquisitionSlip;
-
-    // Orion-Start
-    [DataField]
-    public HashSet<ProtoId<AccessLevelPrototype>> SecureCrateOrderAccess = new();
-
-    [DataField]
-    public LocId? DepartmentDestinationName;
-
-    [DataField]
-    public EntProtoId? SecureCratePrototype;
-    // Orion-End
 }

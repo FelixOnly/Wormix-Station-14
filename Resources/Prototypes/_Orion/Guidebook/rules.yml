@@ -2,7 +2,7 @@
 - type: guideEntry
   id: OrionRuleset
   name: guide-entry-server-rules
-  text: "/ServerInfo/_Orion/Guidebook/ServerRules/Ruleset.xml"
+  text: "/ServerInfo/_Wormix/Guidebook/ServerRules/Ruleset.xml"
   children:
   - OrionRule1
   - OrionRule2

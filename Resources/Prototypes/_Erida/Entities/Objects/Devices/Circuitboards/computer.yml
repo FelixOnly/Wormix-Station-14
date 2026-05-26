@@ -1,0 +1,9 @@
+- type: entity
+  parent: [ BaseComputerCircuitboard, BaseInteQContraband ]
+  suffix: Интек
+  id: InteQCommsComputerCircuitboard
+  components:
+  - type: Sprite
+    state: cpu_syndicate
+  - type: ComputerBoard
+    prototype: InteQComputerComms

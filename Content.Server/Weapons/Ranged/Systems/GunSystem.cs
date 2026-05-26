@@ -128,6 +128,7 @@ using Content.Server.PowerCell;
 using Content.Server.Weapons.Ranged.Components;
 using Content.Shared._Lavaland.Weapons.Ranged.Events;
 using Content.Shared._Shitmed.Targeting;
+using Content.Shared.Atmos.Components;
 using Content.Shared.Body.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;

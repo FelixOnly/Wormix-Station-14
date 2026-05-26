@@ -5,7 +5,6 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Goobstation.Maths.FixedPoint;
-using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Cargo.Systems;
 using Content.Server.Electrocution;
@@ -20,6 +19,7 @@ using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared.Atmos.Components;
 
 namespace Content.Server.Anomaly.Effects;
 

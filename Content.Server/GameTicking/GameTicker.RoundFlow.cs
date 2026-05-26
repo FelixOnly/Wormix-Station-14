@@ -78,8 +78,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Linq;
-using System.Numerics;
 using Content.Goobstation.Common.LastWords;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Goobstation.Shared.Mind.Components;
@@ -89,6 +87,7 @@ using Content.Server.GameTicking.Events;
 using Content.Server.Ghost;
 using Content.Server.Maps;
 using Content.Server.Roles;
+using Content.Server.Voting.Managers;
 using Content.Shared.CCVar;
 using Content.Shared.Damage;
 using Content.Shared.Database;
@@ -98,6 +97,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Players;
 using Content.Shared.Preferences;
+using Content.Shared.Voting;
 using JetBrains.Annotations;
 using Prometheus;
 using Robust.Shared.Asynchronous;
@@ -109,6 +109,8 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using System.Linq;
+using System.Numerics;
 
 namespace Content.Server.GameTicking
 {
@@ -117,6 +119,7 @@ namespace Content.Server.GameTicking
         [Dependency] private readonly DiscordWebhook _discord = default!;
         [Dependency] private readonly RoleSystem _role = default!;
         [Dependency] private readonly ITaskManager _taskManager = default!;
+        [Dependency] private readonly IVoteManager _voteManager = default!;
 
         private static readonly Counter RoundNumberMetric = Metrics.CreateCounter(
             "ss14_round_number",
@@ -796,6 +799,10 @@ namespace Content.Server.GameTicking
                 UpdateInfoText();
 
                 ReqWindowAttentionAll();
+
+                // Запуск голосования за Мапу и Режим в лобби
+                _voteManager.CreateStandardVote(initiator: null, voteType: StandardVoteType.Map);     // ADT-Tweak
+                _voteManager.CreateStandardVote(initiator: null, voteType: StandardVoteType.Preset);  // ADT-Tweak
             }
         }
 

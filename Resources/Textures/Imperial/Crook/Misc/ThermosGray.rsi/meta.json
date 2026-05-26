@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "this content is under ICLA licence, read more on https://wiki.imperialspace.net/icla",
+    "copyright": "by @crookielv",
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "icon_open"
+        },
+        {
+            "name": "inhand-right"
+        },
+        {
+            "name": "inhand-left"
+        }
+    ]
+}

@@ -66,29 +66,38 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Linq;
-using System.Numerics;
 using Content.Server.Cargo.Systems;
 using Content.Server.Emp;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
+using Content.Server.Stack;
+using Content.Server.Store.Components;
 using Content.Server.Vocalization.Systems;
+using Content.Shared.Advertise.Components;
+using Content.Shared.Advertise.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
 using Content.Shared.Emp;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Power;
+using Content.Shared.Power.EntitySystems;
+using Content.Shared.Stacks;
+using Content.Shared.Tag;
 using Content.Shared.Throwing;
 using Content.Shared.UserInterface;
 using Content.Shared.VendingMachines;
 using Content.Shared.Wall;
+using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using System.Linq;
+using System.Numerics;
 
 namespace Content.Server.VendingMachines
 {
@@ -98,6 +107,17 @@ namespace Content.Server.VendingMachines
         [Dependency] private readonly PricingSystem _pricing = default!;
         [Dependency] private readonly ThrowingSystem _throwingSystem = default!;
         [Dependency] private readonly IGameTiming _timing = default!;
+        [Dependency] protected readonly SharedPopupSystem _popup = default!;
+
+        //ADT-Economy-Start
+        [Dependency] private readonly SharedPowerReceiverSystem _receiver = default!;
+        [Dependency] private readonly SharedSpeakOnUIClosedSystem _speakOn = default!;
+        //[Dependency] private readonly BankCardSystem _bankCard = default!;
+        [Dependency] private readonly TagSystem _tag = default!;
+        [Dependency] private readonly StackSystem _stackSystem = default!;
+        [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
+        //ADT-Economy-End
+
 
         private const float WallVendEjectDistanceFromWall = 1f;
 
@@ -113,6 +133,12 @@ namespace Content.Server.VendingMachines
             SubscribeLocalEvent<VendingMachineComponent, TryVocalizeEvent>(OnTryVocalize);
 
             SubscribeLocalEvent<VendingMachineComponent, ActivatableUIOpenAttemptEvent>(OnActivatableUIOpenAttempt);
+
+            Subs.BuiEvents<VendingMachineComponent>(VendingMachineUiKey.Key, subs =>
+            {
+                subs.Event<VendingMachineEjectMessage>(OnInventoryEjectMessage);
+                subs.Event<VendingMachineEjectCountMessage>(OnInventoryEjectCountMessage);  // ADT vending eject count
+            });
 
             SubscribeLocalEvent<VendingMachineComponent, VendingMachineSelfDispenseEvent>(OnSelfDispense);
 
@@ -184,7 +210,7 @@ namespace Content.Server.VendingMachines
             {
                 if (component.DispenseOnHitCooldown != null)
                 {
-                    component.DispenseOnHitEnd = Timing.CurTime + component.DispenseOnHitCooldown.Value;
+                    component.DispenseOnHitCoolingDown = true;
                 }
 
                 EjectRandom(uid, throwItem: true, forceEject: true, component);
@@ -213,10 +239,12 @@ namespace Content.Server.VendingMachines
 
             TryRestockInventory(uid, component);
 
-            Popup.PopupEntity(Loc.GetString("vending-machine-restock-done-self", ("target", uid)), args.Args.User, args.Args.User, PopupType.Medium);
+            
+            _popup.PopupEntity(Loc.GetString("vending-machine-restock-done-self", ("target", uid)), args.Args.User, args.Args.User, PopupType.Medium);
+
             var othersFilter = Filter.PvsExcept(args.Args.User);
             // Orion-Edit-Start: Localization
-            Popup.PopupEntity(Loc.GetString("vending-machine-restock-done", // vending-machine-restock-done-others -> vending-machine-restock-done
+            _popup.PopupEntity(Loc.GetString("vending-machine-restock-done", // vending-machine-restock-done-others -> vending-machine-restock-done
             ("user", Identity.Entity(args.User, EntityManager)),
             ("target", uid)), args.Args.User, othersFilter, true, PopupType.Medium);
             // Orion-Edit-End
@@ -276,15 +304,153 @@ namespace Content.Server.VendingMachines
                 var entry = GetEntry(uid, item.ID, item.Type, vendComponent);
                 if (entry != null)
                     entry.Amount--;
-                EjectItem(uid, vendComponent, forceEject);
+                EjectItem(uid, 1, vendComponent, forceEject);   // ADT vending eject count
             }
             else
             {
-                TryEjectVendorItem(uid, item.Type, item.ID, throwItem, user: null, vendComponent: vendComponent);
+                TryEjectVendorItem(uid, item.Type, item.ID, throwItem, 1, user: null, vendComponent: vendComponent);
             }
         }
 
-        protected override void EjectItem(EntityUid uid, VendingMachineComponent? vendComponent = null, bool forceEject = false)
+        /// <summary>
+        /// Tries to eject the provided item. Will do nothing if the vending machine is incapable of ejecting, already ejecting
+        /// or the item doesn't exist in its inventory.
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="type">The type of inventory the item is from</param>
+        /// <param name="itemId">The prototype ID of the item</param>
+        /// <param name="throwItem">Whether the item should be thrown in a random direction after ejection</param>
+        /// <param name="vendComponent"></param>
+        public void TryEjectVendorItem(EntityUid uid, InventoryType type, string itemId, bool throwItem, int count, EntityUid? user = null, VendingMachineComponent? vendComponent = null)
+        {
+            if (!Resolve(uid, ref vendComponent))
+                return;
+
+            if (vendComponent.Ejecting || vendComponent.Broken || !_receiver.IsPowered(uid))
+            {
+                return;
+            }
+
+            var entry = GetEntry(uid, itemId, type, vendComponent);
+
+            if (string.IsNullOrEmpty(entry?.ID))
+            {
+                _popup.PopupClient(Loc.GetString("vending-machine-component-try-eject-invalid-item"), uid);
+                Deny((uid, vendComponent));
+                return;
+            }
+
+            if (entry.Amount <= 0)
+            {
+                _popup.PopupClient(Loc.GetString("vending-machine-component-try-eject-out-of-stock"), uid);
+                Deny((uid, vendComponent));
+                return;
+            }
+
+            vendComponent.NextItemCount = count;
+
+            // Start Ejecting, and prevent users from ordering while anim playing
+            //vendComponent.EjectEnd = Timing.CurTime + vendComponent.EjectDelay;
+            vendComponent.Ejecting = true;
+            vendComponent.NextItemToEject = entry.ID;
+            vendComponent.ThrowNextItem = throwItem;
+
+            if (TryComp(uid, out SpeakOnUIClosedComponent? speakComponent))
+                _speakOn.TrySetFlag((uid, speakComponent));
+
+            entry.Amount--;
+            Dirty(uid, vendComponent);
+            UpdateUI((uid, vendComponent));
+            TryUpdateVisualState((uid, vendComponent));
+
+            Audio.PlayPvs(vendComponent.SoundVend, uid, AudioParams.Default.WithVolume(-2f).WithVariation(0.2f));
+            //Audio.PlayPredicted(vendComponent.SoundVend, uid, user);
+        }
+
+        //ADT-Economy-Start
+        //private void OnInteractUsing(EntityUid uid, VendingMachineComponent component, InteractUsingEvent args)
+        //{
+        //    if (args.Handled)
+        //        return;
+
+        //    if (component.Broken || !this.IsPowered(uid, EntityManager))
+        //        return;
+
+        //    //if (!TryComp<CurrencyComponent>(args.Used, out var currency) ||
+        //    //    !currency.Price.Keys.Contains(component.CurrencyType))
+        //    //    return;
+
+        //    var stack = Comp<StackComponent>(args.Used);
+        //    //component.Credits += stack.Count;
+        //    Del(args.Used);
+        //    UpdateVendingMachineInterfaceState(uid, component);
+        //    //Audio.PlayPvs(component.SoundInsertCurrency, uid);
+        //    args.Handled = true;
+        //}
+
+        //protected override int GetEntryPrice(EntityPrototype proto)
+        //{
+        //    var price = (int) _pricing.GetEstimatedPrice(proto);
+        //    return price > 0 ? price : 25;
+        //}
+
+        //private int GetPrice(VendingMachineInventoryEntry entry, VendingMachineComponent comp, int count)
+        //{
+        //    return (int) (entry.Price * count * comp.PriceMultiplier);
+        //}
+
+        //private void OnWithdrawMessage(EntityUid uid, VendingMachineComponent component, VendingMachineWithdrawMessage args)
+        //{
+        //    _stackSystem.SpawnAtPosition(component.Credits, component.CreditStackPrototype, // ADT-Fix
+        //        Transform(uid).Coordinates);
+
+        //    component.Credits = 0;
+        //    Audio.PlayPvs(component.SoundWithdrawCurrency, uid);
+
+        //    UpdateVendingMachineInterfaceState(uid, component);
+        //}
+
+        /// <summary>
+        /// Checks whether the user is authorized to use the vending machine, then ejects the provided item if true
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="sender">Entity that is trying to use the vending machine</param>
+        /// <param name="type">The type of inventory the item is from</param>
+        /// <param name="itemId">The prototype ID of the item</param>
+        /// <param name="component"></param>
+        public void AuthorizedVend(EntityUid uid, EntityUid sender, InventoryType type, string itemId, VendingMachineComponent component, int count) // ADT vending eject count
+        {
+            if (IsAuthorized(uid, sender, component))
+            {
+                TryEjectVendorItem(uid, type, itemId, component.CanShoot, count, sender, component);
+                return;
+            }
+
+        }
+
+        public void OnInventoryEjectMessage(Entity<VendingMachineComponent> entity, ref VendingMachineEjectMessage args)
+        {
+            if (!this.IsPowered(entity.Owner, EntityManager) || Deleted(entity))
+                return;
+
+            if (args.Actor is not { Valid: true } actor)
+                return;
+
+            AuthorizedVend(entity.Owner, actor, args.Type, args.ID, entity.Comp, 1); // ADT vending eject count
+        }
+
+        private void OnInventoryEjectCountMessage(EntityUid uid, VendingMachineComponent component, VendingMachineEjectCountMessage args)
+        {
+            if (!this.IsPowered(uid, EntityManager))
+                return;
+
+            if (args.Actor is not { Valid: true } entity || Deleted(entity))
+                return;
+
+            AuthorizedVend(uid, entity, args.Entry.Type, args.Entry.ID, component, args.Count);
+        }
+
+        protected override void EjectItem(EntityUid uid, int count, VendingMachineComponent? vendComponent = null, bool forceEject = false)
         {
             if (!Resolve(uid, ref vendComponent))
                 return;
@@ -310,30 +476,75 @@ namespace Content.Server.VendingMachines
                 spawnCoordinates = spawnCoordinates.Offset(offset);
             }
 
-            var ent = Spawn(vendComponent.NextItemToEject, spawnCoordinates);
 
-            if (vendComponent.ThrowNextItem)
+            // ADT vending eject count start
+            for (var i = 0; i < count; i++)
             {
-                var range = vendComponent.NonLimitedEjectRange;
-                var direction = new Vector2(_random.NextFloat(-range, range), _random.NextFloat(-range, range));
-                _throwingSystem.TryThrow(ent, direction, vendComponent.NonLimitedEjectForce);
+                var ent = Spawn(vendComponent.NextItemToEject, spawnCoordinates);
+
+                if (vendComponent.ThrowNextItem)
+                {
+                    var range = vendComponent.NonLimitedEjectRange;
+                    var direction = new Vector2(_random.NextFloat(-range, range), _random.NextFloat(-range, range));
+                    _throwingSystem.TryThrow(ent, direction, vendComponent.NonLimitedEjectForce);
+                }
             }
+            // ADT vending eject count end
+
 
             vendComponent.NextItemToEject = null;
             vendComponent.ThrowNextItem = false;
+            vendComponent.NextItemCount = 1;    // ADT vending eject count
         }
 
         public override void Update(float frameTime)
         {
             base.Update(frameTime);
 
+            var query = EntityQueryEnumerator<VendingMachineComponent>();
+            while (query.MoveNext(out var uid, out var comp))
+            {
+                if (comp.Ejecting)
+                {
+                    comp.EjectAccumulator += frameTime;
+                    if (comp.EjectAccumulator >= comp.EjectDelay)
+                    {
+                        comp.EjectAccumulator = 0f;
+                        comp.Ejecting = false;
+
+                        EjectItem(uid, comp.NextItemCount, comp);   // ADT vending eject count
+                    }
+                }
+
+                if (comp.Denying)
+                {
+                    comp.DenyAccumulator += frameTime;
+                    if (comp.DenyAccumulator >= comp.DenyDelay)
+                    {
+                        comp.DenyAccumulator = 0f;
+                        comp.Denying = false;
+
+                        TryUpdateVisualState(uid);
+                    }
+                }
+
+                if (comp.DispenseOnHitCoolingDown)
+                {
+                    comp.DispenseOnHitAccumulator += frameTime;
+                    if (comp.DispenseOnHitAccumulator >= comp.DispenseOnHitCooldown)
+                    {
+                        comp.DispenseOnHitAccumulator = 0f;
+                        comp.DispenseOnHitCoolingDown = false;
+                    }
+                }
+            }
             var disabled = EntityQueryEnumerator<EmpDisabledComponent, VendingMachineComponent>();
             while (disabled.MoveNext(out var uid, out _, out var comp))
             {
                 if (comp.NextEmpEject < _timing.CurTime)
                 {
                     EjectRandom(uid, true, false, comp);
-                    comp.NextEmpEject += (5 * comp.EjectDelay);
+                    comp.NextEmpEject += TimeSpan.FromSeconds(5 * comp.EjectDelay);
                 }
             }
         }

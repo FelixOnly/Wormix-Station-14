@@ -1,0 +1,8 @@
+- type: marking
+  id: TailSharky
+  bodyPart: Tail
+  markingCategory: Tail
+  #  speciesRestriction: [Shark]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Shark/parts.rsi
+      state: tail_m

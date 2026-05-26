@@ -1,0 +1,9 @@
+ent-SnowballBase = { ent-BaseItem }
+    .desc = { "" }
+    .suffix = { "" }
+ent-Snowball = снежок
+    .desc = Маленький и холодный
+    .suffix = { "" }
+ent-SnowballIce  = ледышка
+    .desc = Маленькая и скользкая
+    .suffix = { "" }

@@ -2,7 +2,7 @@
   id: TajaranPatch
   markingCategory: Overlay
   bodyPart: Chest
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_overlay.rsi
       state: patch
@@ -11,7 +11,7 @@
   id: TajaranSkeletonBody
   markingCategory: Overlay
   bodyPart: Chest
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_overlay.rsi
       state: skeleton_body
@@ -29,7 +29,7 @@
   id: TajaranBlotsBody
   markingCategory: Overlay
   bodyPart: Chest
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_overlay.rsi
       state: blots_body
@@ -38,7 +38,7 @@
   id: TajaranStripesBody
   markingCategory: Overlay
   bodyPart: Chest
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_overlay.rsi
       state: stripes_body
@@ -65,7 +65,7 @@
   id: TajaranGradientLhand
   markingCategory: Arms
   bodyPart: LHand
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_parts.rsi
       state: gradient_LHand
@@ -74,7 +74,7 @@
   id: TajaranGradientLarm
   markingCategory: Arms
   bodyPart: LArm
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_parts.rsi
       state: gradient_LArm
@@ -83,7 +83,7 @@
   id: TajaranGradientRhand
   markingCategory: Arms
   bodyPart: RHand
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_parts.rsi
       state: gradient_RHand
@@ -92,7 +92,7 @@
   id: TajaranGradientRarm
   markingCategory: Arms
   bodyPart: RArm
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_parts.rsi
       state: gradient_RArm
@@ -101,7 +101,7 @@
   id: TajaranSpikey
   markingCategory: Hair
   bodyPart: Hair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_hairs.rsi
       state: spikey
@@ -110,7 +110,7 @@
   id: TajaranTajaranHairLadiesretro
   markingCategory: Hair
   bodyPart: Hair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_hairs.rsi
       state: ladiesretro
@@ -119,7 +119,7 @@
   id: TajaranHairBraid
   markingCategory: Hair
   bodyPart: Hair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_hairs.rsi
       state: braid
@@ -128,7 +128,7 @@
   id: TajaranHairEyebrows
   markingCategory: Hair
   bodyPart: Hair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_hairs.rsi
       state: eyebrows
@@ -137,7 +137,7 @@
   id: TajaranHairPigtail
   markingCategory: Hair
   bodyPart: Hair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_hairs.rsi
       state: pigtail
@@ -146,7 +146,7 @@
   id: TajaranHairCurly
   markingCategory: Hair
   bodyPart: Hair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_hairs.rsi
       state: curly
@@ -155,7 +155,7 @@
   id: TajaranHairBob
   markingCategory: Hair
   bodyPart: Hair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_hairs.rsi
       state: bob
@@ -164,7 +164,7 @@
   id: TajaranHairFingerwave
   markingCategory: Hair
   bodyPart: Hair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_hairs.rsi
       state: fingerwave
@@ -173,7 +173,7 @@
   id: TajaranHairPlait
   markingCategory: Hair
   bodyPart: Hair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_hairs.rsi
       state: plait
@@ -182,7 +182,7 @@
   id: TajaranHairPonytail
   markingCategory: Hair
   bodyPart: Hair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_hairs.rsi
       state: ponytail
@@ -191,7 +191,7 @@
   id: TajaranHairClean
   markingCategory: Hair
   bodyPart: Hair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_hairs.rsi
       state: clean
@@ -200,7 +200,7 @@
   id: TajaranHairRattail
   markingCategory: Hair
   bodyPart: Hair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_hairs.rsi
       state: rattail
@@ -209,7 +209,7 @@
   id: TajaranHairBedhead
   markingCategory: Hair
   bodyPart: Hair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_hairs.rsi
       state: bedhead
@@ -218,7 +218,7 @@
   id: TajaranHairVictory
   markingCategory: Hair
   bodyPart: Hair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_hairs.rsi
       state: victory
@@ -227,7 +227,7 @@
   id: TajaranHairShaggy
   markingCategory: Hair
   bodyPart: Hair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_hairs.rsi
       state: shaggy
@@ -236,7 +236,7 @@
   id: TajaranHairMohawk
   markingCategory: Hair
   bodyPart: Hair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_hairs.rsi
       state: mohawk
@@ -245,7 +245,7 @@
   id: TajaranHairBangs
   markingCategory: Hair
   bodyPart: Hair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_hairs.rsi
       state: bangs
@@ -254,7 +254,7 @@
   id: TajaranHairMessy
   markingCategory: Hair
   bodyPart: Hair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_hairs.rsi
       state: messy
@@ -263,7 +263,7 @@
   id: TajaranHairStraight
   markingCategory: Hair
   bodyPart: Hair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_hairs.rsi
       state: straight
@@ -272,7 +272,7 @@
   id: TajaranHairLong
   markingCategory: Hair
   bodyPart: Hair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_hairs.rsi
       state: long
@@ -281,7 +281,7 @@
   id: TajaranMustache2
   markingCategory: FacialHair
   bodyPart: FacialHair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_facial_hairs.rsi
       state: mustache_2
@@ -290,7 +290,7 @@
   id: TajaranBeard
   markingCategory: FacialHair
   bodyPart: FacialHair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_facial_hairs.rsi
       state: beard
@@ -299,7 +299,7 @@
   id: TajaranMustache3
   markingCategory: FacialHair
   bodyPart: FacialHair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_facial_hairs.rsi
       state: mustache_3
@@ -308,7 +308,7 @@
   id: TajaranCheeks
   markingCategory: FacialHair
   bodyPart: FacialHair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_facial_hairs.rsi
       state: cheeks
@@ -317,7 +317,7 @@
   id: TajaranMustache
   markingCategory: FacialHair
   bodyPart: FacialHair
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_facial_hairs.rsi
       state: mustache
@@ -326,7 +326,7 @@
   id: TajaranPatch2
   markingCategory: Head
   bodyPart: Head
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_head.rsi
       state: patch_2
@@ -335,7 +335,7 @@
   id: TajaranEyeStripesHead
   markingCategory: Head
   bodyPart: Head
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_head.rsi
       state: eye_stripes_head
@@ -344,7 +344,7 @@
   id: TajaranOutears
   markingCategory: HeadTop
   bodyPart: HeadTop
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_head.rsi
       state: outears
@@ -353,7 +353,7 @@
   id: TajaranTigerHead
   markingCategory: Head
   bodyPart: Head
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_head.rsi
       state: tiger_head
@@ -362,7 +362,7 @@
   id: TajaranMuzzle
   markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_head.rsi
       state: muzzle
@@ -371,7 +371,7 @@
   id: TajaranTigerFace
   markingCategory: Head
   bodyPart: Head
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_head.rsi
       state: tiger_face
@@ -380,7 +380,7 @@
   id: TajaranStarHead
   markingCategory: Head
   bodyPart: Head
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_head.rsi
       state: star_head
@@ -389,7 +389,7 @@
   id: TajaranInears
   markingCategory: HeadTop
   bodyPart: HeadTop
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_head.rsi
       state: inears
@@ -398,7 +398,7 @@
   id: TajaranNose
   markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_head.rsi
       state: nose
@@ -407,7 +407,7 @@
   id: TajaranRaccoon-head
   markingCategory: Head
   bodyPart: Head
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_head.rsi
       state: raccoon-head
@@ -416,7 +416,7 @@
   id: TajaranManeHead
   markingCategory: Head
   bodyPart: Head
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_head.rsi
       state: mane_head
@@ -425,7 +425,7 @@
   id: TajaranMuzzleinears
   markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_head.rsi
       state: muzzleinears
@@ -434,17 +434,16 @@
   id: TajaranTailFluffy
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_tail.rsi
       state: tail_fluffy
-
 
 - type: marking
   id: TajaranBelly2
   markingCategory: Chest
   bodyPart: Chest
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_chest.rsi
       state: belly2
@@ -453,7 +452,7 @@
   id: TajaranChest
   markingCategory: Chest
   bodyPart: Chest
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_chest.rsi
       state: chest
@@ -462,7 +461,7 @@
   id: TajaranBelly1
   markingCategory: Chest
   bodyPart: Chest
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_chest.rsi
       state: belly1
@@ -471,7 +470,7 @@
   id: TajaranBelly3
   markingCategory: Chest
   bodyPart: Chest
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_chest.rsi
       state: belly3
@@ -480,7 +479,7 @@
   id: TajaranTailM
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: []
+  #speciesRestriction: []
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_tail.rsi
       state: tail_m
@@ -489,7 +488,7 @@
   id: TajaranTailRing
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_tail.rsi
       state: tail_m
@@ -500,7 +499,7 @@
   id: TajaranTailSkeleton
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_tail.rsi
       state: tail_m
@@ -511,7 +510,7 @@
   id: TajaranTailTip
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_tail.rsi
       state: tail_m
@@ -522,19 +521,18 @@
   id: TajaranTailFluffySkeleton
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_tail.rsi
       state: tail_fluffy
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_tail.rsi
       state: tail_skeleton
 
-
 - type: marking
   id: TajaranTailWingler1
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_tail.rsi
       state: tail_fluffy
@@ -545,7 +543,7 @@
   id: TajaranTailWingler2
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_tail.rsi
       state: tail_fluffy
@@ -556,7 +554,7 @@
   id: TajaranTailWingler3
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: [ Tajaran ]
+  #speciesRestriction: [ Tajaran ]
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_tail.rsi
       state: tail_fluffy
@@ -568,7 +566,7 @@
   id: TajaranTailFluffyAnimated
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: []
+  #speciesRestriction: []
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_tail.rsi
       state: tail_fluffy_wagging
@@ -577,7 +575,7 @@
   id: TailWingler1Animated
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: []
+  #speciesRestriction: []
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_tail.rsi
       state: tail_fluffy_wagging
@@ -588,7 +586,7 @@
   id: TailWingler2Animated
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: []
+  #speciesRestriction: []
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_tail.rsi
       state: tail_fluffy_wagging
@@ -599,7 +597,7 @@
   id: TailWingler3Animated
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: []
+  #speciesRestriction: []
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_tail.rsi
       state: tail_fluffy_wagging
@@ -610,7 +608,7 @@
   id: TailFluffySkeletonAnimated
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: []
+  #speciesRestriction: []
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_tail.rsi
       state: tail_fluffy_wagging
@@ -621,7 +619,7 @@
   id: TailTipAnimated
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: []
+  #speciesRestriction: []
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_tail.rsi
       state: tail_m_wagging
@@ -632,7 +630,7 @@
   id: TajaranTailMAnimated
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: []
+  #speciesRestriction: []
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_tail.rsi
       state: tail_m_wagging
@@ -641,7 +639,7 @@
   id: TailRingAnimated
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: []
+  #speciesRestriction: []
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_tail.rsi
       state: tail_m_wagging
@@ -652,7 +650,7 @@
   id: TailSkeletonAnimated
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: []
+  #speciesRestriction: []
   sprites:
     - sprite: _Orion/Mobs/Customization/Tajaran/tajaran_tail.rsi
       state: tail_m_wagging

@@ -715,6 +715,7 @@ public abstract partial class SharedMoverController : VirtualController
         }
         // End DeltaV code
 
+
         if (FootstepModifierQuery.TryComp(uid, out var moverModifier))
         {
             sound = moverModifier.FootstepSoundCollection;

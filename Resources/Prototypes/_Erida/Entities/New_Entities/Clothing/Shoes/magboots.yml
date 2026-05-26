@@ -1,0 +1,22 @@
+- type: entity
+  parent: ClothingShoesBootsMagBase
+  id: ClothingShoesBootsMagNTNavy
+  name: nanotrasen navy magboots
+  description:
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Shoes/magboots-nanotrasen-navy.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Erida/Clothing/Shoes/magboots-nanotrasen-navy.rsi
+    - type: ClothingSpeedModifier
+      walkModifier: 0.9
+      sprintModifier: 0.9
+    - type: MeleeWeapon
+      damage:
+        types:
+          Blunt: 10
+    - type: StaticPrice
+      price: 750
+    - type: StealTarget
+      stealGroup: ClothingShoesBootsMagAdv

@@ -1,0 +1,47 @@
+- type: radioChannel
+  id: CSH
+  name: bkm-radio-csh
+  keycode: "в"
+  frequency: 8118
+  color: "#8f09b0"
+  longRange: true
+
+- type: radioChannel
+  id: Fleet
+  name: bkm-radio-fleet
+  keycode: "э"
+  frequency: 8119
+  color: "#006400"
+  longRange: true
+
+- type: radioChannel
+  id: UEG
+  name: bkm-radio-UEG
+  keycode: "з"
+  frequency: 8121
+  color: "#228B22"
+  longRange: true
+
+- type: radioChannel
+  id: AID
+  name: bkm-radio-AID
+  keycode: "ж"
+  frequency: 1301
+  color: "#aae8f2"
+  longRange: true
+
+- type: radioChannel
+  id: AIMALF
+  name: bkm-radio-AIMALF
+  keycode: "б"
+  frequency: 1300
+  color: "#c90000"
+  longRange: true
+
+- type: radioChannel
+  id: Rebels
+  name: bkm-radio-Rebels
+  keycode: "ь"
+  frequency: 1245
+  color: "#fbff2b"
+  longRange: true

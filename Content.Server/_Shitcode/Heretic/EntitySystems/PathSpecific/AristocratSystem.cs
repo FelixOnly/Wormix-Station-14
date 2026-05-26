@@ -24,6 +24,7 @@ using Content.Server.Light.EntitySystems;
 using Content.Shared._Goobstation.Wizard.Projectiles;
 using Content.Shared._Shitcode.Heretic.Components;
 using Content.Shared.Atmos;
+using Content.Shared.Atmos.Components;
 using Content.Shared.Audio;
 using Content.Shared.Coordinates.Helpers;
 using Content.Shared.Damage;

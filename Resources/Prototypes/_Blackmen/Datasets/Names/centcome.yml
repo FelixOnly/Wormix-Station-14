@@ -1,0 +1,47 @@
+- type: localizedDataset
+  id: NameSpetsRXBZZ
+  values:
+    prefix: names-spets-rxbzz-
+    count: 1
+
+- type: localizedDataset
+  id: NamesOFCs
+  values:
+    prefix: names-ofcs-
+    count: 3
+
+- type: localizedDataset
+  id: NamesSGTs
+  values:
+    prefix: names-sgts-
+    count: 3
+
+- type: localizedDataset
+  id: NamesCPLs
+  values:
+    prefix: names-cpls-
+    count: 3
+
+- type: localizedDataset
+  id: NamesPVTs
+  values:
+    prefix: names-pvts-
+    count: 2
+
+- type: localizedDataset
+  id: NameSpets
+  values:
+    prefix: name-spets-dataset-
+    count: 43
+
+- type: localizedDataset
+  id: NameSpetsCommander
+  values:
+    prefix: name-spets-commander-dataset-
+    count: 1
+
+- type: localizedDataset
+  id: NameSpetsOperative
+  values:
+    prefix: name-spets-operative-dataset-
+    count: 1

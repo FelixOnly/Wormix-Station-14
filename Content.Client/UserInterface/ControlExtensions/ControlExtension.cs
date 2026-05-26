@@ -3,9 +3,11 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Client._Wormix.Searching;
 using Content.Client.Guidebook.Controls;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
+using System.Text.RegularExpressions;
 
 namespace Content.Client.UserInterface.ControlExtensions;
 
@@ -85,17 +87,54 @@ public static class ControlExtension
                 return true;
             }
         }
+        // Wormix edit start
 
         foreach (var label in richTextLabels)
         {
-            var text = label.GetMessage();
 
-            if (text != null && text.Contains(search, StringComparison.OrdinalIgnoreCase))
+            var dirtyLabel = label.GetMessage();
+
+            if (dirtyLabel == null)
+                continue;
+
+            string text = FuzzySearching.TrimTags(dirtyLabel).ToLower();
+
+
+            if (text.Contains(search.ToLower(), StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+
+            if (text.Contains("\n"))
+            {
+                var reagents = text.Split(
+                    new[] { '\r', '\n' },
+                    StringSplitOptions.RemoveEmptyEntries);
+
+                foreach (var reagent in reagents)
+                {
+                    var cleaned = Regex.Replace(reagent, @"\s*\[\d+\]", "")
+                            .Trim();
+
+                    int distance = FuzzySearching.LevensteinAlgorithm(
+                        cleaned.ToLower(),
+                        search.ToLower());
+
+                    if (distance <= 3)
+                    {
+                        return true;
+                    }
+                }
+
+            }
+
+            if (FuzzySearching.LevensteinAlgorithm(text.ToLower(), search) <= 3)
             {
                 return true;
             }
         }
 
+        // Wormix edit end
         return false;
     }
 }

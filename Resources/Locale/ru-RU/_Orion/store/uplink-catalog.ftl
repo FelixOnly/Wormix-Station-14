@@ -15,6 +15,3 @@ uplink-rpd-box-desc = 80 убойных патронов 7.62мм для руч�
 
 uplink-reinforcement-radio-cyborg-saboteur-name = Телепорт саботажного борга Синдиката
 uplink-reinforcement-radio-cyborg-saboteur-desc = Инженерный киборг, предназначенный для ремонта, саботажа и поддержки. Оснащён запасным пистолетом и энергомечом для самообороны.
-
-uplink-stamp-chameleon-name = Голографическая печать-хамелеон
-uplink-stamp-chameleon-desc = Универсальная печать, что может маскироваться под любой желаемый вид.

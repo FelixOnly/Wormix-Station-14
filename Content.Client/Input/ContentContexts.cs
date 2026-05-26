@@ -70,6 +70,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared._Backmen.Input;
 using Content.Shared.Input;
 using Robust.Shared.Input;
 
@@ -109,6 +110,7 @@ namespace Content.Client.Input
             common.AddFunction(ContentKeyFunctions.ResistGrab); // Goobstation - Grab Intent
             common.AddFunction(ContentKeyFunctions.ZoomOut);
             common.AddFunction(ContentKeyFunctions.ZoomIn);
+
             common.AddFunction(ContentKeyFunctions.ResetZoom);
             common.AddFunction(ContentKeyFunctions.InspectEntity);
             common.AddFunction(ContentKeyFunctions.ToggleRoundEndSummaryWindow);
@@ -163,6 +165,7 @@ namespace Content.Client.Input
             human.AddFunction(ContentKeyFunctions.Arcade2);
             human.AddFunction(ContentKeyFunctions.Arcade3);
             human.AddFunction(ContentKeyFunctions.TogglePosing); // Orion
+            human.AddFunction(CMKeyFunctions.CMUniqueAction); // BACKMEN EDIT
             // Shitmed Change Start - TODO: Add hands, feet and groin targeting.
             human.AddFunction(ContentKeyFunctions.TargetHead);
             human.AddFunction(ContentKeyFunctions.TargetChest);

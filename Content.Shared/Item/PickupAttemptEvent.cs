@@ -31,6 +31,13 @@ public class BasePickupAttemptEvent : CancellableEntityEventArgs
     public readonly EntityUid User;
     public readonly EntityUid Item;
 
+    /// <summary>
+    /// Whether or not to show a popup message to the player telling them why the attempt was cancelled.
+    /// This should be true when this event is raised during interactions, and false when it is raised
+    /// for disabling verbs or similar that do not do the actual pickup.
+    /// </summary>
+    public bool ShowPopup;
+
     public BasePickupAttemptEvent(EntityUid user, EntityUid item)
     {
         User = user;

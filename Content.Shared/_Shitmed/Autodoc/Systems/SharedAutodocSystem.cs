@@ -6,7 +6,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._EinsteinEngines.Silicon.Components;
 using Content.Shared._Shitmed.Autodoc.Components;
 using Content.Shared._Shitmed.Medical.Surgery;
 using Content.Shared._Shitmed.Medical.Surgery.Steps;
@@ -344,8 +343,6 @@ public abstract class SharedAutodocSystem : EntitySystem
 
     public bool IsAwake(EntityUid uid)
     {
-        if (TryComp(uid, out SiliconComponent? comp) && !comp.DoSiliconsDreamOfElectricSheep)
-            return false;
         return _mobState.IsAlive(uid) && !HasComp<SleepingComponent>(uid);
     }
 

@@ -14,6 +14,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Client._Amour.Stickers.UI;
 using Content.Client.Stylesheets;
 using Content.Shared.Chat;
 using Content.Shared.Input;
@@ -27,6 +28,7 @@ public class ChatInputBox : PanelContainer
     public readonly ChannelSelectorButton ChannelSelector;
     public readonly HistoryLineEdit Input;
     public readonly ChannelFilterButton FilterButton;
+    public readonly StickerButton StickerButton;
     protected readonly BoxContainer Container;
     protected ChatChannel ActiveChannel { get; private set; } = ChatChannel.Local;
 
@@ -54,6 +56,25 @@ public class ChatInputBox : PanelContainer
             HorizontalExpand = true,
             StyleClasses = {"chatLineEdit"}
         };
+
+        // Amour edit start
+        StickerButton = new StickerButton
+        {
+            Name = "StickerButton",
+            Visible = false,
+            StyleClasses = { "chatSelectorOptionButton" }
+        };
+        StickerButton.OnStickerSelected += sticker =>
+        {
+            // Insert sticker if in OOC or Admin channels
+            if (ActiveChannel == ChatChannel.OOC || ActiveChannel == ChatChannel.Admin || ActiveChannel == ChatChannel.AdminChat)
+                StickerInputHelper.InsertSticker(Input, sticker);
+        };
+        Container.AddChild(StickerButton);
+        // Amour edit end
+
+
+
         Container.AddChild(Input);
         FilterButton = new ChannelFilterButton
         {
@@ -68,6 +89,10 @@ public class ChatInputBox : PanelContainer
     private void UpdateActiveChannel(ChatSelectChannel selectedChannel)
     {
         ActiveChannel = (ChatChannel) selectedChannel;
+
+        // Amour edit: Stickers are available in OOC and Admin chat
+        StickerButton.Visible = (ActiveChannel == ChatChannel.OOC || ActiveChannel == ChatChannel.Admin || ActiveChannel == ChatChannel.AdminChat);
+    
     }
 
     private static string GetChatboxInfoPlaceholder()

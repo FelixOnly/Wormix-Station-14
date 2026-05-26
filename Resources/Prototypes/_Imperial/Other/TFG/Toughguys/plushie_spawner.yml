@@ -1,0 +1,59 @@
+- type: entity
+  name: Random Community Plushie Spawner
+  id: ToughguysPlushieSpawner
+  suffix: COMMUNITY,TOY
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: Objects/Fun/Plushies/bee.rsi
+          state: icon
+    - type: RandomSpawner
+      rarePrototypes:
+        - PlushieCPGift
+        - PlushieBartenderGift
+        - PlushieChemistGift
+        - PlushieSOGift
+        - PlushieIAAGift
+        - PlushieYeseniaGift
+        - PlushieBMGift
+      rareChance: 0.15
+      prototypes:
+        - PlushiePassenger
+        - PlushieCapitan
+        - PlushieChemist
+        - PlushieCP
+        - PlushieEngineer
+        - PlushieGSB
+        - PlushieParamedic
+        - PlushiePCC
+        - PlushieScientist
+        - PlushieSurgeon
+        - PlushieBartender
+        - PlushieSO
+        - PlushieBarmem
+        - PlushieCoroner
+        - PlushieIAA
+        - PlushieAdri
+        - PlushieHlimmy
+        - PlushieTaylor
+        - PlushieMichael
+        - PlushieSylvester
+        - PlushieBorg
+        - PlushieErika
+        - PlushieAiden
+        - PlushieKainov
+        - PlushieSavir
+        - PlushieKarner
+        - PlushieVenya
+        - PlushieAid
+        - PlushieZevs
+        - PlushieCadet
+# CentCom plushies...
+        - PlushieYesenia
+        - PlushieBM
+        - PlushieCSCC
+        - PlushieClaud
+      chance: 0.75
+      offset: 0.10

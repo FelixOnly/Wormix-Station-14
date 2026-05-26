@@ -4,8 +4,8 @@
   text: "/ServerInfo/_Orion/Guidebook/Orion.xml"
   priority: -1
   children:
-  - OrionRuleset
-  - SpaceLaw
-  - SOP
-  - OrionAntagonistGuide
-  - OrionRnDMachines
+    #- OrionRuleset
+    - SpaceLaw
+    - SOP
+    - OrionAntagonistGuide
+    - OrionRnDMachines

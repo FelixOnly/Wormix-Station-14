@@ -46,6 +46,8 @@ public enum SlotFlags
     SOCKS = 1 << 19,
     WRISTS = 1 << 20,
     // Orion-End
+    ANUS = 1 << 21,
+
     All = ~NONE,
 
     WITHOUT_POCKET = All & ~POCKET,

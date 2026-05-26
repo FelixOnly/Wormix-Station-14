@@ -1,0 +1,95 @@
+#centcomm
+- type: entity
+  parent: BaseMindRole
+  id: BaseJobMindRole
+  abstract: true
+  components:
+    - type: JobRole
+
+- type: entity
+  parent: BaseJobMindRole
+  id: MindRoleBKCCAssistant
+  name: Ассистент ЦК
+  components:
+    - type: MindRole
+      jobPrototype: BKCCAssistant
+
+- type: entity
+  parent: BaseJobMindRole
+  id: MindRoleBKCCCargo
+  name: Карго ЦК
+  components:
+    - type: MindRole
+      jobPrototype: BKCCCargo
+
+- type: entity
+  parent: BaseJobMindRole
+  id: MindRoleBKCCOperator
+  name: Оператор ЦК
+  components:
+    - type: MindRole
+      jobPrototype: BKCCOperator
+
+- type: entity
+  parent: BaseJobMindRole
+  id: MindRoleBKCCSecOfficer
+  name: Охранник ЦК
+  components:
+    - type: MindRole
+      jobPrototype: BKCCSecOfficer
+
+- type: entity
+  parent: BaseJobMindRole
+  id: MindRoleERTLeader
+  name: Лидер ОБР
+  components:
+    - type: MindRole
+      jobPrototype: ERTLeader
+
+- type: entity
+  parent: BaseJobMindRole
+  id: MindRoleERTEngineer
+  name: Инженер ОБР
+  components:
+    - type: MindRole
+      jobPrototype: ERTEngineer
+
+- type: entity
+  parent: BaseJobMindRole
+  id: MindRoleERTSecurity
+  name: Охранник ОБР
+  components:
+    - type: MindRole
+      jobPrototype: ERTSecurity
+
+- type: entity
+  parent: BaseJobMindRole
+  id: MindRoleERTMedical
+  name: Медик ОБР
+  components:
+    - type: MindRole
+      jobPrototype: ERTMedical
+
+- type: entity
+  parent: BaseJobMindRole
+  id: MindRoleERTJanitor
+  name: Уборщик ОБР
+  components:
+    - type: MindRole
+      jobPrototype: ERTJanitor
+
+- type: entity
+  parent: BaseJobMindRole
+  id: MindRoleCBURN
+  name: РХБЗЗ
+  components:
+    - type: MindRole
+      jobPrototype: CBURN
+
+- type: entity
+  parent: BaseJobMindRole
+  id: MindRoleDeathSquad
+  name: Деды
+  components:
+    - type: MindRole
+      jobPrototype: DeathSquad

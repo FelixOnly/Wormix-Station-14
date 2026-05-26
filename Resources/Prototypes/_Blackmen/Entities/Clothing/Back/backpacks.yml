@@ -1,0 +1,54 @@
+- type: entity
+  parent: [ClothingBackpack, BaseCentcommContraband]
+  id: ClothingOrderBackpack
+  name: Backpack of the Red Order.
+  description: A backpack of the death squad, taken as a trophy and remade to fit their needs by the order!
+  suffix: Бакмен
+  components:
+    - type: Storage
+      grid:
+        - 0,0,7,4
+    - type: Sprite
+      sprite: Backmen/Clothing/Back/Backpacks/orden_backpacks.rsi
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingNinjaSatchel
+  name: Ninja satchel
+  description: Space ninja backpack
+  suffix: Нинзя, Бакмен
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Back/Backpacks/ninja_backpacks.rsi
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackMVD
+  name: satchel
+  suffix: Бакмен
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Back/Backpacks/mvd.rsi
+
+- type: entity
+  parent: [ClothingBackpack, BaseCentcommContraband]
+  id: ClothingCentcomBackpack
+  name: рюкзак Центком
+  description: РЮКЗАК ЗЕЛЁНЫХ ЧЕЛОВЕЧКОВ!!!
+  suffix: Бакмен, Центком
+  components:
+    - type: Storage
+      grid:
+        - 0,0,7,4
+    - type: Sprite
+      sprite: Backmen/Clothing/Back/Backpacks/centcom_backpack.rsi
+
+- type: entity
+  parent: [ClothingBackpack, BaseCentcommContraband]
+  id: ClothingBackpackBlueshieldAlt
+  name: officer "Blueshield" backpack
+  description: It's a very blue robust backpack.
+  suffix: Бакмен, ОСЩ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Back/Backpacks/blueshield_backpack.rsi

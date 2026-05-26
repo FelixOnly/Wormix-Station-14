@@ -1,0 +1,15 @@
+#Cargo EVA
+- type: entity
+  parent: ClothingOuterEVASuitBase
+  id: ClothingOuterHardsuitCargoEVA
+  name: EVA cargo suit
+  description: Скафандр EVA изготовленный специально для отдела снабжения.
+  suffix: Бакмен
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/eva_cargo.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Hardsuits/eva_cargo.rsi
+    - type: ToggleableClothing
+      clothingPrototypes:
+        head: ClothingHeadHelmetCargoEVA

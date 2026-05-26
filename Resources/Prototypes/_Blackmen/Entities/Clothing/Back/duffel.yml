@@ -1,0 +1,9 @@
+- type: entity
+  parent: [ClothingBackpackDuffel, BaseCentcommContraband]
+  id: ClothingBackpackDuffelBlueshieldAlt
+  name: officer "Blueshield" duffel bag
+  description: A large duffel bag for storing extra reinforced guard supplies.
+  suffix: Бакмен, ОСЩ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Back/Duffels/blueshield.rsi

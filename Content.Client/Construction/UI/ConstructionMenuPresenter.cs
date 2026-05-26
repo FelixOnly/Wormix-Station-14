@@ -52,6 +52,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Configuration; // Goobstation
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
+using Content.Client._Wormix.Searching;
 
 namespace Content.Client.Construction.UI
 {
@@ -306,6 +307,7 @@ namespace Content.Client.Construction.UI
 
             var (search, category) = args;
             var isEmptyCategory = string.IsNullOrEmpty(category) || category == ForAllCategoryName;
+
             _selectedCategory = isEmptyCategory ? string.Empty : category;
 
             foreach (var recipe in _prototypeManager.EnumeratePrototypes<ConstructionPrototype>())
@@ -318,10 +320,29 @@ namespace Content.Client.Construction.UI
                     || _whitelistSystem.IsWhitelistFail(recipe.EntityWhitelist, _playerManager.LocalEntity.Value))
                     continue;
 
-                if (!string.IsNullOrEmpty(search) && (recipe.Name is { } name &&
-                                                      !name.Contains(search.Trim(),
-                                                          StringComparison.InvariantCultureIgnoreCase)))
-                    continue;
+                // Wormix edit start
+
+                if (!string.IsNullOrEmpty(search))
+                {
+                    if (string.IsNullOrEmpty(recipe.Name))
+                        continue;
+
+
+                    var recipeName = recipe.Name.ToLowerInvariant();
+
+                    if (!recipeName.Contains(search))
+                    {
+                        // Smaller number = closer match
+                        var distance = FuzzySearching.LevensteinAlgorithm(recipeName, search);
+
+                        // Adjust this number to make search stricter/looser
+                        if (distance > 12 && !recipeName.Contains(search))
+                            continue;
+                    }
+                }
+
+                // Wormix edit end
+
 
                 if (!isEmptyCategory)
                 {
@@ -344,8 +365,72 @@ namespace Content.Client.Construction.UI
                 recipes.Add(new(recipe, proto));
             }
 
-            recipes.Sort(
-                (a, b) => string.Compare(a.Prototype.Name, b.Prototype.Name, StringComparison.InvariantCulture));
+            // Wormix edit start
+
+            recipes.Sort((a, b) =>
+            {
+                var searchText = search.ToLowerInvariant()
+                                           .Replace("ё", "е");
+
+                var aName = a.Prototype.Name;
+                var bName = b.Prototype.Name;
+
+                if (searchText.Length == 0)
+                    return string.Compare(aName, bName, StringComparison.InvariantCulture);
+
+                if (string.IsNullOrEmpty(aName) || string.IsNullOrEmpty(bName))
+                    return -1;
+
+
+                aName = aName.Replace("ё", "е");
+                bName = bName.Replace("ё", "е");
+
+
+                // 1. StartsWith priority
+                var aStarts = aName.StartsWith(searchText);
+                var bStarts = bName.StartsWith(searchText);
+
+
+
+                if (aStarts && !bStarts)
+                    return -1;
+
+                if (!aStarts && bStarts)
+                    return 1;
+
+                // 2. Contains priority
+                var aContains = aName.Contains(searchText);
+                var bContains = bName.Contains(searchText);
+
+                if (aContains && !bContains)
+                    return -1;
+
+                if (!aContains && bContains)
+                    return 1;
+
+                // 3. Similarity percent
+                var aSimilarity = FuzzySearching.GetSimilarityPercent(aName, searchText);
+                var bSimilarity = FuzzySearching.GetSimilarityPercent(bName, searchText);
+
+                var similarityCompare = bSimilarity.CompareTo(aSimilarity);
+
+                if (similarityCompare != 0)
+                    return similarityCompare;
+
+                // 4. Distance fallback
+                var aDistance = FuzzySearching.LevensteinAlgorithm(aName, searchText);
+                var bDistance = FuzzySearching.LevensteinAlgorithm(bName, searchText);
+
+                var distanceCompare = aDistance.CompareTo(bDistance);
+
+                if (distanceCompare != 0)
+                    return distanceCompare;
+
+                // 5. Alphabetical fallback
+                return string.Compare(aName, bName, StringComparison.InvariantCulture);
+            });
+
+            // Wormix edit end
 
             return recipes;
         }

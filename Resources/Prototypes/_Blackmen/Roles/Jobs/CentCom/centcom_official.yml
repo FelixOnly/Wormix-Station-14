@@ -1,0 +1,69 @@
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconNT
+  icon:
+    sprite: /Textures/Backmen/Icons/jobicon.rsi
+    state: NT
+
+- type: startingGear
+  id: CentComOfficialEVAGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficer
+    shoes: ClothingShoesBootsLaceup
+    mask: ClothingMaskGasCentcom
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesCentcomNaval
+    outerClothing: ClothingOuterHardsuitCentcomCarporate
+    suitstorage: OxygenTankFilled
+    id: CentcomPDABackmen
+    ears: ClothingHeadsetAltCentCom
+    pocket1: CyberPen
+    pocket2: BoxFolderSecretBlack
+  #innerClothingSkirt: ClothingUniformJumpskirtCentcomOfficer
+
+- type: entity
+  parent: BasePDA
+  id: CentcomPDABackmen
+  name: CentCom PDA
+  description: Light green sign of walking bureaucracy.
+  components:
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType: !type:String pda-centcom
+    - type: Pda
+      id: IDCardCentComOfficialCorvax
+      penSlot:
+        startingItem: PenCentcom
+        whitelist:
+          tags:
+            - Write
+    - type: PdaBorderColor
+      borderColor: "#00842e"
+    - type: Icon
+      state: pda-centcom
+
+- type: entity
+  parent: CentcomIDCardDeathsquad
+  id: IDCardCentComOfficialCorvax
+  name: ID карта ПЦК
+  components:
+    - type: Sprite
+      layers:
+        - state: card_silver # Backmen
+        - state: sub_department # Backmen
+          color: "#1b67a5"
+        - state: frame_head # Backmen
+          color: "#1b67a5"
+        - state: idcentcom
+    - type: Item
+      heldPrefix: silver
+    - type: PresetIdCard
+      job: CentralCommandOfficial
+    - type: Access
+      tags:
+        - CCCargo
+        - CCSecurity
+        - CentralCommand
+        - CCOfficer
+      groups:
+        - AllAccess

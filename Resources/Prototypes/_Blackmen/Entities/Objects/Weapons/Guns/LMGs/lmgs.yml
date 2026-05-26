@@ -1,0 +1,66 @@
+- type: entity
+  name: MG-60
+  parent: BaseWeaponLightMachineGun
+  id: WeaponLightMachineGunMG60
+  suffix: Бакмен, Пулемёт
+  description: The Raummetall MG-60 general purpose machinegun is the EarthGov Army's current standard GPMG. Though usually seen mounted on vehicles, it is sometimes used by infantry to hold chokepoints or suppress enemies, or in rare cases for marching fire.
+  components:
+    - type: Sprite
+      sprite: Backmen/Objects/Weapons/Gunsx64/LMGs/t42/big.rsi
+      layers:
+        - state: base
+          map: ["enum.GunVisualLayers.Base"]
+        - state: mag-0
+          map: ["enum.GunVisualLayers.Mag"]
+    - type: Clothing
+      sprite: Backmen/Objects/Weapons/Gunsx64/LMGs/t42/tiny.rsi
+    - type: Item
+      sprite: Backmen/Objects/Weapons/Gunsx64/LMGs/t42/tiny.rsi
+    - type: GunWieldBonus
+      minAngle: -30
+      maxAngle: -50
+    - type: Gun
+      minAngle: 34
+      maxAngle: 55
+      cameraRecoilScalar: 5
+      fireRate: 5
+      soundGunshot:
+        path: /Audio/Weapons/Guns64/LMGs/t42.ogg
+        params:
+          volume: -3
+    - type: ChamberMagazineAmmoProvider
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: MagazineLightMachineGunDrum
+          insertSound: /Audio/Weapons/Guns64/LMGs/t42_reload.ogg
+          ejectSound: /Audio/Weapons/Guns64/LMGs/t42_unload.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - MagazineLightMachineGunDrum
+        gun_chamber:
+          name: Chamber
+          startingItem: CartridgeRifle
+          priority: 1
+          whitelist:
+            tags:
+              - CartridgeRifle
+    - type: ContainerContainer
+      containers:
+        gun_magazine: !type:ContainerSlot
+        gun_chamber: !type:ContainerSlot
+    - type: MagazineVisuals
+      magState: mag
+      steps: 2
+      zeroVisible: true
+    - type: Appearance
+    - type: Wieldable
+    - type: UseDelay
+      delay: 1.9
+    - type: GunRequiresWield
+    - type: ClothingSpeedModifier
+      walkModifier: 1
+      sprintModifier: 0.6
+    - type: HeldSpeedModifier

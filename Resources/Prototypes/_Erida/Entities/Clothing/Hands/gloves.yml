@@ -1,0 +1,12 @@
+- type: entity
+  parent: [ClothingHandsKnuckleDustersSyndicate, BaseInteQContraband]
+  id: ClothingHandsKnuckleDustersInteQ
+  suffix: Интек
+  name: InteQ knuckle dusters
+  description: "Plastitanium knuckle dusters branded with the blood-red S. A real man beats someone to death with these."
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Hands/Gloves/KnuckleDusters/inteqknuckleduster.rsi
+      state: inteqknuckleduster
+    - type: Clothing
+      sprite: _Erida/Clothing/Hands/Gloves/KnuckleDusters/inteqknuckleduster.rsi

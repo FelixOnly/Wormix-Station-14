@@ -19,6 +19,7 @@ using System.Threading.Tasks;
 using Content.Server.Atmos.Components;
 using Content.Shared._Shitmed.Damage;
 using Content.Shared._Shitmed.Targeting;
+using Content.Shared.Atmos.Components;
 using Content.Shared.Heretic;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;

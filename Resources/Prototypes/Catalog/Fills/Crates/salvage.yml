@@ -43,90 +43,98 @@
   suffix: Filled
   parent: CrateMining # Orion-Edit
   components:
-  - type: StorageFill
-    contents:
-      - id: ClothingOuterHardsuitSalvage
-      - id: ClothingMaskBreath
-      - id: OxygenTankFilled
-      - id: FireExtinguisher
-      - id: ClothingShoesBootsMag
-      - id: HandheldGPSBasic # - Mass Scanner Removed by Lavaland
-      - id: Pickaxe
-      - id: Welder
-      - id: Wrench
-      - id: Screwdriver
-      - id: Crowbar
-      - id: Wirecutter
-      - id: ClothingBeltUtility
-      - id: OreBag
-      - id: ClothingBeltSalvageWebbing
+    - type: StorageFill
+      contents:
+        - id: ClothingOuterHardsuitSalvage
+        - id: ClothingMaskBreath
+        - id: OxygenTankFilled
+        - id: FireExtinguisher
+        - id: ClothingShoesBootsMag
+        - id: HandheldGPSBasic # - Mass Scanner Removed by Lavaland
+        - id: Pickaxe
+        - id: Welder
+        - id: Wrench
+        - id: Screwdriver
+        - id: Crowbar
+        - id: Wirecutter
+        - id: ClothingBeltUtility
+        - id: OreBag
+        - id: ClothingBeltSalvageWebbing
 
 - type: entity
   id: CrateSalvageAssortedGoodies
   suffix: Filled, Salvage Random
-  categories: [ HideSpawnMenu ] # You should use SalvageMaterialCrateSpawner instead
+  categories: [HideSpawnMenu] # You should use SalvageMaterialCrateSpawner instead
   parent: CrateGenericSteel
   components:
-  - type: StorageFill
-    contents:
+    - type: StorageFill
+      contents:
         # Normal (10%)
-      - id: OxygenTankFilled
-        prob: 0.1
-      - id: SheetPlasma
-        prob: 0.1
-      - id: IngotGold
-        prob: 0.1
-      - id: IngotSilver
-        prob: 0.1
-      - id: SheetPlasma
-        prob: 0.1
-      - id: WelderIndustrialAdvanced
-        prob: 0.1
-      - id: ResearchDisk
-        prob: 0.1
-      - id: SheetUranium
-        prob: 0.1
-        #  - Service
-      - id: CrayonBox
-        prob: 0.1
-        #  - Medical
-      - id: MedkitFilled
-        prob: 0.1
-      - id: BoxSyringe
-        prob: 0.1
-      - id: BoxBeaker
-        prob: 0.1
-        #  - Heh
-      - id: SalvageHumanCorpse
-        prob: 0.1
-        # Interesting (1%)
-        #  - Ammo
-      - id: MagazineBoxMagnum
-        prob: 0.01
-      - id: ResearchDisk10000
-        prob: 0.01
-        # Just no (0.1%)
-        #  - Working guns
-      - id: WeaponRevolverDeckard
-        prob: 0.001
-      - id: WeaponRevolverInspector
-        prob: 0.001
-      - id: ClothingShoesBootsMagBlinding
-        prob: 0.001
-        #  - Skub
-      - id: Skub
-        prob: 0.001
-      - id: ClothingHeadHatCatEars
-        prob: 0.01
-      - id: ClothingHeadHatDogEars
-        prob: 0.01
-        # TRAITOR EQUIPMENT (0.01%)
-      - id: Telecrystal50 # Goobstation - Telecrystal rework
-        prob: 0.0001
-      - id: WeaponRevolverPython
-        prob: 0.0001
-      - id: WeaponRevolverMateba
-        prob: 0.0001
+        - id: OxygenTankFilled
+          prob: 0.1
+        - id: SheetPlasma
+          prob: 0.1
+        - id: IngotGold
+          prob: 0.1
+        - id: IngotSilver
+          prob: 0.1
+        - id: SheetPlasma
+          prob: 0.1
+        - id: WelderIndustrialAdvanced
+          prob: 0.1
+        - id: ResearchDisk5000 #Goob station
+          prob: 0.1
+        - id: SheetUranium
+          prob: 0.1
+          #  - Service
+        - id: CrayonBox
+          prob: 0.1
+          #  - Medical
+        - id: MedkitFilled
+          prob: 0.1
+        - id: BoxSyringe
+          prob: 0.1
+        - id: BoxBeaker
+          prob: 0.1
+          #  - Heh
+        - id: SalvageHumanCorpse
+          prob: 0.1
+          # Interesting (1%)
+        - id: MaterialBSCrystal #Goob station
+          prob: 0.01
+          #  - Ammo
+        - id: MagazineBoxMagnum
+          prob: 0.01
+        - id: ResearchDisk10000
+          prob: 0.01
+          # Just no (0.1%)
+          #  - Working guns
+        - id: WeaponRevolverDeckard
+          prob: 0.001
+        - id: WeaponRevolverInspector
+          prob: 0.001
+        - id: ClothingShoesBootsMagBlinding
+          prob: 0.001
+          #  - Skub
+        - id: Skub
+          prob: 0.001
+        - id: ClothingHeadHatCatEars
+          prob: 0.01
+        - id: ClothingHeadHatDogEars
+          prob: 0.01
+        - id: FoodMango #Goob station
+          prob: 0.01
+          # TRAITOR EQUIPMENT (0.01%)
+        - id: Telecrystal50 # Goobstation - Telecrystal rework
+          prob: 0.0001
+        - id: WeaponRevolverPython
+          prob: 0.0001
+        - id: WeaponRevolverMateba
+          prob: 0.0001
+        - id: GatfruitSeeds # Goob station
+          prob: 0.0001
+        - id: DehydratedSpaceCarp #Goob station
+          prob: 0.0001
 
 - type: entity
   parent: CrateMining # Orion-Edit
@@ -134,11 +142,11 @@
   name: crusher dagger crate
   description: Contains 4 crusher daggers for use by salvage.
   components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: WeaponCrusherDagger
-        amount: 4
+    - type: EntityTableContainerFill
+      containers:
+        entity_storage:
+          id: WeaponCrusherDagger
+          amount: 4
 
 # Salvage rewards
 - type: entity
@@ -147,26 +155,28 @@
   name: seismic charge crate
   description: Contains 6 seismic charges for use by salvage.
   components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: SeismicCharge
-        amount: 6
+    - type: EntityTableContainerFill
+      containers:
+        entity_storage:
+          id: SeismicCharge
+          amount: 6
 
 - type: entity
   parent: CrateGenericSteel
   id: CrateDoubleEmergencyTank
   name: double emergency tank crate
-  description: Contains 2 double emergency oxygen tanks and 2 double emergency nitrogen tanks
+  description: Contains 2 double emergency oxygen tanks, 2 double emergency nitrogen tanks and 2 double emergency water vapor tanks. #Goob station
   components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:AllSelector
-        children:
-        - id: DoubleEmergencyOxygenTankFilled
-          amount: 2
-        - id: DoubleEmergencyNitrogenTankFilled
-          amount: 2
+    - type: EntityTableContainerFill
+      containers:
+        entity_storage: !type:AllSelector
+          children:
+            - id: DoubleEmergencyOxygenTankFilled
+              amount: 2
+            - id: DoubleEmergencyNitrogenTankFilled
+              amount: 2
+            - id: DoubleEmergencyWaterVaporTankFilled #Goob station
+              amount: 2
 
 - type: entity
   parent: CrateMining # Orion-Edit
@@ -174,11 +184,11 @@
   name: crusher crate
   description: Contains 2 crushers for use by salvage.
   components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: WeaponCrusher
-        amount: 2
+    - type: EntityTableContainerFill
+      containers:
+        entity_storage:
+          id: WeaponCrusher
+          amount: 2
 
 - type: entity
   parent: CrateMining # Orion-Edit
@@ -186,13 +196,13 @@
   name: fulton crate
   description: Contains a fulton beacon and 8 fultons.
   components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:AllSelector
-        children:
-        - id: FultonBeacon
-        - id: Fulton
-          amount: 8
+    - type: EntityTableContainerFill
+      containers:
+        entity_storage: !type:AllSelector
+          children:
+            - id: FultonBeacon
+            - id: Fulton
+              amount: 8
 
 - type: entity
   parent: CrateGenericSteel
@@ -200,10 +210,10 @@
   name: void jetpack crate
   description: Contains a single void jetpack.
   components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: JetpackVoidFilled
+    - type: EntityTableContainerFill
+      containers:
+        entity_storage:
+          id: JetpackVoidFilled
 
 - type: entity
   parent: CrateMining # Orion-Edit
@@ -211,13 +221,13 @@
   name: salvage hardsuit crate
   description: Contains a salvage hardsuit, breath mask, and oxygen tank.
   components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:AllSelector
-        children:
-        - id: ClothingOuterHardsuitSalvage
-        - id: ClothingMaskBreath
-        - id: OxygenTankFilled
+    - type: EntityTableContainerFill
+      containers:
+        entity_storage: !type:AllSelector
+          children:
+            - id: ClothingOuterHardsuitSalvage
+            - id: ClothingMaskBreath
+            - id: OxygenTankFilled
 
 - type: entity
   parent: CrateMining # Orion-Edit
@@ -225,10 +235,10 @@
   name: crusher glaive crate
   description: Contains a crusher glaive for use by salvage.
   components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: WeaponCrusherGlaive
+    - type: EntityTableContainerFill
+      containers:
+        entity_storage:
+          id: WeaponCrusherGlaive
 
 - type: entity
   parent: CrateMiningSecure # Orion-Edit
@@ -236,10 +246,10 @@
   name: supreme salvager cloak crate
   description: Contains a cloak only to be worn by supreme salvagers. Wearing it undeservedly will result in your doom.
   components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: ClothingNeckCloakSalvagerSupreme
+    - type: EntityTableContainerFill
+      containers:
+        entity_storage:
+          id: ClothingNeckCloakSalvagerSupreme
 
 - type: entity
   parent: CrateGenericSteel
@@ -276,3 +286,4 @@
   #  contents:
   #  - id: SalvagePartsT4Spawner
   #    amount: 5
+

@@ -1,0 +1,8 @@
+- type: entity
+  id: BaseBlueShieldContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  suffix: Бакмен, ОСЩ
+  components:
+    - type: Contraband
+      allowedJobs: [BlueShieldOfficer]

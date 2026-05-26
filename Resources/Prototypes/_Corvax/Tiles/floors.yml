@@ -9,13 +9,13 @@
   sprite: /Textures/_Corvax/Tiles/wood_parquet.png
   variants: 4
   placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
   baseTurf: Plating
   isSubfloor: false
-  deconstructTools: [ Prying ]
+  deconstructTools: [Prying]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
@@ -29,13 +29,13 @@
   sprite: /Textures/_Corvax/Tiles/wood_chess.png
   variants: 4
   placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
   baseTurf: Plating
   isSubfloor: false
-  deconstructTools: [ Prying ]
+  deconstructTools: [Prying]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
@@ -49,13 +49,13 @@
   sprite: /Textures/_Corvax/Tiles/wood_black.png
   variants: 4
   placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
   baseTurf: Plating
   isSubfloor: false
-  deconstructTools: [ Prying ]
+  deconstructTools: [Prying]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
@@ -69,13 +69,13 @@
   sprite: /Textures/_Corvax/Tiles/wood_large_black.png
   variants: 4
   placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
   baseTurf: Plating
   isSubfloor: false
-  deconstructTools: [ Prying ]
+  deconstructTools: [Prying]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
@@ -89,13 +89,13 @@
   sprite: /Textures/_Corvax/Tiles/wood_parquet_black.png
   variants: 4
   placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
   baseTurf: Plating
   isSubfloor: false
-  deconstructTools: [ Prying ]
+  deconstructTools: [Prying]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
@@ -109,13 +109,13 @@
   sprite: /Textures/_Corvax/Tiles/wood_chess_black.png
   variants: 4
   placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
   baseTurf: Plating
   isSubfloor: false
-  deconstructTools: [ Prying ]
+  deconstructTools: [Prying]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
@@ -129,13 +129,13 @@
   sprite: /Textures/_Corvax/Tiles/wood_dark.png
   variants: 4
   placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
   baseTurf: Plating
   isSubfloor: false
-  deconstructTools: [ Prying ]
+  deconstructTools: [Prying]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
@@ -149,13 +149,13 @@
   sprite: /Textures/_Corvax/Tiles/wood_large_dark.png
   variants: 4
   placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
   baseTurf: Plating
   isSubfloor: false
-  deconstructTools: [ Prying ]
+  deconstructTools: [Prying]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
@@ -169,13 +169,13 @@
   sprite: /Textures/_Corvax/Tiles/wood_parquet_dark.png
   variants: 4
   placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
   baseTurf: Plating
   isSubfloor: false
-  deconstructTools: [ Prying ]
+  deconstructTools: [Prying]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
@@ -189,13 +189,13 @@
   sprite: /Textures/_Corvax/Tiles/wood_chess_dark.png
   variants: 4
   placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
   baseTurf: Plating
   isSubfloor: false
-  deconstructTools: [ Prying ]
+  deconstructTools: [Prying]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
@@ -209,13 +209,13 @@
   sprite: /Textures/_Corvax/Tiles/wood_light.png
   variants: 4
   placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
   baseTurf: Plating
   isSubfloor: false
-  deconstructTools: [ Prying ]
+  deconstructTools: [Prying]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
@@ -229,13 +229,13 @@
   sprite: /Textures/_Corvax/Tiles/wood_large_light.png
   variants: 4
   placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
   baseTurf: Plating
   isSubfloor: false
-  deconstructTools: [ Prying ]
+  deconstructTools: [Prying]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
@@ -249,13 +249,13 @@
   sprite: /Textures/_Corvax/Tiles/wood_parquet_light.png
   variants: 4
   placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
   baseTurf: Plating
   isSubfloor: false
-  deconstructTools: [ Prying ]
+  deconstructTools: [Prying]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
@@ -269,13 +269,13 @@
   sprite: /Textures/_Corvax/Tiles/wood_chess_light.png
   variants: 4
   placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
   baseTurf: Plating
   isSubfloor: false
-  deconstructTools: [ Prying ]
+  deconstructTools: [Prying]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
@@ -289,13 +289,13 @@
   sprite: /Textures/_Corvax/Tiles/wood_red.png
   variants: 4
   placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
   baseTurf: Plating
   isSubfloor: false
-  deconstructTools: [ Prying ]
+  deconstructTools: [Prying]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
@@ -309,13 +309,13 @@
   sprite: /Textures/_Corvax/Tiles/wood_large_red.png
   variants: 4
   placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
   baseTurf: Plating
   isSubfloor: false
-  deconstructTools: [ Prying ]
+  deconstructTools: [Prying]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
@@ -329,13 +329,13 @@
   sprite: /Textures/_Corvax/Tiles/wood_parquet_red.png
   variants: 4
   placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
   baseTurf: Plating
   isSubfloor: false
-  deconstructTools: [ Prying ]
+  deconstructTools: [Prying]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:
@@ -349,13 +349,13 @@
   sprite: /Textures/_Corvax/Tiles/wood_chess_red.png
   variants: 4
   placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
+    - 1.0
   baseTurf: Plating
   isSubfloor: false
-  deconstructTools: [ Prying ]
+  deconstructTools: [Prying]
   footstepSounds:
     collection: FootstepWood
   barestepSounds:

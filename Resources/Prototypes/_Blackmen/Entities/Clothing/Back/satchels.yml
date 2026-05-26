@@ -1,0 +1,9 @@
+- type: entity
+  parent: [ClothingBackpackSatchel, BaseCentcommContraband]
+  id: ClothingBackpackSatchelBlueshieldAlt
+  name: officer "Blueshield" satchel
+  description: A robust satchel for officer "Blueshield" needs.
+  suffix: Бакмен, ОСЩ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Back/Satchels/blueshield_satchel.rsi

@@ -1,0 +1,416 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetCentcom
+  name: шлем службы безопасности Центком
+  description: Модифицированный шлем службы безопасности, предназначенный для нужд охраны станций Центрального командования.
+  suffix: Бакмен, ЦК
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/centcom_sec_helmet.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/centcom_sec_helmet.rsi
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.8
+          Slash: 0.8
+          Piercing: 0.8
+          Heat: 0.8
+    - type: ExplosionResistance
+      damageCoefficient: 0.8
+
+- type: entity
+  parent: [ClothingHeadHelmetBase, BaseSecurityContraband]
+  id: ClothingHeadSecurityPilotHelmet
+  name: security pilot helmet
+  description: Standard security pilot gear. Protects the head from impacts.
+  suffix: Бакмен, СБ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/helmet-sec-pilot.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/helmet-sec-pilot.rsi
+    - type: Tag
+      tags:
+        - WhitelistChameleon
+        - SecurityHelmet
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingMogHelmet
+  name: Баллистический Шлем МОГ
+  description: Баллистический Шлем корпорации CSH для бойцов МОГ, покрыт желтым слоем стекла, обеспечивает защиту от осколков, разработан инженером CSH Беловым.
+  suffix: Бакмен, ОПЗ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/mog_helmet.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/mog_helmet.rsi
+    - type: IngestionBlocker
+    - type: Armor
+      coverage:
+        - Head
+      modifiers:
+        coefficients:
+          Blunt: 0.70
+          Slash: 0.90
+          Piercing: 0.90
+          Heat: 0.70
+          ArmorPiercing: 0.95
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadIOGHelmet
+  name: Шлем биологической защиты ИОГ.
+  description: Шлем биологической защиты ИОГ. Оснащен прокладками из прочного материала, способного сдержать выстрел мелкокалиберного оружия.
+  suffix: Бакмен, ОПЗ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/biohazardIOG.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/biohazardIOG.rsi
+    - type: Armor
+      coverage:
+        - Head
+      modifiers:
+        coefficients:
+          Blunt: 0.8
+          Slash: 0.8
+          Piercing: 0.9
+          Heat: 0.8
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetPoloskiAltin
+  name: Тяжёлый шлем Алтын
+  description: Тяжелый шлем марки АЛТЫН, способен выдержать выстрел крупнокалиберного оружия.
+  suffix: Бакмен, СССП
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/altinbelov.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/altinbelov.rsi
+    - type: IngestionBlocker
+    - type: Armor
+      coverage:
+        - Head
+      modifiers:
+        coefficients:
+          Blunt: 0.60
+          Slash: 0.8
+          Piercing: 0.9
+          Heat: 0.80
+          ArmorPiercing: 0.80
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadGermanHelmet
+  name: Старый немецкий шлем
+  description: Довольно старый шлем, который потрепало временем.
+  suffix: Бакмен, СССП
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/germanhelmetbelov.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/germanhelmetbelov.rsi
+    - type: IngestionBlocker
+    - type: Armor
+      coverage:
+        - Head
+      modifiers:
+        coefficients:
+          Blunt: 0.50
+          Heat: 0.40
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetSSSP
+  name: Легкий советский шлем
+  description: Легкий шлем советских войск
+  suffix: Бакмен, СССП
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/helmetssspbel.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/helmetssspbel.rsi
+    - type: IngestionBlocker
+    - type: Armor
+      coverage:
+        - Head
+      modifiers:
+        coefficients:
+          Blunt: 0.8
+          Slash: 0.8
+          Piercing: 0.9
+          Heat: 0.4
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetIhsCombathelmet
+  name: Тяжелый тактический шлем IHS
+  description: Тяжелый шлем неизвестной корпорации, никто не знает кому принадлежат бойцы которые носят данный шлем.
+  suffix: Бакмен
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/ihscombathelmetbelsuper.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/ihscombathelmetbelsuper.rsi
+    - type: IngestionBlocker
+    - type: Armor
+      coverage:
+        - Head
+      modifiers:
+        coefficients:
+          Blunt: 0.60
+          Slash: 0.8
+          Piercing: 0.9
+          Heat: 0.80
+
+#Cargo EVA Helmet
+- type: entity
+  parent: [ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase]
+  id: ClothingHeadHelmetCargoEVA
+  categories: [HideSpawnMenu]
+  name: EVA cargo helmet
+  description: Встроенный шлем скафандра EVA отдела снабжения. Есть фонарик.
+  suffix: Бакмен
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/eva_cargo.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/eva_cargo.rsi
+    - type: PointLight
+      color: "#ffdbad"
+    - type: Armor
+      coverage:
+        - Head
+      modifiers:
+        coefficients:
+          Slash: 0.9
+          Heat: 0.95
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetRed
+  name: красный мотошлем
+  description: Вы чувствуете жажду. Не только скорости.
+  suffix: Бакмен
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/motohelmetred.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/motohelmetred.rsi
+    - type: Armor
+      coverage:
+        - Head
+      modifiers:
+        coefficients:
+          Blunt: 0.9
+          Slash: 0.9
+          Piercing: 0.9
+          Heat: 0.9
+
+- type: entity
+  parent: ClothingHeadHelmetRed
+  id: ClothingHeadHelmetGreen
+  name: зелёный мотошлем
+  description: Вы чувствуете жажду. Не только скорости.
+  suffix: Бакмен
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/motohelmetgreen.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/motohelmetgreen.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetRed
+  id: ClothingHeadHelmetBlue
+  name: синий мотошлем
+  description: Вы чувствуете жажду. Не только скорости.
+  suffix: Бакмен
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/motohelmetblue.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/motohelmetblue.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetRed
+  id: ClothingHeadHelmetBlack
+  name: чёрный мотошлем
+  description: Вы чувствуете жажду. Не только скорости.
+  suffix: Бакмен
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/motohelmetblack.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/motohelmetblack.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetRed
+  id: ClothingHeadHelmetWhite
+  name: белый мотошлем
+  description: Вы чувствуете жажду. Не только скорости.
+  suffix: Бакмен
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/motohelmetwhite.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/motohelmetwhite.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetRed
+  id: ClothingHeadHelmetYellow
+  name: жёлтый мотошлем
+  description: Вы чувствуете жажду. Не только скорости.
+  suffix: Бакмен
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/motohelmetyellow.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/motohelmetyellow.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetEGov
+  id: ClothingHeadHelmetEGovPilot
+  name: pilot helmet
+  suffix: Бакмен, ОПЗ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/pilothelmet.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/pilothelmet.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetEGov
+  name: helmet
+  description: A usual helmet.
+  suffix: Бакмен, ОПЗ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/helmet.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/helmet.rsi
+    - type: Armor
+      coverage:
+        - Head
+      modifiers:
+        coefficients:
+          Blunt: 0.8
+          Slash: 0.8
+          Piercing: 0.9
+          Heat: 0.8
+    - type: ExplosionResistance
+      damageCoefficient: 0.8
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetMVD
+  name: противоударный шлем
+  description: Обычный шлем с желтым визором.
+  suffix: Бакмен
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/helmetmvd.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/helmetmvd.rsi
+    - type: Armor
+      coverage:
+        - Head
+      modifiers:
+        coefficients:
+          Blunt: 0.4
+          Slash: 0.5
+          Piercing: 0.85
+          Heat: 0.75
+    - type: ExplosionResistance
+      damageCoefficient: 0.8
+
+- type: entity # backmen
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetSWAT
+  name: шлем SWAT
+  description: Шлем SWATа, способен выдержать выстрел оружия.
+  suffix: Бакмен, ОПЗ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/helm.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/helm.rsi
+    - type: IngestionBlocker
+    - type: Armor
+      coverage:
+        - Head
+      modifiers:
+        coefficients:
+          Blunt: 0.60
+          Slash: 0.8
+          Piercing: 0.9
+          Heat: 0.80
+
+- type: entity # backmen
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetGreenMilee
+  name: шлем милитарист
+  description: Шлем милитарист, способен выдержать выстрел оружия.
+  suffix: Бакмен, ОПЗ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/helmetgrin.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/helmetgrin.rsi
+    - type: IngestionBlocker
+    - type: Armor
+      coverage:
+        - Head
+      modifiers:
+        coefficients:
+          Blunt: 0.40
+          Slash: 0.3
+          Piercing: 0.9
+          Heat: 0.60
+
+- type: entity # backmen
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetTGMCwhite
+  name: белый боевой шлем
+  description: Белый боевой шлем, способен выдержать выстрел оружия.
+  suffix: Бакмен, ОПЗ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/helmwhitetgmc.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/helmwhitetgmc.rsi
+    - type: IngestionBlocker
+    - type: Armor
+      coverage:
+        - Head
+      modifiers:
+        coefficients:
+          Blunt: 0.30
+          Slash: 0.3
+          Piercing: 0.9
+          Heat: 0.60
+
+- type: entity # backmen
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetTGMCwhiteMed
+  name: белый медицинский шлем
+  description: Белый боевой-медицинский шлем, способен выдержать выстрел оружия.
+  suffix: Бакмен, ОПЗ
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Helmets/helm_medtgmc.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Helmets/helm_medtgmc.rsi
+    - type: IngestionBlocker
+    - type: Armor
+      coverage:
+        - Head
+      modifiers:
+        coefficients:
+          Blunt: 0.30
+          Slash: 0.3
+          Piercing: 0.9
+          Heat: 0.60

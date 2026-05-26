@@ -9,6 +9,7 @@ using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared._EinsteinEngines.SelfExtinguisher;
 using Content.Shared.Actions;
+using Content.Shared.Atmos.Components;
 using Content.Shared.Charges.Components;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Effects;

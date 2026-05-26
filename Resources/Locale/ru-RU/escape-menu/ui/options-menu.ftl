@@ -1,5 +1,6 @@
 ## General stuff
 
+ui-options-binds-search = Поиск
 ui-options-title = Игровые настройки
 ui-options-tab-accessibility = Доступность
 ui-options-tab-admin = Админ

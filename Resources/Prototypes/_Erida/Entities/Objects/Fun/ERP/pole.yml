@@ -1,0 +1,11 @@
+- type: entity
+  parent: BaseItem
+  id: LPPPole
+  suffix: ЕРП
+  name: LPPPole
+  description: LPPPole
+  components:
+    - type: Sprite
+      sprite: _Erida/Objects/Fun/ERP/pole.rsi
+      state: pole
+

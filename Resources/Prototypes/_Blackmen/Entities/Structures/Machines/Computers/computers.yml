@@ -1,0 +1,69 @@
+- type: entity
+  parent: ComputerId
+  id: CCComputerId
+  name: Консоль ID карт ЦК
+  description: Terminal for programming Nanotrasen employee ID cards to access parts of the station.
+  suffix: Бакмен, ЦК
+  components:
+    - type: IdCardConsole
+      accessLevels:
+        - CentralCommand
+        - CCCargo
+        - CCOfficer
+        - CCSecurity
+        - CCAdmiral
+      privilegedIdSlot:
+        name: id-card-console-privileged-id
+        ejectSound: /Audio/Machines/id_swipe.ogg
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectOnBreak: true
+        swap: false
+        whitelist:
+          components:
+            - IdCard
+      targetIdSlot:
+        name: id-card-console-target-id
+        ejectSound: /Audio/Machines/id_swipe.ogg
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectOnBreak: true
+        swap: false
+        whitelist:
+          components:
+            - IdCard
+
+- type: entity
+  parent: ComputerId
+  id: UEGComputerId
+  name: Консоль ID карт ОПЗ
+  description: Terminal for programming Nanotrasen employee ID cards to access parts of the station.
+  suffix: Бакмен, ОПЗ
+  components:
+    - type: IdCardConsole
+      accessLevels:
+        - EarthGovCommand
+        - EarthGovSpecialits
+        - EarthGovMedic
+        - EarthGov
+      privilegedIdSlot:
+        name: id-card-console-privileged-id
+        ejectSound: /Audio/Machines/id_swipe.ogg
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectOnBreak: true
+        swap: false
+        whitelist:
+          components:
+            - IdCard
+      targetIdSlot:
+        name: id-card-console-target-id
+        ejectSound: /Audio/Machines/id_swipe.ogg
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectOnBreak: true
+        swap: false
+        whitelist:
+          components:
+            - IdCard
+
+- type: entity
+  categories: [HideSpawnMenu]
+  parent: MarkerBase
+  id: ReinforcementSpawner

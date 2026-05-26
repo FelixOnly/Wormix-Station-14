@@ -18,7 +18,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Text.RegularExpressions;
 using Content.Client.MainMenu.UI;
 using Content.Client.UserInterface.Systems.EscapeMenu;
 using Robust.Client;
@@ -27,8 +26,11 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared;
 using Robust.Shared.Configuration;
+using Robust.Shared.Console;
 using Robust.Shared.Network;
 using Robust.Shared.Utility;
+using System;
+using System.Text.RegularExpressions;
 using UsernameHelpers = Robust.Shared.AuthLib.UsernameHelpers;
 
 namespace Content.Client.MainMenu
@@ -46,11 +48,13 @@ namespace Content.Client.MainMenu
         [Dependency] private readonly IResourceCache _resourceCache = default!;
         [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
         [Dependency] private readonly ILogManager _logManager = default!;
+        [Dependency] private readonly IConsoleHost _console = default!; // Wormix edit
 
         private ISawmill _sawmill = default!;
 
         private MainMenuControl _mainMenuControl = default!;
         private bool _isConnecting;
+        private bool _shouldGoLobby; // Wormix edit
 
         // ReSharper disable once InconsistentNaming
         private static readonly Regex IPv6Regex = new(@"\[(.*:.*:.*)](?::(\d+))?");
@@ -63,11 +67,15 @@ namespace Content.Client.MainMenu
             _mainMenuControl = new MainMenuControl(_resourceCache, _configurationManager);
             _userInterfaceManager.StateRoot.AddChild(_mainMenuControl);
 
+            _client.PlayerJoinedGame += OnPlayerJoinedGame; // Wormix edit
+
             _mainMenuControl.QuitButton.OnPressed += QuitButtonPressed;
             _mainMenuControl.OptionsButton.OnPressed += OptionsButtonPressed;
             _mainMenuControl.DirectConnectButton.OnPressed += DirectConnectButtonPressed;
             _mainMenuControl.AddressBox.OnTextEntered += AddressBoxEntered;
             _mainMenuControl.ChangelogButton.OnPressed += ChangelogButtonPressed;
+
+            _mainMenuControl.GoToLobbyButton.OnPressed += GoToLobbyButtonPressed; // Wormix edit
 
             _client.RunLevelChanged += RunLevelChanged;
         }
@@ -79,6 +87,23 @@ namespace Content.Client.MainMenu
             _netManager.ConnectFailed -= _onConnectFailed;
 
             _mainMenuControl.Dispose();
+        }
+
+        private void OnPlayerJoinedGame(object? sender, PlayerEventArgs e)
+        // Wormix edit
+        {
+            if (_shouldGoLobby)
+            {
+                _console.ExecuteCommand("golobby");
+                _shouldGoLobby = false;
+            }
+        }
+        private void GoToLobbyButtonPressed(BaseButton.ButtonEventArgs obj)
+        {
+            var input = _mainMenuControl.AddressBox;
+            TryConnect(input.Text);
+
+            _shouldGoLobby = true;
         }
 
         private void ChangelogButtonPressed(BaseButton.ButtonEventArgs args)
@@ -210,6 +235,7 @@ namespace Content.Client.MainMenu
         {
             _isConnecting = state;
             _mainMenuControl.DirectConnectButton.Disabled = state;
+            _mainMenuControl.GoToLobbyButton.Disabled = state;
         }
     }
 }

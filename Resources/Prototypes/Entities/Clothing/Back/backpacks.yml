@@ -107,6 +107,12 @@
   # to prevent bag open/honk spam
   - type: UseDelay
     delay: 0.5
+  - type: Armor
+    coverage:
+        - Chest
+    modifiers:
+        coefficients:
+            Slash: 0.9
   - type: ExplosionResistance
     damageCoefficient: 0.9
   - type: Tag

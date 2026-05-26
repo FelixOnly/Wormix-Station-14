@@ -1,0 +1,10 @@
+- type: marking
+  id: EarsResomi
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian]
+  sprites:
+    - sprite: ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi
+      state: avali_inner
+    - sprite: ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi
+      state: avali_outer

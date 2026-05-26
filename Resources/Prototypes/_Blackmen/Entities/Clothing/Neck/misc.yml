@@ -1,0 +1,30 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckBellCollar
+  name: bell collar
+  description: A way to inform others about your presence, or just to annoy everyone around you!
+  suffix: Бакмен, ВЫРЕЗАН
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Neck/Misc/bellcollar.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Neck/Misc/bellcollar.rsi
+    - type: FootstepModifier
+      footstepSoundCollection:
+        collection: FootstepJester
+        params:
+          variation: 0.09
+          volume: -6
+
+      #FootstepJester
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterUnathiRobe
+  name: roughspun robes
+  description: A traditional Unathi garment.
+  suffix: Бакмен
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Misc/unathirobe.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Misc/unathirobe.rsi

@@ -187,6 +187,8 @@ public abstract partial class SharedBuckleSystem
             return;
         }
 
+        return; // WORMIX TEMP FIX 
+
         // Goobstation - doafter for unbuckle by others
         if (args.Puller != ent.Owner
             && TryComp<StrapComponent>(ent.Comp.BuckledTo, out var strap)

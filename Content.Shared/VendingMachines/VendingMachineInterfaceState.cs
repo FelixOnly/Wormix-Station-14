@@ -20,6 +20,36 @@ namespace Content.Shared.VendingMachines
         }
     }
 
+    //ADT-Economy-Start
+    [Serializable, NetSerializable]
+    public sealed class VendingMachineWithdrawMessage : BoundUserInterfaceMessage
+    {
+    }
+
+    [Serializable, NetSerializable]
+    public sealed class VendingMachineEjectCountMessage : BoundUserInterfaceMessage
+    {
+        public readonly VendingMachineInventoryEntry Entry;
+        public readonly int Count;
+        public VendingMachineEjectCountMessage(VendingMachineInventoryEntry entry, int count)
+        {
+            Entry = entry;
+            Count = count;
+        }
+    }
+
+    [NetSerializable, Serializable]
+    public sealed class VendingMachineInterfaceState : BoundUserInterfaceState
+    {
+        public List<VendingMachineInventoryEntry> Inventory;
+        public VendingMachineInterfaceState(List<VendingMachineInventoryEntry> inventory) 
+        {
+            Inventory = inventory;
+        }
+    }
+
+    //ADT-Economy-End
+
     [Serializable, NetSerializable]
     public enum VendingMachineUiKey
     {

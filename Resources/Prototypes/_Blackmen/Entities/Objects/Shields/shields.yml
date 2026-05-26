@@ -1,0 +1,70 @@
+- type: entity
+  name: assault tower shield
+  parent: BaseShield
+  id: EgovShield
+  description: A shield that covers the wearer from head to toe, not everyone can lift this.
+  suffix: Бакмен, ОПЗ
+  components:
+    - type: Sprite
+      sprite: Backmen/Objects/Weapons/Melee/shields.rsi
+      state: egov-icon
+    - type: Item
+      sprite: Backmen/Objects/Weapons/Melee/shields.rsi
+      size: Huge
+      heldPrefix: egov
+    - type: StaticPrice
+      price: 200
+    - type: Blocking
+      passiveBlockModifier:
+        coefficients:
+          Blunt: 0.7
+          Slash: 0.7
+          Piercing: 0.7
+          ArmorPiercing: 0.9
+          Heat: 0.7
+      activeBlockModifier:
+        coefficients:
+          Blunt: 0.5
+          Slash: 0.5
+          Piercing: 0.5
+          ArmorPiercing: 0.8
+          Heat: 0.5
+        flatReductions:
+          Blunt: 5
+          Slash: 5
+          Piercing: 5
+          Heat: 5
+    - type: Destructible
+      thresholds:
+        - trigger: !type:DamageTrigger
+            damage: 190 #This is probably enough damage before it breaks
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+            - !type:PlaySoundBehavior
+              sound:
+                collection: MetalBreak
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                SheetPlasteel1:
+                  min: 4
+                  max: 4
+
+# InteQ
+- type: entity
+  parent: [RiotLaserShield, BaseMinorContraband]
+  id: InteQLaserShield
+  name: InteQ laser shield
+  description: InteQ shield built for withstanding lasers, but not much else.
+  suffix: Бакмен, Интек
+  components:
+    - type: Sprite
+      sprite: Backmen/Objects/Weapons/Melee/inteq_shield.rsi
+      state: inteq_icon
+    - type: Item
+      sprite: Backmen/Objects/Weapons/Melee/inteq_shield.rsi
+      heldPrefix: inteq
+    - type: Reflect
+      reflectProb: 0.95
+      reflects:
+        - Energy

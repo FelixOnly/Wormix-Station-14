@@ -1,0 +1,17 @@
+ent-ClothingUniformJumpsuitSheriffCaptain = униформа капитана-шерифа
+    .desc = Военный комбинезон, что используется для устрашения нарушителей закона. Пока этими нарушителями не будут изменены законы...
+    .suffix = Шериф Капитан
+ent-ClothingHeadHatBeretCaptainSheriff = берет шерифа
+    .desc = Салатово-золотистый берет.
+ent-ClothingHandsGlovesCaptainSheriff = перчатки шерифа
+    .desc = Ежовые рукавицы капитана станции.
+ent-BoxCaptainAdditionalClothing = коробка дополнительной одежды
+    .desc = В этой коробке содержатся дополнительные наряды для капитана станции.
+ent-Capwhitecloack = белый плащ капитана
+   .desc = Его яркий белый свет ослепляет своим величием.
+ent-Capwhitebackpack = белый рюкзак капитана
+   .desc = Это ваше воображение, или на нем действительно есть пятно?
+ent-CapSheriffcloack = плащ шерифа
+   .desc = Он излучает суровость!
+ent-CapSheriffbackpack = рюкзак шерифа
+   .desc = Здесь остались следы тех, кто ослушался!

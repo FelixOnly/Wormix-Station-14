@@ -17,15 +17,17 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Actions;
+using Content.Shared.Stacks;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared.VendingMachines
 {
-    [RegisterComponent, NetworkedComponent, AutoGenerateComponentPause]
+    [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
     public sealed partial class VendingMachineComponent : Component
     {
         /// <summary>
@@ -40,7 +42,7 @@ namespace Content.Shared.VendingMachines
         /// Used by the client to determine how long the deny animation should be played.
         /// </summary>
         [DataField]
-        public TimeSpan DenyDelay = TimeSpan.FromSeconds(2);
+        public float DenyDelay = 2f;
 
         /// <summary>
         /// Used by the server to determine how long the vending machine stays in the "Eject" state.
@@ -48,40 +50,35 @@ namespace Content.Shared.VendingMachines
         /// Used by the client to determine how long the deny animation should be played.
         /// </summary>
         [DataField]
-        public TimeSpan EjectDelay = TimeSpan.FromSeconds(1.2);
+        public float EjectDelay = 1.2f;
 
-        [DataField]
+        [DataField, AutoNetworkedField]
         public Dictionary<string, VendingMachineInventoryEntry> Inventory = new();
 
-        [DataField]
+        [DataField, AutoNetworkedField]
         public Dictionary<string, VendingMachineInventoryEntry> EmaggedInventory = new();
 
-        [DataField]
+        [DataField, AutoNetworkedField]
         public Dictionary<string, VendingMachineInventoryEntry> ContrabandInventory = new();
 
         /// <summary>
         /// If true then unlocks the <see cref="ContrabandInventory"/>
         /// </summary>
-        [DataField]
+        [DataField, AutoNetworkedField]
         public bool Contraband;
 
-        [ViewVariables]
-        public bool Ejecting => EjectEnd != null;
+        // ADT start
 
         [ViewVariables]
-        public bool Denying => DenyEnd != null;
+        public bool Ejecting;
 
         [ViewVariables]
-        public bool DispenseOnHitCoolingDown => DispenseOnHitEnd != null;
+        public bool Denying;
 
-        [DataField, AutoPausedField]
-        public TimeSpan? EjectEnd;
+        [ViewVariables]
+        public bool DispenseOnHitCoolingDown;
 
-        [DataField, AutoPausedField]
-        public TimeSpan? DenyEnd;
-
-        [DataField]
-        public TimeSpan? DispenseOnHitEnd;
+        // ADT end
 
         public string? NextItemToEject;
 
@@ -116,7 +113,7 @@ namespace Content.Shared.VendingMachines
         ///     and can be circumvented with forced ejections.
         /// </summary>
         [DataField]
-        public TimeSpan? DispenseOnHitCooldown = TimeSpan.FromSeconds(1.0);
+        public float DispenseOnHitCooldown = 1f;
 
         /// <summary>
         ///     Sound that plays when ejecting an item
@@ -142,6 +139,11 @@ namespace Content.Shared.VendingMachines
         public float NonLimitedEjectForce = 7.5f;
 
         public float NonLimitedEjectRange = 5f;
+
+        // ADT 
+        public float EjectAccumulator = 0f;
+        public float DenyAccumulator = 0f;
+        public float DispenseOnHitAccumulator = 0f;
 
         /// <summary>
         /// The quality of the stock in the vending machine on spawn.
@@ -209,6 +211,46 @@ namespace Content.Shared.VendingMachines
         [DataField("loopDeny")]
         public bool LoopDenyAnimation = true;
         #endregion
+
+        //ADT-Economy-Start
+        //[DataField, ViewVariables(VVAccess.ReadWrite)]
+        //public double PriceMultiplier = 0.75;
+
+        //[DataField, ViewVariables(VVAccess.ReadWrite)]
+        //public bool AllForFree = false;
+
+        //public ProtoId<StackPrototype> CreditStackPrototype = "Credit";
+
+        //[DataField]
+        //public string CurrencyType = "SpaceCash";
+
+        //[DataField]
+        //public SoundSpecifier SoundInsertCurrency =
+        //    new SoundPathSpecifier("/Audio/ADT/Machines/polaroid2.ogg");
+
+        //[DataField]
+        //public SoundSpecifier SoundWithdrawCurrency =
+        //    new SoundPathSpecifier("/Audio/ADT/Machines/polaroid1.ogg");
+
+        //[ViewVariables]
+        //public int Credits;
+
+        public int NextItemCount = 1;
+
+        [DataField, AutoNetworkedField]
+        public Color UiButtonBorderColor = Color.FromHex("#4972A1");
+
+        [DataField, AutoNetworkedField]
+        public Color UiButtonBaseColor = Color.FromHex("#141F2F");
+
+        [DataField, AutoNetworkedField]
+        public Color UiButtonHoveredColor = Color.FromHex("#4972A1");
+
+        [DataField, AutoNetworkedField]
+        public Color UiButtonDisabledColor = Color.FromHex("#3f3f3fff");
+
+        //ADT-Economy-End
+
     }
 
     [Serializable, NetSerializable, DataDefinition]

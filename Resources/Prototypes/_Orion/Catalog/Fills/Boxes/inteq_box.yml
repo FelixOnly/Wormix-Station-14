@@ -3,21 +3,21 @@
   id: BoxInteQEVA
   suffix: InteQ EVA, Filled
   components:
-  - type: StorageFill
-    contents:
-      - id: ClothingHeadHelmetEVAInteQ
-      - id: ClothingOuterEVASuitInteQ
-      - id: DoubleEmergencyNitrogenTankFilled
-      - id: DoubleEmergencyOxygenTankFilled
+    - type: StorageFill
+      contents:
+        - id: ClothingHeadHelmetEVAInteQ
+        - id: ClothingOuterEVASuitInteQ
+        - id: DoubleEmergencyNitrogenTankFilled
+        - id: DoubleEmergencyOxygenTankFilled
 
 - type: entity
   parent: BoxInteQ
   id: BoxInteQPistolCommissar
   suffix: Commissar, Filled
   components:
-  - type: StorageFill
-    contents:
-      - id: WeaponPistolInteQCommissar
-      - id: MagazinePistol
-        amount: 2
-      - id: MagazineBoxPistolInteQ
+    - type: StorageFill
+      contents:
+        - id: WeaponPistolInteQCommissar
+        - id: MagazinePistol
+          amount: 2
+        - id: MagazineBoxPistolInteQ

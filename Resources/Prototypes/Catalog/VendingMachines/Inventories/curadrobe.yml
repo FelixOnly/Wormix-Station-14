@@ -29,6 +29,7 @@
     ClothingUniformJumpskirtLibrarian: 3
     ClothingShoesBootsLaceup: 2
     ClothingHeadsetService: 2
+    ValentineCard: 5 # Wormix
   contrabandInventory:
     ToyFigurineLibrarian: 1
   emaggedInventory: # Goobstation

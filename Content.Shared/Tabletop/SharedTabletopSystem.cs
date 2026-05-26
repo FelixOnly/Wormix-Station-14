@@ -16,8 +16,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Diagnostics.CodeAnalysis;
-using System.Numerics;
+using Content.Shared._ADT.GhostInteractions;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
@@ -25,6 +24,8 @@ using Content.Shared.Tabletop.Components;
 using Content.Shared.Tabletop.Events;
 using Robust.Shared.Network;
 using Robust.Shared.Serialization;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
 
 namespace Content.Shared.Tabletop
 {
@@ -123,6 +124,9 @@ namespace Content.Shared.Tabletop
                 return false;
             }
 
+
+
+
             return _interactionSystem.InRangeUnobstructed(playerEntity, table.Value) && ActionBlockerSystem.CanInteract(playerEntity, table);
         }
 
@@ -133,6 +137,9 @@ namespace Content.Shared.Tabletop
 
             // CanSeeTable checks interaction action blockers. So no need to check them here.
             // If this ever changes, so that ghosts can spectate games, then the check needs to be moved here.
+
+            if (HasComp<OuijaBoardUserComponent>(playerEntity)) // ADT Ouija board
+                return true;
 
             return TryComp(playerEntity, out HandsComponent? hands) && hands.Hands.Count > 0;
         }

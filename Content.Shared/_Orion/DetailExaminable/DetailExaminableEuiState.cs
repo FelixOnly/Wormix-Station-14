@@ -1,9 +1,11 @@
 using Content.Shared.Eui;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.SD;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using System.Net.NetworkInformation;
 
 namespace Content.Shared._Orion.DetailExaminable;
 
@@ -19,6 +21,7 @@ public sealed class DetailExaminableEuiState : EuiStateBase
     public ProtoId<SpeciesPrototype> Species;
     public Sex Sex;
     public Gender Gender;
+    public EnumERPStatus ERPStatus; // SD-ERP-Status
     public string FlavorText;
     public string OOCFlavorText;
     public string CharacterFlavorText;
@@ -38,6 +41,7 @@ public sealed class DetailExaminableEuiState : EuiStateBase
         ProtoId<SpeciesPrototype> species,
         Sex sex,
         Gender gender,
+        EnumERPStatus erpStatus,
         string flavorText,
         string oocFlavorText,
         string characterFlavorText,
@@ -57,6 +61,7 @@ public sealed class DetailExaminableEuiState : EuiStateBase
         Species = species;
         Sex = sex;
         Gender = gender;
+        ERPStatus = erpStatus; // SD-ERP-Status
         FlavorText = flavorText;
         OOCFlavorText = oocFlavorText;
         CharacterFlavorText = characterFlavorText;

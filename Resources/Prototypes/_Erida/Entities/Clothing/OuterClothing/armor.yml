@@ -1,0 +1,80 @@
+- type: entity
+  parent: [ClothingOuterArmorBaseCarapace, BaseCentcommContraband]
+  id: ClothingOuterArmorCoSCCCarapace
+  suffix: Эрида
+  name: centcom chief of staff carapace
+  description:
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/OuterClothing/Armor/coscc_carapace.rsi
+    - type: Clothing
+      sprite: _Erida/Clothing/OuterClothing/Armor/coscc_carapace.rsi
+    - type: Tag
+      tags:
+        - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
+  id: ClothingOuterArmorBaseCarapace
+  abstract: true
+  components:
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.5
+          Slash: 0.5
+          Piercing: 0.6
+          Heat: 0.5
+          Caustic: 0.9
+    - type: ExplosionResistance
+      damageCoefficient: 0.65
+    - type: ClothingSpeedModifier
+      walkModifier: 1.0
+      sprintModifier: 1.0
+    - type: HeldSpeedModifier
+    - type: GroupExamine
+
+- type: entity
+  parent: [ClothingOuterArmorBaseCarapace, BaseCentcommContraband]
+  id: ClothingOuterArmorCentcomDeputyCarapace
+  suffix: Эрида
+  name: centcom deputy carapace
+  description:
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/OuterClothing/Armor/centcom_carapace.rsi
+    - type: Clothing
+      sprite: _Erida/Clothing/OuterClothing/Armor/centcom_carapace.rsi
+    - type: Tag
+      tags:
+        - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingOuterArmorBaseCarapace, BaseCentcommContraband]
+  id: ClothingOuterArmorOSOCarapace
+  suffix: Эрида
+  name: OSO carapace
+  description:
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/OuterClothing/Armor/oso_carapace.rsi
+    - type: Clothing
+      sprite: _Erida/Clothing/OuterClothing/Armor/oso_carapace.rsi
+    - type: Tag
+      tags:
+        - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingOuterArmorBaseCarapace, BaseCentcommContraband]
+  id: ClothingOuterArmorCentcomSec
+  suffix: Эрида
+  name: centcom security vest
+  description:
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/OuterClothing/Armor/centcom_sec_armor.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/OuterClothing/Armor/centcom_sec_armor.rsi
+    - type: Tag
+      tags:
+        - WhitelistChameleon

@@ -1,0 +1,189 @@
+- type: entity
+  abstract: true
+  parent: [BaseItem, StorePresetUplinkInteQ] #PDA's have uplinks so they have to inherit the data.
+  id: ADTBasePDA
+  name: PDA
+  description: Personal Data Assistant.
+  components:
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType: !type:String pda
+    - type: Sprite
+      sprite: Imperial/ussp/Merc/PDA.rsi
+      layers:
+        - map: ["enum.PdaVisualLayers.Base"]
+          state: "pda_base"
+        - state: "light_overlay"
+          map: ["enum.PdaVisualLayers.Flashlight"]
+          shader: "unshaded"
+          visible: false
+        - state: "id_overlay"
+          map: ["enum.PdaVisualLayers.IdLight"]
+          shader: "unshaded"
+          visible: false
+        - state: "insert_overlay" # Goob
+          map: ["enum.PdaVisualLayers.Pen"]
+    - type: Icon
+      sprite: Objects/Devices/pda.rsi
+      state: pda_base
+    - type: Pda
+      paiSlot:
+        priority: -2
+        whitelist:
+          components:
+            - PAI
+      penSlot:
+        startingItem: Pen
+        priority: -1
+        whitelist:
+          tags:
+            - Write
+      idSlot:
+        name: access-id-card-component-default
+        ejectSound: /Audio/Machines/id_swipe.ogg
+        insertSound: /Audio/Machines/id_insert.ogg
+        whitelist:
+          components:
+            - IdCard
+    - type: PdaVisuals
+    - type: Item
+      size: Small
+    - type: ContainerContainer
+      containers:
+        PDA-id: !type:ContainerSlot {}
+        PDA-pen: !type:ContainerSlot {}
+        PDA-pai: !type:ContainerSlot {}
+        Cartridge-Slot: !type:ContainerSlot {}
+        program-container: !type:Container
+    - type: ItemSlots
+    - type: Clothing
+      quickEquip: false
+      slots:
+        - idcard
+        - Belt
+    - type: UnpoweredFlashlight
+    - type: PointLight
+      enabled: false
+      radius: 1.7
+      falloff: 3
+      softness: 5
+      autoRot: true
+    - type: Ringer
+    - type: RingerUplink
+    - type: DeviceNetwork
+      deviceNetId: Wireless
+      receiveFrequencyId: PDA
+      prefix: device-address-prefix-console
+      savableAddress: false
+    - type: WirelessNetworkConnection
+      range: 500
+    - type: CartridgeLoader
+      uiKey: enum.PdaUiKey.Key
+      preinstalled:
+        - CrewManifestCartridge
+        - NotekeeperCartridge
+        - NanoTaskCartridge
+        - NewsReaderCartridge
+      cartridgeSlot:
+        priority: -1
+        name: device-pda-slot-component-slot-name-cartridge
+        ejectSound: /Audio/Machines/id_swipe.ogg
+        insertSound: /Audio/Machines/id_insert.ogg
+        whitelist:
+          components:
+            - Cartridge
+    - type: ActivatableUI
+      key: enum.PdaUiKey.Key
+      singleUser: true
+    - type: UserInterface
+      interfaces:
+        enum.PdaUiKey.Key:
+          type: PdaBoundUserInterface
+        enum.StoreUiKey.Key:
+          type: StoreBoundUserInterface
+        enum.RingerUiKey.Key:
+          type: RingerBoundUserInterface
+        enum.InstrumentUiKey.Key:
+          type: InstrumentBoundUserInterface
+        enum.HealthAnalyzerUiKey.Key:
+          type: HealthAnalyzerBoundUserInterface
+    - type: Tag
+      tags:
+        - DoorBumpOpener
+        - WhitelistChameleon
+        - WhitelistChameleonPDA
+    - type: Input
+      context: "human"
+    - type: SentienceTarget # sentient PDA = pAI lite
+      flavorKind: station-event-random-sentience-flavor-mechanical
+      weight: 0.001 # 1,000 PDAs = as likely to be picked as 1 regular animal
+    - type: BlockMovement
+      blockInteraction: false # lets the PDA toggle its own flashlight
+
+- type: entity
+  parent: ADTBasePDA
+  id: USSPPDA
+  name: The Mercenary's PDA
+  suffix: Vl, Arcane
+  description: It looks more like a military computer. He's covered in scratches.
+  components:
+    - type: Sprite
+      sprite: Imperial/ussp/Merc/PDA.rsi
+      layers:
+        - map: ["enum.PdaVisualLayers.Base"]
+          state: "pda_base"
+        - state: "light_overlay"
+          map: ["enum.PdaVisualLayers.Flashlight"]
+          shader: "unshaded"
+          visible: false
+        - state: "id_overlay"
+          map: ["enum.PdaVisualLayers.IdLight"]
+          shader: "unshaded"
+          visible: false
+        - state: "insert_overlay" # Goob
+          map: ["enum.PdaVisualLayers.Pen"]
+          visible: false
+    - type: Item
+      size: Small
+    - type: Pda
+      id: USSPBattleIDcard
+    - type: Icon
+      sprite: Imperial/ussp/Merc/PDA.rsi
+      state: pda_base
+    - type: PdaBorderColor
+      borderColor: "#597d5f"
+      accentHColor: "#3a5940"
+    - type: HealthAnalyzer
+      scanDelay: 5
+      scanningEndSound:
+        path: "/Audio/Items/Medical/healthscanner.ogg"
+
+- type: entity
+  parent: USSPPDA
+  id: USSPoficerPDA
+  name: The Mercenary's PDA
+  suffix: Vl, Arcane
+  description: It looks more like a military computer. He's covered in scratches.
+  components:
+    - type: Pda
+      id: USSPofficerIDcard
+
+- type: entity
+  parent: USSPPDA
+  id: USSPPDAComissar
+  name: The Mercenary's PDA
+  suffix: Vl, Arcane
+  description: It looks more like a military computer. He's covered in scratches.
+  components:
+    - type: Pda
+      id: USSPComissarIDcard
+
+- type: entity
+  parent: ADTBasePDA
+  id: USSPPDASergeant
+  name: The Mercenary's PDA
+  suffix: Vl, Arcane
+  description: It looks more like a military computer. He's covered in scratches.
+  components:
+    - type: Pda
+      id: USSPSergeantIDcard

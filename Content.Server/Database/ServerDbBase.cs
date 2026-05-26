@@ -409,6 +409,7 @@ namespace Content.Server.Database
             return new HumanoidCharacterProfile(
                 profile.CharacterName,
                 profile.FlavorText,
+                profile.ERPStatus,
                 // Orion-Start
                 profile.OOCFlavorText,
                 profile.CharacterFlavorText,
@@ -461,6 +462,7 @@ namespace Content.Server.Database
 
             profile.CharacterName = humanoid.Name;
             profile.FlavorText = humanoid.FlavorText;
+            profile.ERPStatus = (int) humanoid.ERPStatus; // SD-ERPStatus
             // Orion-Start
             profile.OOCFlavorText = humanoid.OocFlavorText;
             profile.CharacterFlavorText = humanoid.CharacterFlavorText;
@@ -2311,6 +2313,47 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             await db.DbContext.SaveChangesAsync(cancel);
             return true;
         }
+
+        public async Task<bool> MarkPollSeenAsync(int pollId, NetUserId userId, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            var existing = await db.DbContext.PollSeen
+                .AnyAsync(s => s.PollId == pollId && s.PlayerUserId == userId.UserId, cancel);
+
+            if (existing)
+                return false;
+
+            db.DbContext.PollSeen.Add(new PollSeen
+            {
+                PollId = pollId,
+                PlayerUserId = userId.UserId,
+                SeenAt = DateTime.UtcNow,
+            });
+            await db.DbContext.SaveChangesAsync(cancel);
+            return true;
+        }
+
+        public async Task<HashSet<int>> GetSeenPollIdsAsync(NetUserId userId, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            var ids = await db.DbContext.PollSeen
+                .Where(s => s.PlayerUserId == userId.UserId)
+                .Select(s => s.PollId)
+                .ToListAsync(cancel);
+
+            return [.. ids];
+        }
+
+        public async Task<int> GetPollSeenCountAsync(int pollId, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            return await db.DbContext.PollSeen
+                .CountAsync(s => s.PollId == pollId, cancel);
+        }
+
 
         public async Task<List<PollVote>> GetPollVotesAsync(int pollId, CancellationToken cancel = default)
         {

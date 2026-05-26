@@ -57,14 +57,13 @@ cargo-console-paper-reason-default = Отсутствует
 cargo-console-cooldown-count = Нельзя заказать более одного товара { $product } за раз.
 cargo-console-cooldown-active = Заказы на { $product } будут недоступны ещё { $timeCount } { $timeUnits }.
 cargo-console-paper-approver-default = Самостоятельно
-cargo-console-paper-print-name = Заказ #{ $orderNumber } ({ $detailName } x { $detailQuantity })
+cargo-console-paper-print-name = Заказ #{ $orderNumber }
 cargo-console-paper-print-text =
     Заказ #{ $orderNumber }
     Товар: { $itemName }
     Кол-во: { $orderQuantity }
     Запросил: { $requester }
-    Место доставки: { $destination }
-    Примечание: { $note }
+    Причина: { $reason }
     Одобрил: { $approver }
 # Cargo shuttle console
 cargo-shuttle-console-menu-title = Консоль вызова грузового шаттла
@@ -94,8 +93,7 @@ cargo-acquisition-slip-body = [head=3]Детали актива[/head]
     { "[bold]Цена за единицу:[/bold" }] ${ $unit }
     { "[bold]Количество:[/bold]" } { $amount }
     { "[bold]Сумма:[/bold]" } ${ $cost }
-
+    
     { "[head=3]Детали покупки[/head]" }
     { "[bold]Заказчик:[/bold]" } { $orderer }
-    { "[bold]Место доставки:[/bold]" } { $destination }
-    { "[bold]Примечание:[/bold]" } { $note }
+    { "[bold]Причина:[/bold]" } { $reason }

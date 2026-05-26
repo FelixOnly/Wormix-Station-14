@@ -81,18 +81,9 @@ namespace Content.Shared.Cargo
         public string Requester { get; private set; }
         // public String RequesterRank; // TODO Figure out how to get Character ID card data
         // public int RequesterId;
+        [DataField]
+        public string Reason { get; private set; }
         public  bool Approved;
-
-        // Orion-Start
-        [DataField]
-        public string? DeliveryDestination { get; private set; }
-
-        [DataField]
-        public string? Note { get; private set; }
-
-        public bool SecuredDelivery;
-        // Orion-End
-
         [DataField]
         public string? Approver;
 
@@ -103,7 +94,7 @@ namespace Content.Shared.Cargo
         public ProtoId<CargoAccountPrototype> Account;
 
         // GoobStation - (cooldown parameter) cooldown on Cargo Orders (specifically gamba)
-        public CargoOrderData(int orderId, string productId, string productName, int price, int amount, string requester, string? deliveryDestination, string? note, ProtoId<CargoAccountPrototype> account, int cooldown, bool securedDelivery = false) // Orion-Edit
+        public CargoOrderData(int orderId, string productId, string productName, int price, int amount, string requester, string reason, ProtoId<CargoAccountPrototype> account, int cooldown)
         {
             OrderId = orderId;
             ProductId = productId;
@@ -111,11 +102,7 @@ namespace Content.Shared.Cargo
             Price = price;
             OrderQuantity = amount;
             Requester = requester;
-            // Orion-Start
-            DeliveryDestination = deliveryDestination;
-            SecuredDelivery = securedDelivery;
-            Note = note;
-            // Orion-End
+            Reason = reason;
             Account = account;
             // GoobStation - (cooldown assignment) cooldown on Cargo Orders (specifically gamba)
             Cooldown = cooldown;

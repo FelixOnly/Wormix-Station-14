@@ -55,8 +55,12 @@ using Content.Client.Ghost;
 using Content.Shared.Administration;
 using Content.Shared.Chat;
 using Robust.Client.Console;
+using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Utility;
+using System.Text.RegularExpressions;
+using static Content.Shared._Wormix.ChatsanPlus.ChatsanPlusSystem;
+using static Content.Shared._Wormix.CCVar.CCVar;
 
 namespace Content.Client.Chat.Managers;
 
@@ -65,6 +69,7 @@ internal sealed class ChatManager : IChatManager
     [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
     [Dependency] private readonly IClientAdminManager _adminMgr = default!;
     [Dependency] private readonly IEntitySystemManager _systems = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
 
     private ISawmill _sawmill = default!;
     public event Action? PermissionsUpdated; //Nyano - Summary: need to be able to update perms for new psionics.
@@ -104,7 +109,13 @@ internal sealed class ChatManager : IChatManager
 
     public void SendMessage(string text, ChatSelectChannel channel)
     {
+        // Wormix edit start
+
         var str = text.ToString();
+
+        List<Short> shorts = Deserialize(_cfg.GetCVar(ShortArchive));
+
+
         switch (channel)
         {
             case ChatSelectChannel.Console:
@@ -141,7 +152,36 @@ internal sealed class ChatManager : IChatManager
             // TODO sepearate radio and say into separate commands.
             case ChatSelectChannel.Radio:
             case ChatSelectChannel.Local:
+
+                // Wormix edit start
+
+
+                foreach (Short item in shorts)
+                {
+                    // exact message match
+                    if (item.Channel == ChatSelectChannel.Emotes)
+                    {
+                        var exactPattern = $@"^\s*{Regex.Escape(item.Trigger)}\s*$";
+
+                        if (Regex.IsMatch(str, exactPattern))
+                        {
+                            _consoleHost.ExecuteCommand($"me \"{CommandParsing.Escape(item.Reaction)}\"");
+                            return;
+                        }
+
+                        continue;
+                    }
+
+                    // word replacement
+                    var pattern = $@"(?<!\p{{L}}){Regex.Escape(item.Trigger)}(?!\p{{L}})";
+
+                    str = Regex.Replace(str, pattern, item.Reaction);
+                }
+
+
                 _consoleHost.ExecuteCommand($"say \"{CommandParsing.Escape(str)}\"");
+
+                // Wormix edit end
                 break;
 
             case ChatSelectChannel.Whisper:

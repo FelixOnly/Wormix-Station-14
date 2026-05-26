@@ -161,18 +161,16 @@
       damageContainer: Shield
     - type: Destructible
       thresholds:
-        - trigger:
-            !type:DamageTrigger
+        - trigger: !type:DamageTrigger
             damage: 140
           behaviors:
             - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
+              acts: ["Destruction"]
+        - trigger: !type:DamageTrigger
             damage: 100 #This is probably enough damage before it breaks
           behaviors:
             - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+              acts: ["Destruction"]
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalBreak
@@ -193,7 +191,7 @@
 
 - type: entity
   name: riot shield
-  parent: [ BaseShield, BaseSecurityContraband ]
+  parent: [BaseShield, BaseSecurityContraband]
   id: RiotShield
   description: A large tower shield. Good for controlling crowds.
   components:
@@ -214,7 +212,7 @@
 
 - type: entity
   name: laser shield
-  parent: [ BaseShield, BaseSecurityContraband ]
+  parent: [BaseShield, BaseSecurityContraband]
   id: RiotLaserShield
   description: A shield built for withstanding lasers, but not much else.
   components:
@@ -234,7 +232,7 @@
 
 - type: entity
   name: ballistic shield
-  parent: [ BaseShield, BaseSecurityContraband ]
+  parent: [BaseShield, BaseSecurityContraband]
   id: RiotBulletShield
   description: A shield built for protecting against ballistics, but not much else.
   components:
@@ -242,6 +240,7 @@
       sprite: _Goobstation/Objects/Shields/riotbulletshield.rsi # Goobstation
       state: ballistic-icon
     - type: Item
+      sprite: _Goobstation/Objects/Shields/riotbulletshield.rsi #Goobstation
       heldPrefix: ballistic
     - type: Blocking
       passiveBlockModifier:
@@ -287,18 +286,16 @@
       node: woodenBuckler
     - type: Destructible
       thresholds:
-        - trigger:
-            !type:DamageTrigger
+        - trigger: !type:DamageTrigger
             damage: 60
           behaviors:
             - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
+              acts: ["Destruction"]
+        - trigger: !type:DamageTrigger
             damage: 30 #Weaker shield
           behaviors:
             - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+              acts: ["Destruction"]
             - !type:PlaySoundBehavior
               sound:
                 collection: WoodDestroy
@@ -343,25 +340,23 @@
       node: cardShield
     - type: Destructible
       thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 25
-        behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-      - trigger:
-          !type:DamageTrigger
-          damage: 10 #Very very weak shield
-        behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-        - !type:PlaySoundBehavior
-          sound: /Audio/Items/Toys/ToyFall2.ogg
-        - !type:SpawnEntitiesBehavior
-          spawn:
-            MaterialCardboard:
-              min: 2
-              max: 4
+        - trigger: !type:DamageTrigger
+            damage: 25
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+        - trigger: !type:DamageTrigger
+            damage: 10 #Very very weak shield
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+            - !type:PlaySoundBehavior
+              sound: /Audio/Items/Toys/ToyFall2.ogg
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                MaterialCardboard:
+                  min: 2
+                  max: 4
     - type: StaticPrice
       price: 20
 
@@ -373,7 +368,7 @@
   components:
     - type: Tag #goobstation
       tags:
-       - MakeshiftShield
+        - MakeshiftShield
     - type: Sprite
       state: makeshift-icon
     - type: Item
@@ -401,18 +396,16 @@
       node: makeshiftShield
     - type: Destructible
       thresholds:
-        - trigger:
-            !type:DamageTrigger
+        - trigger: !type:DamageTrigger
             damage: 40
           behaviors:
             - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
+              acts: ["Destruction"]
+        - trigger: !type:DamageTrigger
             damage: 20 #Very weak shield
           behaviors:
             - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+              acts: ["Destruction"]
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalBreak
@@ -454,18 +447,16 @@
       node: shield
     - type: Destructible
       thresholds:
-        - trigger:
-            !type:DamageTrigger
+        - trigger: !type:DamageTrigger
             damage: 40
           behaviors:
             - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
+              acts: ["Destruction"]
+        - trigger: !type:DamageTrigger
             damage: 20
           behaviors:
             - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+              acts: ["Destruction"]
             - !type:SpawnEntitiesBehavior
               spawn:
                 MaterialWebSilk:
@@ -508,7 +499,7 @@
 
 - type: entity
   name: mirror shield
-  parent: [ BaseShield, BaseMagicalContraband ]
+  parent: [BaseShield, BaseMagicalContraband]
   id: MirrorShield
   description: Eerily glows red... you hear the geometer whispering
   components:
@@ -539,12 +530,11 @@
         path: /Audio/Effects/glass_step.ogg
     - type: Destructible
       thresholds:
-        - trigger:
-            !type:DamageTrigger
+        - trigger: !type:DamageTrigger
             damage: 40
           behaviors:
             - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+              acts: ["Destruction"]
             - !type:PlaySoundBehavior
               sound:
                 collection: GlassBreak
@@ -579,8 +569,8 @@
       activatedSize: Huge
     - type: ComponentToggler
       components:
-      - type: DisarmMalus
-        malus: 1 # Goob edit
+        - type: DisarmMalus
+          malus: 1 # Goob edit
     - type: Sprite
       sprite: Objects/Weapons/Melee/e_shield.rsi
       layers:
@@ -589,7 +579,7 @@
           color: "#FFFFFF"
           visible: false
           shader: unshaded
-          map: [ "shield" ]
+          map: ["shield"]
     - type: Item
       size: Small
       sprite: Objects/Weapons/Melee/e_shield.rsi
@@ -681,8 +671,8 @@
           volume: -5
     - type: ComponentToggler
       components:
-      - type: DisarmMalus
-        malus: 1 # Goob edit
+        - type: DisarmMalus
+          malus: 1 # Goob edit
     - type: ItemToggleSize
       activatedSize: Huge
     - type: Sprite
@@ -691,7 +681,7 @@
         - state: teleriot-icon
         - state: teleriot-on
           visible: false
-          map: [ "shield" ]
+          map: ["shield"]
     - type: Item
       size: Small
       sprite: Objects/Weapons/Melee/teleriot_shield.rsi
@@ -708,18 +698,16 @@
     - type: Appearance
     - type: Destructible
       thresholds:
-        - trigger:
-            !type:DamageTrigger
+        - trigger: !type:DamageTrigger
             damage: 100
           behaviors:
             - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
+              acts: ["Destruction"]
+        - trigger: !type:DamageTrigger
             damage: 70
           behaviors:
             - !type:DoActsBehavior
-              acts: [ "Destruction" ]
+              acts: ["Destruction"]
             - !type:PlaySoundBehavior
               sound:
                 collection: MetalGlassBreak

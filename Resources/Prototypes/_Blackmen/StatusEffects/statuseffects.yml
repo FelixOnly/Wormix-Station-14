@@ -1,0 +1,6 @@
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconStationAI
+  icon:
+    sprite: Backmen/Interface/Misc/job_icons.rsi
+    state: stationAI

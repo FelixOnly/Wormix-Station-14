@@ -113,6 +113,7 @@ public abstract class SharedArmorSystem : EntitySystem
         if (component is { ArmourCoverageHidden: true, ArmourModifiersHidden: true })
             return;
 
+        // Wormix edit
         if (!component.Modifiers.Coefficients.Any() && !component.Modifiers.FlatReduction.Any())
             return;
 

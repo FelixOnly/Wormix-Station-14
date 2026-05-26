@@ -40,6 +40,7 @@ public sealed class SharedFakeMindShieldImplantSystem : EntitySystem
     }
     private void ImplantCheck(EntityUid uid, FakeMindShieldImplantComponent component, ref ImplantImplantedEvent ev)
     {
+
         if (ev.Implanted != null)
             EnsureComp<FakeMindShieldComponent>(ev.Implanted.Value);
     }

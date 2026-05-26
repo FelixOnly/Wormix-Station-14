@@ -22,7 +22,6 @@
   - NetworkConfigurator
   - Signaller
   - SprayPainter
-  - GeigerCounter #Goob station
   - SprayPainterAmmo
   - FlashlightLantern
   - HandheldGPSBasic
