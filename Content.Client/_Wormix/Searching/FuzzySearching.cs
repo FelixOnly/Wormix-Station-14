@@ -1,9 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+// SPDX-FileCopyrightText: 2026 sablerti <work.feliks@proton.me>
+//
+// SPDX-License-Identifier: AGPL-3
+
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Content.Client._Wormix.Searching;
 public static class FuzzySearching
