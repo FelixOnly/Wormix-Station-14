@@ -154,6 +154,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Client._Orion.Lobby.UI;
+using Content.Client._Orion.RichText;
 using Content.Client.Guidebook;
 using Content.Client.Humanoid;
 using Content.Client.Lobby.UI.Loadouts;
@@ -196,6 +197,9 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using Direction = Robust.Shared.Maths.Direction;
+using Content.Goobstation.Common.CCVar;
+using Content.Goobstation.Common.Barks;
+using Content.Shared._Orion.RichText;
 namespace Content.Client.Lobby.UI
 {
     [GenerateTypedNameReferences]
@@ -853,11 +857,11 @@ namespace Content.Client.Lobby.UI
             if (_flavorText == null || Profile == null)
                 return;
 
-            _flavorText.PreviewAppearanceText.SetMessage(Profile.FlavorText);
-            _flavorText.PreviewTraitsText.SetMessage(Profile.CharacterFlavorText);
-            _flavorText.PreviewOOCText.SetMessage(Profile.OocFlavorText);
+            SetFlavorPreviewMarkup(_flavorText.PreviewAppearanceText, Profile.FlavorText);
+            SetFlavorPreviewMarkup(_flavorText.PreviewTraitsText, Profile.CharacterFlavorText);
+            SetFlavorPreviewMarkup(_flavorText.PreviewOOCText, Profile.OocFlavorText);
             _flavorText.PreviewTagsText.Text = Profile.TagsFlavorText;
-            _flavorText.PreviewNSFWOOCText.SetMessage(Profile.NsfwOOCFlavorText);
+            SetFlavorPreviewMarkup(_flavorText.PreviewNSFWOOCText, Profile.NsfwOOCFlavorText);
             _flavorText.PreviewNSFWTagsText.Text = Profile.NsfwTagsFlavorText;
 
             ProcessLinks(Profile.LinksFlavorText, _flavorText.PreviewLinksContainer);
@@ -871,7 +875,7 @@ namespace Content.Client.Lobby.UI
             CreateGyrBigTextLabel(Loc.GetString($"humanoid-profile-editor-gyr-red"), Color.Red);
             CreateGyrTextLabel(Profile.RedFlavorText);
 
-            _flavorText.PreviewNSFWText.SetMessage(Profile.NsfwFlavorText);
+            SetFlavorPreviewMarkup(_flavorText.PreviewNSFWText, Profile.NsfwFlavorText);
 
             var species = _prototypeManager.TryIndex(Profile.Species, out var speciesProto)
                 ? Loc.GetString(speciesProto.Name)
@@ -931,18 +935,15 @@ namespace Content.Client.Lobby.UI
         {
             var label = new RichTextLabel
             {
-                Text = text + "\n",
                 VerticalExpand = true,
             };
 
+            SetFlavorPreviewMarkup(label, text + "\n");
             _flavorText?.PreviewGYRContainer.AddChild(label);
         }
 
         private void ProcessLinks(string linksText, BoxContainer linksContainer)
         {
-            if (linksContainer == null)
-                return;
-
             linksContainer.RemoveAllChildren();
 
             if (string.IsNullOrEmpty(linksText))
@@ -2626,6 +2627,12 @@ namespace Content.Client.Lobby.UI
             _rgbSkinColorSelector.Color = color;
 
             ReloadProfilePreview();
+        }
+
+        private static void SetFlavorPreviewMarkup(RichTextLabel label, string content)
+        {
+            var safeContent = SafeMarkup.SanitizeBasic(content);
+            label.SetMessage(FormattedMessage.FromMarkupPermissive(safeContent), SafeMarkupTags.Basic);
         }
         // Orion-End
     }
