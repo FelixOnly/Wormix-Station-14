@@ -1,3 +1,21 @@
+- type: job
+  id: CentralCommandOperator
+  name: job-name-centcom-operator
+  description: job-description-centcom-operator
+  playTimeTracker: JobCentralCommandOperator
+  setPreference: false
+  startingGear: CentcomOperatorGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom-officer
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+
 - type: startingGear
   id: CentcomOperatorGear
   equipment:
