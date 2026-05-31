@@ -19,19 +19,6 @@ roles-antag-blob-name = Блоб
 roles-antag-blob-objective = Достигните критической массы.
 guide-entry-blob = Блоб
 # Popups
-blob-target-normal-blob-invalid = Неверный тип блоба, выберите обычный блоб.
-blob-target-factory-blob-invalid = Неверный тип блоба, выберите фабричный блоб.
-blob-target-node-blob-invalid = Неверный тип блоба, выберите узловой блоб.
-blob-target-close-to-resource = Слишком близко к другому ресурсному блобу.
-blob-target-nearby-not-node = Поблизости нет узлового или ресурсного блоба.
-blob-target-close-to-node = Слишком близко к другому узлу.
-blob-target-already-produce-blobbernaut = Эта фабрика уже произвела блоббернаута.
-blob-cant-split = Вы не можете разделить ядро блоба.
-blob-not-have-nodes = У вас нет узлов.
-blob-not-enough-resources = Недостаточно ресурсов.
-blob-help = Только Бог может вам помочь.
-blob-swap-chem = В разработке.
-blob-mob-attack-blob = Вы не можете атаковать блоба.
 blob-get-resource = +{ $point }
 blob-spent-resource = -{ $point }
 blobberaut-not-on-blob-tile = Вы умираете вне плиток блоба.
@@ -41,8 +28,6 @@ blob-mob-zombify-third-start = { $pod } начинает превращать { 
 blob-mob-zombify-second-end = { $pod } превратил вас в подконтрольного.
 blob-mob-zombify-third-end = { $pod } превратил { $target } в подконтрольного.
 blobberaut-factory-destroy = фабрика уничтожена
-blob-target-already-connected = уже подключено
-# UI
 blob-chem-swap-ui-window-name = Обмен химикатами
 blob-chem-reactivespines-info =
     Реактивные шипы

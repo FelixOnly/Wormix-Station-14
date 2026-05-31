@@ -1,5 +1,4 @@
 # Уши
-marking-DemonCowEars = Аркана, уши (Коровьи)
 marking-DemonCowEars-cow_ears = Уши
 marking-DemonEars = Аркана, уши (Демонические)
 marking-DemonEars-demon_ears = Уши

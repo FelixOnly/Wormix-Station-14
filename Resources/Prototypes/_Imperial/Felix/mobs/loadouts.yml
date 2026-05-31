@@ -68,7 +68,6 @@
 #  storage:
 #    back:
 #    -
-
 - type: startingGear
   id: MercenaryGlock
   equipment:
@@ -82,8 +81,8 @@
     ears: ClothingHeadsetFADAK9M
     pocket1: BlackShieldBeret
     belt: BlackShieldWebbing
-  inhand:
-    - CSWeaponGlock-18
+  #inhand:
+  #  - CSWeaponGlock-18
 #  storage:
 #    back:
 #    -

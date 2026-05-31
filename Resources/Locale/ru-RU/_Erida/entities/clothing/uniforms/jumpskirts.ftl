@@ -1,5 +1,3 @@
-ent-ClothingUniformJumpskirtWhiteCaptain = белая юбка-комбинезон капитана
-   .desc = Белая юбка-комбинезон капитана символизирующая, что ваша зарплата явно превышает нормы.
 ent-ClothingUniformJumpsuitmaidblack = чёрный костюм горничной
    .desc = Классический костюм французской горничной.
 ent-ClothingUniformJumpsuitmaidblue = голубой костюм горничной

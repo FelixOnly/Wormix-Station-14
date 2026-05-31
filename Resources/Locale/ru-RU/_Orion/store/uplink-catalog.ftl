@@ -1,7 +1,6 @@
 uplink-book-codespeak-language-name = Словарь кодового языка
 uplink-book-codespeak-language-desc = Словарь, что научит вас кодовому языку. Можно прочитать всего 2 раза.
 
-uplink-energy-dome-name = Энергетический барьер
 uplink-energy-dome-desc = Генератор щита, защищающий владельца от лазеров и пуль, но не позволяющий самому использовать оружие дальнего боя. Использует батареи.
 
 uplink-cortical-borer-egg-name = Яйцо кортикального паразита

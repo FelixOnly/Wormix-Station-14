@@ -27,11 +27,6 @@ marking-ADTAllvampirehorn-vampirehorn = Рога
 # Прически
 marking-ADTAllAyanami = Аянами
 marking-ADTAllBubbleGum = Принцесса Буббль Гум
-marking-ADTAllCloud = Облако
-marking-ADTAllMavis = Мавис
-marking-ADTAllMorningHairstyle = Утренняя прическа 1
-marking-ADTAllMorningHairstyle2 = Утренняя прическа 2
-marking-ADTAllPonytail = Конский хвост
 marking-ADTAllPrinceCharming = Королевское очарование
 marking-ADTAllShavedFemale = Распущенные волосы (жен.)
 marking-ADTAllShavedFemaleUnisex = Распущенные волосы (унисекс)

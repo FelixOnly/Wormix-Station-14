@@ -50,16 +50,7 @@ marking-AugmentsAugFootLeft = Аугментация, стопа левой но
 marking-AugmentsAugTorso-_augtorso_m = Аугментация, корпус мужской
 marking-AugmentsAugTorso = Аугментация, корпус мужской (Песчанный)
 marking-Malstrem = Аугментация, Мальстрём
-marking-Malstrem-malstrem = Мальстрём
-marking-Beholder = Аугментация, Наблюдатель
-marking-Beholder-beholder = Наблюдатель
-marking-Terminator = Аугментация, Терминатор
-marking-Terminator-terminator = Терминатор
 marking-Iron_jaw = Аугментация, Стальная челюсть
-marking-Iron_jaw-iron_jaw = Стальная челюсть
-
-
-# Прочее
 marking-ADTHumanElfEars = Эльфийские уши, Человек
 marking-ADTHumanElfEars-elf_ears = Эльфийские уши
 marking-ADTHumanElfEars2 = Эльфийские уши 2, Человек

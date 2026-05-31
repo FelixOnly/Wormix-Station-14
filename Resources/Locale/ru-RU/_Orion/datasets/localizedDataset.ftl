@@ -1,6 +1,3 @@
-inteq-vanguard-leader-prefix-1 = Коммандер Авангарда
-inteq-vanguard-prefix-1 = Авангард
-inteq-agent-prefix-1 = Агент
 unknown-prefix-1 = #
 unknown-prefix-2 = $
 unknown-prefix-3 = №

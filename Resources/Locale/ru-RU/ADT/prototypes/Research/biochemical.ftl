@@ -8,8 +8,6 @@ research-technology-industrial-medicine = Промышленная медици�
 
 research-technology-advanced-medical-care = Продвинутая медицина
 
-research-technology-crew-monitoring = Портативный монитор экипажа
-
 research-technology-chemistry-misc = Химические принадлежности
 
 research-technology-thermo = Термогеника

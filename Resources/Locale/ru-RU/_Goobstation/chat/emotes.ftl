@@ -13,7 +13,6 @@ chat-emote-name-fart-super = Пердеть
 chat-emote-name-flap = Взмахнуть
 chat-emote-name-trill = Дрожжать
 chat-emote-name-warble = Петь
-chat-emote-name-wurble = Журчать
 chat-emote-name-mars = Марс
 # Message
 chat-emote-msg-fart = пукает.
@@ -22,7 +21,6 @@ chat-emote-msg-fart-super = пердит.
 chat-emote-msg-flap = взмахивает { POSS-ADJ($entity) } крыльями.
 chat-emote-msg-trill = дрожжит!
 chat-emote-msg-warble = поёт!
-chat-emote-msg-wurble = журчит!
 chat-emote-msg-mars = марс.
 chat-emote-msg-bagawk = багаукс!
 # Misc

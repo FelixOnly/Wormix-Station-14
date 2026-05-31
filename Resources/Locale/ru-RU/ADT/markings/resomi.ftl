@@ -1,7 +1,3 @@
-marking-ResomiTail = Резоми Хвост
-marking-ResomiTail-tail = Резоми Хвост
-
-marking-ResomiTailFeathers = Хвостовое оперенье
 marking-ResomiTailFeathers-tail_feathers = Хвостовое оперенье
 
 marking-ResomiLArmFeathers = Резоми Оперение левой руки

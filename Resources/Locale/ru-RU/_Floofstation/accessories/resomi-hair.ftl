@@ -5,7 +5,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 marking-HairResomiBackstrafe = Назад Вихрем
-marking-HairResomiBurstShort = Короткий Всплеск
 marking-HairResomiDefault = Стандарт
 marking-HairResomiDroopy = Свисающая
 marking-HairResomiEars = Ушастая

@@ -1,9 +1,5 @@
-humanoid-profile-editor-voice-label = Голос(TTS):
 humanoid-profile-editor-barks-label = Голос (барки):
 humanoid-profile-editor-tts-label = Голос (TTS):
-humanoid-profile-editor-voice-play = ▶
-
-# TTS Voice Menu
 humanoid-profile-editor-tts-voice-menu-title = Выбор голоса TTS
 humanoid-profile-editor-tts-voice-menu-search = Поиск по названию...
 humanoid-profile-editor-tts-voice-menu-sex-filter = Пол

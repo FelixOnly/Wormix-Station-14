@@ -1,28 +1,13 @@
-language-Universal-name = Универсальный
-language-Universal-description = ЧТО ТЫ ТАКОЕ.
-
 language-GalacticCommon-name = Общегалактический
 language-GalacticCommon-description = Обычно используется для межвидового общения и официальных целей.
-
-language-Bubblish-name = Пузырчатый
-language-Bubblish-description = Язык слаймолюдов. Это смесь булькающих звуков и хлюпов. Человеку очень трудно говорить без механической помощи.
 
 language-Elysian-name = Элизиан
 language-Elysian-description = Язык, на котором говорят жители Империи Элизиум. Отдаёт величием и чистотой.
 
-language-RootSpeak-name = Песнь корней
-language-RootSpeak-description = Странный шелестящий язык, на котором говорят дионы.
-
 language-CodeSpeak-name = Кодовый язык
 language-CodeSpeak-description = Оперативники синдиката могут использовать серию кодовых слов для передачи сложной информации, в то время как для любого слушателя они звучат как случайные понятия и напитки.
 
-language-Nekomimetic-name = Некоязык
-language-Nekomimetic-description = Для стороннего наблюдателя этот язык представляет собой непонятную смесь ломаного японского. Для фелинидов он каким-то образом понятен.
-
 language-Draconic-name = Синта'унати
-language-Draconic-description = Общий язык унатхов с преобладающими шипящими звуками.
-
-language-Canilunzt-name = Канилунц
 language-Canilunzt-description = Гортанный язык, на котором говорят и используют обитатели системы Ваззенда, состоящий из рычания, лая, тявканья и интенсивного использования движений ушей и хвоста, вулпканины говорят на этом языке с легкостью.
 
 language-SikTaj-name = Сик'тайр
@@ -35,8 +20,6 @@ language-Fire-name = Огненный
 language-Fire-description = Звуки огня, что каким-то образом складываются в осмысленную речь.
 
 language-SolCommon-name = Солнечный язык
-language-SolCommon-description = Общий язык, на котором говорят обитатели солнечной системы.
-
 language-Cat-name = Животный кошачий
 language-Cat-description = Примитивные звуки, издаваемые кошками. Каким-то образом они передают смысл!
 
@@ -50,8 +33,6 @@ language-Xeno-name = Ксено
 language-Xeno-description = Давно забытый язык ксеноморфов.
 
 language-RobotTalk-name = Троичный
-language-RobotTalk-description = Это не язык сам по себе, но он используется роботами и КПБ для обмена данными.
-
 language-Monkey-name = Животный обезьяний
 language-Monkey-description = Набор звуков и жестов, издаваемых приматами с целью общения.
 

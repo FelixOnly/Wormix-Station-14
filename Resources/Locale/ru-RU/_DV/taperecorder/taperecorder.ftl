@@ -1,5 +1,3 @@
-cassette-repair-start = Вы начинаете перематывать плёнку обратно в { $item }.
-cassette-repair-finish = Вам удаётся перемотать плёнку обратно в { $item }.
 tape-cassette-position = Плёнка перемотана примерно на [color=green]{ $position }%[/color].
 tape-cassette-damaged = Плёнка размотана, используйте ручку или отвёртку для починки.
 tape-recorder-playing = Диктофон находится в режиме [color=green]воспроизведения[/color].
