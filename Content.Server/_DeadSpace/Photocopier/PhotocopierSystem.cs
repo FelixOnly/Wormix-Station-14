@@ -1,27 +1,29 @@
 // Мёртвый Космос, Licensed under custom terms with restrictions on public hosting and commercial use, full text: https://raw.githubusercontent.com/dead-space-server/space-station-14-fobos/master/LICENSE.TXT
 
-using Content.Shared.Paper;
+using Content.Server._Orion.Time;
+using Content.Server.GameTicking;
 using Content.Server.Popups;
 using Content.Server.Power.Components;
+using Content.Server.Station.Systems;
+using Content.Shared._DeadSpace.Photocopier;
+using Content.Shared._Orion.Time;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Database;
 using Content.Shared.Emag.Systems;
-using Content.Shared._DeadSpace.Photocopier;
+using Content.Shared.Hands.Components;
+using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Paper;
+using Content.Shared.Power;
+using Content.Shared.UserInterface;
+using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
+using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.ContentPack;
-using Robust.Shared.Audio;
-using Content.Server.Station.Systems;
-using Content.Shared.Verbs;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Shared.Hands.Components;
-using Content.Shared.Database;
-using Content.Shared.UserInterface;
-using Content.Shared.Power;
-using Content.Shared._Orion.Time;
-using Content.Shared.Hands.EntitySystems;
-using Content.Server._Orion.Time;
 
 namespace Content.Server._DeadSpace.Photocopier;
 
@@ -38,6 +40,8 @@ public sealed class PhotocopierSystem : EntitySystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly SharedHandsSystem _sharedHandsSystem = default!;
     [Dependency] private readonly TimeSystem _timeSystem = default!; // Erida edit
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly GameTicker _ticker = default!;
 
     private const string PaperSlotId = "Paper";
 
@@ -354,10 +358,11 @@ public sealed class PhotocopierSystem : EntitySystem
         string text = _resourceManager.ContentFileReadText(formPrototype.Text).ReadToEnd();
 
         text = text.Replace("DOCUMENT NAME", Loc.GetString(formPrototype.Name));
-        // Erida-Edit-Start | GameTicker/DateTime > TimeSystem
-        text = text.Replace("{{HOUR.MINUTE.SECOND}}", _timeSystem.GetStationTime().ToString("hh\\:mm\\:ss"));
+        // Wormix-Edit-Start 
+        DateTime time = _timeSystem.GetStationDate();
+        text = text.Replace("{{HOUR.MINUTE.SECOND}}", $"{_gameTiming.CurTime.Subtract(_ticker.RoundStartTimeSpan).ToString("hh\\:mm\\:ss")} / {(time.Day < 10 ? $"0{time.Day}" : time.Day)}.{(time.Month < 10 ? $"0{time.Month}" : time.Month)}.{time.Year}");
         text = text.Replace("{{DAY.MONTH.YEAR}}", _timeSystem.GetStationDate().ToString("dd.MM.yyyy"));
-        // Erida-Edit-End
+        // Wormix-Edit-End
 
         if (_station.GetOwningStation(uid) is { } station)
         {
