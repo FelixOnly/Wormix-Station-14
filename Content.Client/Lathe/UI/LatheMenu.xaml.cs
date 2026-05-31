@@ -278,16 +278,17 @@ public sealed partial class LatheMenu : DefaultWindow
                     continue;
                 }
 
-
+                // Smaller number = closer match
                 var distance = FuzzySearching.LevensteinAlgorithm(recipeName, search);
 
-                // Adjust this number to make search stricter/looser
-                if (distance > 7 && !recipeName.Contains(search))
+                var seqRatio = FuzzySearching.SequenceMatcherRatio(recipeName, search);
+
+                if (distance > 7 && seqRatio < 0.45)
                 {
                     recipesToShow.Add(proto);
                     continue;
                 }
-
+  
             }
             else
             {
@@ -348,7 +349,16 @@ public sealed partial class LatheMenu : DefaultWindow
             if (!aContains && bContains)
                 return 1;
 
-            // 3. Similarity percent
+            // 3. SequenceMatcher ratio
+            var aSeq = FuzzySearching.SequenceMatcherRatio(aRecipeName, searchText);
+            var bSeq = FuzzySearching.SequenceMatcherRatio(bRecipeName, searchText);
+
+            var seqCompare = bSeq.CompareTo(aSeq);
+
+            if (seqCompare != 0)
+                return seqCompare;
+
+            // 4. Similarity percent
             var aSimilarity = FuzzySearching.GetSimilarityPercent(aRecipeName, searchText);
             var bSimilarity = FuzzySearching.GetSimilarityPercent(bRecipeName, searchText);
 
@@ -357,7 +367,7 @@ public sealed partial class LatheMenu : DefaultWindow
             if (similarityCompare != 0)
                 return similarityCompare;
 
-            // 4. Distance fallback
+            // 5. Distance fallback
             var aDistance = FuzzySearching.LevensteinAlgorithm(aRecipeName, searchText);
             var bDistance = FuzzySearching.LevensteinAlgorithm(bRecipeName, searchText);
 
@@ -366,7 +376,7 @@ public sealed partial class LatheMenu : DefaultWindow
             if (distanceCompare != 0)
                 return distanceCompare;
 
-            // 5. Alphabetical fallback
+            // 6. Alphabetical fallback
             return string.Compare(aRecipeName, bRecipeName, StringComparison.InvariantCulture);
         });
 

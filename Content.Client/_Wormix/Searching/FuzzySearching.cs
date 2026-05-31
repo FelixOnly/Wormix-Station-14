@@ -31,6 +31,67 @@ public static class FuzzySearching
         return Regex.Replace(text, @"\[(\/)?[a-zA-Z]+(=[^\]]+)?\]", "");
     }
 
+    public static double SequenceMatcherRatio(string a, string b)
+    {
+        if (string.IsNullOrEmpty(a) || string.IsNullOrEmpty(b))
+            return 0;
+
+        a = a.ToLowerInvariant();
+        b = b.ToLowerInvariant();
+
+        var matches = GetMatchingCharacters(a, b);
+
+        return (2.0 * matches) / (a.Length + b.Length);
+    }
+
+    public static int GetMatchingCharacters(string a, string b)
+    {
+        if (a.Length == 0 || b.Length == 0)
+            return 0;
+
+        var longest = LongestCommonSubstring(a, b);
+
+        if (longest.length == 0)
+            return 0;
+
+        return longest.length
+               + GetMatchingCharacters(
+                   a[..longest.aStart],
+                   b[..longest.bStart])
+               + GetMatchingCharacters(
+                   a[(longest.aStart + longest.length)..],
+                   b[(longest.bStart + longest.length)..]);
+    }
+
+    public static (int aStart, int bStart, int length) LongestCommonSubstring(string a, string b)
+    {
+        int bestLength = 0;
+        int bestA = 0;
+        int bestB = 0;
+
+        var table = new int[a.Length + 1, b.Length + 1];
+
+        for (var i = 1; i <= a.Length; i++)
+        {
+            for (var j = 1; j <= b.Length; j++)
+            {
+                if (a[i - 1] != b[j - 1])
+                    continue;
+
+                table[i, j] = table[i - 1, j - 1] + 1;
+
+                if (table[i, j] > bestLength)
+                {
+                    bestLength = table[i, j];
+                    bestA = i - bestLength;
+                    bestB = j - bestLength;
+                }
+            }
+        }
+
+        return (bestA, bestB, bestLength);
+    }
+
     public static int LevensteinAlgorithm(string source1, string source2) //O(n*m)
     {
         var source1Length = source1.Length;

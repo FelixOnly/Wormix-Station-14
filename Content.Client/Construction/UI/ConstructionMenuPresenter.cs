@@ -335,8 +335,9 @@ namespace Content.Client.Construction.UI
                         // Smaller number = closer match
                         var distance = FuzzySearching.LevensteinAlgorithm(recipeName, search);
 
-                        // Adjust this number to make search stricter/looser
-                        if (distance > 12 && !recipeName.Contains(search))
+                        var seqRatio = FuzzySearching.SequenceMatcherRatio(recipeName, search);
+
+                        if (distance > 12 && seqRatio < 0.45)
                             continue;
                     }
                 }
@@ -382,15 +383,13 @@ namespace Content.Client.Construction.UI
                     return -1;
 
 
-                aName = aName.Replace("ё", "е");
-                bName = bName.Replace("ё", "е");
+                aName = aName.ToLowerInvariant().Replace("ё", "е");
+                bName = bName.ToLowerInvariant().Replace("ё", "е");
 
 
                 // 1. StartsWith priority
                 var aStarts = aName.StartsWith(searchText);
                 var bStarts = bName.StartsWith(searchText);
-
-
 
                 if (aStarts && !bStarts)
                     return -1;
@@ -408,7 +407,17 @@ namespace Content.Client.Construction.UI
                 if (!aContains && bContains)
                     return 1;
 
-                // 3. Similarity percent
+                // 3. SequenceMatcher ratio
+                var aSeq = FuzzySearching.SequenceMatcherRatio(aName, searchText);
+                var bSeq = FuzzySearching.SequenceMatcherRatio(bName, searchText);
+
+                var seqCompare = bSeq.CompareTo(aSeq);
+
+                if (seqCompare != 0)
+                    return seqCompare;
+
+
+                // 4. Similarity percent
                 var aSimilarity = FuzzySearching.GetSimilarityPercent(aName, searchText);
                 var bSimilarity = FuzzySearching.GetSimilarityPercent(bName, searchText);
 
@@ -417,7 +426,7 @@ namespace Content.Client.Construction.UI
                 if (similarityCompare != 0)
                     return similarityCompare;
 
-                // 4. Distance fallback
+                // 5. Distance fallback
                 var aDistance = FuzzySearching.LevensteinAlgorithm(aName, searchText);
                 var bDistance = FuzzySearching.LevensteinAlgorithm(bName, searchText);
 
@@ -426,7 +435,7 @@ namespace Content.Client.Construction.UI
                 if (distanceCompare != 0)
                     return distanceCompare;
 
-                // 5. Alphabetical fallback
+                // 6. Alphabetical fallback
                 return string.Compare(aName, bName, StringComparison.InvariantCulture);
             });
 
