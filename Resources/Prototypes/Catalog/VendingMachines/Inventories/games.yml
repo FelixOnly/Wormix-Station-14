@@ -32,6 +32,7 @@
     BooksBag: 3
     CardBoxBlack: 3 # GoobStation
     ADTCardBoxUno: 3 # ADT
+    ClothingBackpackDuffelTennisGame: 1 # Wormix
   contrabandInventory:
     OuijaBoard: 1 # ADT
     Basketball: 1
