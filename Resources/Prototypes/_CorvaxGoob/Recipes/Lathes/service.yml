@@ -1,6 +1,7 @@
 - type: latheRecipe
   id: PhotoCamera
   result: PhotoCamera
+  completetime: 1
   materials:
     Plastic: 500
     Steel: 500

@@ -9,52 +9,53 @@
   tier: 1
   startingTechnology: true
   pointCosts:
-  - type: General
-    amount: 500
+    - type: General
+      amount: 500
   recipeUnlocks:
-  - HandLabeler
-  - ParcelWrap
-  - CutterMachineCircuitboard
-  - RadioHandheld
-  - ClothingHeadset # Without keys!!!
-  - TapeRecorder
-  - CassetteTape
-  - PetCarrier
-  - Bucket
-  - MopItem
-  - Broomstick
-  - TrashBag
-  - WireBrush
-  - FlashlightLantern
-  - Flare
-  - StationRadioCircuitboard
-  - DocumentPrinterMachineCircuitboard # Orion
-  - HandheldStationMap
-  - ClothingHeadHatCone
-  - WeaponHammer
-  - AppraisalTool
-  - LedLightTube
-  - SodiumLightTube
-  - ExteriorLightTube
-  - LedLightBulb
-  - DimLightBulb
-  - WarmLightBulb
-  - DrinkMug
-  - DrinkMugMetal
-  - CustomDrinkJug
-  - FoodKebabSkewer
-  - WetFloorSign
-  - IntercomElectronics
-  - StationMapElectronics
-  - Pen
-  - CrewCassette
-  - ConfettiGrenade
-  - FoodShakerSaltEmpty
-  - FoodShakerPepperEmpty
-  - VinylPlayerCircuitboard
-  - TapeDeckCircuitboard
-  - StationRadioServerCircuitboard
-  - StationRadioRigCircuitboard
+    - HandLabeler
+    - ParcelWrap
+    - CutterMachineCircuitboard
+    - RadioHandheld
+    - ClothingHeadset # Without keys!!!
+    - TapeRecorder
+    - CassetteTape
+    - PetCarrier
+    - Bucket
+    - MopItem
+    - Broomstick
+    - TrashBag
+    - WireBrush
+    - FlashlightLantern
+    - Flare
+    - StationRadioCircuitboard
+    - DocumentPrinterMachineCircuitboard # Orion
+    - HandheldStationMap
+    - ClothingHeadHatCone
+    - WeaponHammer
+    - AppraisalTool
+    - LedLightTube
+    - SodiumLightTube
+    - ExteriorLightTube
+    - LedLightBulb
+    - DimLightBulb
+    - WarmLightBulb
+    - DrinkMug
+    - DrinkMugMetal
+    - CustomDrinkJug
+    - FoodKebabSkewer
+    - WetFloorSign
+    - IntercomElectronics
+    - StationMapElectronics
+    - Pen
+    - CrewCassette
+    - ConfettiGrenade
+    - FoodShakerSaltEmpty
+    - FoodShakerPepperEmpty
+    - VinylPlayerCircuitboard
+    - TapeDeckCircuitboard
+    - StationRadioServerCircuitboard
+    - StationRadioRigCircuitboard
+    - PhotoCamera # CorvaxGoob
   position: 8,-4
 
 - type: technology
@@ -67,23 +68,23 @@
   discipline: Service
   tier: 2
   announceChannels:
-  - Service
+    - Service
   pointCosts:
-  - type: General
-    amount: 5000
+    - type: General
+      amount: 5000
   technologyPrerequisites:
-  - OfficeEquipment
+    - OfficeEquipment
   discountExperiments:
-  - ScanningRandomJanitorTrash
+    - ScanningRandomJanitorTrash
   discountExperimentCosts:
     ScanningRandomJanitorTrash: 5000
   recipeUnlocks:
-  - AdvMopItem
-  - LightReplacer
-  - SprayBottle
-  - WeaponSprayNozzle
-  - ClothingBackpackWaterTank
-  - MegaSprayBottle
+    - AdvMopItem
+    - LightReplacer
+    - SprayBottle
+    - WeaponSprayNozzle
+    - ClothingBackpackWaterTank
+    - MegaSprayBottle
   position: 8,-2
 
 - type: technology
@@ -96,19 +97,19 @@
   discipline: Service
   tier: 1
   announceChannels:
-  - Service
+    - Service
   pointCosts:
-  - type: General
-    amount: 2500
+    - type: General
+      amount: 2500
   technologyPrerequisites:
-  - OfficeEquipment
+    - OfficeEquipment
   recipeUnlocks:
-  - CommsComputerCircuitboard
-  - CargoRequestComputerCircuitboard
-  - MedicalRecordsComputerCircuitboard
-  - CrewMonitoringComputerCircuitboard
-  - CargoBountyComputerCircuitboard
-  - ScreenTimerElectronics
+    - CommsComputerCircuitboard
+    - CargoRequestComputerCircuitboard
+    - MedicalRecordsComputerCircuitboard
+    - CrewMonitoringComputerCircuitboard
+    - CargoBountyComputerCircuitboard
+    - ScreenTimerElectronics
   position: 9,-4
 
 - type: technology
@@ -121,17 +122,17 @@
   discipline: Service
   tier: 2
   pointCosts:
-  - type: General
-    amount: 5000
+    - type: General
+      amount: 5000
   technologyPrerequisites:
-  - Consoles
+    - Consoles
   discountExperiments:
-  - PhysicalArcadeWinner
+    - PhysicalArcadeWinner
   discountExperimentCosts:
     PhysicalArcadeWinner: 5000
   recipeUnlocks:
-  - BlockGameArcadeComputerCircuitboard
-  - SpaceVillainArcadeComputerCircuitboard
+    - BlockGameArcadeComputerCircuitboard
+    - SpaceVillainArcadeComputerCircuitboard
   position: 10,-4
 
 - type: technology
@@ -145,31 +146,31 @@
   tier: 1
   startingTechnology: true
   pointCosts:
-  - type: General
-    amount: 500
+    - type: General
+      amount: 500
   recipeUnlocks:
-  - ElectricGrillMachineCircuitboard
-  - MicrowaveMachineCircuitboard
-  - FoodBowlBig
-  - CandyBowl
-  - FoodPlate
-  - FoodPlateSmall
-  - FoodPlatePlastic
-  - FoodPlateSmallPlastic
-  - FoodPlateMuffinTin
-  - FoodPlateTin
-  - BarSpoon
-  - Spoon
-  - SpoonPlastic
-  - Fork
-  - ForkPlastic
-  - KitchenKnife
-  - KnifePlastic
-  - DrinkShaker
-  - DrinkGlass
-  - DrinkGlassCoupeShaped
-  - DrinkShotGlass
-  - Ashtray
+    - ElectricGrillMachineCircuitboard
+    - MicrowaveMachineCircuitboard
+    - FoodBowlBig
+    - CandyBowl
+    - FoodPlate
+    - FoodPlateSmall
+    - FoodPlatePlastic
+    - FoodPlateSmallPlastic
+    - FoodPlateMuffinTin
+    - FoodPlateTin
+    - BarSpoon
+    - Spoon
+    - SpoonPlastic
+    - Fork
+    - ForkPlastic
+    - KitchenKnife
+    - KnifePlastic
+    - DrinkShaker
+    - DrinkGlass
+    - DrinkGlassCoupeShaped
+    - DrinkShotGlass
+    - Ashtray
   position: 8,-3
 
 - type: technology
@@ -182,21 +183,21 @@
   discipline: Service
   tier: 2
   announceChannels:
-  - Service
+    - Service
   pointCosts:
-  - type: General
-    amount: 5000
+    - type: General
+      amount: 5000
   technologyPrerequisites:
-  - CafeteriaEquipment
+    - CafeteriaEquipment
   recipeUnlocks:
-#  - DeepFryer
-#  - Oven
-#  - Stove
-  - SlimeGrinderMachineCircuitboard
-  - ReagentGrinderMachineCircuitboard
-  - SheetifierMachineCircuitboard
-  - FatExtractorMachineCircuitboard
-  - PairedChopsticks
+    #  - DeepFryer
+    #  - Oven
+    #  - Stove
+    - SlimeGrinderMachineCircuitboard
+    - ReagentGrinderMachineCircuitboard
+    - SheetifierMachineCircuitboard
+    - FatExtractorMachineCircuitboard
+    - PairedChopsticks
   position: 7,-4
 
 - type: technology
@@ -209,15 +210,15 @@
   discipline: Service
   tier: 1
   announceChannels:
-  - Service
+    - Service
   pointCosts:
-  - type: General
-    amount: 3000
+    - type: General
+      amount: 3000
   technologyPrerequisites:
-  - OfficeEquipment
+    - OfficeEquipment
   recipeUnlocks:
-  - SynthesizerInstrument
-  - PushHorn
+    - SynthesizerInstrument
+    - PushHorn
   position: 7,-3
 
 - type: technology
@@ -231,10 +232,10 @@
   tier: 1
   startingTechnology: true
   pointCosts:
-  - type: General
-    amount: 500
+    - type: General
+      amount: 500
   recipeUnlocks:
-  - FishingRod
+    - FishingRod
   position: 11,-2
 
 - type: technology
@@ -247,12 +248,12 @@
   discipline: Service
   tier: 2
   pointCosts:
-  - type: General
-    amount: 5000
+    - type: General
+      amount: 5000
   technologyPrerequisites:
-  - FishingEquip
+    - FishingEquip
   requiredExperiments:
-  - ScanningFish
+    - ScanningFish
   # TODO
   position: 11,-3
 
@@ -266,12 +267,12 @@
   discipline: Service
   tier: 3
   pointCosts:
-  - type: General
-    amount: 7500
+    - type: General
+      amount: 7500
   technologyPrerequisites:
-  - FishingEquipAdv
+    - FishingEquipAdv
   discountExperiments:
-  - ScanningFishSecond
+    - ScanningFishSecond
   discountExperimentCosts:
     ScanningFishSecond: 7500
   # TODO

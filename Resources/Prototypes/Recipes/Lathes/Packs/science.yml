@@ -14,161 +14,160 @@
 - type: latheRecipePack
   id: ScienceBoardsStatic
   recipes:
-  #- ProtolatheMachineCircuitboard - Goobstation - Moved to SharedBoardsStatic
-  #- AutolatheMachineCircuitboard
-  #- CircuitImprinterMachineCircuitboard
-  - ExosuitFabricatorMachineCircuitboard
-  - CutterMachineCircuitboard
-  - BorgChargerCircuitboard
+    #- ProtolatheMachineCircuitboard - Goobstation - Moved to SharedBoardsStatic
+    #- AutolatheMachineCircuitboard
+    #- CircuitImprinterMachineCircuitboard
+    - ExosuitFabricatorMachineCircuitboard
+    - CutterMachineCircuitboard
+    - BorgChargerCircuitboard
 
 - type: latheRecipePack
   id: CircuitFloorsStatic
   recipes:
-  - FloorGreenCircuit
-  - FloorBlueCircuit
-  - FloorRedCircuit
+    - FloorGreenCircuit
+    - FloorBlueCircuit
+    - FloorRedCircuit
 
 # Keeps flash payloads out of the hands of tiders, I guess. All triggers roundstart for autolathes and med/sci/secfab
 - type: latheRecipePack
   id: ScienceExplosives
   recipes:
-  - ChemicalPayload
-  - FlashPayload
+    - ChemicalPayload
+    - FlashPayload
 
 ## Dynamic
-
 - type: latheRecipePack
   id: ScienceEquipment
   recipes:
-  - AnomalyScanner
-  - NodeScanner
-  - AnomalyLocator
-  - AnomalyLocatorWide
-  - HoloprojectorField
-  #- SignallerAdvanced - Goobstation - Removed from there. Still in Equipment.
-  - DeviceQuantumSpinInverter
-  - DeviceDesynchronizer
-  - ClothingBackpackHarmpack
-  # Orion-Start
-  - ModularGrenade
-  - TrackingImplanter
-  - SadTromboneImplanter
-  - ClothingEyesHudMedical
-  - ClothingEyesHudDiagnostic
-  - SlimeScannerXenobio
-  - ExperiScanner
-  - ResearchDataDisk
+    - AnomalyScanner
+    - NodeScanner
+    - AnomalyLocator
+    - AnomalyLocatorWide
+    - HoloprojectorField
+    #- SignallerAdvanced - Goobstation - Removed from there. Still in Equipment.
+    - DeviceQuantumSpinInverter
+    - DeviceDesynchronizer
+    - ClothingBackpackHarmpack
+    # Orion-Start
+    - ModularGrenade
+    - TrackingImplanter
+    - SadTromboneImplanter
+    - ClothingEyesHudMedical
+    - ClothingEyesHudDiagnostic
+    - SlimeScannerXenobio
+    - ExperiScanner
+    - ResearchDataDisk
   # Orion-End
 
 - type: latheRecipePack
   id: ScienceClothing
   recipes:
-  - ClothingShoesBootsMagSci
-  - ClothingShoesBootsMoon
-#  - ClothingShoesBootsSpeed - Goobstation - Nuked due to sprinting.
-  - ClothingShoesBootsJump
-  - ClothingBackpackHolding
-  - ClothingBackpackSatchelHolding
-  - ClothingBackpackDuffelHolding
-  - ClothingBackpackMessengerHolding # Frontier
-  # Orion-Start
-  - ClothingEyesNightVisionDiagnosticGoggles
+    - ClothingShoesBootsMagSci
+    - ClothingShoesBootsMoon
+    #  - ClothingShoesBootsSpeed - Goobstation - Nuked due to sprinting.
+    - ClothingShoesBootsJump
+    - ClothingBackpackHolding
+    - ClothingBackpackSatchelHolding
+    - ClothingBackpackDuffelHolding
+    - ClothingBackpackMessengerHolding # Frontier
+    # Orion-Start
+    - ClothingEyesNightVisionDiagnosticGoggles
   # Orion-End
 
 - type: latheRecipePack
   id: PowerCells
   recipes:
-#  - PowerCellMicroreactor # Orion-Edit: Replaced with PowerCellBluespaceReactor
-  - PowerCellHigh
-  - PowerCellHyper
-  # Orion-Start
-  - PowerCellSuper
-  - PowerCellBluespace
-  - PowerCellBluespaceReactor
-  - PowerCellVortex
+    #  - PowerCellMicroreactor # Orion-Edit: Replaced with PowerCellBluespaceReactor
+    - PowerCellHigh
+    - PowerCellHyper
+    # Orion-Start
+    - PowerCellSuper
+    - PowerCellBluespace
+    - PowerCellBluespaceReactor
+    - PowerCellVortex
   # Orion-End
 
 - type: latheRecipePack
   id: ScienceWeapons
   recipes:
-  - WeaponPistolCHIMP
-  - WeaponForceGun
-  #- WeaponLaserSvalinn - Goobstation - Moved to ServiceWeapons
-  #- WeaponProtoKineticAccelerator - Goobstation - Moved to MiningWeapons
-  - WeaponTetherGun
-  - WeaponGauntletGorilla
+    - WeaponPistolCHIMP
+    - WeaponForceGun
+    #- WeaponLaserSvalinn - Goobstation - Moved to ServiceWeapons
+    #- WeaponProtoKineticAccelerator - Goobstation - Moved to MiningWeapons
+    - WeaponTetherGun
+    - WeaponGauntletGorilla
 
 - type: latheRecipePack
   id: FauxTiles
   recipes:
-  - FauxTileAstroGrass
-  - FauxTileMowedAstroGrass
-  - FauxTileJungleAstroGrass
-  - FauxTileAstroIce
-  - FauxTileAstroSnow
-  - FauxTileAstroAsteroidSand
+    - FauxTileAstroGrass
+    - FauxTileMowedAstroGrass
+    - FauxTileJungleAstroGrass
+    - FauxTileAstroIce
+    - FauxTileAstroSnow
+    - FauxTileAstroAsteroidSand
 
 - type: latheRecipePack
   id: ScienceBoards
   recipes:
-  #- TurboItemRechargerCircuitboard - Goobstation - Moved to SharedBoards
-  # Begin DeltaV Removals - replaced by techfabs/upgrade kits
-  #- AutolatheHyperConvectionMachineCircuitboard
-  #- ProtolatheHyperConvectionMachineCircuitboard
-  #- CircuitImprinterHyperConvectionMachineCircuitboard
-  # End DeltaV Removals
-  - TechDiskComputerCircuitboard
-  #- FlatpackerMachineCircuitboard - Moved to SharedBoards
-  #- SheetifierMachineCircuitboard - Moved to ServiceBoards
-  #- PowerCageRechargerCircuitboard - Moved to SharedBoards
-  - AnalysisComputerCircuitboard
-  - AnomalyVesselCircuitboard
-  - AnomalyVesselExperimentalCircuitboard
-  - AnomalySynchronizerCircuitboard
-  - APECircuitboard
-  - ArtifactAnalyzerMachineCircuitboard
-  - ArtifactCrusherMachineCircuitboard
-  # Orion-Start
-  - ResearchAndDevelopmentServerMachineCircuitboard
-  - ResearchServerControlConsoleCircuitboard
-  - ResearchComputerCircuitboard
-  - ResearchDestructiveAnalyzerMachineCircuitboard
-  - ResearchExperimentalDestructiveScannerMachineCircuitboard
-  - XenobiologyBountyComputerCircuitboard
-  - StationAiUploadCircuitboard
+    #- TurboItemRechargerCircuitboard - Goobstation - Moved to SharedBoards
+    # Begin DeltaV Removals - replaced by techfabs/upgrade kits
+    #- AutolatheHyperConvectionMachineCircuitboard
+    #- ProtolatheHyperConvectionMachineCircuitboard
+    #- CircuitImprinterHyperConvectionMachineCircuitboard
+    # End DeltaV Removals
+    - TechDiskComputerCircuitboard
+    #- FlatpackerMachineCircuitboard - Moved to SharedBoards
+    #- SheetifierMachineCircuitboard - Moved to ServiceBoards
+    #- PowerCageRechargerCircuitboard - Moved to SharedBoards
+    - AnalysisComputerCircuitboard
+    - AnomalyVesselCircuitboard
+    - AnomalyVesselExperimentalCircuitboard
+    - AnomalySynchronizerCircuitboard
+    - APECircuitboard
+    - ArtifactAnalyzerMachineCircuitboard
+    - ArtifactCrusherMachineCircuitboard
+    # Orion-Start
+    - ResearchAndDevelopmentServerMachineCircuitboard
+    - ResearchServerControlConsoleCircuitboard
+    - ResearchComputerCircuitboard
+    - ResearchDestructiveAnalyzerMachineCircuitboard
+    - ResearchExperimentalDestructiveScannerMachineCircuitboard
+    - XenobiologyBountyComputerCircuitboard
+    - StationAiUploadCircuitboard
   # Orion-End
 
 - type: latheRecipePack
   id: CameraBoards
   recipes:
-  - SurveillanceCameraRouterCircuitboard
-  - SurveillanceCameraMonitorCircuitboard
-  - SurveillanceWirelessCameraMonitorCircuitboard
-  - SurveillanceCameraWirelessRouterCircuitboard
-  - ComputerTelevisionCircuitboard
-  - SurveillanceWirelessCameraMovableCircuitboard
-  - SurveillanceWirelessCameraAnchoredCircuitboard
+    - SurveillanceCameraRouterCircuitboard
+    - SurveillanceCameraMonitorCircuitboard
+    - SurveillanceWirelessCameraMonitorCircuitboard
+    - SurveillanceCameraWirelessRouterCircuitboard
+    - ComputerTelevisionCircuitboard
+    - SurveillanceWirelessCameraMovableCircuitboard
+    - SurveillanceWirelessCameraAnchoredCircuitboard
 
 - type: latheRecipePack
   id: MechBoards
   recipes:
-  - RipleyCentralElectronics
-  - RipleyPeripheralsElectronics
-  - HonkerCentralElectronics
-  - HonkerPeripheralsElectronics
-  - HonkerTargetingElectronics
-  - HamtrCentralElectronics
-  - HamtrPeripheralsElectronics
-  # Orion-Start
-  - GygaxCentralElectronics
-  - DurandCentralElectronics
+    - RipleyCentralElectronics
+    - RipleyPeripheralsElectronics
+    - HonkerCentralElectronics
+    - HonkerPeripheralsElectronics
+    - HonkerTargetingElectronics
+    - HamtrCentralElectronics
+    - HamtrPeripheralsElectronics
+    # Orion-Start
+    - GygaxCentralElectronics
+    - DurandCentralElectronics
   # Orion-End
 
 - type: latheRecipePack
   id: ShuttleBoards
   recipes:
-  - ShuttleConsoleCircuitboard
-  - RadarConsoleCircuitboard
-  - ThrusterMachineCircuitboard
-  - GyroscopeMachineCircuitboard
-  - MiniGravityGeneratorCircuitboard
+    - ShuttleConsoleCircuitboard
+    - RadarConsoleCircuitboard
+    - ThrusterMachineCircuitboard
+    - GyroscopeMachineCircuitboard
+    - MiniGravityGeneratorCircuitboard
