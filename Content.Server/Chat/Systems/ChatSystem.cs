@@ -951,7 +951,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             // Goob edit start
             if (TryComp<DeafComponent>(listener, out var modifier) && language.SpeechOverride.RequireSpeech)
                 continue; // blocks anyone with the deaf component from hearing.
-            if (HasComp<PermanentBlindnessComponent>(listener) || HasComp<TemporaryBlindnessComponent>(listener))
+            if (language.SpeechOverride.RequireSight && (HasComp<PermanentBlindnessComponent>(listener) || HasComp<TemporaryBlindnessComponent>(listener))) // Orion-Edit
                 continue; // block blind people from seeing subtle sign language gestures
             // Goob edit end
 

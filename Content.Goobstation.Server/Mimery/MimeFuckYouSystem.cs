@@ -47,6 +47,7 @@ public sealed class MimeFuckYouSystem : EntitySystem
             _popupSystem.PopupEntity(Loc.GetString("lazy-mime-too-much"), ent, PopupType.LargeCaution);
             _stunSystem.TryAddParalyzeDuration(ent, TimeSpan.FromSeconds(5));
             EnsureComp<KillSignComponent>(ent);
+            args.Cancel(); // Orion
         }
         else if (violationCount == youAreDone) // you will grow complacent
         {
