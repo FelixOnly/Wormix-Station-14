@@ -1,0 +1,239 @@
+# DHS Officer Spawner
+
+- type: entity
+  id: RandomHumanoidSpawnerDHSOfficer
+  name: Офицер ДВБ
+  suffix: Центком
+  components:
+    - type: Sprite
+      sprite: /Textures/_Wormix/Markers/jobs.rsi
+      state: navyofficer
+    - type: RandomMetadata
+      nameSegments:
+        - NamesMilitaryFirstLeader
+        - NamesMilitaryLast
+      nameFormat: name-format-standard
+    - type: RandomHumanoidSpawner
+      settings: DHSOfficer
+
+- type: randomHumanoidSettings
+  id: DHSOfficer
+  parent: CentcommHumanoid
+  randomizeName: false
+  components:
+    - type: AutoImplant
+      implants:
+        [
+          FreedomImplant,
+          BluespaceLifelineImplant,
+          RadioImplantCentcomm,
+          StypticStimulatorImplant,
+          NutrimentPumpImplant,
+        ]
+    - type: GhostRole
+      name: ghost-role-information-navy-officer-name
+      description: ghost-role-information-navy-officer-description
+      rules: ghost-role-information-navy-officer-rules
+      skills: # CorvaxGoob-Skills
+        - All
+      raffle:
+        settings: short
+    - type: Loadout
+      prototypes: [DHSOfficerGear]
+      roleLoadout: [RoleSurvivalEVA]
+    - type: RandomMetadata
+      nameSegments:
+        - NamesMilitaryFirstLeader
+        - NamesMilitaryLast
+      nameFormat: name-format-standard
+
+# DHS Ops Spawner
+
+- type: entity
+  id: RandomHumanoidSpawnerDHSOps
+  name: Оперативник ДВБ
+  suffix: Центком
+  components:
+    - type: Sprite
+      sprite: /Textures/_Wormix/Markers/jobs.rsi
+      state: navyops
+    - type: RandomMetadata
+      nameSegments:
+        - NamesMilitaryFirst
+        - NamesMilitaryLast
+      nameFormat: name-format-standard
+    - type: RandomHumanoidSpawner
+      settings: DHSOps
+
+- type: randomHumanoidSettings
+  id: DHSOps
+  parent: CentcommHumanoid
+  randomizeName: false
+  components:
+    - type: AutoImplant
+      implants:
+        [
+          FreedomImplant,
+          BluespaceLifelineImplant,
+          RadioImplantCentcomm,
+          StypticStimulatorImplant,
+          NutrimentPumpImplant,
+        ]
+    - type: GhostRole
+      name: ghost-role-information-navy-officer-name
+      description: ghost-role-information-navy-officer-description
+      rules: ghost-role-information-navy-officer-rules
+      skills: # CorvaxGoob-Skills
+        - All
+      raffle:
+        settings: short
+    - type: Loadout
+      prototypes: [DHSOpsGear]
+    - type: RandomMetadata
+      nameSegments:
+        - NamesMilitaryFirst
+        - NamesMilitaryLast
+      nameFormat: name-format-standard
+
+- type: entity
+  id: RandomHumanoidSpawnerDHSOpsEVA
+  name: Оперативник ДВБ
+  suffix: Центком, EVA
+  components:
+    - type: Sprite
+      sprite: /Textures/_Wormix/Markers/jobs.rsi
+      state: navyops
+    - type: RandomMetadata
+      nameSegments:
+        - NamesMilitaryFirst
+        - NamesMilitaryLast
+      nameFormat: name-format-standard
+    - type: RandomHumanoidSpawner
+      settings: DHSOpsEVA
+
+- type: randomHumanoidSettings
+  id: DHSOpsEVA
+  parent: CentcommHumanoid
+  randomizeName: false
+  components:
+    - type: AutoImplant
+      implants:
+        [
+          FreedomImplant,
+          BluespaceLifelineImplant,
+          RadioImplantCentcomm,
+          StypticStimulatorImplant,
+          NutrimentPumpImplant,
+        ]
+    - type: GhostRole
+      name: ghost-role-information-navy-officer-name
+      description: ghost-role-information-navy-officer-description
+      rules: ghost-role-information-navy-officer-rules
+      skills: # CorvaxGoob-Skills
+        - All
+      raffle:
+        settings: short
+    - type: Loadout
+      prototypes: [DHSOpsGearEVA]
+    - type: RandomMetadata
+      nameSegments:
+        - NamesMilitaryFirst
+        - NamesMilitaryLast
+      nameFormat: name-format-standard
+
+# Special Operations Officer Spawner
+
+- type: entity
+  id: RandomHumanoidSpawnerSpecialOperationsOfficers
+  name: Офицер СпецОпераций
+  suffix: Центком
+  components:
+    - type: Sprite
+      sprite: /Textures/_Wormix/Markers/jobs.rsi
+      state: specops
+    - type: RandomMetadata
+      nameSegments:
+        - NamesMilitaryFirstHighRank
+        - NamesMilitaryLast
+      nameFormat: name-format-standard
+    - type: RandomHumanoidSpawner
+      settings: SpecialOperationsOfficer
+
+- type: randomHumanoidSettings
+  id: SpecialOperationsOfficer
+  parent: CentcommHumanoid
+  randomizeName: false
+  components:
+    - type: AutoImplant
+      implants:
+        [
+          FreedomImplant,
+          BluespaceLifelineImplant,
+          RadioImplantCentcomm,
+          NutrimentPumpImplant,
+          StypticStimulatorImplant,
+        ]
+    - type: GhostRole
+      name: ghost-role-information-special-operations-officer-name
+      description: ghost-role-information-special-operations-officer-description
+      rules: ghost-role-information-special-operations-officer-rules
+      skills: # CorvaxGoob-Skills
+        - All
+      raffle:
+        settings: short
+    - type: Loadout
+      prototypes: [SpecialOperationsOfficerGear]
+    - type: RandomMetadata
+      nameSegments:
+        - NamesMilitaryFirstHighRank
+        - NamesMilitaryLast
+      nameFormat: name-format-standard
+
+# DHS Captain Spawner
+
+- type: entity
+  id: RandomHumanoidSpawnerDHSCaptain
+  name: Капитан ДВБ
+  suffix: Центком, только для админов
+  components:
+    - type: Sprite
+      sprite: /Textures/_Wormix/Markers/jobs.rsi
+      state: navycap
+    - type: RandomMetadata
+      nameSegments:
+        - NamesMilitaryFirstHighRank
+        - NamesMilitaryLast
+      nameFormat: name-format-standard
+    - type: RandomHumanoidSpawner
+      settings: DHSCaptain
+
+- type: randomHumanoidSettings
+  id: DHSCaptain
+  parent: CentcommHumanoid
+  randomizeName: false
+  components:
+    - type: AutoImplant
+      implants:
+        [
+          FreedomImplant,
+          BluespaceLifelineImplant,
+          RadioImplantCentcomm,
+          NutrimentPumpImplant,
+          StypticStimulatorImplant,
+          SpaceProofImplant,
+        ]
+    - type: GhostRole
+      name: ghost-role-information-navy-captain-name
+      description: ghost-role-information-navy-captain-description
+      rules: ghost-role-information-navy-captain-rules
+      skills: # CorvaxGoob-Skills
+        - All
+      raffle:
+        settings: short
+    - type: Loadout
+      prototypes: [DHSCaptainGear]
+    - type: RandomMetadata
+      nameSegments:
+        - NamesMilitaryFirstHighRank
+        - NamesMilitaryLast
+      nameFormat: name-format-standard

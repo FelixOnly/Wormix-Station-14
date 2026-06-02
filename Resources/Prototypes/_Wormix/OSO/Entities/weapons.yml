@@ -1,0 +1,85 @@
+#Weapons
+
+- type: entity
+  name: Вектор
+  parent: BaseWeaponSubMachineGun
+  id: WeaponSubMachineGunVector
+  suffix: Эскадрон Смерти
+  description: Модифицированный Вектор Эскадрона Смерти использующий .45 Магнум для задач, не предполагающих выживших.
+  components:
+  - type: Sprite
+    sprite: /Textures/_Wormix/Objects/Weapons/vector.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: /Textures/_Wormix/Objects/Weapons/vector.rsi
+  - type: Gun
+    fireRate: 6
+    selectedMode: FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+    availableModes:
+    - FullAuto
+    - SemiAuto
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineMagnumSubMachineGunPiercing
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineMagnumSubMachineGun
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMagnumAP
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMagnum
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  
+- type: entity
+  parent: PhoronSabre
+  name: фороновая сабля ОСО
+  id: PhoronSabreOSO
+  description: Экспериментальное оружие Офицера Специальных Операций. В основном для показухи. Имеет более концентрированный и яркий пучок энергии.
+  suffix: ОСО
+  components:
+  - type: EnergySword
+    colorOptions:
+    - "#f3f4fa"
+
+  - type: MeleeWeapon
+    resistanceBypass: true
+    angle: 0
+
+  - type: ItemToggleMeleeWeapon
+    activatedSoundOnHit:
+      path: /Audio/Weapons/eblade1.ogg
+      params:
+        variation: 0.250
+    activatedSoundOnHitNoDamage:
+      path: /Audio/Weapons/eblade1.ogg
+      params:
+        variation: 0.250
+        volume: -10
+    activatedSoundOnSwing:
+      path: /Audio/Weapons/eblademiss.ogg
+      params:
+        variation: 0.125
+    activatedDamage:
+      types:
+        Slash: 40
+        Heat: 45
+        Radiation: 20
+        Structural: 160

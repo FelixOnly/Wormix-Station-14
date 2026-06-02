@@ -1,0 +1,124 @@
+#Items
+
+- type: entity
+  name: тактическая аптечка
+  description: "Тактическая аптечка с расширенным набором автоинжекторов и регенеративных средств. Потому что стандартная медицина просто не успевает за вашим образом жизни."
+  parent: Medkit
+  id: MedkitMilitary
+  components:
+  - type: Sprite
+    sprite: /Textures/_Wormix/Objects/Misc/medkit.rsi
+    state: blackkit
+  - type: Item
+    heldPrefix: blackkit
+    size: Normal
+    shape:
+    - 0,0,1,1
+    sprite: /Textures/_Wormix/Objects/Misc/medkit.rsi
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,3,3  
+  - type: StaticPrice
+    price: 900
+
+- type: entity
+  id: MedkitMilitaryFilled
+  name: тактическая аптечка
+  description: "Тактическая аптечка с расширенным набором автоинжекторов и регенеративных средств. Потому что стандартная медицина просто не успевает за вашим образом жизни."
+  parent: MedkitMilitary
+  suffix: Заполненная
+  components:
+  - type: StorageFill
+    contents:
+      - id: MedicatedSuture
+      - id: MedicatedSuture
+      - id: RegenerativeMesh
+      - id: RegenerativeMesh
+      - id: AdvancedCombatMedipen
+      - id: AdvancedCombatMedipen
+      - id: CombatMedipen
+      - id: CombatMedipen
+      - id: RadAutoInjector
+      - id: AntiPoisonMedipen
+      - id: AirlossAutoInjector
+      - id: EmergencyMedipen
+
+- type: entity
+  id: DefibrillatorCompactDeathSquad
+  parent: [ BaseDefibrillator, PowerCellSlotMediumItem ]
+  name: дефибриллятор Эскадрона Смерти
+  description: Спасение жизни ещё никогда не было таким агрессивным.
+  components:
+  - type: Sprite
+    sprite: /Textures/_Wormix/Objects/Misc/defibdeathsquad.rsi
+    layers:
+      - state: icon
+      - state: screen
+        map: [ "enum.ToggleableVisuals.Layer" ]
+        visible: false
+        shader: unshaded
+      - state: ready
+        map: ["enum.PowerDeviceVisualLayers.Powered"]
+        shader: unshaded
+  - type: Item
+    size: Small
+  - type: ToggleCellDraw
+  - type: PowerCellDraw
+    useRate: 50
+  - type: Defibrillator
+    zapHeal:
+      types:
+        Asphyxiation: -70
+        Poison: -50
+        Radiation: -50
+        Blunt: -50
+        Slash: -50
+        Piercing: -50
+        Heat: -55
+        Cold: -50
+        Caustic: -50
+        Shock: -50
+        Cellular: -10
+    doAfterDuration: 3 # Goob value
+  - type: DoAfter
+  - type: UseDelay
+  - type: ContainerFill
+    containers:
+      cell_slot:
+      - PowerCellMicroreactor
+  - type: Tag
+    tags:
+    - Special1
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 15
+  - type: ItemToggleMeleeWeapon
+    activatedSoundOnHit:
+      path: /Audio/Items/Defib/defib_zap.ogg
+      params:
+        variation: 0.250
+    activatedSoundOnHitNoDamage:
+      path: /Audio/Items/Defib/defib_zap.ogg
+      params:
+        variation: 0.250
+        volume: -10
+    activatedDamage:
+      types:
+        Blunt: 15
+        Shock: 30
+      
+- type: entity
+  parent: [ OmnimedTool, BaseCentcommContraband ]
+  id: OmnimedToolDeathSquad
+  name: продвинутый хирургический мультитул
+  description: Компактный хирургический инструмент, удобно упакованный, как швейцарский армейский нож. Может выполнять хирургические операции через одежду.
+  components:
+  - type: Sprite
+    state: evil
+  - type: Item
+    size: Normal
+    heldPrefix: evil
+  - type: SurgeryIgnoreClothing
+    

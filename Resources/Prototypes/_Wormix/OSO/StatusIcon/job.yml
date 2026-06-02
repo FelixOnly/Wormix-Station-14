@@ -1,0 +1,32 @@
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconOSO
+  icon:
+    sprite: /Textures/_Wormix/Icons/job_icon.rsi
+    state: Specialofficer
+  jobName: Офицер СпецОпераций
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconDeathSquad
+  icon:
+    sprite: /Textures/_Wormix/Icons/job_icon.rsi
+    state: Deathsquad
+  jobName: Эскадрон Смерти
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconDHSCaptain
+  icon:
+    sprite: /Textures/_Wormix/Icons/job_icon.rsi
+    state: navycaptain
+  jobName: Капитан ДВБ
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconDHS
+  icon:
+    sprite: /Textures/_Wormix/Icons/job_icon.rsi
+    state: navy
+  jobName: Офицер ДВБ
+

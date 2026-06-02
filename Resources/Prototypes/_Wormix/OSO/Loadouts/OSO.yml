@@ -1,0 +1,132 @@
+- type: startingGear
+  id: SpecialOperationsOfficerGear
+  equipment:
+    jumpsuit: ClothingUniformSpecOfficer
+    head: ClothingHeadSpecOfficer
+    back: ClothingBackpackSatchelLeatherFilledSpecOps
+    mask: ClothingMaskNeckGaiter
+    eyes: ClothingEyesGlassesDeathsquad
+    neck: ClothingNeckSpecOfficer
+    ears: ClothingHeadsetDeathsquad
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmourInvisibleCompact
+    shoes: ClothingShoesBootsJackFilledOSO
+    id: SpecialOperationsOfficerPDA
+    pocket1: PhoronSabreOSO
+    pocket2: ExecutiveIDCard
+    suitstorage: WeaponRifleAnnie
+    belt: ClothingBeltHolsterFilledCentComm
+  storage:
+    back:
+      - MedkitMilitaryFilled
+      - ClothingOuterHardsuitSOO
+      - ClothingShoesBootsOSO
+
+- type: startingGear
+  id: DHSCaptainGear
+  equipment:
+    jumpsuit: ClothingUniformDHSCaptain
+    shoes: ClothingShoesBootsJackFilledOSO
+    head: ClothingHeadDHSCaptain
+    eyes: ClothingEyesGlassesDeathsquad
+    gloves: ClothingHandsGlovesHeavyGoldenTrim
+    back: ClothingBackpackSatchelLeatherFilledNavyOfficer
+    outerClothing: ClothingOuterArmourInvisible
+    neck: ClothingNeckDHSCaptain
+    id: DHSCaptainBlackPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltSheathFilledNavyOfficer
+    pocket1: NukeOverride
+    pocket2: ExecutiveIDCard
+  storage:
+    back:
+      - MedkitMilitaryFilled
+
+- type: startingGear
+  id: DHSOfficerGear
+  equipment:
+    jumpsuit: ClothingUniformDHS
+    shoes: ClothingShoesBootsJackFilled
+    head: ClothingHeadDHS
+    eyes: ClothingEyesGlassesCentComm
+    gloves: ClothingHandsGlovesHeavyGoldenTrim
+    back: ClothingBackpackSatchelLeatherFilledNavyOfficer
+    outerClothing: ClothingOuterArmourInvisible
+    neck: ExecutiveIDCard
+    id: DHSOfficerPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltSheathFilledNavyOfficer
+
+- type: startingGear
+  id: DHSOpsGear
+  equipment:
+    jumpsuit: ClothingUniformDHS
+    shoes: ClothingShoesBootsJackFilled
+    head: ClothingHeadDHS
+    eyes: ClothingEyesGlassesCentComm
+    mask: ClothingMaskGasSecurity
+    gloves: ClothingHandsGlovesCombat
+    back: ClothingBackpackDHS
+    outerClothing: ClothingOuterArmourInvisible
+    neck: ExecutiveIDCard
+    id: DHSOfficerPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltDSO
+    suitstorage: WeaponRifleAnnie
+  storage:
+    back:
+      - HandheldFaxOfficial
+      - CentralCommandBusinessCard
+      - DeterrentCaseFilled
+      - WeaponPulsePistol
+
+- type: startingGear
+  id: DHSOpsGearEVA
+  equipment:
+    jumpsuit: ClothingUniformDHS
+    shoes: ClothingShoesBootsJackFilled
+    head: ClothingHeadDHS
+    eyes: ClothingEyesGlassesCentComm
+    mask: ClothingMaskGasSecurity
+    gloves: ClothingHandsGlovesCombat
+    back: ClothingModsuitCorporateDHSFilled
+    outerClothing: ClothingOuterArmourInvisible
+    neck: ExecutiveIDCard
+    id: DHSOfficerPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltDSO
+    pocket2: DoubleEmergencyOxygenTankFilled
+    suitstorage: WeaponRifleAnnie
+
+- type: startingGear
+  id: DeathSquadGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitDeathSquad
+    back: ClothingDeathSquadronBackpack
+    mask: ClothingMaskGasDeathSquad
+    eyes: ClothingEyesGlassesDeathsquad # Goobstation
+    neck: ExecutiveIDCard # Executive Access!
+    ears: ClothingHeadsetDeathsquad # Goobstation
+    gloves: ClothingHandsGlovesDeathsquadUnremovable # Rip and TEAR
+    outerClothing: ClothingOuterHardsuitDeathsquad
+    shoes: ClothingShoesBootsMagDeathsquad # These boots are cooler.
+    id: DeathsquadPDA # New PDA!
+    pocket1: PhoronSabre # Goobstation
+    pocket2: WeaponRevolverMateba # Goobstation
+    belt: ClothingBeltDeathsquadWebbingFilled # Centcomm Doesn't use syndicate tech.
+  storage:
+    back:
+      - SpeedLoaderMatebaAP # Goobstation - 7 rounds
+      - SpeedLoaderMatebaAP # Goobstation - 7 rounds
+      - ToolDebug # Spanish Army Knife - TODO Replace
+      - WelderExperimental
+      - BlueShieldShieldEvilFilled
+      - DeterrentCaseFilled
+      - WeaponSubMachineGunVector
+      - MagazineMagnumSubMachineGunPiercing
+      - MagazineMagnumSubMachineGunPiercing
+      - MagazineMagnumSubMachineGunPiercing
+      - MagazineMagnumSubMachineGunPiercing
+  inhand:
+    - WeaponPulseRifle
+

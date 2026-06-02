@@ -1,0 +1,360 @@
+# Clothing
+
+- type: entity
+  parent: [ClothingBackpack, BaseCentcommContraband]
+  id: ClothingBackpackDHS
+  name: Рюкзак ДВБ
+  description: Специальный рюкзак для операторов ДВБ
+  suffix: Вормикс, ДВБ
+  components:
+    - type: Sprite
+      sprite: /Textures/_Wormix/Clothing/navybackpack.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckSpecOfficer
+  name: Плащ ОСО
+  suffix: ОСО
+  description: "Этот черный цвет заставляет ваше сердце биться быстрее"
+  components:
+    - type: Sprite
+      sprite: /Textures/_Wormix/Clothing/specialofficercloak.rsi
+    - type: Clothing
+      sprite: /Textures/_Wormix/Clothing/specialofficercloak.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadSpecOfficer
+  name: Фуражка ОСО
+  suffix: ОСО
+  description: "Она внушает вам доверие"
+  components:
+    - type: Sprite
+      sprite: /Textures/_Wormix/Clothing/specialofficerhatcap.rsi
+    - type: Clothing
+      sprite: /Textures/_Wormix/Clothing/specialofficerhatcap.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformSpecOfficer
+  name: Комбинезон ОСО
+  suffix: ОСО
+  description: "Форма, которая вселяет страх во врагов NanoTrasen"
+  components:
+    - type: Sprite
+      sprite: /Textures/_Wormix/Clothing/specialofficerjumpskirt.rsi
+    - type: Clothing
+      sprite: /Textures/_Wormix/Clothing/specialofficerjumpskirt.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckDHSCaptain
+  name: Плащ Капитана ДВБ
+  suffix: Вормикс, ДВБ
+  description: "Засекречено."
+  components:
+    - type: Sprite
+      sprite: /Textures/_Wormix/Clothing/navycaptaincloak.rsi
+    - type: Clothing
+      sprite: /Textures/_Wormix/Clothing/navycaptaincloak.rsi
+
+- type: entity
+  parent: [ClothingBeltDeathsquadWebbing, BaseCentcommContraband]
+  suffix: Filled, ДСО
+  id: ClothingBeltDSO
+  name: РПС Спецназа
+  description: "Специальный РПС, созданный для ДВБ и ДСО"
+  components:
+    - type: Sprite
+      sprite: /Textures/_Wormix/Clothing/navywebbing.rsi
+    - type: Clothing
+      sprite: /Textures/_Wormix/Clothing/navywebbing.rsi
+    - type: StorageFill
+      contents:
+        - id: MedkitCombatFilled
+          amount: 1
+        - id: MagazineLightRifle
+          amount: 4
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadDHSCaptain
+  name: Фуражка Капитана ДВБ
+  suffix: Вормикс, ДВБ
+  description: "Засекречено."
+  components:
+    - type: Sprite
+      sprite: /Textures/_Wormix/Clothing/navycaptainhatcap.rsi
+    - type: Clothing
+      sprite: /Textures/_Wormix/Clothing/navycaptainhatcap.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformDHSCaptain
+  name: Комбинезон Капитана ДВБ
+  suffix: Вормикс, ДВБ
+  description: "Засекречено."
+  components:
+    - type: Sprite
+      sprite: /Textures/_Wormix/Clothing/navycaptainrjumpskirt.rsi
+    - type: Clothing
+      sprite: /Textures/_Wormix/Clothing/navycaptainrjumpskirt.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformDHS
+  name: Комбинезон Офицера ДВБ
+  suffix: Вормикс, ДВБ
+  description: "Засекречено."
+  components:
+    - type: Sprite
+      sprite: /Textures/_Wormix/Clothing/navyjumpskirt.rsi
+    - type: Clothing
+      sprite: /Textures/_Wormix/Clothing/navyjumpskirt.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadDHS
+  name: Берет Офицера ДВБ
+  suffix: Вормикс, ДВБ
+  description: "Засекречено."
+  components:
+    - type: Sprite
+      sprite: /Textures/_Wormix/Clothing/navyberet.rsi
+    - type: Clothing
+      sprite: /Textures/_Wormix/Clothing/navyberet.rsi
+
+- type: entity
+  parent: ClothingOuterArmourInvisible
+  name: компактный блюспейс бронежилет
+  id: ClothingOuterArmourInvisibleCompact
+  description: Экспериментально компактный бронежилет с блюспейс технологией.
+  suffix: Вормикс, ЦК
+  components:
+    - type: Item
+      size: Small
+      shape:
+        - 0,0,1,0
+    - type: Armor
+
+- type: entity
+  parent: [BaseCentcommContraband, ClothingShoesBootsJackFilled]
+  name: подозрительные подкованные сапоги
+  id: ClothingShoesBootsJackFilledOSO
+  description: Нескользящая модификация ботинок, судя по всему они созданы для высокопоставленных офицеров Центком.
+  suffix: ОСО
+  components:
+    - type: NoSlip
+    - type: FootstepModifier
+      footstepSoundCollection:
+        collection: StepHeavyBoots
+
+#Deathsquad Webbing
+
+- type: entity
+  parent:
+    [
+      ClothingBeltStorageBase,
+      ContentsExplosionResistanceBase,
+      BaseCentcommContraband,
+    ]
+  id: ClothingBeltDeathsquadWebbing
+  suffix: DO NOT MAP
+  name: deathsquad operative chestrig
+  description: A robust and durable chestrig, containing everything you need to keep you in the fight. You probably won't need to use it.
+  components:
+    - type: Sprite
+      sprite: _Goobstation/Clothing/Belt/deathsquadwebbing.rsi
+    - type: Clothing
+      sprite: _Goobstation/Clothing/Belt/deathsquadwebbing.rsi
+    - type: ExplosionResistance
+      damageCoefficient: 0.01
+    - type: ContainerContainer
+      containers:
+        item: !type:ContainerSlot
+        storagebase: !type:Container
+          ents: []
+    - type: ItemSlots
+      slots:
+        item:
+          # name: Handgun # CorvaxGoob-Loc-in-UI
+          whitelist:
+            tags:
+              - Sidearm
+        item2:
+          whitelist:
+            tags:
+              - Special1
+
+- type: entity
+  parent: [ClothingBeltDeathsquadWebbing, BaseCentcommContraband]
+  suffix: Filled, DO NOT MAP
+  id: ClothingBeltDeathsquadWebbingFilled
+  name: deathsquad operative chestrig
+  description: "A robust and durable chestrig, containing everything you need to keep you in the fight. You probably won't need to use it."
+  components:
+    - type: StorageFill
+      contents:
+        - id: MedkitMilitaryFilled
+          amount: 1
+        - id: PunctAutoInjector
+          amount: 2
+        - id: AdvancedCombatMedipen
+          amount: 1
+        - id: PyraAutoInjector
+          amount: 2
+        - id: AirlossAutoInjector
+          amount: 1
+        - id: CentcommStimpack
+          amount: 2
+        - id: OmnimedToolDeathSquad
+    - type: ContainerFill
+      containers:
+        item:
+          - WeaponPistolCentcommAgent
+        item2:
+          - DefibrillatorCompactDeathSquad
+
+#SOO Mag
+
+- type: entity
+  parent: ClothingShoesBootsMagEmergencyResponseTeam
+  id: ClothingShoesBootsOSO
+  suffix: ОСО
+  name: магнитные сапоги ОСО
+  description: Подошвы впиваются в пол, чтобы каждый шаг был законом.
+  components:
+    - type: ContainerContainer
+      containers:
+        item: !type:ContainerSlot
+    - type: Sprite
+      sprite: /Textures/_Wormix/Clothes/OSOmag.rsi
+      state: icon
+    - type: Clothing
+      sprite: /Textures/_Wormix/Clothes/OSOmag.rsi
+    - type: Item
+      sprite: /Textures/_Wormix/Clothes/OSOmag.rsi
+    - type: ClothingSpeedModifier
+      walkModifier: 1.10
+      sprintModifier: 1.10
+    - type: FootstepModifier
+      footstepSoundCollection:
+        collection: FootstepHeavySuit
+    - type: GasTank
+      outputPressure: 42.6
+      air:
+        volume: 50000
+        temperature: 293.15
+        moles:
+          - 50000 # oxygen
+    - type: Tag
+      tags: [] # ignore "WhitelistChameleon" tag
+    - type: ItemSlots
+      slots:
+        item:
+          whitelist:
+            tags:
+              - Knife
+              - Sidearm
+
+#Fix Mod Hair
+
+- type: entity
+  parent: BaseClothingModsuitHelmet
+  id: ClothingModsuitHelmetStandard
+  name: standard modsuit helmet
+  description: A special modular suit spaceproof helmet designed for compact folding inside modular suit control.
+  categories: [HideSpawnMenu]
+  components:
+    - type: Appearance
+    - type: Sprite
+      sprite: _Goobstation/Clothing/Head/Modsuits/standard.rsi
+      layers:
+        - state: helmet
+        - state: helmet-sealed
+          visible: false
+          map: ["sealed"]
+    - type: HideLayerClothing # Goobstation
+      slots:
+        - Hair
+        - Snout
+        - HeadTop
+        - HeadSide
+      hideOnToggle: true
+    - type: SealableClothing
+      sealUpPopup: sealable-clothing-seal-up-helmet
+      sealDownPopup: sealable-clothing-seal-down-helmet
+    - type: SealableClothingVisuals
+      spriteLayer: sealed
+      clothingVisuals:
+        head:
+          - state: equipped-HEAD-sealed
+        head-resomi:
+          - state: equipped-HEAD-sealed-resomi
+        head-vox:
+          - state: equipped-HEAD-sealed-vox
+        head-vulpkanin:
+          - state: equipped-HEAD-sealed-vulpkanin
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.85
+          Slash: 0.85
+          Piercing: 0.85
+          Heat: 0.85
+          Radiation: 0.2
+    - type: ComponentToggler
+      components:
+        - type: BreathMask
+        - type: PressureProtection
+          highPressureMultiplier: 0.3
+          lowPressureMultiplier: 1000
+        - type: TemperatureProtection
+          heatingCoefficient: 0.01
+          coolingCoefficient: 0.01
+        - type: IdentityBlocker
+        - type: IngestionBlocker
+          blockSmokeIngestion: True
+    #THIS WILL BE REPLACED WITH MODULE ↓↓
+    - type: PointLight
+      enabled: false
+      radius: 5
+      energy: 3
+      mask: /Textures/Effects/LightMasks/cone.png
+      autoRot: true
+      netsync: true
+    - type: HandheldLight
+      addPrefix: true
+      blinkingBehaviourId: blinking
+      radiatingBehaviourId: radiating
+    - type: LightBehaviour
+      behaviours:
+        - !type:FadeBehaviour
+          id: radiating
+          interpolate: Linear
+          maxDuration: 2.0
+          startValue: 3.0
+          endValue: 2.0
+          isLooped: true
+          reverseWhenFinished: true
+        - !type:PulseBehaviour
+          id: blinking
+          interpolate: Nearest
+          maxDuration: 1.0
+          startValue: 0.1
+          endValue: 2.0
+          isLooped: true
+    - type: Battery
+      maxCharge: 600 #lights drain 3/s but recharge of 2 makes this 1/s. Therefore 600 is 10 minutes of light.
+      startingCharge: 600
+    - type: BatterySelfRecharger
+      autoRecharge: true
+      autoRechargeRate: 2
+    - type: Tag
+      tags:
+        - PlasmamanSafe
+        - Envirohelm
+    - type: IgniteFromGasImmunity
+      parts:
+        - Head
+

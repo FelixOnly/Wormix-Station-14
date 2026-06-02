@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Take from game by JrInventor05(ds: qwerty0555), sprite item made by Ewer",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "navyofficer"
+      },
+      {
+        "name": "navyops"
+      },
+      {
+        "name": "specops"
+      },
+      {
+        "name": "navycap"
+      }
+    ]
+  }
