@@ -26,55 +26,55 @@
   name: blast door
   description: This one says 'BLAST DONGER'.
   components:
-    - type: AccessReader
-      containerAccessProvider: board
-    - type: Sprite
-      sprite: Structures/Doors/Shutters/blastdoor.rsi
-      layers:
-        - state: closed
-          map: ["enum.DoorVisualLayers.Base"]
-    - type: Door
-      closeTimeOne: 0.4
-      closeTimeTwo: 0.4
-      openTimeOne: 0.4
-      openTimeTwo: 0.4
-      openingAnimationTime: 1.0
-      closingAnimationTime: 1.0
-      canPry: false
-      crushDamage:
-        types:
-          Blunt: 25 # yowch
-      openSound:
-        path: /Audio/Machines/blastdoor.ogg
-      closeSound:
-        path: /Audio/Machines/blastdoor.ogg
-    - type: Occluder
-    - type: Appearance
-    - type: RadiationBlocker
-      resistance: 8
-    - type: Damageable
-      damageContainer: StructuralInorganic
-      damageModifierSet: StrongMetallic
-    - type: ContainerFill
-      containers:
-        board: [DoorElectronics]
-    - type: Construction
-      graph: BlastDoor
-      node: blastdoor
-      containers:
-        - board
-    - type: StaticPrice
-      price: 500
-    - type: InteractionPopup
-      interactSuccessString: comp-window-knock
-      messagePerceivedByOthers: comp-window-knock
-      interactSuccessSound:
-        path: /Audio/Effects/glass_knock.ogg
-    - type: Penetratable # Goobstation - Better snipers
-      penetrateDamage: 200
-      damagePenalty: 0.4
-    - type: WeldingSparksAnimation # Goobstation
-      startingOffset: 0, 0.5
+  - type: AccessReader
+    containerAccessProvider: board
+  - type: Sprite
+    sprite: Structures/Doors/Shutters/blastdoor.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Door
+    closeTimeOne: 0.4
+    closeTimeTwo: 0.4
+    openTimeOne: 0.4
+    openTimeTwo: 0.4
+    openingAnimationTime: 1.0
+    closingAnimationTime: 1.0
+    canPry: false
+    crushDamage:
+      types:
+        Blunt: 25 # yowch
+    openSound:
+      path: /Audio/_Orion/Machines/blastdoornew.ogg # Orion-Edit
+    closeSound:
+      path: /Audio/_Orion/Machines/blastdoornew.ogg # Orion-Edit
+  - type: Occluder
+  - type: Appearance
+  - type: RadiationBlocker
+    resistance: 8
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StrongMetallic
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronics ]
+  - type: Construction
+    graph: BlastDoor
+    node: blastdoor
+    containers:
+    - board
+  - type: StaticPrice
+    price: 500
+  - type: InteractionPopup
+    interactSuccessString: comp-window-knock
+    messagePerceivedByOthers: comp-window-knock
+    interactSuccessSound:
+      path: /Audio/Effects/glass_knock.ogg
+  - type: Penetratable # Goobstation - Better snipers
+    penetrateDamage: 200
+    damagePenalty: 0.4
+  - type: WeldingSparksAnimation # Goobstation
+    startingOffset: 0, 0.5
 
 - type: entity
   id: BlastDoorOpen
