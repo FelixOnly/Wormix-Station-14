@@ -143,22 +143,6 @@
 
 # Special Operations Officer Spawner
 
-- type: entity
-  id: RandomHumanoidSpawnerSpecialOperationsOfficers
-  name: Офицер СпецОпераций
-  suffix: Центком
-  components:
-    - type: Sprite
-      sprite: /Textures/_Wormix/Markers/jobs.rsi
-      state: specops
-    - type: RandomMetadata
-      nameSegments:
-        - NamesMilitaryFirstHighRank
-        - NamesMilitaryLast
-      nameFormat: name-format-standard
-    - type: RandomHumanoidSpawner
-      settings: SpecialOperationsOfficer
-
 - type: randomHumanoidSettings
   id: SpecialOperationsOfficer
   parent: CentcommHumanoid

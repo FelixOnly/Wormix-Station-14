@@ -26,22 +26,30 @@
   payrollFromStationBudget: false
   # Orion-End
   accessGroups:
-  - AllAccess
+    - AllAccess
   access:
-  - CentralCommand
-  - NanotrasenRepresentative
-  - BlueshieldOfficer
+    - CentralCommand
+    - NanotrasenRepresentative
+    - BlueshieldOfficer
   special:
-  - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant ]
-  # Orion-Start
-  - !type:AddComponentSpecial
-    components:
-      - type: AdditionalLanguage
-        speaks:
-        - CorporateCodespeak
-        understands:
-        - CorporateCodespeak
+    - !type:AddImplantSpecial
+      implants:
+        [
+          MindShieldImplant,
+          FreedomImplant,
+          BluespaceLifelineImplant,
+          RadioImplantCentcomm,
+          NutrimentPumpImplant,
+          StypticStimulatorImplant,
+        ]
+    # Orion-Start
+    - !type:AddComponentSpecial
+      components:
+        - type: AdditionalLanguage
+          speaks:
+            - CorporateCodespeak
+          understands:
+            - CorporateCodespeak
   # Orion-End
 
 - type: startingGear
@@ -60,7 +68,6 @@
     belt: ClothingBeltSheathFilledNavyOfficer
 
 # Navy Captain
-
 - type: job
   id: NavyCaptain
   name: job-name-navy-captain
@@ -85,16 +92,24 @@
     - NanotrasenRepresentative
     - BlueshieldOfficer
   special:
-  - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant ]
-  # Orion-Start
-  - !type:AddComponentSpecial
-    components:
-      - type: AdditionalLanguage
-        speaks:
-        - CorporateCodespeak
-        understands:
-        - CorporateCodespeak
+    - !type:AddImplantSpecial
+      implants:
+        [
+          MindShieldImplant,
+          FreedomImplant,
+          BluespaceLifelineImplant,
+          RadioImplantCentcomm,
+          NutrimentPumpImplant,
+          StypticStimulatorImplant,
+        ]
+    # Orion-Start
+    - !type:AddComponentSpecial
+      components:
+        - type: AdditionalLanguage
+          speaks:
+            - CorporateCodespeak
+          understands:
+            - CorporateCodespeak
   # Orion-End
 
 - type: startingGear
@@ -114,7 +129,6 @@
     pocket1: NukeOverride
 
 # Undercover Officer
-
 - type: job
   id: NavyOfficerUndercover
   name: job-name-navy-officer-undercover
@@ -139,16 +153,24 @@
     - NanotrasenRepresentative
     - BlueshieldOfficer
   special:
-  - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant ]
-  # Orion-Start
-  - !type:AddComponentSpecial
-    components:
-      - type: AdditionalLanguage
-        speaks:
-        - CorporateCodespeak
-        understands:
-        - CorporateCodespeak
+    - !type:AddImplantSpecial
+      implants:
+        [
+          MindShieldImplant,
+          FreedomImplant,
+          BluespaceLifelineImplant,
+          RadioImplantCentcomm,
+          NutrimentPumpImplant,
+          StypticStimulatorImplant,
+        ]
+    # Orion-Start
+    - !type:AddComponentSpecial
+      components:
+        - type: AdditionalLanguage
+          speaks:
+            - CorporateCodespeak
+          understands:
+            - CorporateCodespeak
   # Orion-End
 
 - type: startingGear
@@ -167,16 +189,14 @@
     ears: ClothingHeadsetChameleon
     pocket1: WeaponPistolCentcommAgent
 
-
 # Special Operations Officer
-
 - type: job
   id: SpecialOperationsOfficer
   name: job-name-special-operations-officer
   description: job-description-operations-officer
   playTimeTracker: JobSpecialOperationsOfficer
   setPreference: false
-  startingGear: SpecialOperationsOfficerGear
+  startingGear: SpecialOperationsOfficerGearGoob
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-commander
   canBeAntag: false
@@ -194,20 +214,28 @@
     - NanotrasenRepresentative
     - BlueshieldOfficer
   special:
-  - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant]
-  # Orion-Start
-  - !type:AddComponentSpecial
-    components:
-      - type: AdditionalLanguage
-        speaks:
-        - CorporateCodespeak
-        understands:
-        - CorporateCodespeak
+    - !type:AddImplantSpecial
+      implants:
+        [
+          MindShieldImplant,
+          FreedomImplant,
+          BluespaceLifelineImplant,
+          RadioImplantCentcomm,
+          NutrimentPumpImplant,
+          StypticStimulatorImplant,
+        ]
+    # Orion-Start
+    - !type:AddComponentSpecial
+      components:
+        - type: AdditionalLanguage
+          speaks:
+            - CorporateCodespeak
+          understands:
+            - CorporateCodespeak
   # Orion-End
 
 - type: startingGear
-  id: SpecialOperationsOfficerGear
+  id: SpecialOperationsOfficerGearGoob
   equipment:
     jumpsuit: ClothingUniformJumpsuitSpecOps
     shoes: ClothingShoesBootsJackFilled
@@ -217,14 +245,13 @@
     back: ClothingBackpackSatchelLeatherFilledSpecOps
     outerClothing: ClothingOuterArmourInvisible
     neck: ExecutiveIDCard
-    id: SpecialOperationsOfficerPDA
+    id: SpecialOperationsOfficerPDAGoob
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltHolsterFilledCentComm
     suitstorage: WeaponRifleAnnie
     pocket1: WeaponRevolverMateba
 
 # Diplomat
-
 - type: job
   id: Diplomat
   name: job-name-diplomat
@@ -240,25 +267,33 @@
   payrollFromStationBudget: false
   # Orion-End
   requirements:
-  - !type:AgeRequirement
-    requiredAge: 21
+    - !type:AgeRequirement
+      requiredAge: 21
   accessGroups:
-  - AllAccess
+    - AllAccess
   access:
-  - CentralCommand
-  - NanotrasenRepresentative
-  - BlueshieldOfficer
+    - CentralCommand
+    - NanotrasenRepresentative
+    - BlueshieldOfficer
   special:
-  - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant ]
-  # Orion-Start
-  - !type:AddComponentSpecial
-    components:
-      - type: AdditionalLanguage
-        speaks:
-        - CorporateCodespeak
-        understands:
-        - CorporateCodespeak
+    - !type:AddImplantSpecial
+      implants:
+        [
+          MindShieldImplant,
+          FreedomImplant,
+          BluespaceLifelineImplant,
+          RadioImplantCentcomm,
+          NutrimentPumpImplant,
+          StypticStimulatorImplant,
+        ]
+    # Orion-Start
+    - !type:AddComponentSpecial
+      components:
+        - type: AdditionalLanguage
+          speaks:
+            - CorporateCodespeak
+          understands:
+            - CorporateCodespeak
   # Orion-End
 
 - type: startingGear
@@ -275,7 +310,6 @@
     ears: ClothingHeadsetAltCentCom
 
 # Inspector
-
 - type: job
   id: Inspector
   name: job-name-inspector
@@ -291,25 +325,33 @@
   payrollFromStationBudget: false
   # Orion-End
   requirements:
-  - !type:AgeRequirement
-    requiredAge: 21
+    - !type:AgeRequirement
+      requiredAge: 21
   accessGroups:
-  - AllAccess
+    - AllAccess
   access:
-  - CentralCommand
-  - NanotrasenRepresentative
-  - BlueshieldOfficer
+    - CentralCommand
+    - NanotrasenRepresentative
+    - BlueshieldOfficer
   special:
-  - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant ]
-  # Orion-Start
-  - !type:AddComponentSpecial
-    components:
-      - type: AdditionalLanguage
-        speaks:
-        - CorporateCodespeak
-        understands:
-        - CorporateCodespeak
+    - !type:AddImplantSpecial
+      implants:
+        [
+          MindShieldImplant,
+          FreedomImplant,
+          BluespaceLifelineImplant,
+          RadioImplantCentcomm,
+          NutrimentPumpImplant,
+          StypticStimulatorImplant,
+        ]
+    # Orion-Start
+    - !type:AddComponentSpecial
+      components:
+        - type: AdditionalLanguage
+          speaks:
+            - CorporateCodespeak
+          understands:
+            - CorporateCodespeak
   # Orion-End
 
 - type: startingGear
@@ -367,7 +409,15 @@
     - BlueshieldOfficer
   special:
     - !type:AddImplantSpecial
-      implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant ]
+      implants:
+        [
+          MindShieldImplant,
+          FreedomImplant,
+          BluespaceLifelineImplant,
+          RadioImplantCentcomm,
+          NutrimentPumpImplant,
+          StypticStimulatorImplant,
+        ]
 
 - type: startingGear
   id: OuterCommanderGear

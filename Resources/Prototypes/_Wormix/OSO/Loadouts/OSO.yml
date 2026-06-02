@@ -97,36 +97,3 @@
     belt: ClothingBeltDSO
     pocket2: DoubleEmergencyOxygenTankFilled
     suitstorage: WeaponRifleAnnie
-
-- type: startingGear
-  id: DeathSquadGear
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitDeathSquad
-    back: ClothingDeathSquadronBackpack
-    mask: ClothingMaskGasDeathSquad
-    eyes: ClothingEyesGlassesDeathsquad # Goobstation
-    neck: ExecutiveIDCard # Executive Access!
-    ears: ClothingHeadsetDeathsquad # Goobstation
-    gloves: ClothingHandsGlovesDeathsquadUnremovable # Rip and TEAR
-    outerClothing: ClothingOuterHardsuitDeathsquad
-    shoes: ClothingShoesBootsMagDeathsquad # These boots are cooler.
-    id: DeathsquadPDA # New PDA!
-    pocket1: PhoronSabre # Goobstation
-    pocket2: WeaponRevolverMateba # Goobstation
-    belt: ClothingBeltDeathsquadWebbingFilled # Centcomm Doesn't use syndicate tech.
-  storage:
-    back:
-      - SpeedLoaderMatebaAP # Goobstation - 7 rounds
-      - SpeedLoaderMatebaAP # Goobstation - 7 rounds
-      - ToolDebug # Spanish Army Knife - TODO Replace
-      - WelderExperimental
-      - BlueShieldShieldEvilFilled
-      - DeterrentCaseFilled
-      - WeaponSubMachineGunVector
-      - MagazineMagnumSubMachineGunPiercing
-      - MagazineMagnumSubMachineGunPiercing
-      - MagazineMagnumSubMachineGunPiercing
-      - MagazineMagnumSubMachineGunPiercing
-  inhand:
-    - WeaponPulseRifle
-

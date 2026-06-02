@@ -8,14 +8,6 @@
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconDeathSquad
-  icon:
-    sprite: /Textures/_Wormix/Icons/job_icon.rsi
-    state: Deathsquad
-  jobName: Эскадрон Смерти
-
-- type: jobIcon
-  parent: JobIcon
   id: JobIconDHSCaptain
   icon:
     sprite: /Textures/_Wormix/Icons/job_icon.rsi
@@ -29,4 +21,3 @@
     sprite: /Textures/_Wormix/Icons/job_icon.rsi
     state: navy
   jobName: Офицер ДВБ
-

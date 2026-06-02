@@ -62,20 +62,6 @@
 #ID Card
 
 - type: entity
-  parent: CentcomIDCardDHSCaptain
-  id: CentcomIDCardSpecialOperationsOfficer
-  name: Special Operations Officer's ID card
-  components:
-    - type: Sprite
-      layers:
-        - state: silver
-        - state: idcentcom
-    - type: Item
-      heldPrefix: silver
-    - type: PresetIdCard
-      job: SpecialOperationsOfficer
-
-- type: entity
   parent: IDCardStandard
   id: CentcomIDCardDHSCaptain
   name: DHS Captain's ID card
