@@ -204,29 +204,30 @@
   name: security gas mask
   description: A standard issue Security gas mask.
   components:
-    - type: Item
-      size: Tiny
-    - type: Sprite
-      sprite: Clothing/Mask/gassecurity.rsi
-    - type: Clothing
-      sprite: Clothing/Mask/gassecurity.rsi
-    - type: Armor
-      coverage:
-        - Head
-      modifiers:
-        coefficients:
-          Blunt: 0.9
-          Slash: 0.9
-          Piercing: 0.9
-          Heat: 0.9
-    - type: Tag # Goobstation - For survial boxes
-      tags:
-        - PetWearable
-        - WhitelistChameleon
-        - SecurityBreathMask
-    - type: Hailer # Goobstation - Hailer
-    - type: IngestionBlocker # Goobstation
-      blockSmokeIngestion: true
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Clothing/Mask/gassecurity.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/gassecurity.rsi
+  - type: Armor
+    coverage:
+    - Head
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: Tag # Goobstation - For survial boxes
+    tags:
+    - PetWearable
+    - WhitelistChameleon
+    - SecurityBreathMask
+    - GasMask # Goobstation
+  - type: Hailer # Goobstation - Hailer
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: [ClothingMaskGas, BaseSyndicateContraband]
@@ -234,28 +235,29 @@
   name: syndicate gas mask
   description: A close-fitting tactical mask that can be connected to an air supply.
   components:
-    - type: Sprite
-      sprite: Clothing/Mask/gassyndicate.rsi
-    - type: Clothing
-      sprite: Clothing/Mask/gassyndicate.rsi
-    - type: FlashImmunity
-    - type: EyeProtection
-    - type: Armor
-      coverage:
-        - Head
-      modifiers:
-        coefficients:
-          Blunt: 0.9
-          Slash: 0.9
-          Piercing: 0.9
-          Heat: 0.9
-    - type: Tag # Goobstation - For survial boxes
-      tags:
-        - PetWearable
-        - WhitelistChameleon
-        - SyndicateBreathMask
-    - type: IngestionBlocker # Goobstation
-      blockSmokeIngestion: true
+  - type: Sprite
+    sprite: Clothing/Mask/gassyndicate.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/gassyndicate.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+  - type: Armor
+    coverage:
+    - Head
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: Tag  # Goobstation - For survial boxes
+    tags:
+    - PetWearable
+    - WhitelistChameleon
+    - SyndicateBreathMask
+    - GasMask # Goobstation
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: ClothingMaskGas
@@ -443,21 +445,24 @@
   name: clown wig and mask
   description: A true prankster's facial attire. A clown is incomplete without his wig and mask.
   components:
-    - type: Sprite
-      sprite: Clothing/Mask/clown.rsi
-    - type: Clothing
-      sprite: Clothing/Mask/clown.rsi
-    - type: BreathMask
-    - type: IdentityBlocker
-    - type: Tag
-      tags:
-        - ClownMask
-        - WhitelistChameleon
-        - IPCMaskWearable # EE - IPCs
-        - Mask
-    - type: HideLayerClothing
-      slots:
-        - Snout
+  - type: Sprite
+    sprite: Clothing/Mask/clown.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/clown.rsi
+  - type: BreathMask
+  - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - ClownMask
+    - WhitelistChameleon
+    - IPCMaskWearable # EE - IPCs
+    - Mask
+  - type: HideLayerClothing
+    slots:
+    - Snout
+  - type: SpeakFontOverride # Goob - clown speaks pink comic sans
+    fontId: LDFComicSans
+    color: "#e93790"
 
 - type: entity
   parent: ClothingMaskClownBase
@@ -661,32 +666,33 @@
   name: swat gas mask
   description: A elite issue Security gas mask.
   components:
-    - type: Sprite
-      sprite: Clothing/Mask/swat.rsi
-    - type: Clothing
-      sprite: Clothing/Mask/swat.rsi
-    - type: Tag
-      tags:
-        - WhitelistChameleon
-    - type: HideLayerClothing
-      slots:
-        - Hair
-        - Snout
-        #    - HeadTop # Orion-Edit: Removed
-        - HeadSide
-      hideOnToggle: true
-    - type: Armor
-      coverage:
-        - Head
-      modifiers:
-        coefficients:
-          Blunt: 0.8
-          Slash: 0.8
-          Piercing: 0.9
-          Heat: 0.9
-    - type: IngestionBlocker # Goobstation
-      blockSmokeIngestion: true
-    - type: Hailer # Goobstation - Hailer
+  - type: Sprite
+    sprite: Clothing/Mask/swat.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/swat.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - GasMask
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+#    - HeadTop # Orion-Edit: Removed
+    - HeadSide
+    hideOnToggle: true
+  - type: Armor
+    coverage:
+    - Head
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.9
+        Heat: 0.9
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
+  - type: Hailer # Goobstation - Hailer
 
 - type: entity
   parent: [ClothingMaskGas, BaseSecurityCargoContraband]
@@ -722,31 +728,32 @@
   name: ert gas mask
   description: The gas mask of the elite squad of the ERT.
   components:
-    - type: Sprite
-      sprite: Clothing/Mask/ert.rsi
-    - type: Clothing
-      sprite: Clothing/Mask/ert.rsi
-    - type: Tag
-      tags:
-        - WhitelistChameleon
-    - type: HideLayerClothing
-      slots:
-        - Hair
-        - Snout
-      hideOnToggle: true
-    - type: FlashImmunity
-    - type: EyeProtection
-    - type: Armor
-      coverage:
-        - Head
-      modifiers:
-        coefficients:
-          Blunt: 0.9
-          Slash: 0.9
-          Piercing: 0.9
-          Heat: 0.9
-    - type: IngestionBlocker # Goobstation
-      blockSmokeIngestion: true
+  - type: Sprite
+    sprite: Clothing/Mask/ert.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/ert.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - GasMask # Goobstation
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    hideOnToggle: true
+  - type: FlashImmunity
+  - type: EyeProtection
+  - type: Armor
+    coverage:
+    - Head
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: ClothingMaskGasERT
@@ -754,39 +761,40 @@
   name: death squad gas mask
   description: A unique gas mask for the NT's most elite squad.
   components:
-    - type: Sprite
-      sprite: Clothing/Mask/squadron.rsi
-    - type: Clothing
-      sprite: Clothing/Mask/squadron.rsi
-    - type: HideLayerClothing
-      slots:
-        - Hair
-        - HeadTop
-        - HeadSide
-    - type: Armor
-      coverage:
-        - Head
-      modifiers:
-        coefficients:
-          Blunt: 0.75
-          Slash: 0.75
-          Piercing: 0.75
-          Heat: 0.75
-    - type: Tag
-      tags: [] # ignore "WhitelistChameleon" tag
-    # Goobstation
-    - type: DiseaseProtection
-      # full immunity
-      incoming:
-        powerModifiers:
-          Aerial: -1
-        chanceMultipliers:
-          Aerial: 0
-      outgoing:
-        powerModifiers:
-          Aerial: -1
-        chanceMultipliers:
-          Aerial: 0
+  - type: Sprite
+    sprite: Clothing/Mask/squadron.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/squadron.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - HeadSide
+  - type: Armor
+    coverage:
+    - Head
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.75
+        Heat: 0.75
+  - type: Tag
+    tags: # ignore "WhitelistChameleon" tag
+    - GasMask # Goobstation
+  # Goobstation
+  - type: DiseaseProtection
+    # full immunity
+    incoming:
+      powerModifiers:
+        Aerial: -1
+      chanceMultipliers:
+        Aerial: 0
+    outgoing:
+      powerModifiers:
+        Aerial: -1
+      chanceMultipliers:
+        Aerial: 0
 
 - type: entity
   parent: ClothingMaskBase
@@ -1082,25 +1090,26 @@
   name: welding gas mask
   description: A gas mask with built in welding goggles and face shield. Looks like a skull, clearly designed by a nerd.
   components:
-    - type: Sprite
-      sprite: Clothing/Mask/welding-gas.rsi
-      state: icon
-    - type: Clothing
-      sprite: Clothing/Mask/welding-gas.rsi
-    - type: BreathMask
-    - type: IngestionBlocker
-    - type: IdentityBlocker
-    - type: FlashImmunity
-    - type: EyeProtection
-    - type: PhysicalComposition #Goobstation - Recycle update
-      materialComposition:
-        Steel: 150
-        Glass: 50
-    - type: StaticPrice
-      price: 100
-    - type: Tag
-      tags:
-        - WhitelistChameleon
-    - type: HideLayerClothing
-      slots:
-        - Snout
+  - type: Sprite
+    sprite: Clothing/Mask/welding-gas.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Mask/welding-gas.rsi
+  - type: BreathMask
+  - type: IngestionBlocker
+  - type: IdentityBlocker
+  - type: FlashImmunity
+  - type: EyeProtection
+  - type: PhysicalComposition #Goobstation - Recycle update
+    materialComposition:
+      Steel: 150
+      Glass: 50
+  - type: StaticPrice
+    price: 100
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - GasMask # Goobstation
+  - type: HideLayerClothing
+    slots:
+    - Snout
