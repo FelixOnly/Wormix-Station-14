@@ -26,7 +26,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Client._Lua.UserInterface.Controls;
 using Content.Client.Changelog;
 using Content.Client.Hands;
 using Content.Client.UserInterface.Controls;
@@ -81,7 +80,7 @@ namespace Content.Client.Gameplay
 
             // FPS counter.
             // yeah this can just stay here, whatever
-            _fpsCounter = new HudPerfLabel(_gameTiming, EntitySystem.Get<_Lua.Tick.ClientServerPerfSystem>()); // Lua fps mod
+            _fpsCounter = new FpsCounter(_gameTiming);
             UserInterfaceManager.PopupRoot.AddChild(_fpsCounter);
             _fpsCounter.Visible = _configurationManager.GetCVar(CCVars.HudFpsCounterVisible);
             _configurationManager.OnValueChanged(CCVars.HudFpsCounterVisible, (show) => { _fpsCounter.Visible = show; });
