@@ -153,6 +153,7 @@
     - type: Sprite
       sprite: ADT/Objects/Fun/cards.rsi
       state: singlecard_down_uno
+      drawdepth: SmallObjects
     - type: Card
       backSpriteLayers:
         - sprite: ADT/Objects/Fun/cards.rsi

@@ -33,6 +33,32 @@
     tags:
       - ADTCardPlay
 
+- type: entity
+  parent: BaseItem
+  id: ADTCardBase
+  name: card
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EmitSoundOnLand
+    sound:
+      collection: cardShove
+  - type: Sprite
+    sprite: ADT/Objects/Fun/cards.rsi
+    state: singlecard_down_black
+  - type: Rotatable
+  - type: Item
+    size: Small
+  - type: UseDelay
+    delay: 0.5
+  - type: Tag
+    tags:
+    - ADTCardPlay
+  - type: Card
+    backSprite:
+    - sprite: ADT/Objects/Fun/cards.rsi
+      state: singlecard_down_black
+    flipped: true
+
 # Frontier: base stack for card stack component
 - type: entity
   parent: [ BaseItem ] 
