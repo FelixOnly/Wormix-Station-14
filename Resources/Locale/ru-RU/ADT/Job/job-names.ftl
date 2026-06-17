@@ -4,8 +4,6 @@ JobADTPathologist = патологоанатом
 job-name-ADTMiner = шахтёр
 JobADTMiner = шахтёр
 
-JobRoboticist = робототехник
-
 job-name-magistrat = магистрат
 JobMagistrat = магистрат
 

@@ -15,7 +15,6 @@ station-beacon-smoking-room = Курилка
 station-beacon-mine = Шахтёрская
 station-beacon-interrogation = Допросная
 station-beacon-suits-sec = Скафандры СБ
-station-beacon-paramedic = Парамедик
 station-beacon-cloning = Клонирование
 station-beacon-virology = Вирусология
 station-beacon-docking-area-sec = Стыковочная зона СБ

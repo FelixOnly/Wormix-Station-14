@@ -2,7 +2,6 @@ research-technology-medicine = Базовая медицина
 research-technology-surgery = Базовая хирургия
 research-technology-surgery-advanced = Продвинутая хирургия
 research-technology-chemistry = Базовая химия
-research-technology-medical-defense = Экстремальные методы контроля
 research-technology-medical-defense-advanced = Продвинутые экстремальные методы контроля
 research-technology-crew-monitoring = Мониторинг экипажа
 research-technology-bodybags = Мешки для тел

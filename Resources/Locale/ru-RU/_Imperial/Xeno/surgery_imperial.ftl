@@ -42,17 +42,11 @@ broken-bones = Вы чувствуете неествественное пере
 ent-FixOVein = fixOVein
     .desc = Лечит кровеносные сосуды.
 
-ent-BoneGel = костный гель
-    .desc = Сращивает кости.
-
 ent-DNAInjector = манипулятор ДНК
     .desc = Манипулирует с ДНК.
 
 ent-OrganHealer = гель для лечения органов
     .desc = Лечит органы.
-
-ent-BoneSetter = установщик костей
-    .desc = Ставит кости на место.
 
 ent-ClothingUniformJumpsuitSurgeon = униформа хирурга
 ent-SurgeonPDA = КПК хирурга

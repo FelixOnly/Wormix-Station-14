@@ -1,6 +1,5 @@
 roles-antag-phantom-name = Фантом
 roles-antag-phantom-objective = Используйте свои паранормальные способности для достижения целей.
-roles-antag-ghoul-name = Гуль
 roles-antag-ghoul-objective = Исполняй приказы своего хозяина.
 ghost-role-information-ianhero-name = Молниеносный Иан
 ghost-role-information-ianhero-description = Вы - последняя надежда на спасение станции! Не забывайте выпендриваться, чтобы поддерживать статус самого милого супергероя

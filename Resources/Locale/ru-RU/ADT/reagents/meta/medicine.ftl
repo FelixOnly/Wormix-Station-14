@@ -28,12 +28,6 @@ reagent-desc-agolatine = Атипичный антидепрессант, зач
 reagent-name-formalin = формалин
 reagent-desc-formalin = Препарат, свёртывающий белки и предотвращающий их разложение. Используется для бальзамирования трупов.
 
-reagent-name-styptic-powder = кровоостанавливающая пудра
-reagent-desc-styptic-powder = При нанесении на кожу заживляет травмы.
-
-reagent-name-silver-sulfadiazine = сульфадиазин серебра
-reagent-desc-silver-sulfadiazine = При нанесении на кожу заживляет ожоги.
-
 reagent-name-detoxisol = детоксизол
 reagent-desc-detoxisol = Препарат, синтезированный на основе растительных ферментов, с целью всеобщей детоксикации организма. Имеет небольшой побочный эффект в виде небольших потерь верхних слоёв эпителия.
 

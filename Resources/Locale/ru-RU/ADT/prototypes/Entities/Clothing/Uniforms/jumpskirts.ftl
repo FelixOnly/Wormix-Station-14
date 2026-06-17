@@ -153,9 +153,6 @@ ent-ADTClothingUniformJumpskirtBarberBrown = коричневая модная �
 ent-ADTClothingUniformJumpskirtTeto = юбка-костюм Тето
     .desc = Юбка костюм 31-летней женщины уталоида.
 
-ent-ClothingUniformJumpskirtCommandGeneric = юбка командования
-    .desc = Обычная юбка-комбинезон расцветки командования, не связанная с каким-либо конкретным отделом.
-
 ent-ADTClothingUniformDressVintage = винтажное платье
     .desc = Красивое винтажное платье для особых случаев.
 

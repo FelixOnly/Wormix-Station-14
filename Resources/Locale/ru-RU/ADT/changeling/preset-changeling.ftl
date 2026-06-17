@@ -8,14 +8,6 @@ changelings-description = дурацкие воришки ДНК
 changelings-not-enough-ready-players = Недостаточно игроков нажали "Готов"! Всего было {$readyPlayersCount} готовых игроков из {$minimumPlayers} нужных. Режим "Генокрады" не запустится.
 changelings-no-one-ready = Никто не нажал "Готов"! Режим "Генокрады" начать нельзя.
 # Ling role
-changeling-role-greeting =
-    Вы являетесь Генокрадом, впитавшим форму {$character-name} и превратившимся в него.
-    Ваши цели перечислены в специальном меню, используйте ваши способности, чтобы выполнить их.
-changeling-role-greeting-short =
-    Вы являетесь Генокрадом, впитавшим форму
-    { $character-name } и превратившимся в него.
-    Используйте ваши способности, чтобы выполнить цели.
-# Ling abilities
 changeling-not-enough-chemicals = Недостаточно химических веществ!
 changeling-armblade-fail = Вам нужна свободная рука!
 changeling-armblade-success-others = Вокруг руки { $user } образуется причудливое лезвие!
@@ -50,7 +42,6 @@ changeling-dna-switchdna = Переключился на ДНК { $target }.
 changeling-transform-activate = Вы превратились в { $target }.
 changeling-transform-fail-already = Вы уже превратились в { $target }!
 changeling-transform-fail-mutation = Ваше тело слишком искажено для превращения!
-changeling-sting-fail-self = Ужалить { $target } не вышло!
 changeling-sting-fail-target = Вы чувствуёте лёгкое покалывание.
 changeling-dna-sting = Вы забираете образец ДНК { $target }.
 changeling-dna-sting-fail-nodna = { $target } не имеет ДНК!

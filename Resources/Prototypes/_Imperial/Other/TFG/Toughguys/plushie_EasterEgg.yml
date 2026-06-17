@@ -133,7 +133,7 @@
   components:
     - type: Sprite
       sprite: Objects/Misc/pens.rsi
-      state: pen_centcom_gift
+      state: pen_centcom
     - type: Item
       sprite: Objects/Misc/pens.rsi
       heldPrefix: gift_pen_centcom

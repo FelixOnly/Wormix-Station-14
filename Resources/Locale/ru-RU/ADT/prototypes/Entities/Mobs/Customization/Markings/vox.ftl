@@ -72,12 +72,10 @@ marking-ADTVoxTailBalled-voxtailballed = Молотилка
 marking-ADTVoxTailSplit = Сдвоенный
 marking-ADTVoxTailSplit-voxtailsplit = Сдвоенный
 
-marking-VoxBeak = Стандартный клюв
 marking-VoxLArmScales = Стандартная, левая рука
 marking-VoxLHandScales = Стандартная, кисть левой руки
 marking-VoxRArmScales = Стандартная, правая рука
 marking-VoxRHandScales = Стандартная, кисть правой руки
-marking-VoxTail = Стандартный хвост
 marking-VoxLFootScales = Стандартная, ступня левой ноги
 marking-VoxLLegScales = Стандратная, левая нога
 marking-VoxRFootScales = Стандартная, ступня правой ноги

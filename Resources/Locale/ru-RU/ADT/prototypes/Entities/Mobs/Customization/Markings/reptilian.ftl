@@ -88,10 +88,6 @@ marking-TailMaw-maw = Хвост
 marking-TailShark = Унатх, хвост (Акула)
 marking-TailShark-shark_fin = Хвост, конец
 marking-TailShark-shark_tail-shark_tail = Хвост
-marking-TailSnake = Унатх, хвост (Змея)
-marking-TailSnake-snake = Хвост
-
-# Морды
 marking-SnoutEasternDW = Унатх, морда (Восточный дракон 1)
 marking-SnoutEasternDW-easterndnw_primary = Морда, 1
 marking-SnoutEasternDW-easterndnw_secondary = Морда, 2

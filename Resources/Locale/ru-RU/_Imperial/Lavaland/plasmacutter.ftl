@@ -1,9 +1,6 @@
-ent-WeaponPlasmaCutter = плазменный резак
-    .desc = Устройство, от которого теряют сознание все некроморфы и розовые вульпы.
 ent-EmptyWeaponPlasmaCutter = плазменный резак
     .desc = Устройство, от которого теряют сознание все некроморфы и розовые вульпы.
 
-ent-BulletPlasmaCutter = "пробивающий"
 ent-AttackerBulletPlasmaCutter = "атакующий"
 
 

@@ -70,70 +70,38 @@ marking-SpotsArmR = Пятнистая правая рука
 marking-SpotsArmR-spots = Пятнистая правая рука
 marking-VoxArmsStripesRHand = Полосы (правая рука)
 marking-VoxArmsStripesRHand-stripes = Полосы (правая рука)
-marking-VoxRArmScales = Чешуя руки правая
-
-# LArm
-
 marking-SpotsArmL = Пятнистая левая рука
 marking-SpotsArmL-spots = Пятнистая левая рука
 marking-VoxArmsStripesLHand = Полосы (левая рука)
 marking-VoxArmsStripesLHand-stripes = Полосы (левая рука)
-marking-VoxLArmScales = Чешуя руки левая
-
-# RLeg
-
 marking-FeatheredLegR = Опёртая правая нога
 marking-FeatheredLegR-feathered = Опёртая правая нога
 marking-VoxLegGradientRLeg = Сплошной (правая нога)
 marking-VoxLegGradientRLeg-gradient = Сплошной (правая нога)
 marking-VoxLegsStripesRLeg = Полосы (правая)
 marking-VoxLegsStripesRLeg-stripes = Полосы (правая)
-marking-VoxRLegScales = Чешуя ноги правая
-
-# LLeg
-
 marking-FeatheredLegL = Опёртая левая нога
 marking-FeatheredLegL-feathered = Опёртая левая нога
 marking-VoxLegGradientLLeg = Сплошной (левая нога)
 marking-VoxLegGradientLLeg-gradient = Сплошной (левая нога)
 marking-VoxLegsStripesLLeg = Полосы (левая)
 marking-VoxLegsStripesLLeg-stripes = Полосы (левая)
-marking-VoxLLegScales = Чешуя ноги левая
-
-# LFoot
-
 marking-VoxFootGradientLFoot = Сплошной (левая ступня)
 marking-VoxFootGradientLFoot-gradient = Сплошной (левая ступня)
-marking-VoxLFootScales = Чешуя стопы левая
-
-# RFoot
-
 marking-VoxFootGradientRFoot = Сплошной (правая ступня)
 marking-VoxFootGradientRFoot-gradient = Сплошной (правая ступня)
-marking-VoxRFootScales = Чешуя стопы правая
-
-# LHand
-
 marking-VoxHandGradientLHand = Градиент (левая рука)
 marking-VoxHandGradientLHand-gradient1 = Низ
 marking-VoxHandGradientLHand-gradient2 = Средина
 marking-VoxHandGradientLHand-gradient3 = Верх
 marking-VoxLArmProsthetic = Протез (левая)
 marking-VoxLArmProsthetic-prosthetic = Протез (левая)
-marking-VoxLHandScales = Чешуя (левая)
-
-# RHand
-
 marking-VoxHandGradientRHand = Градиент (правая рука)
 marking-VoxHandGradientRHand-gradient1 = Низ
 marking-VoxHandGradientRHand-gradient2 = Средина
 marking-VoxHandGradientRHand-gradient3 = Верх
 marking-VoxRArmProsthetic = Протез (правая)
 marking-VoxRArmProsthetic-prosthetic = Протез (правая)
-marking-VoxRHandScales = Чешуя руки правая
-
-# FacialHair
-
 marking-BeardPadovana = Падована
 marking-BeardPadovana-padovana = Падована
 marking-LargeWattle = Кожистый нарост (Большой)

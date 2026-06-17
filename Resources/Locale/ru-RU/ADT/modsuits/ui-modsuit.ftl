@@ -14,5 +14,3 @@ mod-lock = заблокирован🔒
 mod-locked = разблокирован🔓
 mod-user = пользователь:
 mod-no-user = пользователь отсутствует
-alerts-modsuit-power-name = Заряд МОДсьюта
-alerts-modsuit-power-desc = Показывает, сколько заряда осталось у вашего МОДа.

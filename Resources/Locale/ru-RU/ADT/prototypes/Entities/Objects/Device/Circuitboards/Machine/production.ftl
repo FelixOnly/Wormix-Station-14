@@ -20,11 +20,6 @@ ent-ADTKitchenAssemblerMachineCircuitBoard = кухонный ассемблер
     .desc = Машинная плата, используемая для создания кухонного ассемблера.
 ent-ADTMedicalAssemblerMachineCircuitBoard = медицинский ассемблер (машинная плата)
     .desc = Машинная плата, используемая для создания медицинского ассемблера.
-ent-ChemDispenserMachineCircuitboard = раздатчик химикатов (машинная плата)
-    .desc = Машинная плата, используемая для создания раздатчика химикатов.
-ent-EnergyChemDispenserMachineCircuitboard = энерго-раздатчик химикатов (машинная плата)
-    .desc = Машинная плата, используемая для создания раздатчика химикатов.
-
 ent-ADTVinylPlayerCircuitboard = виниловый проигрыватель (машинная плата)
     .desc = Машинная плата, используемая для создания винилового проигрывателя.
 ent-ADTTapeDeckCircuitboard = магнитофонная дека (машинная плата)

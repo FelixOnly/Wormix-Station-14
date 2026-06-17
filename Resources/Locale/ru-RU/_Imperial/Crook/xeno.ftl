@@ -10,8 +10,6 @@ ent-XenoStructuralGelRandom = структурный гель
 ent-MobFacehuggerXeno = лицехват
     .desc = Напоминает крупного скорпиона.
 
-ent-XenoEgg = яйцо ксеноморфов
-    .desc = Хранит в себе какую-то опасность.
 ent-XenoEggFacehugger = яйцо ксеноморфов
     .desc = Хранит в себе какую-то опасность.
 ent-XenoEggSlime = яйцо ксеноморфов

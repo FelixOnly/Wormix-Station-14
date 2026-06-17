@@ -1,16 +1,9 @@
 store-category-inst-effects = Пассивное
 
-alerts-revenant-essence-name = [color=#f605fa]Эссенция[/color]
-alerts-revenant-essence-desc = Сила [color=#f605fa]души[/color]. Поддерживает ваше существование и используется для использования способностей.
-
-alerts-revenant-corporeal-name = Проявление
-alerts-revenant-corporeal-desc = В данный момент вас видно и можно нанести урон.
-
 revenant-shop-action = Меню прокачки
 revenant-shop-action-desc = Открывает меню прокачки способностей Ревенанта.
 
 revenant-defile = Проклянуть
-revenant-defile-desc = Прокляните область вокруг, разбрасывая полы, ломая окна, взламывая контейнеры и нанося небольшой урон всем.
 revenant-defile-action-desc = Стоит [color=#f605fa]30 эссенции[/color].
 
 revenant-hysteria = Истерия
@@ -22,7 +15,6 @@ revenant-overload-lights-desc = Перегрузите сеть, застави�
 revenant-overload-lights-action-desc = Стоит [color=#f605fa]40 эссенции[/color].
 
 revenant-malfunction = Сбой
-revenant-malfunction-desc = Устройте сбой для ближайшей электроники. Использование проявляет вас на средний срок.
 revenant-malfunction-action-desc = Стоит [color=#f605fa]50 эссенции[/color].
 
 revenant-smoke = Туман

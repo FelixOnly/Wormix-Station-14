@@ -26,8 +26,6 @@ coffee-bon-bon-name = кофе бон-бон
 coffee-bon-bon-desc = Напиток времен СССП, который популярен среди "элиты" народа. Очень и ОЧЕНЬ любим народом.
 reagent-physical-desc-coffeebonbon = густое и кофейное
 
-reagent-name-bacchus-blessing = благославение бахуса
-reagent-desc-bacchus-blessing = Коктейль не может быть настолько ужасным... Или может?
 -blessing = как кирпичная стена
 
 

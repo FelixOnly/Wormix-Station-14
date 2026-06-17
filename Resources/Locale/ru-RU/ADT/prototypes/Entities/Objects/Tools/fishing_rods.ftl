@@ -7,9 +7,3 @@ ent-ADTFishingRodGolden = золотая удочка
 ent-ADTFishingRodMakeshift = самодельная удочка
     .desc = С помощью этого поймать рыбу будет затруднительно.
 
-ent-FishingLure = поплавок
-    .desc = Здесь рыба ловится.
-ent-FishingLureMakeshift = поплавок
-    .desc = Здесь рыба ловится.
-
-

@@ -94,7 +94,6 @@ marking-LizardLittleHorns-small = Рога
 
 marking-TailDropped = Сброшенный хвост
 marking-TailDropped-dropped = Сброшенный хвост
-marking-TailGecko = Хвост геккона
 marking-TailGecko-gecko1 = Хвост геккона
 marking-TailGecko-gecko2 = Пятна
 marking-TailSnailLizard = Улиточный панцирь

@@ -1,6 +1,3 @@
-ent-ActionHereticFleshSurgery = Хирургия плоти
-    .desc = Удалите случайный орган жертвы.
-
 ent-ActionHereticGhoulCall = Призыв плоти
     .desc = Телепортируйте всех ваших гулей к себе.
 

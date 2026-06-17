@@ -1,4 +1,3 @@
-comp-stack-split-custom = Ввести сумму...
 comp-stack-split-custom-title = Разделить стопку
 comp-stack-split-custom-description = Сумма: (макс. { $count }):
 comp-stack-split-custom-input-label = Количество:

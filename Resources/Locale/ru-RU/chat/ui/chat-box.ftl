@@ -30,7 +30,6 @@ hud-chatbox-channel-Notifications = Уведомления
 hud-chatbox-channel-Server = Сервер
 hud-chatbox-channel-Visual = Визуальный
 # Goobstation - Starlight collective mind port
-hud-chatbox-channel-CollectiveMind = Collective Mind
 hud-chatbox-channel-Damage = Повреждения
 hud-chatbox-channel-Unspecified = Неопределённый
 hud-chatbox-highlights = Выделения:

@@ -190,5 +190,3 @@ ent-RubberStampCommandNedra = Печать руководства комплек
     .desc = Печать, повышает уровень важности документа
 ent-RubberStampComitetNedra = Печать комитета управления Недр
     .desc = Печать, повышает уровень важности документа
-ent-ChemistryBottleSaline = бутылочка физраствора
-    .desc = { ent-BaseChemistryEmptyBottle.desc }

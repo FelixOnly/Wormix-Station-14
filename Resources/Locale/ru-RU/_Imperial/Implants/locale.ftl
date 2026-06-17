@@ -13,7 +13,5 @@ ent-ImperialBlinkImplant = имплант близкой телепортаци�
 
 uplink-smoke-implanter-name = Имплантер дымовой завесы
 uplink-smoke-implanter-desc = Позволяет выпустить дымовую завесу с малой задержкой.
-uplink-nutriment-implant-name = Имплантер помпы питательных веществ
-uplink-nutriment-implant-desc = Подавляет требования в пище и воде.
 uplink-blink-implant-name = Имплантер близкой телепортации
 uplink-blink-implant-desc = Позволяет телепортироваться на близких дистанциях.
