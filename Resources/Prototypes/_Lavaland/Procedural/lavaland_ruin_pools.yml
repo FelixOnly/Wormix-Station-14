@@ -30,7 +30,7 @@
   maxDistance: 172
   gridRuins:
     # Orion-Start
-    InteQSizo: 1
+    # InteQSizo: 1 # Wormix edit
     # Orion-End
     SyndicateBase: 1
     HierophantArena: 1
@@ -42,7 +42,7 @@
     Chemistry: 1
     Graveyard: 1
     SeedVault: 1
-    Hermit: 2
+    # Hermit: 2 # Wormix edit
     WaffleCo: 1
     ArrivalsBack: 1
     ArrivalsFront: 1
@@ -54,7 +54,7 @@
     CultBase: 1
     Hunter: 1
     XenoNest: 1
-#WIZDEN RUINS (only peak ones, rest are trash) man
+    #WIZDEN RUINS (only peak ones, rest are trash) man
     CargoWreck: 1
     Murder: 1
     EscapePod: 2
