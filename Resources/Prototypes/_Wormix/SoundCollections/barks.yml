@@ -396,11 +396,6 @@
   id: MinecraftXyloboneBark
   files:
   - /Audio/_Wormix/Voice/Vocal-Barks/minecraft_xylobone.ogg  
-
-- type: soundCollection
-  id: WehBark
-  files:
-  - /Audio/_Wormix/Voice/Vocal-Barks/weh.ogg
   
 - type: soundCollection
   id: WehBark
