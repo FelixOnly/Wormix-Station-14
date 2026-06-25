@@ -1,0 +1,433 @@
+- type: soundCollection
+  id: MrAntTennaBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-tenna-01.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-tenna-02.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-tenna-03.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-tenna-04.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-tenna-05.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-tenna-06.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-tenna-07.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-tenna-08.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-tenna-09.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-tenna-10.ogg
+
+- type: soundCollection
+  id: RouxlsKaard
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-rouxls-01.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-rouxls-02.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-rouxls-03.ogg
+
+- type: soundCollection
+  id: SkeletonBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/skeleton-01.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/skeleton-02.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/skeleton-03.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/skeleton-04.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/skeleton-05.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/skeleton-06.ogg
+
+- type: soundCollection
+  id: Gaster
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_gaster_1.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_gaster_2.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_gaster_3.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_gaster_4.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_gaster_5.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_gaster_6.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_gaster_7.ogg
+
+- type: soundCollection
+  id: temmie
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_temmie_1.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_temmie_2.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_temmie_3.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_temmie_4.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_temmie_5.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_temmie_6.ogg
+
+- type: soundCollection
+  id: Mettaton
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_mettaton_1.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_mettaton_2.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_mettaton_3.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_mettaton_4.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_mettaton_5.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_mettaton_6.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_mettaton_7.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_mettaton_8.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale_mettaton_9.ogg
+
+- type: soundCollection
+  id: FatalErrorSans
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/underverse_fatal_error_sans_1.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/underverse_fatal_error_sans_2.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/underverse_fatal_error_sans_3.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/underverse_fatal_error_sans_4.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/underverse_fatal_error_sans_5.ogg
+
+- type: soundCollection
+  id: Sam
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/microsoft-sam-01.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/microsoft-sam-02.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/microsoft-sam-03.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/microsoft-sam-04.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/microsoft-sam-05.ogg
+  - /Audio/_Wormix/Voice/Vocal-Barks/microsoft-sam-06.ogg
+
+- type: soundCollection
+  id: GuitarC3Bark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/Guitar-C3.ogg
+
+- type: soundCollection
+  id: GuitarC2Bark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/Guitar-C2.ogg
+
+- type: soundCollection
+  id: GuitarC4Bark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/Guitar-C4.ogg
+    
+- type: soundCollection
+  id: BanjoMediumBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/Banjo-Cn3.ogg
+  
+- type: soundCollection
+  id: BanjoHighBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/Banjo-Cn4.ogg
+  
+- type: soundCollection
+  id: MerpSoundBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/merp.ogg
+  
+- type: soundCollection
+  id: Synth1Bark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale-synth-1.ogg
+  
+- type: soundCollection
+  id: Synth2Bark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/synth-2.ogg
+  
+- type: soundCollection
+  id: Synth3Bark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/bloop.ogg
+
+- type: soundCollection
+  id: Synth4Bark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale-synth-2.ogg
+  
+- type: soundCollection
+  id: Chrip1Bark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale-chrip-1.ogg  
+
+- type: soundCollection
+  id: Chrip2Bark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale-chrip-2.ogg  
+
+- type: soundCollection
+  id: FloweyBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale-flowey.ogg
+
+- type: soundCollection
+  id: UnderswapSansBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/underswap-sans.ogg
+
+- type: soundCollection
+  id: StatisticSoundBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale-stats.ogg
+
+- type: soundCollection
+  id: DefaultBarkSoundBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale-default.ogg
+
+- type: soundCollection
+  id: AngryFloweyBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale-flowey-angry.ogg
+  
+- type: soundCollection
+  id: AceBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale-yellow-ace.ogg
+
+- type: soundCollection
+  id: AxisBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale-yellow-axis.ogg
+  
+- type: soundCollection
+  id: ChujinBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale-yellow-chujin.ogg
+
+- type: soundCollection
+  id: CerobaBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale-yellow-ceroba.ogg
+
+- type: soundCollection
+  id: DalvBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale-yellow-davl.ogg
+  
+- type: soundCollection
+  id: EdBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale-yellow-ed.ogg
+
+- type: soundCollection
+  id: MarletBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale-yellow-martlet.ogg
+
+- type: soundCollection
+  id: MorayBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale-yellow-moray.ogg
+  
+- type: soundCollection
+  id: StarloBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/undertale-yellow-starlo.ogg
+  
+- type: soundCollection
+  id: SusieBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-susie.ogg
+
+- type: soundCollection
+  id: SpamtonBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-spamton.ogg
+
+- type: soundCollection
+  id: RudolphBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-rudolph.ogg
+  
+- type: soundCollection
+  id: RalseiBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-ralsei.ogg
+
+- type: soundCollection
+  id: QueenBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-queen.ogg
+  
+- type: soundCollection
+  id: NoelleBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-noelle.ogg
+
+- type: soundCollection
+  id: LancerBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-lancer.ogg
+
+- type: soundCollection
+  id: JevilBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-jevil.ogg
+
+- type: soundCollection
+  id: BerdlyBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-berdly.ogg
+  
+- type: soundCollection
+  id: NoellesMomBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-noellemom.ogg
+  
+- type: soundCollection
+  id: GersonBoomBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-gerson.ogg
+
+- type: soundCollection
+  id: JackensteinBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltarune-jackenstein.ogg
+  
+- type: soundCollection
+  id: CharkisBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltaruneREwritten_charkis.ogg
+
+- type: soundCollection
+  id: JunkilBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltaruneREwritten_junkil.ogg
+
+- type: soundCollection
+  id: ScamptonBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/deltaruneREwritten_scamton.ogg
+  
+- type: soundCollection
+  id: TSUndAlphysBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/ts_underswap_alphys.ogg
+
+- type: soundCollection
+  id: BugerpantBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/ts_underswap_bugerpant.ogg
+  
+- type: soundCollection
+  id: CoffinKBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/ts_underswap_coffin_k.ogg
+  
+- type: soundCollection
+  id: CrossbonesBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/ts_underswap_crossbones.ogg
+  
+- type: soundCollection
+  id: HarryBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/ts_underswap_harry.ogg
+
+- type: soundCollection
+  id: LarryBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/ts_underswap_larry.ogg
+
+- type: soundCollection
+  id: MettalotBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/ts_underswap_mettalot.ogg
+
+- type: soundCollection
+  id: MoldrickBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/ts_underswap_moldrick.ogg
+   
+- type: soundCollection
+  id: SGTSplosionBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/ts_underswap_sgt_splosion.ogg
+   
+- type: soundCollection
+  id: MinecraftBassBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/minecraft_bass.ogg  
+
+- type: soundCollection
+  id: MinecraftBassAttackBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/minecraft_bassattack.ogg  
+
+- type: soundCollection
+  id: MinecraftBellBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/minecraft_bell.ogg  
+
+- type: soundCollection
+  id: MinecraftBitBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/minecraft_bit.ogg  
+
+- type: soundCollection
+  id: MinecraftCowBellBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/minecraft_cow_bell.ogg  
+
+- type: soundCollection
+  id: MinecraftDidgeridooBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/minecraft_didgeridoo.ogg  
+
+- type: soundCollection
+  id: MinecraftFluteBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/minecraft_flute.ogg  
+
+- type: soundCollection
+  id: MinecraftGuitarBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/minecraft_guitar.ogg  
+
+- type: soundCollection
+  id: MinecraftHarpBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/minecraft_harp.ogg  
+
+- type: soundCollection
+  id: MinecraftIceChimeBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/minecraft_icechime.ogg  
+
+- type: soundCollection
+  id: MinecraftIronXylophoneBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/minecraft_iron_xylophone.ogg  
+
+- type: soundCollection
+  id: MinecraftPlingBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/minecraft_pling.ogg  
+
+- type: soundCollection
+  id: MinecraftXyloboneBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/minecraft_xylobone.ogg  
+
+- type: soundCollection
+  id: WehBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/weh.ogg
+  
+- type: soundCollection
+  id: WehBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/weh.ogg
+
+- type: soundCollection
+  id: GhostRadioBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/noise-bark.ogg
+
+- type: soundCollection
+  id: CanineVoiceBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/bark-bark.ogg
+
+- type: soundCollection
+  id: FelineVoiceeBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/bark-meow.ogg
+
+- type: soundCollection
+  id: YetAnotherDefaultBarkSoundBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/oneshot-text.ogg
+
+- type: soundCollection
+  id: OneshotRobotBark
+  files:
+  - /Audio/_Wormix/Voice/Vocal-Barks/oneshot-robot.ogg
