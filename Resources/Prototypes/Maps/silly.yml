@@ -25,7 +25,7 @@
             Captain: [ 1, 1 ]
             # cargo
             Quartermaster: [ 1, 1 ]
-            SalvageSpecialist: [ 3, 3 ]
+            SalvageSpecialist: [ 1, 1 ] # Wormix
             CargoTechnician: [ 3, 3 ]
             # engineering
             ChiefEngineer: [ 1, 1 ]

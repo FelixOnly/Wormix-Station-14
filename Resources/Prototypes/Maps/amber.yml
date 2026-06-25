@@ -86,8 +86,8 @@
             Lawyer: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]
-            SalvageSpecialist: [ 3, 3 ]
-            ShaftMiner: [ 3, 3 ]
+            SalvageSpecialist: [ 1, 1 ] # Wormix
+            ShaftMiner: [ 1, 1 ] # Wormix
             CargoTechnician: [ 2, 3 ]
             #civilian
             Passenger: [ -1, -1 ]
