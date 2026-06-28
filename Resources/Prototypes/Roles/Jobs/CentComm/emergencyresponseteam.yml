@@ -119,6 +119,9 @@
   name: job-name-ertleader
   description: job-description-ertleader
   playTimeTracker: JobERTLeader
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 9000 # 2.5 hrs
   setPreference: false
   startingGear: ERTLeaderGearEVA
   icon: "JobIconERTLeader" # Orion-Edit: Custom icon

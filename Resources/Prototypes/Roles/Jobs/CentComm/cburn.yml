@@ -16,6 +16,9 @@
   playTimeTracker: JobCBURN
   setPreference: false
   startingGear: CBURNGear
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 9000 # 2.5 hrs
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-centcom
   canBeAntag: false

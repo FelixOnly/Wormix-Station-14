@@ -4,9 +4,8 @@
   description: job-description-BkmVirologist
   playTimeTracker: JobBkmVirologist
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 7200
+    - !type:OverallPlaytimeRequirement
+      time: 9000 # 2.5 hrs
   startingGear: BkmVirologistGear
   icon: "JobIconVirologist"
   supervisors: job-supervisors-cmo

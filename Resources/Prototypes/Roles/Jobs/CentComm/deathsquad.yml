@@ -18,6 +18,9 @@
   playTimeTracker: JobDeathSquad
   setPreference: false
   startingGear: DeathSquadGear
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 9000 # 2.5 hrs
   icon: "JobIconDeathSquad" # Orion-Edit: Custom icon
   supervisors: job-supervisors-centcom
   canBeAntag: false

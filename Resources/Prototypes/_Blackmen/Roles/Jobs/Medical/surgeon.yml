@@ -4,9 +4,8 @@
   description: job-description-surgeon
   playTimeTracker: JobBkmSurgeon
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 7200 #2 hrs # Corvax-RoleTime
+    - !type:OverallPlaytimeRequirement
+      time: 9000 # 2.5 hrs
   startingGear: SurgeonGear
   icon: "JobIconSurgeon"
   supervisors: job-supervisors-cmo

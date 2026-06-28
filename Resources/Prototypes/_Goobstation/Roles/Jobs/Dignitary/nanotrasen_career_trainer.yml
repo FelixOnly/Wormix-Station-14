@@ -6,6 +6,9 @@
   goobcoins: 45
   weight: 20
   startingGear: NanotrasenCareerTrainerGear
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 9000 # 2.5 hrs
   icon: "JobIconNanotrasenTrainer"
   joinNotifyCrew: true
   supervisors: job-supervisors-ntr-centcom

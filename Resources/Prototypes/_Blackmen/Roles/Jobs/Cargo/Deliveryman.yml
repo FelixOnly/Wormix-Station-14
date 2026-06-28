@@ -4,6 +4,9 @@
   description: job-description-Deliveryman
   playTimeTracker: JobDeliveryman
   startingGear: DeliverymanGear
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 9000 # 2.5 hrs
   icon: JobIconServiceWorker
   supervisors: job-supervisors-service
   canBeAntag: false

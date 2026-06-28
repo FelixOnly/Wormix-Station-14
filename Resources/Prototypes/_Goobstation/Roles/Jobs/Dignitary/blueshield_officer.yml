@@ -33,17 +33,8 @@
   description: job-description-bs
   playTimeTracker: JobBlueshieldOfficer
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Command
-      time: 90000 # 25 hours
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 54000 # 15 hours
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 90000 # 25 hours
-    - !type:AgeRequirement
-      requiredAge: 21
+    - !type:OverallPlaytimeRequirement
+      time: 9000 # 2.5 hrs
     - !type:SpeciesRequirement # Goob - None Felinid
       inverted: true
       species:

@@ -42,8 +42,8 @@
   supervisors: job-supervisors-centcom # Goobstation
   canBeAntag: false
   requirements:
-  - !type:AgeRequirement
-    requiredAge: 21
+    - !type:OverallPlaytimeRequirement
+      time: 9000 # 2.5 hrs
   accessGroups:
   - AllAccess
   access:

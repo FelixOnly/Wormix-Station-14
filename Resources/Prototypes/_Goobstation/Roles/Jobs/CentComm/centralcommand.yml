@@ -16,6 +16,9 @@
   name: job-name-navy-officer
   description: job-description-navy-officer
   playTimeTracker: JobNavyOfficer
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 9000 # 2.5 hrs
   setPreference: false
   startingGear: NavyOfficerGear
   icon: "JobIconNanotrasen"

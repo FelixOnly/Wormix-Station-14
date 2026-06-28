@@ -4,6 +4,9 @@
   description: job-description-radiohost
   playTimeTracker: JobRadioHost
   startingGear: RadioHostGear
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 9000 # 2.5 hrs
   icon: "JobIconRadioHost"
   supervisors: job-supervisors-hop
   # Orion-Start
