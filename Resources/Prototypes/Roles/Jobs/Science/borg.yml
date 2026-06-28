@@ -35,9 +35,8 @@
   description: job-description-station-ai
   playTimeTracker: JobStationAi
   requirements:
-  - !type:RoleTimeRequirement
-    role: JobBorg
-    time: 18000  # 5 hrs
+    - !type:OverallPlaytimeRequirement
+      time: 9000 # 2.5 hrs
   canBeAntag: false
   goobcoins: 40 #Goob content
   weight: 10 # Goob Edit

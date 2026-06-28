@@ -79,6 +79,9 @@
   description: job-description-janitor
   playTimeTracker: JobJanitor
   startingGear: JanitorGear
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 9000 # 2.5 hrs
   icon: "JobIconJanitor"
   supervisors: job-supervisors-hop
   guides: [ Janitorial ] # goobstation

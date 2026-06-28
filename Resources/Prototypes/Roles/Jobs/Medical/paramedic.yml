@@ -81,9 +81,8 @@
   description: job-description-paramedic
   playTimeTracker: JobParamedic
   requirements:
-  - !type:DepartmentTimeRequirement
-    department: Medical
-    time: 9000 #2.5 hrs
+    - !type:OverallPlaytimeRequirement
+      time: 9000 # 2.5 hrs
   startingGear: ParamedicGear
   icon: "JobIconParamedic"
   supervisors: job-supervisors-cmo

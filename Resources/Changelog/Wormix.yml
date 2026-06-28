@@ -117,3 +117,8 @@ Entries:
       time: '2026-06-25T10:00:00.0000000+00:00'
       changes:
       - { message: "Добавлены барки: Minecraft, Undertale и Deltarune. Общее количество новых барков 76", type: Add }
+    - author: Sablerti
+      id: 10
+      time: '2026-06-28T10:00:00.0000000+00:00'
+      changes:
+      - { message: "Применены ограничение на все роли на 2 с половиной часа общего времени игры на сервере.", type: Fix }  

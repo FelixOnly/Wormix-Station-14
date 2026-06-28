@@ -84,7 +84,7 @@
   playTimeTracker: JobChef
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 1800 # 30 Minutes
+      time: 9000 # 2.5 hrs
   startingGear: ChefGear
   icon: "JobIconChef"
   supervisors: job-supervisors-hop

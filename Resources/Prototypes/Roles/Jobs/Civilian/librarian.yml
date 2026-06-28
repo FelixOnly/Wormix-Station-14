@@ -69,6 +69,9 @@
   description: job-description-librarian
   playTimeTracker: JobLibrarian
   startingGear: LibrarianGear
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 9000 # 2.5 hrs
   icon: "JobIconLibrarian"
   supervisors: job-supervisors-hop
   goobcoins: 10 #Goob content

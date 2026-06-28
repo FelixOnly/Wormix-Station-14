@@ -61,6 +61,9 @@
   description: job-description-musician
   playTimeTracker: JobMusician
   startingGear: MusicianGear
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 9000 # 2.5 hrs
   icon: "JobIconMusician"
   supervisors: job-supervisors-hire
   goobcoins: 10 #Goob content

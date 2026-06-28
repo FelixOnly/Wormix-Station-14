@@ -136,15 +136,8 @@
   description: job-description-cmo
   playTimeTracker: JobChiefMedicalOfficer
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobChemist
-      time: 18000 #5 hrs
-    - !type:RoleTimeRequirement
-      role: JobMedicalDoctor
-      time: 28000 #8 hrs
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 36000 #10 hrs
+    - !type:OverallPlaytimeRequirement
+      time: 9000 # 2.5 hrs
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
   supervisors: job-supervisors-captain

@@ -59,6 +59,9 @@
   description: job-description-reporter
   playTimeTracker: JobReporter
   startingGear: ReporterGear
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 9000 # 2.5 hrs
   icon: "JobIconReporter"
   goobcoins: 15 #Goob content
   supervisors: job-supervisors-hop

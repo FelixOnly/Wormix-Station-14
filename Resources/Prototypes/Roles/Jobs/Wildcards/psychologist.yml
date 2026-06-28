@@ -104,6 +104,9 @@
   description: job-description-psychologist
   playTimeTracker: JobPsychologist
   startingGear: PsychologistGear
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 9000 # 2.5 hrs
   icon: "JobIconPsychologist"
   supervisors: job-supervisors-cmo
   goobcoins: 15 #Goob content
