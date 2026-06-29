@@ -1,14 +1,4 @@
 - type: reaction
-  id: Lye
-  reactants:
-    Water:
-      amount: 1
-    Ash:
-      amount: 1
-  products:
-    Lye: 2
-
-- type: reaction
   id: StimulantsSuper
   impact: Medium
   reactants:
