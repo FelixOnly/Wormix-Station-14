@@ -25,6 +25,6 @@
     - CosmicCult
     - SubGamemodesRule
     #- MeteorSwarmScheduler - Goob Edit
-    - SpaceTrafficControlEventScheduler
+    #- SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
     - BasicStationEventScheduler
