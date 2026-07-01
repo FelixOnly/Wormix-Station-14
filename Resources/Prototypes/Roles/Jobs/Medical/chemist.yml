@@ -68,6 +68,8 @@
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 9000 # 2.5 hrs
+    - !type:MaturityRequirement
+      minAge: 25
   startingGear: ChemistGear
   icon: "JobIconChemist"
   supervisors: job-supervisors-cmo

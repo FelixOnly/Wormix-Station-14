@@ -102,6 +102,8 @@
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 9000 # 2.5 hrs
+    - !type:MaturityRequirement
+      minAge: 18
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security

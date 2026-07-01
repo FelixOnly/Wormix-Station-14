@@ -132,6 +132,8 @@
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 9000 # 2.5 hrs
+    - !type:MaturityRequirement
+      minAge: 25
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"

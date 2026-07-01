@@ -62,6 +62,8 @@
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 9000 # 2.5 hrs
+    - !type:MaturityRequirement
+      minAge: 21
   icon: "JobIconReporter"
   goobcoins: 15 #Goob content
   supervisors: job-supervisors-hop

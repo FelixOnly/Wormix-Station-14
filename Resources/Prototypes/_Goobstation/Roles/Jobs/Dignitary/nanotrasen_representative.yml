@@ -101,8 +101,8 @@
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 9000 # 2.5 hrs
-    - !type:AgeRequirement
-      requiredAge: 21
+    - !type:MaturityRequirement
+      minAge: 35
   weight: 20
   startingGear: NanotrasenRepresentativeGear
   icon: "JobIconNanotrasenRepresentative"
