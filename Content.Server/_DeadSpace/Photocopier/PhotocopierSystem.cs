@@ -360,7 +360,7 @@ public sealed class PhotocopierSystem : EntitySystem
         text = text.Replace("DOCUMENT NAME", Loc.GetString(formPrototype.Name));
         // Wormix-Edit-Start 
         DateTime time = _timeSystem.GetStationDate();
-        text = text.Replace("{{HOUR.MINUTE.SECOND}}", $"{_gameTiming.CurTime.Subtract(_ticker.RoundStartTimeSpan).ToString("hh\\:mm\\:ss")} / {(time.Day < 10 ? $"0{time.Day}" : time.Day)}.{(time.Month < 10 ? $"0{time.Month}" : time.Month)}.{time.Year}");
+        text = text.Replace("{{HOUR.MINUTE.SECOND}}", $"{_gameTiming.CurTime.Subtract(_ticker.RoundStartTimeSpan).ToString("hh\\:mm\\:ss")} /");
         text = text.Replace("{{DAY.MONTH.YEAR}}", _timeSystem.GetStationDate().ToString("dd.MM.yyyy"));
         // Wormix-Edit-End
 

@@ -61,7 +61,6 @@ ent-ClothingHeadHatSurgeon = шапочка хирурга
     .desc = Защищает пациента от волос хирурга.
 
 job-name-surgeon = Хирург
-job-description-surgeon = Лечит внутренние травмы.
 
 reagent-name-humanisine = гуманизин
 reagent-desc-humanisine = Go back, i want to be monke!

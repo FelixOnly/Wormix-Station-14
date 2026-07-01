@@ -200,13 +200,6 @@
   color: "#A0522D"
 
 - type: radioChannel
-  id: FelixradioChannelAdministrativeSector
-  name: AdministrativeSector
-  keycode: "а"
-  frequency: 1155
-  color: "#66CDAA"
-
-- type: radioChannel
   id: FelixradioChannelFinancialSector
   name: FinancialSector
   keycode: "f"
