@@ -13,9 +13,6 @@
   joinNotifyCrew: true
   discordRequired: true
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Cargo
-      time: 126000
     - !type:RoleTimeRequirement
       role: JobCentralCommandAssistant
       time: 21600
