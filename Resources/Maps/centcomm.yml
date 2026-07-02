@@ -32639,13 +32639,6 @@ entities:
     - type: Transform
       pos: -14.75395,-5.71581
       parent: 1668
-- proto: RubberStampCBURNLeader
-  entities:
-  - uid: 741
-    components:
-    - type: Transform
-      pos: -14.418312,-6.043935
-      parent: 1668
 - proto: RubberStampCentcom
   entities:
   - uid: 361
@@ -32688,13 +32681,6 @@ entities:
     components:
     - type: Transform
       pos: -14.748892,-5.84081
-      parent: 1668
-- proto: RubberStampERTLeader
-  entities:
-  - uid: 855
-    components:
-    - type: Transform
-      pos: -14.418312,-6.200185
       parent: 1668
 - proto: RubberStampFuckingDenied
   entities:
